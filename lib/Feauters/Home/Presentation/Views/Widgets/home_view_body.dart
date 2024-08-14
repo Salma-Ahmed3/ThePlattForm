@@ -7,15 +7,13 @@ import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.da
 import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/hourly_service_view.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 import 'package:nowproject/core/utils/custom_button_home_view.dart';
-import 'package:nowproject/core/utils/custom_nav_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return  SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
@@ -57,8 +55,6 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: const CustomNavBar(),
     );
   }
 }
