@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_dot_color.dart';
+import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_dot_circle.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_photo.dart';
 
 class HomeViewBody extends StatelessWidget {
