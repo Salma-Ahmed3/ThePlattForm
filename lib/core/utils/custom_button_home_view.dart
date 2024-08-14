@@ -50,13 +50,15 @@ class CustomButtonHomeView extends StatelessWidget {
           Positioned(
             top: 14,
             right: 72,
+            bottom: 17,
             child: Text(titletext, style: TextStyles.regular16),
           ),
           Positioned(
             top: 38,
             right: 72,
             left: 7,
-            child: Text(subtitletext, style: TextStyles.regular16),
+            bottom: 17,
+            child: Text(subtitletext, style: TextStyles.regular12),
           ),
         ],
       ),
