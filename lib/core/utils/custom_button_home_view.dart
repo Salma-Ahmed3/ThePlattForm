@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class CustomButtonHomeView extends StatelessWidget {
+  const CustomButtonHomeView({
     super.key, 
     required this.subtitletext, 
     required this.titletext, 

@@ -16,10 +16,10 @@ class SocialMediaIconsItem extends StatelessWidget {
         SocialMediaIcons(icon:  Image.asset ('assets/images/xApp.png'),),
               const SizedBox(width: 10,),
       
-        SocialMediaIcons(icon: const Icon(Icons.link , color: Colors.white,)),
+        SocialMediaIcons(icon:  Image.asset ('assets/images/linkedin.png')),
               const SizedBox(width: 10,),
       
-        SocialMediaIcons(icon:  Image.asset ('assets/images/WhatsApp.png'),),
+        SocialMediaIcons(icon:  Image.asset ('assets/images/instaIcon.png'),),
               const SizedBox(width: 10,),
       
           const SocialMediaIcons(icon: Icon(Icons.facebook , color: Colors.white,),),
