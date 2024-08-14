@@ -11,4 +11,14 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
     fontSize: 18,
   );
+  static const TextStyle regular12 = TextStyle(
+    fontFamily: 'Alexandria',
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+  );
+  static const TextStyle regular16 = TextStyle(
+    fontFamily: 'Alexandria',
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+  );
 }
