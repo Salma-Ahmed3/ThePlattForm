@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomButtonNotifications extends StatelessWidget {
@@ -64,7 +65,7 @@ class CustomButtonNotifications extends StatelessWidget {
                
               },
               child: Image.asset(
-                'assets/images/deleteIcon.png',
+                Assets.imagesDeleteIcon,
                 width: 12,
                 height: 14, 
               ),),

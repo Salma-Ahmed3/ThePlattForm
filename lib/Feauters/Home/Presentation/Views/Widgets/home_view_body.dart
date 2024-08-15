@@ -3,10 +3,10 @@ import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_dot_c
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_photo.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/distinguished_services.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/social_media_icons_item.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/hourly_service_view.dart';
+import 'package:nowproject/Feauters/Resident%20service/Presentation/Views/resident_service_view.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
-import 'package:nowproject/core/utils/custom_button_home_view.dart';
+import 'package:nowproject/core/utils/custom_button.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(height: 24,),
               const DistinguishedServices(),
               const SizedBox(height: 17,),
-              CustomButtonHomeView(
+              CustomButton(
                 titletext: 'خدمة بالساعة',
                 subtitletext:'خدمات منزلية بنظام الساعات',
                 colorSmallContainer: const Color(0xffD6D6D6),
@@ -37,14 +37,14 @@ class HomeViewBody extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20,),
-              CustomButtonHomeView(
+              CustomButton(
                 titletext: 'خدمة مقيمة',
                 subtitletext: 'نظام الباقات الشهرية والسنوية',
-                colorSmallContainer: Color(0xffACACAC),
+                colorSmallContainer: const Color(0xffACACAC),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const TestPage()),
+                    MaterialPageRoute(builder: (context) => const ResidentServiceView()),
                   );
                 },
               ),

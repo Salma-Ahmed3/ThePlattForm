@@ -1,27 +1,27 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/home_view_body.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
+import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/add_new_address_view_body.dart';
 import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
 import 'package:nowproject/core/Widgets/build_app_bar.dart';
 import 'package:nowproject/core/utils/custom_nav_bar.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class AddNewAddressView extends StatelessWidget {
+  const AddNewAddressView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        // drawer: MenurBar(),
+    return  Directionality(textDirection: TextDirection.rtl, 
+    child: Scaffold(
+       
         appBar: buildAppBar(
           context, 
-          titleAppBar: 'مرحبا عميلنا العزيز', 
-          rightIcon: const Icon(Icons.menu), 
+          titleAppBar: 'إضافة عنوان جديد', 
+          rightIcon: const Icon(Icons.arrow_back), 
           onPressedRightIcon: () { 
-            Navigator.push(
+            Navigator.pop(
               context,
-              MaterialPageRoute(builder: (context) => const TestPage()),
+              
             );
            }, 
           leftIcon: const Icon(Icons.notifications), 
@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
            }, 
          
         ),
-        body: const HomeViewBody(),
+        body: const AddNewAddressViewBody(),
         bottomNavigationBar: const CustomNavBar(),
       ),
     );

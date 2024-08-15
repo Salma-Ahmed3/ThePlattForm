@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomTextInPhoto extends StatelessWidget {
@@ -14,7 +15,7 @@ class CustomTextInPhoto extends StatelessWidget {
               const SizedBox(
                   height: 49,
                 ),
-                       Image.asset('assets/images/picture.png'),      
+                       Image.asset(Assets.imagesPicIcon),      
                        const SizedBox(
                         height: 16,
                        ),
