@@ -4,6 +4,8 @@ import 'package:nowproject/Feauters/Logo/Presentation/Views/Widgets/logo_view_bo
 
 class LogoView extends StatelessWidget {
   const LogoView({super.key});
+  static const routeName = 'Logo';
+
 
   @override
   Widget build(BuildContext context) {
