@@ -15,22 +15,35 @@ class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
          CustomButtonInAddNewAddrease(
                   onTap: () {
                     Navigator.pop(context);
-
                   }, alignment:  Alignment.centerRight, 
                   colorBackGround: Colors.transparent, 
-                  tixtInButton: const Text('السابق',
-                   style: TextStyles.regular18,
-                   ) ,
+                  tixtInButton: const Padding(
+                  padding: EdgeInsets.only(left: 30 
+                  , right: 33
+                   , top: 10,
+                    bottom: 10,
+                    ),
+                    child:  Text('السابق',
+                     style: TextStyles.regular18,
+                     ),
+                  ) ,
                  ),
                  CustomButtonInAddNewAddrease(
                   onTap: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => const TestPage()));
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TestPage()));
                   }, alignment:  Alignment.centerLeft, 
                   colorBackGround: Colors.black,
-                   tixtInButton: Text('التالي',
-                    style: TextStyles.regular18.copyWith(color: Colors.white),
-                    ) ,
+                  tixtInButton: Padding(
+                                padding: const EdgeInsets.only(left: 30 
+                                , right: 33
+                                , top: 10
+                                , bottom: 10,
+                                ),
+
+                    child: Text('التالي',
+                      style: TextStyles.regular18.copyWith(color: Colors.white),
+                      ),
+                   ) ,
                  ),
       ],
     );

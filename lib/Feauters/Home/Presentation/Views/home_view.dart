@@ -7,6 +7,7 @@ import 'package:nowproject/core/utils/custom_nav_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+  static const routeName = 'HomeView';
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
+import 'package:nowproject/Feauters/LogIn/Presentation/Views/login_view.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class LogoViewBody extends StatefulWidget {
@@ -52,7 +52,7 @@ class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderSt
 
   Route _createRoute() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => const HomeView(),
+      pageBuilder: (context, animation, secondaryAnimation) => const LoginView(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;

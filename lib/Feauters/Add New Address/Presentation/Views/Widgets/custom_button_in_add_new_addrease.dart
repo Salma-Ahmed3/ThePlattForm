@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomButtonInAddNewAddrease extends StatelessWidget {
-  const CustomButtonInAddNewAddrease({super.key, this.onTap, required this.alignment, required this.colorBackGround, required this.tixtInButton});
+  const CustomButtonInAddNewAddrease({
+    super.key,
+     this.onTap,
+      required this.alignment, 
+      required this.colorBackGround, 
+      required this.tixtInButton});
 final void Function()? onTap;
 final AlignmentGeometry alignment;
 final Color colorBackGround;
@@ -10,11 +15,7 @@ final Widget tixtInButton;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:onTap,
-      child: Stack(
-        children: [
-                Align(
-                  alignment:alignment,
-                  child: Container(
+      child: Container(
                             width: 108,
                     height: 47,
                     decoration: BoxDecoration(
@@ -25,15 +26,16 @@ final Widget tixtInButton;
                         width: 1,
                       ),
                     ),
+                    child:tixtInButton,
                   ),
-                ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30 , right: 33 , top: 10, bottom: 10),
-            child: tixtInButton,
-          ),
+                );
+    //       Padding(
+            // padding: const EdgeInsets.only(left: 30 , right: 33 , top: 10, bottom: 10),
+    //         child: tixtInButton,
+    //       ),
                   
-              ],
-      ),
-    );
+    //           ],
+    //   ),
+    // );
   }
 }
