@@ -15,22 +15,22 @@ class ResidentServiceView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: buildAppBar(
-          context,
-          titleAppBar: 'اختيار العنوان',
-          rightIcon: const Icon(Icons.arrow_back),
-          onPressedRightIcon: () {
-            Navigator.pop(context);
-          },
-          leftIcon: const Icon(Icons.notifications),
-          onPressedLeftIcon: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const NotificationView()),
-            );
-          },
-        ),
+        // appBar: buildAppBar(
+        //   context,
+        //   titleAppBar: 'اختيار العنوان',
+        //   rightIcon: const Icon(Icons.arrow_back),
+        //   onPressedRightIcon: () {
+        //     Navigator.pop(context);
+        //   },
+        //   leftIcon: const Icon(Icons.notifications),
+        //   onPressedLeftIcon: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //           builder: (context) => const NotificationView()),
+        //     );
+        //   },
+        // ),
         body: const ResidentServiceViewBody(),
         bottomNavigationBar: const CustomNavBar(),
         floatingActionButton: Row(

@@ -14,25 +14,25 @@ class HourlyService extends StatelessWidget {
     return  Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          appBar: buildAppBar(
-          context, 
-          titleAppBar: 'اختر الخدمة', 
-          rightIcon: const Icon(Icons.menu), 
-          onPressedRightIcon: () { 
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const TestPage()),
-            );
-           }, 
-          leftIcon: const Icon(Icons.notifications), 
-          onPressedLeftIcon: () { 
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NotificationView()),
-            );
-           }, 
+        //   appBar: buildAppBar(
+        //   context, 
+        //   titleAppBar: 'اختر الخدمة', 
+        //   rightIcon: const Icon(Icons.menu), 
+        //   onPressedRightIcon: () { 
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const TestPage()),
+        //     );
+        //    }, 
+        //   leftIcon: const Icon(Icons.notifications), 
+        //   onPressedLeftIcon: () { 
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const NotificationView()),
+        //     );
+        //    }, 
          
-        ),
+        // ),
         body:HourlyServicesViewBody() ,
         bottomNavigationBar: CustomNavBar(),
       

@@ -14,25 +14,25 @@ class AddNewAddressView extends StatelessWidget {
     return  Directionality(textDirection: TextDirection.rtl, 
     child: Scaffold(
        
-        appBar: buildAppBar(
-          context, 
-          titleAppBar: 'إضافة عنوان جديد', 
-          rightIcon: const Icon(Icons.arrow_back), 
-          onPressedRightIcon: () { 
-            Navigator.pop(
-              context,
+        // appBar: buildAppBar(
+        //   context, 
+        //   titleAppBar: 'إضافة عنوان جديد', 
+        //   rightIcon: const Icon(Icons.arrow_back), 
+        //   onPressedRightIcon: () { 
+        //     Navigator.pop(
+        //       context,
               
-            );
-           }, 
-          leftIcon: const Icon(Icons.notifications), 
-          onPressedLeftIcon: () { 
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NotificationView()),
-            );
-           }, 
+        //     );
+        //    }, 
+        //   leftIcon: const Icon(Icons.notifications), 
+        //   onPressedLeftIcon: () { 
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const NotificationView()),
+        //     );
+        //    }, icon: null, 
          
-        ),
+        // ),
         body: const AddNewAddressViewBody(),
         bottomNavigationBar: const CustomNavBar(),
       ),

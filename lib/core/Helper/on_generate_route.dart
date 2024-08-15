@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/login_view.dart';
 import 'package:nowproject/Feauters/Logo/Presentation/Views/logo_view.dart';
+import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
 import 'package:nowproject/Feauters/SignUp/Presentation/Views/signup_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -14,6 +15,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const SignupView());
    case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => const HomeView());
+   case NotificationView.routeName:
+      return MaterialPageRoute(builder: (context) => const NotificationView());
 
     default:
       return MaterialPageRoute(builder: (context) => const HomeView());

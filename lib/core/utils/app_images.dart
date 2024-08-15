@@ -11,6 +11,9 @@ class Assets {
   static const String imagesInstaIcon = "assets/images/instaIcon.png";
   static const String imagesTikTokIcin = "assets/images/TikTok.png";
   static const String imagesAddIcon = "assets/images/Add_Icon.svg";
+  static const String imagesWalletIcon = "assets/images/wallet.png";
+  static const String imagesSunWhitMode = "assets/images/sunWhiteMode.png";
+  static const String imagesMoonDarkMode = "assets/images/moonDarkMode.png";
 
 
 
