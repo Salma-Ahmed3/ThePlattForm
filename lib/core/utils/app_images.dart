@@ -14,6 +14,9 @@ class Assets {
   static const String imagesWalletIcon = "assets/images/wallet.png";
   static const String imagesSunWhitMode = "assets/images/sunWhiteMode.png";
   static const String imagesMoonDarkMode = "assets/images/moonDarkMode.png";
+  static const String imagesAppleIcons = "assets/images/apple_Icons.svg";
+  static const String imagesFacebookIcons = "assets/images/facebook_Icons.svg";
+  static const String imagesGoogleIcons = "assets/images/google_Icons.svg";
 
 
 

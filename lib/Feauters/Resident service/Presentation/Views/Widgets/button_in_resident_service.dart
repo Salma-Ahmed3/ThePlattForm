@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nowproject/Feauters/Resident%20service/Presentation/Views/Widgets/custom_check_box.dart';
+import 'package:nowproject/core/Widgets/custom_check_box.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class ButtonInResidentService extends StatefulWidget {
