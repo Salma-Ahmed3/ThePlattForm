@@ -72,30 +72,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               const SizedBox(
                 height: 25,
               ),
-              // CustomButton(
-              //   onPressed: () {
-              //     if (formKey.currentState!.validate()) {
-              //       formKey.currentState!.save();
-              //       if (isTermsAccepted) {
-              //         context
-              //             .read<SignupCubit>()
-              //             .createUserWithEmailAndPassword(
-              //               email,
-              //               password,
-              //               userName,
-              //             );
-              //       } else {
-              //         buildErrorBar(
-              //             context, 'يجب عليك الموافقة على الشروط والإحكام');
-              //       }
-              //     } else {
-              //       setState(() {
-              //         autovalidateMode = AutovalidateMode.always;
-              //       });
-              //     }
-              //   },
-              //   text: 'إنشاء حساب جديد',
-              // ),
+             
             CustomButtonLogin(
               onPressed: () { 
                 Navigator.of(context).pushNamed(HomeView.routeName);
