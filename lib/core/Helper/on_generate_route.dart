@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/login_view.dart';
 import 'package:nowproject/Feauters/Logo/Presentation/Views/logo_view.dart';
@@ -17,6 +18,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const HomeView());
    case NotificationView.routeName:
       return MaterialPageRoute(builder: (context) => const NotificationView());
+   case TestPage.routeName:
+      return MaterialPageRoute(builder: (context) => const TestPage());
 
     default:
       return MaterialPageRoute(builder: (context) => const HomeView());

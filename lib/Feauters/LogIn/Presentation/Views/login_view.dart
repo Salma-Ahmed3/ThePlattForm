@@ -10,18 +10,10 @@ class LoginView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-       appBar: AppBar(
-    backgroundColor: const Color(0xffF8F8F8),
-      leading: GestureDetector(
-        child: const Icon(
-          Icons.arrow_back,
-        ),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      ),
+      appBar: AppBar(
+      backgroundColor: const Color(0xffF8F8F8),
       centerTitle: true,
-      title: const Text(
+      title:  Text(
         'تسجيل الدخول',
         style: TextStyles.semiBold18,
         textAlign: TextAlign.center,

@@ -10,22 +10,19 @@ class CustomTextFormFaild extends StatelessWidget {
       required this.keyboardType,
       this.onSaved,
       this.obscureText = false});
+
   final String hitText;
   final TextInputAction textInputAction;
   final Widget? suffixIcon;
   final TextInputType keyboardType;
   final void Function(String?)? onSaved;
   final bool obscureText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        boxShadow: [
-       
-        ],
-      ),
       child: TextFormField(
+        
         obscureText: obscureText,
         onSaved: onSaved,
         validator: (value) {
@@ -35,25 +32,23 @@ class CustomTextFormFaild extends StatelessWidget {
           return null;
         },
         keyboardType: keyboardType,
-        cursorColor: const Color.fromARGB(255, 255, 255, 255),
+        cursorColor: Colors.black,
         style: TextStyles.semiBold18.copyWith(
-          color: const Color.fromARGB(255, 125, 132, 133),
+          color: Colors.black,
         ),
         textInputAction: textInputAction,
         decoration: InputDecoration(
+          fillColor: Color(0xffF8F8F8),
           filled: true,
-          // fillColor: Color.fromARGB(255, 217, 228, 187).withOpacity(.4),
           suffixIcon: suffixIcon,
           hintText: hitText,
-          hintStyle: TextStyles.regular16.copyWith(
-            color: const Color.fromARGB(255, 125, 132, 133),
-          ),
+          hintStyle: TextStyles.regular16,
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
             borderSide: const BorderSide(
-              color: Colors.grey,
+              color: Colors.white,
               width: 2,
             ),
           ),
@@ -66,7 +61,7 @@ class CustomTextFormFaild extends StatelessWidget {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
       borderSide: const BorderSide(
-        color: Color(0xff969168),
+        color: Color.fromARGB(255, 37, 33, 1),
         width: 0.3,
       ),
     );

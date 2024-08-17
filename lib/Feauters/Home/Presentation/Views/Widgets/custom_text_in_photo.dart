@@ -19,7 +19,7 @@ class CustomTextInPhoto extends StatelessWidget {
                        const SizedBox(
                         height: 16,
                        ),
-                       const Text('صورة مصممه خصيصاً للعروض',style: TextStyles.regular12),
+                        Text('صورة مصممه خصيصاً للعروض',style: TextStyles.regular12),
              ],
            ),
          );

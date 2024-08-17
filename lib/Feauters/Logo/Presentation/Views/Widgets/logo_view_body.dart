@@ -36,7 +36,7 @@ class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderSt
     return Center(
       child: FadeTransition(
         opacity: _animation,
-        child:  const Text(
+        child:   Text(
           'LOGO',
           style: TextStyles.bold40,
         ),

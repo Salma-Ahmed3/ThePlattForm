@@ -17,8 +17,8 @@ class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
                     Navigator.pop(context);
                   }, alignment:  Alignment.centerRight, 
                   colorBackGround: Colors.transparent, 
-                  tixtInButton: const Padding(
-                  padding: EdgeInsets.only(left: 30 
+                  tixtInButton:  Padding(
+                  padding: const EdgeInsets.only(left: 30 
                   , right: 33
                    , top: 10,
                     bottom: 10,

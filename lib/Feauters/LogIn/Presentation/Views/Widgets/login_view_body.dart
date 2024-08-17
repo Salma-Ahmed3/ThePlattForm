@@ -15,7 +15,7 @@ class LoginViewBody extends StatelessWidget {
       child:
           Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 16,
+          horizontal: 20,
         ),
   
         child: Column(

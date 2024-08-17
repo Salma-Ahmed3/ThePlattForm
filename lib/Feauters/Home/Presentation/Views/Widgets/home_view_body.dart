@@ -49,7 +49,7 @@ class HomeViewBody extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 36,),
-              const Text('نسعد بتواصلكم معنا من خلال', style: TextStyles.regular16,),
+               Text('نسعد بتواصلكم معنا من خلال', style: TextStyles.regular16,),
               const SizedBox(height: 23,),
               const SocialMediaIconsItem(),
             ],

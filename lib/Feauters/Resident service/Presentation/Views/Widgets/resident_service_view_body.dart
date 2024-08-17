@@ -14,7 +14,7 @@ class ResidentServiceViewBody extends StatelessWidget {
     
         children: [
           const SizedBox(height: 30,),
-          const Text(' اختيار العنوان من عناوينك السابقة' , style: TextStyles.regular18,),
+           Text(' اختيار العنوان من عناوينك السابقة' , style: TextStyles.regular18,),
           const SizedBox(height: 32,),
       ButtonInResidentService( titletext: '15 طريق الثمامة الفرعي - الرياض المملكة العربية السعودية', 
       onChanged: (bool value) { 

@@ -12,15 +12,13 @@ class NotificationView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // appBar: buildAppBar(context, titleAppBar: 'الإشعارات',
-        //  rightIcon: const Icon(Icons.arrow_back_sharp),
-        //   leftIcon: const Icon(Icons.notifications), 
-        //   onPressedRightIcon: () { 
-        //   Navigator.pop(
-        //     context,
-        //   );
-        //  }, onPressedLeftIcon: () {  },
-        //     ),
+        appBar: buildAppBar(
+          context,
+          titleAppBar: 'الإشعارات',
+          onPressedRightIcon: () {
+          },
+          icon: const Icon(Icons.notifications),
+        ),
         body: const NotificationViewBody(),
       bottomNavigationBar: const CustomNavBar(),
 

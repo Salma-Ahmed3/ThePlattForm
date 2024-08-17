@@ -7,20 +7,23 @@ class HourlyServicesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 22),
+    return   Padding(
+      padding:  const EdgeInsets.symmetric(horizontal: 22),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('اختر الخدمة المطلوبة', style: TextStyles.regular18,),
-          SizedBox(
-            height: 24,
-          ),
-          CustomButton(titletext: 'عاملة تنظيف', subtitletext : 'تقدم الخدمة بعقود شهرية من شهر الى 24 شهر', colorSmallContainer: Color(0xffD6D6D6)),
-          SizedBox(
+            const SizedBox(
             height: 20,
           ),
-          CustomButton(titletext: 'عاملة تنظيف بالمواد المطلوبة', subtitletext : 'تقدم الخدمة بعقود شهرية من شهر الى 24 شهر', colorSmallContainer: Color(0xffD6D6D6))
+          Text('اختر الخدمة المطلوبة', style: TextStyles.regular18,),
+          const SizedBox(
+            height: 24,
+          ),
+          const CustomButton(titletext: 'عاملة تنظيف', subtitletext : 'تقدم الخدمة بعقود شهرية من شهر الى 24 شهر', colorSmallContainer: Color(0xffD6D6D6)),
+          const SizedBox(
+            height: 20,
+          ),
+          const CustomButton(titletext: 'عاملة تنظيف بالمواد المطلوبة', subtitletext : 'تقدم الخدمة بعقود شهرية من شهر الى 24 شهر', colorSmallContainer: Color(0xffD6D6D6))
 
         ],
       ),

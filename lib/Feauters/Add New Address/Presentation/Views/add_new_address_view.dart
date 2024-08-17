@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/add_new_address_view_body.dart';
 import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
@@ -14,25 +12,14 @@ class AddNewAddressView extends StatelessWidget {
     return  Directionality(textDirection: TextDirection.rtl, 
     child: Scaffold(
        
-        // appBar: buildAppBar(
-        //   context, 
-        //   titleAppBar: 'إضافة عنوان جديد', 
-        //   rightIcon: const Icon(Icons.arrow_back), 
-        //   onPressedRightIcon: () { 
-        //     Navigator.pop(
-        //       context,
-              
-        //     );
-        //    }, 
-        //   leftIcon: const Icon(Icons.notifications), 
-        //   onPressedLeftIcon: () { 
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => const NotificationView()),
-        //     );
-        //    }, icon: null, 
-         
-        // ),
+        appBar: buildAppBar(
+          context,
+          titleAppBar: 'اضافة عنوان جديد',
+          onPressedRightIcon: () {
+            Navigator.of(context).pushNamed(NotificationView.routeName);
+          },
+          icon: const Icon(Icons.notifications),
+        ),
         body: const AddNewAddressViewBody(),
         bottomNavigationBar: const CustomNavBar(),
       ),
