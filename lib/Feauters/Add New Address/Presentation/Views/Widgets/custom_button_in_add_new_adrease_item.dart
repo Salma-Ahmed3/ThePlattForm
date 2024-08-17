@@ -17,13 +17,8 @@ class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
                     Navigator.pop(context);
                   }, alignment:  Alignment.centerRight, 
                   colorBackGround: Colors.transparent, 
-                  tixtInButton:  Padding(
-                  padding: const EdgeInsets.only(left: 30 
-                  , right: 33
-                   , top: 10,
-                    bottom: 10,
-                    ),
-                    child:  Text('السابق',
+                  tixtInButton:  Center(
+                    child: Text('السابق',
                      style: TextStyles.regular18,
                      ),
                   ) ,
@@ -33,17 +28,11 @@ class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const TestPage()));
                   }, alignment:  Alignment.centerLeft, 
                   colorBackGround: Colors.black,
-                  tixtInButton: Padding(
-                                padding: const EdgeInsets.only(left: 30 
-                                , right: 33
-                                , top: 10
-                                , bottom: 10,
-                                ),
-
+                  tixtInButton: Center(
                     child: Text('التالي',
                       style: TextStyles.regular18.copyWith(color: Colors.white),
                       ),
-                   ) ,
+                  ) ,
                  ),
       ],
     );

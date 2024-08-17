@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
@@ -57,12 +58,13 @@ class CustomButtonNotifications extends StatelessWidget {
             child: Text(subtitletext, style: TextStyles.regular12),
           ),
           Positioned(
-            top: 18,
+            top: 25,
             bottom: 26,
             left:16,
            child: GestureDetector(
               onTap: onDelete ?? () {
-               
+
+              Navigator.of(context).pushNamed(TestPage.routeName  );
               },
               child: Image.asset(
                 Assets.imagesDeleteIcon,

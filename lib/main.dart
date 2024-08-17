@@ -9,14 +9,12 @@ void main() {
 class PlattForm extends StatelessWidget {
   const PlattForm({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: LogoView.routeName,
-     
     );
     }
     }

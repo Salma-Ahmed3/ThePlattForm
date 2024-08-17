@@ -9,6 +9,7 @@ AppBar buildAppBar(
   
 }) {
   return AppBar(
+    
     backgroundColor: const Color(0xffF8F8F8),
     centerTitle: true,
           title:  Text(titleAppBar,style:TextStyles.semiBold18,),
