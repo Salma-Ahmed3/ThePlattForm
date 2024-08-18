@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class TextChoosingCarrer extends StatelessWidget {
@@ -11,7 +12,7 @@ class TextChoosingCarrer extends StatelessWidget {
       children: [
 
                 Text('سائق خاص' , style: TextStyles.bold14),
-                SizedBox(height: 5,),
+                SizedBox(height: 5.h,),
                   Text(
                     'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر' ,
                   style: TextStyles.regular12),

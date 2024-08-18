@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_dot_circle.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_photo.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/distinguished_services.dart';
@@ -18,13 +19,13 @@ class HomeViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
             children: [
-              const SizedBox(height: 33,),
+               SizedBox(height: 33.h,),
               const CustomPhoto(),
-              const SizedBox(height: 16,),
+               SizedBox(height: 16.h,),
               const CustomDotCircle(),
-              const SizedBox(height: 24,),
+               SizedBox(height: 24.h,),
               const DistinguishedServices(),
-              const SizedBox(height: 17,),
+               SizedBox(height: 17.h,),
               CustomButton(
                 titletext: 'خدمة بالساعة',
                 subtitletext:'خدمات منزلية بنظام الساعات',
@@ -36,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 20,),
+               SizedBox(height: 20.h,),
               CustomButton(
                 titletext: 'خدمة مقيمة',
                 subtitletext: 'نظام الباقات الشهرية والسنوية',
@@ -48,7 +49,7 @@ class HomeViewBody extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 36,),
+               SizedBox(height: 36.h,),
                Text('نسعد بتواصلكم معنا من خلال', style: TextStyles.regular16,),
               const SizedBox(height: 23,),
               const SocialMediaIconsItem(),

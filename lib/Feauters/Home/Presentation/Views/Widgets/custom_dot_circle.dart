@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDotCircle extends StatefulWidget {
   const CustomDotCircle({super.key});
@@ -26,8 +27,8 @@ class _CustomDotCircleState extends State<CustomDotCircle> {
         });
       },
       child: Container(
-        width: 16,
-        height: 16,
+        width: 16.w,
+        height: 16.h,
         margin: const EdgeInsets.symmetric(horizontal: 7),
         decoration: BoxDecoration(
           shape: BoxShape.circle,

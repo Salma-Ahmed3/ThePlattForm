@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/Widgets/custom_check_box.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
@@ -28,54 +29,45 @@ class ButtonInResidentServiceChooseCareer extends StatefulWidget {
 class _ButtonInResidentServiceChooseCareerState
     extends State<ButtonInResidentServiceChooseCareer> {
   bool isTermsAccepted = false;
-
- 
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        children: [
-          Container(
-            width: 343,
-            height: 76,
+    return Container(
+            width: 343.w,
+            height: 76.h,
             decoration: BoxDecoration(
               color: isTermsAccepted ? Color(0xffF8F8F8) : widget.colorBackGroun,
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
                 color: isTermsAccepted ? Colors.black : widget.colorBorder,
-                width: 1,
+                width: 1.w,
               ),
             ),
           child: 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.titletext, style: TextStyles.bold14),
-                SizedBox(height: 5,),
-                Text(widget.subtext, style: TextStyles.regular12),
+                Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(widget.titletext, style: TextStyles.bold14),
+                    SizedBox(height: 5.h,),
+                    Text(widget.subtext, style: TextStyles.regular12),
+                  ],
+                  ),
+                   CustomCheckBox(
+                    onChecked: (value) {
+                      setState(() {
+                        isTermsAccepted = value;
+                        widget.onChanged(value);
+                      });
+                    },
+                    isChecked: isTermsAccepted,
+                  ),
               ],
             ),
-          ),),
-          Positioned(
-            top: 26,
-            left: 15,
-            child: GestureDetector(
-              onTap: widget.onCheck ?? () {},
-              child: CustomCheckBox(
-                onChecked: (value) {
-                  setState(() {
-                    isTermsAccepted = value;
-                    widget.onChanged(value);
-                  });
-                },
-                isChecked: isTermsAccepted,
-              ),
-            ),
-            ),
-            ],
-            
-            );
+         ),
+        );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/Widgets/custom_button.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/Widgets/custom_text_form_failed.dart';
@@ -31,8 +32,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
-              const SizedBox(
-                height: 24,
+               SizedBox(
+                height: 24.h,
               ),
               CustomTextFormFaild(
                 onSaved: (value) {
@@ -42,8 +43,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.name,
               ),
-              const SizedBox(
-                height: 20,
+               SizedBox(
+                height: 20.h,
               ),
               CustomTextFormFaild(
                 onSaved: (value) {
@@ -53,24 +54,24 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.emailAddress,
               ),
-              const SizedBox(
-                height: 20,
+               SizedBox(
+                height: 20.h,
               ),
               PasswordFailed(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-              const SizedBox(
-                height: 18,
+               SizedBox(
+                height: 18.h,
               ),
               SignUpTermsAndCondition(
                 onChanged: (value) {
                   isTermsAccepted = value;
                 },
               ),
-              const SizedBox(
-                height: 25,
+               SizedBox(
+                height: 25.h,
               ),
              
             CustomButtonLogin(
@@ -78,8 +79,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 Navigator.of(context).pushNamed(HomeView.routeName);
               },
               text: 'إنشاء حساب جديد',
-            ),   const SizedBox(
-                height: 26,
+            ),    SizedBox(
+                height: 26.h,
               ),
               CustomTextAccount(
                 titleHaveAccountOrNot: 'تمتلك حساب بالفعل ؟',
@@ -88,8 +89,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   Navigator.pop(context);
                 },
               ),
-              const SizedBox(
-                height: 25,
+               SizedBox(
+                height: 25.h,
               ),
             ],
           ),

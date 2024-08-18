@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart'; // Import the TestPage
 
@@ -23,11 +24,11 @@ class _NationalityTextState extends State<NationalityText> {
         Navigator.of(context).pushNamed(TestPage.routeName);
       },
       child: Container(
-        width: 112,
-        height: 40,
+        width: 112.w,
+        height: 40.h,
         decoration: BoxDecoration(
           color: isSelected ? Colors.black : Color(0xffD6D6D6),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
         ),
         child: Center(
           child: Text(

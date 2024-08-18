@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/Widgets/custom_button.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/Widgets/custom_text_form_failed.dart';
@@ -30,28 +31,28 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   
         child: Column(
           children: [
-            const SizedBox(
-              height: 24,
+             SizedBox(
+              height: 24.h,
             ),
             const CustomTextFormFaild(
               hitText: '   البريد الالكتروني',
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
             ),
-            const SizedBox(
-              height: 28,
+             SizedBox(
+              height: 28.h,
             ),
              PasswordFailed(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-            const SizedBox(
-              height: 25,
+             SizedBox(
+              height: 25.h,
             ),
             const ForgetPassword(),
-            const SizedBox(
-              height: 33,
+             SizedBox(
+              height: 33.h,
             ),
             CustomButtonLogin(
               onPressed: () { 
@@ -59,8 +60,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               },
               text: 'تسجيل دخول',
             ),
-            const SizedBox(
-              height: 33,
+             SizedBox(
+              height: 33.h,
             ),
             CustomTextAccount(
               titleHaveAccountOrNot: 'لا تمتلك حساب ؟',
@@ -69,12 +70,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 Navigator.of(context).pushNamed(SignupView.routeName);
               },
             ),
-             const SizedBox(
-              height: 41,
+              SizedBox(
+              height: 41.h,
             ),
             // const OrDivider(),
-            const SizedBox(
-              height: 16,
+             SizedBox(
+              height: 16.h,
             ),
             SocialLoginButton(
               onPressed: () {},
@@ -83,8 +84,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
 
             ),
-            const SizedBox(
-              height: 18,
+             SizedBox(
+              height: 18.h,
             ),
             SocialLoginButton(
               onPressed: () {},
@@ -92,8 +93,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             images: Assets.imagesAppleIcons,
 
             ),
-            const SizedBox(
-              height: 18,
+             SizedBox(
+              height: 18.h,
             ),
             SocialLoginButton(
               onPressed: () {},

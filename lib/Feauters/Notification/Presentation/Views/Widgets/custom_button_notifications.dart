@@ -1,78 +1,28 @@
-
 import 'package:flutter/material.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
-import 'package:nowproject/core/utils/app_images.dart';
-import 'package:nowproject/core/utils/app_text_style.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/Feauters/Notification/Presentation/Views/Widgets/custom_button_notifications_items.dart';
 
 class CustomButtonNotifications extends StatelessWidget {
-  const CustomButtonNotifications({
-    super.key,
-    required this.subtitletext,
-    required this.titletext,
-    required this.colorSmallContainer,
-    this.onTap,
-    this.onDelete,
-  });
-
-  final String subtitletext;
-  final String titletext;
-  final Color colorSmallContainer;
-  final void Function()? onTap;
-  final void Function()? onDelete; 
+  const CustomButtonNotifications({super.key,});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap ?? () {},
-      child: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 70,
-            decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: const Color(0xff000000),
-                width: 1,
-              ),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Container(
+          width: double.infinity,
+          height: 70.h,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(
+              color: const Color(0xff000000),
+              width: 1.w,
             ),
           ),
-          const Positioned(
-            top: 12,
-            bottom: 16,
-            child: CircleAvatar(
-              radius: 35,
-              backgroundColor: Color(0xffD6D6D6),
+          child:const CustomButtonNotificationsItem(titletext: '02/05/2023',
+          subtitletext: 'احجزي لك معاونة شهرية ابتداءا من‏2100 ريال',),
             ),
-          ),
-          Positioned(
-            top: 15,
-            right: 63,
-            child: Text(titletext, style: TextStyles.regular10),
-          ),
-          Positioned(
-            top: 29,
-            right: 63,
-            bottom: 19,
-            child: Text(subtitletext, style: TextStyles.regular12),
-          ),
-          Positioned(
-            top:15,
-            // bottom: 26,
-            left:16,
-           child: GestureDetector(
-              onTap: onDelete ?? () {
-              Navigator.of(context).pushNamed(TestPage.routeName  );
-              },
-              child: Image.asset(
-                Assets.imagesDeleteIcon,
-                width: 12,
-                height: 14, 
-              ),),
-          ),
-        ],
-      ),
     );
   }
 }

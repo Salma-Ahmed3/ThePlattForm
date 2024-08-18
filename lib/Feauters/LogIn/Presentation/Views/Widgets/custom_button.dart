@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomButtonLogin extends StatelessWidget {
@@ -13,7 +14,7 @@ class CustomButtonLogin extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: 54,
+          height: 54.h,
           child: GestureDetector(
             onTap: onPressed,
             child: Container(

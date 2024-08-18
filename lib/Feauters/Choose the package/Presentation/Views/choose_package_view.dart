@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
 import 'package:nowproject/core/Widgets/build_app_bar.dart';
 import 'package:nowproject/core/utils/custom_nav_bar.dart';
-import 'widgets/choode_package_view_body.dart';
+import 'widgets/choose_package_view_body.dart';
 
 class ChoosePackageView extends StatelessWidget {
   const ChoosePackageView({super.key});

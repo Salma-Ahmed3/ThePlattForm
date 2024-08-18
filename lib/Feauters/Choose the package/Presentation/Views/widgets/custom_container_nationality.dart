@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomContainerNationality extends StatelessWidget {
@@ -16,12 +17,12 @@ final double widthContainer;
           children: [
             Container(
               width: double.infinity,
-              height: 81,
+              height: 81.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
                 border: Border.all(
                   color: const Color(0xff000000),
-                  width: 1,
+                  width: 1.w,
                 ),
               ),
             ),
@@ -30,7 +31,7 @@ final double widthContainer;
               right: 14,
               child: Container(
                 width: widthContainer,
-                height: 18,
+                height: 18.h,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                 ),

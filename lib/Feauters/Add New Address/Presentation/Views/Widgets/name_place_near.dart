@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class NamePlaceNear extends StatelessWidget {
@@ -9,7 +10,7 @@ class NamePlaceNear extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,  
-      height: 200,
+      height: 200.h,
       child: TextFormField(
         maxLines: 10,
         keyboardType: TextInputType.text,

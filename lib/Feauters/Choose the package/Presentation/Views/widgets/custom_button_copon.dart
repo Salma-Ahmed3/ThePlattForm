@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_container_nationality.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
@@ -11,19 +12,19 @@ class CustomButtonCopon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(    children: [
-       const CustomContainerNationality(
+        CustomContainerNationality(
         titleText: 'هل تمتلك كوبون خصم؟',
-         widthContainer: 200,
+         widthContainer: 200.w,
          ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 37, vertical: 18),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('KSA-Day95', style: TextStyles.regular12,),
+            Text('ادخل رقم الكوبون من فضلك', style: TextStyles.regular12,),
            Container(
-        width: 92,
-        height: 40,
+        width: 92.w,
+        height: 40.h,
         decoration: BoxDecoration(
           color:  Colors.black ,
           borderRadius: BorderRadius.circular(10),

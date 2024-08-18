@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SocialMediaIcons extends StatelessWidget {
   const SocialMediaIcons({super.key, required this.icon});
@@ -12,8 +12,8 @@ final Widget icon;
     return  Row(
        children: [
        CircleAvatar(
-         radius: 20,
-         backgroundColor: Color(0xffACACAC),
+         radius: 20.r,
+         backgroundColor: const Color(0xffACACAC),
          child: 
       icon
        )

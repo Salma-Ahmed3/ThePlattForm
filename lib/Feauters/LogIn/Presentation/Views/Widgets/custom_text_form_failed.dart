@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomTextFormFaild extends StatelessWidget {
@@ -47,9 +48,9 @@ class CustomTextFormFaild extends StatelessWidget {
           enabledBorder: buildBorder(),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(
+            borderSide:  BorderSide(
               color: Colors.white,
-              width: 2,
+              width: 2.w,
             ),
           ),
         ),
@@ -60,9 +61,9 @@ class CustomTextFormFaild extends StatelessWidget {
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: const BorderSide(
-        color: Color.fromARGB(255, 37, 33, 1),
-        width: 0.3,
+      borderSide:  BorderSide(
+        color: const Color.fromARGB(255, 37, 33, 1),
+        width: 0.3.w,
       ),
     );
   }

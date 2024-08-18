@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/Widgets/custom_dialog.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 import 'package:nowproject/core/utils/custom_button.dart';
@@ -13,15 +14,15 @@ class HourlyServicesViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
           Text(
             'اختر الخدمة المطلوبة',
             style: TextStyles.regular18,
           ),
-          const SizedBox(
-            height: 24,
+           SizedBox(
+            height: 24.h,
           ),
           GestureDetector(
             onTap: () {
@@ -47,8 +48,8 @@ class HourlyServicesViewBody extends StatelessWidget {
               colorSmallContainer: const Color(0xffD6D6D6),
             ),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
           CustomButton(
             onTap: () {
@@ -65,7 +66,7 @@ class HourlyServicesViewBody extends StatelessWidget {
             },
             titletext: 'عاملة تنظيف بالمواد المطلوبة',
             subtitletext: 'تقدم الخدمة بعقود شهرية من شهر الى 24 شهر',
-            colorSmallContainer: const Color(0xffD6D6D6),
+            colorSmallContainer: const Color(0xffACACAC),
           ),
           
         ],

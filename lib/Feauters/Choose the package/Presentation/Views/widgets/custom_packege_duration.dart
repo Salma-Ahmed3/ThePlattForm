@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomPackageDuration extends StatelessWidget {
@@ -10,8 +11,8 @@ class CustomPackageDuration extends StatelessWidget {
     return                 Row(
                   children: [
                     Container(
-                    width: 112,
-                    height: 32,
+                    width: 112.w,
+                    height: 32.h,
                     decoration: BoxDecoration(
                     color: const Color(0xffD6D6D6),
                     borderRadius: BorderRadius.circular(8),
@@ -23,10 +24,10 @@ class CustomPackageDuration extends StatelessWidget {
             ),
             child: Center(child: Text('مدة الباقة 1 شهر' , style: TextStyles.regular12,)),
                 ),
-                const SizedBox(width: 6,),
+                 SizedBox(width: 6.w,),
                 Container(
-                    width: 70,
-                    height: 32,
+                    width: 70.w,
+                    height: 32.h,
                     decoration: BoxDecoration(
                     color: const Color(0xffD6D6D6),
                     borderRadius: BorderRadius.circular(8),

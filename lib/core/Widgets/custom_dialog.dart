@@ -28,32 +28,29 @@ class CustomDialog extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
-                          
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                         const SizedBox(height: 19,),
+                          const SizedBox(height: 19,),
                             SvgPicture.asset(
                               Assets.imagesErrorIcon, 
                             ),
                             const SizedBox(height: 13),
                             Text(
-                             'هذه الخدمة تقدم للعائلات فقط',
+                              'هذه الخدمة تقدم للعائلات فقط',
                               style: TextStyles.semiBold18,
                             ),
                             const SizedBox(height: 14),
-                    
                             Text(
                               'نعتذر على عدم تقديم الخدمة في حالة عدم وجود سيدة بالمنزل',
                               style: TextStyles.regular14,
                             ),
                             
                             const SizedBox(height: 16),
-                             Row(
-                              
+                              Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 
-                               CustomButtonInAddNewAddrease(
+                                CustomButtonInAddNewAddrease(
                                 onTap: () {
                                 Navigator.pop(context);
                                 },

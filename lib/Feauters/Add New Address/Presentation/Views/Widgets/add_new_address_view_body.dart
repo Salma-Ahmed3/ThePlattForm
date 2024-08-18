@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_adrease_item.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/house_type.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/name_address.dart';
@@ -11,23 +12,23 @@ class AddNewAddressViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const SingleChildScrollView(
+    return   SingleChildScrollView(
       child:  Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20),
+        padding:  const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-                 SizedBox(height: 41,),
-                 CountryNameFormField(),
-                 SizedBox(height: 16,),
-                 NameAddressFormField(),
-                 SizedBox(height: 16,),
-                 HouseType(),
-                 SizedBox(height: 16,),
-                 PhoneNumber(),
-                 SizedBox(height: 16,),
-                 NamePlaceNear(),
-                 SizedBox(height: 16,),
-                 CustomButtonInAddNewAddreaseItem()
+                  SizedBox(height: 41.h,),
+                  const CountryNameFormField(),
+                  SizedBox(height: 16.h,),
+                  const NameAddressFormField(),
+                  SizedBox(height: 16.h,),
+                  const HouseType(),
+                  SizedBox(height: 16.h,),
+                  const PhoneNumber(),
+                  SizedBox(height: 16.h,),
+                  const NamePlaceNear(),
+                  SizedBox(height: 16.h,),
+                  const CustomButtonInAddNewAddreaseItem()
                 
                 ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/Widgets/custom_check_box.dart';
@@ -27,8 +28,8 @@ class _SignUpTermsAndConditionState extends State<SignUpTermsAndCondition> {
           },
           isChecked: isTermsAccepted,
         ),
-        const SizedBox(
-          width: 16,
+         SizedBox(
+          width: 16.w,
         ),
         Expanded(
           child: Text.rich(

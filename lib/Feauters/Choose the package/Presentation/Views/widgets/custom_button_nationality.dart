@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/nationality_text.dart';
 import 'custom_container_nationality.dart';
 
@@ -6,10 +7,10 @@ class CustomButtonNationality extends StatelessWidget {
   const CustomButtonNationality({super.key, });
   @override
   Widget build(BuildContext context) {
-    return  const Stack(
+    return   Stack(
     children: [
-       CustomContainerNationality(titleText: 'الجنسيه', widthContainer: 70,),
-      Padding(
+       CustomContainerNationality(titleText: 'الجنسيه', widthContainer: 70.w,),
+      const Padding(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 18),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

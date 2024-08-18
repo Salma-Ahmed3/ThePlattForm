@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/social_media_icons.dart';
 
 class SocialMediaIconsItem extends StatelessWidget {
@@ -11,19 +12,19 @@ class SocialMediaIconsItem extends StatelessWidget {
       child: Row(
         children: [
         SocialMediaIcons(icon:  Image.asset ('assets/images/WhatsApp.png'),),
-              const SizedBox(width: 10,),
+               SizedBox(width: 10.w,),
       
         SocialMediaIcons(icon:  Image.asset ('assets/images/xApp.png'),),
-              const SizedBox(width: 10,),
+               SizedBox(width: 10.w,),
       
         SocialMediaIcons(icon:  Image.asset ('assets/images/linkedin.png')),
-              const SizedBox(width: 10,),
+               SizedBox(width: 10.w,),
       
         SocialMediaIcons(icon:  Image.asset ('assets/images/instaIcon.png'),),
-              const SizedBox(width: 10,),
+               SizedBox(width: 10.w,),
       
           const SocialMediaIcons(icon: Icon(Icons.facebook , color: Colors.white,),),
-              const SizedBox(width: 10,),
+               SizedBox(width: 10.w,),
       
         SocialMediaIcons(icon:  Image.asset ('assets/images/TikTok.png'),),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/custom_text_in_photo.dart';
 
 class CustomPhoto extends StatelessWidget {
@@ -9,8 +10,8 @@ class CustomPhoto extends StatelessWidget {
     return Center(
             child: Stack(
               children: [ Container(
-                  width: 365,
-                  height: 189,
+                  width: 365.w,
+                  height: 189.h,
                   decoration: BoxDecoration(
                     color: const Color(0xffD6D6D6),
                     borderRadius: BorderRadius.circular(14), // Adjust the value as needed
