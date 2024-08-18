@@ -58,12 +58,11 @@ class CustomButtonNotifications extends StatelessWidget {
             child: Text(subtitletext, style: TextStyles.regular12),
           ),
           Positioned(
-            top: 25,
-            bottom: 26,
+            top:15,
+            // bottom: 26,
             left:16,
            child: GestureDetector(
               onTap: onDelete ?? () {
-
               Navigator.of(context).pushNamed(TestPage.routeName  );
               },
               child: Image.asset(

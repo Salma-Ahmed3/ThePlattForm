@@ -16,7 +16,7 @@ final Widget tixtInButton;
     return GestureDetector(
       onTap:onTap,
       child: Container(
-                            width: 108,
+                    width: 108,
                     height: 47,
                     decoration: BoxDecoration(
                       color: colorBackGround,
@@ -29,13 +29,6 @@ final Widget tixtInButton;
                     child:tixtInButton,
                   ),
                 );
-    //       Padding(
-            // padding: const EdgeInsets.only(left: 30 , right: 33 , top: 10, bottom: 10),
-    //         child: tixtInButton,
-    //       ),
-                  
-    //           ],
-    //   ),
-    // );
+   
   }
 }
