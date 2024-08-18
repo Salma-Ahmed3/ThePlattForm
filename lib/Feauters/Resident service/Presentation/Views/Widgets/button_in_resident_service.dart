@@ -23,9 +23,6 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
   @override
   Widget build(BuildContext context) {
      return GestureDetector(
-      // onTap: widget.onTap ?? () {
-
-      // },
       child: Stack(
         children: [
           Container(

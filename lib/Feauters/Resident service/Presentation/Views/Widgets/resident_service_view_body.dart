@@ -25,7 +25,8 @@ class ResidentServiceViewBody extends StatelessWidget {
        },
         colorBackGroun: Color(0xffF8F8F8), colorBorder: Colors.black,),
           const SizedBox(height: 12,),
-      ButtonInResidentService( titletext:'7898 طريق الامير تركي بن عبدالعزيز الأول، المعذر، الرياض 12721، السعودية', onChanged: (bool value) {     Navigator.push(
+      ButtonInResidentService( titletext:'7898 طريق الامير تركي بن عبدالعزيز الأول، المعذر، الرياض 12721، السعودية',
+       onChanged: (bool value) {     Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
             ); }, colorBackGroun: Colors.transparent, colorBorder: Color(0xffACACAC),),

@@ -29,6 +29,12 @@ abstract class TextStyles {
     fontSize: 14,
     color: Colors.black,
   );
+  static  TextStyle bold14 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 14,
+    color: Colors.black,
+  );
   static  TextStyle regular18 = TextStyle(
     fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
     fontWeight: FontWeight.w400,
