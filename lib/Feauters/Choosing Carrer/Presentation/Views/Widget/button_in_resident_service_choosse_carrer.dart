@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nowproject/core/Widgets/custom_check_box.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
-class ButtonInResidentService extends StatefulWidget {
-  const ButtonInResidentService({
+class ButtonInResidentServiceChooseCareer extends StatefulWidget {
+  const ButtonInResidentServiceChooseCareer({
     super.key,
     required this.titletext,
+    required this.subtext,
     this.onCheck,
     required this.onChanged,
     required this.colorBackGroun,
@@ -15,31 +16,28 @@ class ButtonInResidentService extends StatefulWidget {
   final ValueChanged<bool> onChanged;
   final void Function()? onCheck;
   final String titletext;
+  final String subtext;
   final Color colorBackGroun;
   final Color colorBorder;
 
   @override
-  State<ButtonInResidentService> createState() =>
-      _ButtonInResidentServiceState();
+  State<ButtonInResidentServiceChooseCareer> createState() =>
+      _ButtonInResidentServiceChooseCareerState();
 }
 
-class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
+class _ButtonInResidentServiceChooseCareerState
+    extends State<ButtonInResidentServiceChooseCareer> {
   bool isTermsAccepted = false;
+
+ 
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          isTermsAccepted = !isTermsAccepted;
-          widget.onChanged(isTermsAccepted);
-        });
-      },
-      child: Stack(
+    return Stack(
         children: [
           Container(
-            width: double.infinity,
-            height: 100,
+            width: 343,
+            height: 76,
             decoration: BoxDecoration(
               color: isTermsAccepted ? Color(0xffF8F8F8) : widget.colorBackGroun,
               borderRadius: BorderRadius.circular(14),
@@ -48,18 +46,20 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
                 width: 1,
               ),
             ),
-          ),
+          child: 
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(widget.titletext, style: TextStyles.bold14),
+                Text(widget.subtext, style: TextStyles.regular12),
+              ],
+            ),
+          ),),
           Positioned(
             top: 26,
-            right: 22,
-            bottom: 26,
-            left: 64,
-            child: Text(widget.titletext, style: TextStyles.regular16),
-          ),
-          Positioned(
-            top: 24,
-            bottom: 42,
-            left: 25,
+            left: 15,
             child: GestureDetector(
               onTap: widget.onCheck ?? () {},
               child: CustomCheckBox(
@@ -72,9 +72,9 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
                 isChecked: isTermsAccepted,
               ),
             ),
-          ),
-        ],
-      ),
-    );
+            ),
+            ],
+            
+            );
   }
 }

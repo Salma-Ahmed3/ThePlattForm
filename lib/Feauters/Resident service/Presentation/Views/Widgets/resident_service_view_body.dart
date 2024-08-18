@@ -11,30 +11,45 @@ class ResidentServiceViewBody extends StatelessWidget {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
-    
         children: [
           const SizedBox(height: 30,),
-           Text(' اختيار العنوان من عناوينك السابقة' , style: TextStyles.regular18,),
+          Text(' اختيار العنوان من عناوينك السابقة' , style: TextStyles.regular18,),
           const SizedBox(height: 32,),
-      ButtonInResidentService( titletext: '15 طريق الثمامة الفرعي - الرياض المملكة العربية السعودية', 
+
+      ButtonInResidentService( 
+        titletext: '15 طريق الثمامة الفرعي - الرياض المملكة العربية السعودية', 
       onChanged: (bool value) { 
          Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
             );
-       },
-        colorBackGroun: Color(0xffF8F8F8), colorBorder: Colors.black,),
-          const SizedBox(height: 12,),
-      ButtonInResidentService( titletext:'7898 طريق الامير تركي بن عبدالعزيز الأول، المعذر، الرياض 12721، السعودية',
-       onChanged: (bool value) {     Navigator.push(
+            },
+            colorBackGroun:Colors.transparent, colorBorder: Color(0xffACACAC),),
+            
+            const SizedBox(height: 12,),
+
+            ButtonInResidentService( 
+              titletext:'7898 طريق الامير تركي بن عبدالعزيز الأول، المعذر، الرياض 12721، السعودية',
+            onChanged: (bool value) {    
+               Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            ); }, colorBackGroun: Colors.transparent, colorBorder: Color(0xffACACAC),),
-          const SizedBox(height: 12,),
-          ButtonInResidentService( titletext: 'المهيني، الشرفية، الرياض 12724، السعودية', onChanged: (bool value) {  Navigator.push(
+            );
+             },
+             colorBackGroun: Colors.transparent,
+              colorBorder: Color(0xffACACAC),),
+
+            const SizedBox(height: 12,),
+
+            ButtonInResidentService( titletext: 'المهيني، الشرفية، الرياض 12724، السعودية',
+            onChanged: (bool value) 
+            {  Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            ); }, colorBackGroun: Colors.transparent, colorBorder: Color(0xffACACAC),),
+            );
+            },
+              colorBackGroun: Colors.transparent,
+              colorBorder: Color(0xffACACAC),),
 
      
         ],
