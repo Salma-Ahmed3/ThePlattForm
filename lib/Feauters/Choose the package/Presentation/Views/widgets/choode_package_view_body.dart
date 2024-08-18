@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_button_nationality.dart';
-import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_in_chiisw_packege.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_in_choose_packege.dart';
 import 'custom_button_copon.dart';
 
 class ChoosePackageViewBody extends StatelessWidget {

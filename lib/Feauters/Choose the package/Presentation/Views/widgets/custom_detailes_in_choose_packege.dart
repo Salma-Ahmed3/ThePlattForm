@@ -23,17 +23,35 @@ class CustomDetailesInChoosePackege extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20 , vertical: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
                   children: [
-                    Text('سائق خاص - باكستان - شهر' , style: TextStyles.bold14,),
-                          const SizedBox(height: 12,),
-                      
-                    const CustomPackageDuration(),
-                          const SizedBox(height: 11,),
-                      
-                    CustomSalary()
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('سائق خاص - باكستان - شهر' , style: TextStyles.bold14,),
+                              const SizedBox(height: 12,),
+                          
+                        const CustomPackageDuration(),
+                              const SizedBox(height: 11,),
+                        CustomSalary(),
+                       
+                      ],
+                    ),
+                     Positioned(
+                      top: 26,
+                      left: 17,
+                       child: CircleAvatar(
+                         
+                        radius: 24,
+                        backgroundColor:  Colors.transparent,
+                        child: IconButton(
+                          onPressed: (){},
+                          icon: const Icon(Icons.add , color: Colors.black,),
+                        ),
+                      ),
+                     )
                   ],
+                  
                 ),
               ),
             ),
