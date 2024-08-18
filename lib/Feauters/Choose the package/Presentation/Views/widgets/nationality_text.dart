@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:nowproject/core/utils/app_text_style.dart';
+import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart'; // Import the TestPage
+
+class NationalityText extends StatefulWidget {
+  const NationalityText({super.key, required this.nameNationality});
+  final String nameNationality;
+
+  @override
+  _NationalityTextState createState() => _NationalityTextState();
+}
+
+class _NationalityTextState extends State<NationalityText> {
+  bool isSelected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isSelected = !isSelected;
+        });
+        Navigator.of(context).pushNamed(TestPage.routeName);
+      },
+      child: Container(
+        width: 112,
+        height: 40,
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.black : Color(0xffD6D6D6),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Text(
+            widget.nameNationality,
+            style: TextStyles.regular12.copyWith(
+          color: isSelected ? Colors.white : Colors.black,
+
+              ),
+          ),
+        ),
+      ),
+    );
+  }
+}
