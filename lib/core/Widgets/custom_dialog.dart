@@ -42,11 +42,9 @@ class CustomDialog extends StatelessWidget {
                             ),
                             const SizedBox(height: 14),
                     
-                            Center(
-                              child: Text(
-                                'نعتذر على عدم تقديم الخدمة في حالة عدم وجود سيدة بالمنزل',
-                                style: TextStyles.regular14,
-                              ),
+                            Text(
+                              'نعتذر على عدم تقديم الخدمة في حالة عدم وجود سيدة بالمنزل',
+                              style: TextStyles.regular14,
                             ),
                             
                             const SizedBox(height: 16),
@@ -92,7 +90,7 @@ class CustomDialog extends StatelessWidget {
                     ),
         ),
          const Positioned(
-          top: 242,
+          top: 283,
           child: CustomCircleAvatar()),
       ],
     );

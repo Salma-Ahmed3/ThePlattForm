@@ -16,11 +16,7 @@ class CustomCircleAvatar extends StatelessWidget {
       child: 
            GestureDetector(
             onTap:   Navigator.of(context).pop,
-            child: const Positioned(
-                    top: 7,
-                    right: 7,
-                    child:            
-             Icon(Icons.close)),
+            child: Icon(Icons.close),
          )
  
     );}
