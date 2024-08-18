@@ -53,6 +53,7 @@ class _ButtonInResidentServiceChooseCareerState
                     crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(widget.titletext, style: TextStyles.bold14),
+                SizedBox(height: 5,),
                 Text(widget.subtext, style: TextStyles.regular12),
               ],
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/choose_package_view.dart';
 import 'package:nowproject/Feauters/Choosing%20Carrer/Presentation/Views/Widget/button_in_resident_service_choosse_carrer.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 
@@ -41,7 +41,7 @@ class ChossingCarrerViewBody extends StatelessWidget {
                     onChanged: (bool value) { 
                       Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const TestPage()),
+                      MaterialPageRoute(builder: (context) => const ChoosePackageView()),
                     );
                     },
                               titletext: 'سائق خاص', 
@@ -56,7 +56,7 @@ class ChossingCarrerViewBody extends StatelessWidget {
                     onChanged: (bool value) { 
                       Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const TestPage()),
+                      MaterialPageRoute(builder: (context) => const ChoosePackageView()),
                     );
                     },
                               titletext: 'عاملة منزلية', 
