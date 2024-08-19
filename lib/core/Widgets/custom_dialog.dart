@@ -62,7 +62,7 @@ class CustomDialogHourly extends StatelessWidget {
                                 style: TextStyles.regular18,
                                 ),
                                 ), width: 108.w ,
-                                height: 47.h, colorBorder:  const Color(0xff000000),
+                                height: 47.h, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8),
                               ), 
                               //  SizedBox(width: 19 ,),    
                               CustomButtonInAddNewAddrease(
@@ -75,7 +75,7 @@ class CustomDialogHourly extends StatelessWidget {
                                 child: Text('التالي',
                                 style: TextStyles.regular18.copyWith(color: Colors.white),
                                 ),
-                                ), width: 108.w, height: 47.h, colorBorder:  const Color(0xff000000) ,
+                                ), width: 108.w, height: 47.h, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8) ,
                                 ),       
                                 ],
                             ),

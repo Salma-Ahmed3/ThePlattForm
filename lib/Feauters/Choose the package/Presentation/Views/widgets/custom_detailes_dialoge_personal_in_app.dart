@@ -70,7 +70,7 @@ class _CustomDetailesDialogePersonalState extends State<CustomDetailesDialogePer
                             ),
                             width: 130.w,
                             height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF),
+                            colorBorder: const Color(0xffEFEFEF), borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         SizedBox(width: 16.w),
@@ -87,7 +87,7 @@ class _CustomDetailesDialogePersonalState extends State<CustomDetailesDialogePer
                             ),
                             width: 130.w,
                             height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF),
+                            colorBorder: const Color(0xffEFEFEF), borderRadius: BorderRadius.circular(8),
                           ),
                           
                         ),

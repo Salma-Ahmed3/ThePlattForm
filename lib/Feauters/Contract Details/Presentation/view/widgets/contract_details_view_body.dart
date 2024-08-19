@@ -33,7 +33,7 @@ class ContractDetailsViewBody extends StatelessWidget {
                         style: TextStyles.regular18,
                         ),
                       ), width: 108.w, height: 47.h,
-                        colorBorder:  const Color(0xff000000) ,
+                        colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8) ,
                         ),
                 CustomButtonInAddNewAddrease(  onTap: () {
                     Navigator.of(context).pushNamed(ContractView.routeName);
@@ -46,7 +46,7 @@ class ContractDetailsViewBody extends StatelessWidget {
                       ),
                   ),
                       width: 108.w, height: 47.h, 
-                      colorBorder:  const Color(0xff000000) ,
+                      colorBorder:  const Color(0xff000000), borderRadius:  BorderRadius.circular(8) ,
                         ),
               ],
             ),
