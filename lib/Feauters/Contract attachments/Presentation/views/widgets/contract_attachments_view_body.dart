@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/core/utils/app_images.dart';
+import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
 
@@ -32,17 +34,31 @@ class ContractAttachmentsViewBody extends StatelessWidget {
                   color: Color(0xffF8F8F8),
                   borderRadius: BorderRadius.circular(14),
                 ),
+                child: CustomContainer(),
               ),
         ],
       ),
     );
   }
 }
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class CustomContainer extends StatelessWidget {
+  const CustomContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: [
+        Container(
+                width: 116,
+                height: 69,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF8F8F8),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Image.asset(Assets.imagesPicIcon),
+              ),
+              Text('الهوية' , style: TextStyles.bold14,)
+      ],
+    );
   }
 }
