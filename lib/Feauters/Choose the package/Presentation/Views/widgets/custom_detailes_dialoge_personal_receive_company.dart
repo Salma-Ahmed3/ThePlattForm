@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/contract_details_view.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
 
@@ -57,7 +58,7 @@ final SizedBox? sizedBox;
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                   Navigator.of(context).pushNamed(ContractDetailsView.routeName);
                   },
                   child: Center(child: Text('التالي',
                   style: TextStyles.regular18.copyWith(color: Colors.white),

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomDetailesDialogePersonalInHouse extends StatelessWidget {
-  const CustomDetailesDialogePersonalInHouse({super.key});
-
+  const CustomDetailesDialogePersonalInHouse({super.key, this.onTap});
+final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,9 +40,7 @@ class CustomDetailesDialogePersonalInHouse extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+                  onTap: onTap,
                   child: Center(child: Text('التالي',
                   style: TextStyles.regular18.copyWith(color: Colors.white),
                       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Chossing%20Mid/Presentation/views/chossing_mid_view.dart';
+import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/contract_details_view.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/login_view.dart';
@@ -18,6 +20,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const HomeView());
    case NotificationView.routeName:
       return MaterialPageRoute(builder: (context) => const NotificationView());
+   case ChoosingMidView.routeName:
+      return MaterialPageRoute(builder: (context) => const ChoosingMidView());
+   case ContractDetailsView.routeName:
+      return MaterialPageRoute(builder: (context) => const ContractDetailsView());
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());
   //  case CustomDialog.routeName:
