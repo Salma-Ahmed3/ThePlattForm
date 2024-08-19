@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/Widgets/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/core/utils/app_images.dart';
@@ -7,8 +8,8 @@ import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../Feauters/Add New Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 
-class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key});
+class CustomDialogHourly extends StatelessWidget {
+  const CustomDialogHourly({super.key});
 
   static const routeName = 'CustomDialog';
 
@@ -60,7 +61,8 @@ class CustomDialog extends StatelessWidget {
                                 child: Text('رجوع',
                                 style: TextStyles.regular18,
                                 ),
-                                ) ,
+                                ), width: 108.w ,
+                                height: 47.h, colorBorder:  const Color(0xff000000),
                               ), 
                               //  SizedBox(width: 19 ,),    
                               CustomButtonInAddNewAddrease(
@@ -73,7 +75,7 @@ class CustomDialog extends StatelessWidget {
                                 child: Text('التالي',
                                 style: TextStyles.regular18.copyWith(color: Colors.white),
                                 ),
-                                ) ,
+                                ), width: 108.w, height: 47.h, colorBorder:  const Color(0xff000000) ,
                                 ),       
                                 ],
                             ),

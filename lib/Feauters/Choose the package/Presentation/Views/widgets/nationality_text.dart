@@ -24,7 +24,7 @@ class _NationalityTextState extends State<NationalityText> {
         Navigator.of(context).pushNamed(TestPage.routeName);
       },
       child: Container(
-        width: 112.w,
+        width: 100.w,
         height: 40.h,
         decoration: BoxDecoration(
           color: isSelected ? Colors.black : Color(0xffD6D6D6),

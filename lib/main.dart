@@ -13,7 +13,7 @@ class PlattForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ScreenUtilInit(
-           designSize: Size(375, 812),
+            designSize: Size(375, 812),
         splitScreenMode: true,
         minTextAdapt: true,
       child: MaterialApp(

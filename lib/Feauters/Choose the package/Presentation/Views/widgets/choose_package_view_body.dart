@@ -17,9 +17,9 @@ class ChoosePackageViewBody extends StatelessWidget {
           SizedBox(height: 24.h,),
           const CustomButtonCopon(),
           SizedBox(height: 15.h,),
-          const CustomDetailesInChoosePackege(workerData: 'سائق خاص- باكستان - شهر', heightContainer: 128,),
+           CustomDetailesInChoosePackege(workerData: 'سائق خاص- باكستان - شهر', heightContainer: 128.h,),
           SizedBox(height: 16.h,),
-          const CustomDetailesInChoosePackege(workerData: 'باقة كينيا ثلاثة أشهر اقساط دفعة أولى 1000 و قسط شهري 3620 ريال', heightContainer: 150,),
+           CustomDetailesInChoosePackege(workerData: 'باقة كينيا ثلاثة أشهر اقساط دفعة أولى 1000 و قسط شهري 3620 ريال', heightContainer: 150.h,),
         ],
       ),
     );

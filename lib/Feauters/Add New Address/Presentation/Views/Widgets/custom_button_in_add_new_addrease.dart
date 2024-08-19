@@ -7,23 +7,26 @@ class CustomButtonInAddNewAddrease extends StatelessWidget {
      this.onTap,
       required this.alignment, 
       required this.colorBackGround, 
-      required this.tixtInButton});
+      required this.tixtInButton, required this.width, required this.height, required this.colorBorder});
 final void Function()? onTap;
 final AlignmentGeometry alignment;
 final Color colorBackGround;
+final Color colorBorder;
 final Widget tixtInButton;
+final double width;
+final double height;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:onTap,
       child: Container(
-                    width: 108.w,
-                    height: 47.h,
+                    width: width,
+                    height: height,
                     decoration: BoxDecoration(
                       color: colorBackGround,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: const Color(0xff000000),
+                        color:colorBorder,
                         width: 1.w,
                       ),
                     ),

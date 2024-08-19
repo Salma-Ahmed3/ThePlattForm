@@ -29,7 +29,7 @@ class HourlyServicesViewBody extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return const CustomDialog();
+                  return const CustomDialogHourly();
                 },
               );
             },
@@ -38,7 +38,7 @@ class HourlyServicesViewBody extends StatelessWidget {
                  showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return const CustomDialog();
+                  return const CustomDialogHourly();
                 },
               );
             
@@ -57,7 +57,7 @@ class HourlyServicesViewBody extends StatelessWidget {
             
                 context: context,
                 builder: (BuildContext context) {
-                  return const CustomDialog(
+                  return const CustomDialogHourly(
                     
                   );
                 },

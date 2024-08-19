@@ -48,11 +48,11 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
               ),
             ),
             child:Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 11),
+              padding: const EdgeInsets.symmetric(horizontal: 17),
               child: Row(
                 children: [
                   SizedBox(
-                    width: 280.w,
+                    width: 245.w,
                     child: Text(widget.titletext,
                     style: TextStyles.regular16),
                     ),

@@ -13,56 +13,62 @@ class ChossingCarrerViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Directionality(
       textDirection: TextDirection.rtl,
-      child: Column(
-        children: [
-          const SizedBox(height: 34,),
-          Text('اختر الخدمة المطلوبة', style: TextStyles.regular14),
-          const SizedBox(height: 15,), 
-            Center(
-              child: Container(
-              width: 384.w,
-              height: 252.h,
-              decoration: BoxDecoration(
-                color: Color(0xffF8F8F8),
-                borderRadius: BorderRadius.circular(21),
-                border: Border.all(
-                  color: const Color(0xffF8F8F8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+             SizedBox(height: 34.h,),
+            Text('اختر الخدمة المطلوبة', style: TextStyles.regular14),
+             SizedBox(height: 15.h,), 
+              Center(
+                child: Container(
+                width: 384.w,
+                height: 252.h,
+                decoration: BoxDecoration(
+                  color: Color(0xffF8F8F8),
+                  borderRadius: BorderRadius.circular(21),
+                  border: Border.all(
+                    color: const Color(0xffF8F8F8),
+                  ),
+                ),
+                  child:
+                  Padding(
+                    padding:  const EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      children: [
+                         SizedBox(height: 41.h,),
+                        ButtonInResidentServiceChooseCareer(
+                        onChanged: (bool value) { 
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ChoosePackageView()),
+                        );
+                        },
+                        titletext: 'سائق خاص', 
+                        subtext: 'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر',
+                        colorBackGroun: Colors.white,
+                        colorBorder: const Color(0xffACACAC),
+                        ),
+                         SizedBox(height: 17.h,),
+                        ButtonInResidentServiceChooseCareer(
+                        onChanged: (bool value) { 
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ChoosePackageView()),
+                        );
+                        },
+                        titletext: 'عاملة منزلية', 
+                        subtext: 'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر',
+                        colorBackGroun: Colors.white,
+                        colorBorder: const Color(0xffACACAC),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-                child:
-                Column(
-                  children: [
-                     SizedBox(height: 41.h,),
-                    ButtonInResidentServiceChooseCareer(
-                    onChanged: (bool value) { 
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ChoosePackageView()),
-                    );
-                    },
-                    titletext: 'سائق خاص', 
-                    subtext: 'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر',
-                    colorBackGroun: Colors.white,
-                    colorBorder: const Color(0xffACACAC),
-                    ),
-                     SizedBox(height: 17.h,),
-                    ButtonInResidentServiceChooseCareer(
-                    onChanged: (bool value) { 
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ChoosePackageView()),
-                    );
-                    },
-                    titletext: 'عاملة منزلية', 
-                    subtext: 'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر',
-                    colorBackGroun: Colors.white,
-                    colorBorder: const Color(0xffACACAC),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

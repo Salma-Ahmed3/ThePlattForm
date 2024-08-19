@@ -13,6 +13,13 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
     fontSize: 18,
   );
+  static  TextStyle semiBold14 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    color: Colors.black,
+
+  );
   static  TextStyle regular12 = TextStyle(
     fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
     fontWeight: FontWeight.w400,
