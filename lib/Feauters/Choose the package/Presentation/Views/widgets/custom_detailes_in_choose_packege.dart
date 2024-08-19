@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_in_choose_packege_item.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_dialoge_personal.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_packege_duration.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_salary.dart';
-import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/Widgets/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
-import '../../../../Add New Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 
 class CustomDetailesInChoosePackege extends StatefulWidget {
-  const CustomDetailesInChoosePackege({super.key, required this.workerData, required this.heightContainer});
+  const CustomDetailesInChoosePackege({super.key, required this.workerData, required this.heightContainer, required this.textPackageDuration});
 final String workerData;
+final String textPackageDuration;
 final double heightContainer;
   @override
   State<CustomDetailesInChoosePackege> createState() =>
@@ -58,13 +58,15 @@ class _CustomDetailesInChoosePackegeState
                       SizedBox(
                         width: 250.w,
                         child: Text(
-                         widget.workerData,
+                        widget.workerData,
                           style: TextStyles.bold14,
                         ),
                       ),
-                       SizedBox(height: 12.h),
-                      const CustomPackageDuration(),
-                       SizedBox(height: 11.h),
+                      SizedBox(height: 12.h),
+                        CustomPackageDuration(
+                        textPackageDuration: widget.textPackageDuration, 
+                      ),
+                      SizedBox(height: 11.h),
                       const CustomSalary(),
                     ],
                   ),
@@ -77,6 +79,7 @@ class _CustomDetailesInChoosePackegeState
                         isRectangleVisible ? Icons.remove : Icons.add,
                         color: Colors.black,
                       ),
+                      
                     ),
                   ),
                 ],
@@ -86,7 +89,7 @@ class _CustomDetailesInChoosePackegeState
           if (isRectangleVisible)
             GestureDetector(
               onTap: (){
-                 showDialog(
+                showDialog(
                 context: context,
                 builder: (BuildContext context) {
                   return const CustomDialogPersonal();
@@ -114,101 +117,3 @@ class _CustomDetailesInChoosePackegeState
     );
   }
 }
-
-class CustomDialogPersonal extends StatefulWidget {
-  const CustomDialogPersonal({super.key});
-
-  static const routeName = 'CustomDialog';
-
-  @override
-  _CustomDialogPersonalState createState() => _CustomDialogPersonalState();
-}
-
-class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
-  bool isDialogExpanded = false;
-
-  void toggleDialogSize() {
-    setState(() {
-      isDialogExpanded = !isDialogExpanded;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Directionality(
-          textDirection: TextDirection.rtl,
-          child: Dialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              height: isDialogExpanded ? 600.h : null,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(height: 50), 
-                  Text(
-                    'كيف تريد اختيار العاملة',
-                    style: TextStyles.semiBold18,
-                  ),
-                  const SizedBox(height: 32),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 36),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: CustomButtonInAddNewAddrease(
-                            onTap: toggleDialogSize,
-                            alignment: Alignment.center,
-                            colorBackGround: const Color(0xffEFEFEF),
-                            tixtInButton: Center(
-                              child: Text(
-                                'من التطبيق',
-                                style: TextStyles.semiBold14,
-                              ),
-                            ),
-                            width: 130.w,
-                            height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF),
-                          ),
-                        ),
-                        SizedBox(width: 16.w),
-                        Expanded(
-                          child: CustomButtonInAddNewAddrease(
-                            onTap: toggleDialogSize,
-                            alignment: Alignment.center,
-                            colorBackGround: const Color(0xffEFEFEF),
-                            tixtInButton: Center(
-                              child: Text(
-                                'من مقر الشركة',
-                                style: TextStyles.semiBold14,
-                              ),
-                            ),
-                            width: 130.w,
-                            height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 39.h),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: 
-          isDialogExpanded ? 80: 286, 
-          child: const CustomCircleAvatar(),
-        ),
-      ],
-    );
-  }
-}
-
