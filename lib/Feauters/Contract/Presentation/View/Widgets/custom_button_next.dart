@@ -1,8 +1,7 @@
 
             import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
-
+import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/contract_attachments_view.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../Add New Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 
@@ -17,7 +16,7 @@ class CustomButtonNext extends StatelessWidget {
                                         alignment: Alignment.bottomLeft,
                                         child: CustomButtonInAddNewAddrease( 
                                               onTap: () {
-                                                Navigator.of(context).pushNamed(TestPage.routeName);
+                                                Navigator.of(context).pushNamed(ContractAttachmentsView.routeName);
                                                   }, 
                                                     alignment:   Alignment.center, 
                                                     colorBackGround: Colors.black,
