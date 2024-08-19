@@ -150,7 +150,7 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: 50), // Increased height to give space for the avatar
+                  const SizedBox(height: 50), 
                   Text(
                     'كيف تريد اختيار العاملة',
                     style: TextStyles.semiBold18,
