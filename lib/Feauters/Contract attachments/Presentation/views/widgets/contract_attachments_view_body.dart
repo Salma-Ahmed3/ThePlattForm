@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/core/utils/app_images.dart';
-import 'package:svg_flutter/svg_flutter.dart';
-
+import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/contract_attachments_view.dart';
+import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/widgets/custom_container.dart';
+import 'package:nowproject/Feauters/Contract/Presentation/View/Widgets/custom_button_next.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class ContractAttachmentsViewBody extends StatelessWidget {
@@ -23,7 +23,7 @@ class ContractAttachmentsViewBody extends StatelessWidget {
                 ),
                 const SizedBox(width: 11),
                 Text('هذه الخطوة اختيارية يمكنك تجاهلها الآن',
-                style: TextStyles.regular12.copyWith(color:Color(0xff24A19D)),),
+                style: TextStyles.regular12.copyWith(color:const Color(0xff24A19D)),),
               ],
             ),
             SizedBox(height: 21.h,),
@@ -31,34 +31,49 @@ class ContractAttachmentsViewBody extends StatelessWidget {
                 width: 359,
                 height: 87,
                 decoration: BoxDecoration(
-                  color: Color(0xffF8F8F8),
+                  color: const Color(0xffF8F8F8),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: CustomContainer(),
+                child: const CustomContainer(titleText: 'الهوية',),
               ),
-        ],
-      ),
-    );
-  }
-}
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-                width: 116,
-                height: 69,
+            SizedBox(height: 20.h,),
+                Container(
+                width: 359,
+                height: 87,
                 decoration: BoxDecoration(
                   color: const Color(0xffF8F8F8),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: Image.asset(Assets.imagesPicIcon),
+                child: const CustomContainer(titleText: 'كارت العائلة',),
               ),
-              Text('الهوية' , style: TextStyles.bold14,)
-      ],
+            SizedBox(height: 20.h,),
+                Container(
+                width: 359,
+                height: 87,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF8F8F8),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: const CustomContainer(titleText: 'العنوان الوطني',),
+              ),
+            SizedBox(height: 20.h,),
+                Container(
+                width: 359,
+                height: 87,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF8F8F8),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: const CustomContainer(titleText: 'تعريق الراتب',),
+              ),
+            SizedBox(height: 32.h,),
+               CustomButtonNext(
+                onTap:  () {
+                    Navigator.of(context).pushNamed(ContractAttachmentsView.routeName);
+                      }, 
+              ),
+        ],
+      ),
     );
   }
 }

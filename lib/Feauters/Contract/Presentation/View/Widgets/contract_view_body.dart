@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
+import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/contract_attachments_view.dart';
 import 'package:nowproject/Feauters/Contract/Presentation/View/Widgets/custom_button_next.dart';
 import 'package:nowproject/Feauters/Contract/Presentation/View/Widgets/custom_contract_items.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
@@ -34,8 +35,14 @@ class ContractViewBody extends StatelessWidget {
                         const SizedBox(height: 23),
                         const CustomContractItems() , 
                         const SizedBox(height: 32),
-                        const CustomButtonNext(),
-                        const SizedBox(height: 23),
+                         Padding(
+                           padding: const EdgeInsets.symmetric(horizontal: 26),
+                           child: CustomButtonNext(
+                            onTap:  () {
+                                               Navigator.of(context).pushNamed(ContractAttachmentsView.routeName);
+                                                 }, 
+                                                   ),
+                         ),
               ],
     );
   }
