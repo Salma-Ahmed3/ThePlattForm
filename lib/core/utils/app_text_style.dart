@@ -8,6 +8,11 @@ abstract class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: 40,
   );
+  static  TextStyle bold20 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+  );
   static  TextStyle semiBold18 = TextStyle(
     fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
     fontWeight: FontWeight.w600,
@@ -28,6 +33,11 @@ abstract class TextStyles {
   static  TextStyle regular16 = TextStyle(
     fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
     fontWeight: FontWeight.w400,
+    fontSize: 16,
+  );
+  static  TextStyle bold16 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w700,
     fontSize: 16,
   );
   static  TextStyle regular14 = TextStyle(

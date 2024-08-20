@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Chossing%20Mid/Presentation/views/chossing_mid_view.dart';
 import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/contract_details_view.dart';
+import 'package:nowproject/Feauters/Contract%20Success/Presentation/views/contract_success_view.dart';
 import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/contract_attachments_view.dart';
 import 'package:nowproject/Feauters/Contract/Presentation/View/contract_view.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
@@ -30,6 +31,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ContractView());
    case ContractAttachmentsView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractAttachmentsView());
+   case ContractSuccessView.routeName:
+      return MaterialPageRoute(builder: (context) => const ContractSuccessView());
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());
   //  case CustomDialog.routeName:

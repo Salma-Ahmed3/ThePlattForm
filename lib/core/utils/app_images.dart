@@ -18,6 +18,10 @@ class Assets {
   static const String imagesFacebookIcons = "assets/images/facebook_Icons.svg";
   static const String imagesGoogleIcons = "assets/images/google_Icons.svg";
   static const String imagesErrorIcon = "assets/images/ErrorIcon.svg";
+  static const String imagesSuccess = "assets/images/Success.png" ;
+  static const String imagesSuccessMedium = "assets/images/SuccessMedium.png" ;
+  static const String imagesSuccessSmall = "assets/images/SuccessSmall.png" ;
+  static const String imagesSuccessVerySmall = "assets/images/SuccessVerySmall.png" ;
 
 
 

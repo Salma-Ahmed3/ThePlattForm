@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/contract_attachments_view.dart';
+import 'package:nowproject/Feauters/Contract%20Success/Presentation/views/contract_success_view.dart';
 import 'package:nowproject/Feauters/Contract%20attachments/Presentation/views/widgets/custom_container.dart';
 import 'package:nowproject/Feauters/Contract/Presentation/View/Widgets/custom_button_next.dart';
 import '../../../../../core/utils/app_text_style.dart';
@@ -69,7 +68,7 @@ class ContractAttachmentsViewBody extends StatelessWidget {
             SizedBox(height: 32.h,),
                CustomButtonNext(
                 onTap:  () {
-                    Navigator.of(context).pushNamed(ContractAttachmentsView.routeName);
+                    Navigator.of(context).pushNamed(ContractSuccessView.routeName);
                       }, 
               ),
         ],
