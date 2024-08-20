@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_dialoge_personal_in_house.dart';
-import 'package:nowproject/Feauters/Chossing%20Mid/Presentation/views/chossing_mid_view.dart';
+import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/chossing_mid_view.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 import 'custom_detailes_dialoge_personal_receive_company.dart';
@@ -97,7 +97,7 @@ class _CustomDetailesDialogePersonalState extends State<CustomDetailesDialogePer
                   ),
                   if (isAppButtonSelected)  CustomDetailesDialogePersonalInHouse(
                     onTap: () {
-                      Navigator.of(context).pushNamed(ChoosingMidView.routeName);
+                      Navigator.of(context).pushNamed(ChoosingMaidView.routeName);
                     },
                   ),
                   if (isCompanyButtonSelected)  CustomDetailesDialogePersonalReceiveCompany(sizedBox: SizedBox(height: 22.h,),),

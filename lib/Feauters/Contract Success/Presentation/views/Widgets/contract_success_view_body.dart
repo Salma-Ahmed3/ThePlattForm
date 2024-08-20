@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
-import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/Widgets/custom_circle_avatar_dialog.dart';
+import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
+import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests_view.dart';
 import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
-import 'package:svg_flutter/svg.dart';
 import 'custom_container_wallet_balance.dart';
 
 class ContractSuccessViewBody extends StatelessWidget {
   const ContractSuccessViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -99,7 +97,7 @@ class CustomDialogPush extends StatelessWidget {
                             const SizedBox(height: 30),
                             CustomButtonInAddNewAddrease(
                                 onTap: () {
-                                Navigator.of(context).pushNamed(TestPage.routeName);
+                                Navigator.of(context).pushNamed(MyRequestsView.routeName);
                                 },
                                 alignment: Alignment.centerRight, 
                                 colorBackGround: Colors.black, 

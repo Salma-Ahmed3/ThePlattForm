@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_dialoge_personal_in_app.dart';
 import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_dialoge_personal_receive_company.dart';
-import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/Widgets/custom_circle_avatar_dialog.dart';
+import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class CustomDialogPersonal extends StatefulWidget {

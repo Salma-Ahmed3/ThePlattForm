@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
-import 'package:nowproject/Feauters/Hourly%20service/Presentatio/Views/Widgets/custom_circle_avatar_dialog.dart';
+import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 import 'package:svg_flutter/svg_flutter.dart';
