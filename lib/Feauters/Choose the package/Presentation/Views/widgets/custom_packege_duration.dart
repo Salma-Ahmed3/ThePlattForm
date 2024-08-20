@@ -24,19 +24,7 @@ final String textPackageDuration;
             ),
             child: Center(child: Text(textPackageDuration, style: TextStyles.regular12,)),
                 ),
-                //  SizedBox(width: 6.w,),
-            //     Container(
-            //         width: 70.w,
-            //         height: 32.h,
-            //         decoration: BoxDecoration(
-            //         color: const Color(0xffD6D6D6),
-            //         borderRadius: BorderRadius.circular(8),
-            //         border: Border.all(
-            //         color:  Colors.black,
-            //   ),
-            // ),
-            // // child: Center(child: Text('خصم 5 %' , style: TextStyles.regular12,)),
-            //     ), 
+        
                   ],
                 );
 
