@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/widgets/custom_chosse_maid_row.dart';
-import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/widgets/custom_detailes_item.dart';
+import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/widgets/custom_dialoge_maid.dart';
 import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/widgets/custom_maid_detailes.dart';
 
 
