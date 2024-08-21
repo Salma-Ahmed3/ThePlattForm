@@ -11,7 +11,6 @@ class AddNewAddressView extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Directionality(textDirection: TextDirection.rtl, 
     child: Scaffold(
-       
         appBar: buildAppBar(
           context,
           titleAppBar: 'اضافة عنوان جديد',

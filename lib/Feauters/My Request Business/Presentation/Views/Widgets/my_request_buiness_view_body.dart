@@ -44,9 +44,8 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                       ),
                     );
                   },
-                   color: selectedRequest == 'الأفراد' ? Colors.black : const Color(0xffD6D6D6),
-                    colorText: selectedRequest == 'الأفراد' ? Colors.white : Colors.black,
-                  
+                  color: selectedRequest == 'الأفراد' ? Colors.black : const Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الأفراد' ? Colors.white : Colors.black,
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
@@ -60,14 +59,13 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                         builder: (BuildContext context) => const MyRequestHourlyView(),
                       ),
                     );
-                  }, color: selectedRequest == 'الساعات' ? Colors.black : const Color(0xffD6D6D6),
-                    colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
-
+                  },
+                  color: selectedRequest == 'الساعات' ? Colors.black : const Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
                   nameMyRequest: 'الأعمال',
-                  
                   isSelected: selectedRequest == 'الأعمال',
                   onTap: () {
                     _onRequestSelected('الأعمال');
@@ -78,14 +76,21 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                       ),
                     );
                   },
-                    color: selectedRequest == 'الأعمال' ?  const Color(0xffD6D6D6): Colors.black,
-                    colorText: selectedRequest == 'الأعمال' ? Colors.black : Colors.white,
-                    
+                  color: selectedRequest == 'الأعمال' ? const Color(0xffD6D6D6): Colors.black ,
+                  colorText: selectedRequest == 'الأعمال' ? Colors.black : Colors.white,
                 ),
               ],
             ),
             const SizedBox(height: 23),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true, titleName: 'Lead-BUSINESS-NO9822',),
+            const CustomRectangleInMyRequest(
+              heightContainer: 53,
+              isLatest: true,
+              titleName: 'Lead-BUSINESS-NO9822',
+              firstText: 'شركة الشركة للاعاشة : صاحب الطلب',
+              secoundText: 'تاريخ الطلب : 20/05/2021',
+              fourText: 'تفاصيل الطلب', 
+              fiveText: 'نحتاج إلى فريق عمل كامل لمكان في الرياض لمدة 5 شهور',
+            ),
           ],
         ),
       ),

@@ -3,29 +3,29 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomDetailesInMyRequest extends StatelessWidget {
-  const CustomDetailesInMyRequest({super.key, required this.showAllData});
+  const CustomDetailesInMyRequest({super.key, required this.showAllData, this.firstText, this.secoundText, this.thirdText, this.fourText, this.fiveText, this.finalText});
   final bool showAllData;
-
+final String? firstText , secoundText , thirdText , fourText , fiveText , finalText;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding:  EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 16.h),
-          Text('صاحب الطلب : Ahmed Abo Alfadl', style: TextStyles.regular14),
+          Text(firstText??'', style: TextStyles.regular14),
           SizedBox(height: 5.h),
-          Text('تاريخ الطلب : 20/05/2021', style: TextStyles.regular14),
+          Text(secoundText??'', style: TextStyles.regular14),
           if (showAllData) ...[
             SizedBox(height: 5.h),
-            Text('الجنسية : بنجلاديش', style: TextStyles.regular14),
+            Text(thirdText??'', style: TextStyles.regular14),
             SizedBox(height: 5.h),
-            Text('المهنة المطلوبة : عاملة منزلية', style: TextStyles.regular14),
+            Text(fourText??'', style: TextStyles.regular14),
             SizedBox(height: 13.h),
-            Text('تفاصيل الطلب :', style: TextStyles.regular14),
+            Text(fiveText??'', style: TextStyles.regular14),
             SizedBox(height: 5.h),
-            Text('طلب اختيار افراد من التطبيق', style: TextStyles.regular14),
+            Text(finalText??'', style: TextStyles.regular14),
           ],
         ],
       ),
