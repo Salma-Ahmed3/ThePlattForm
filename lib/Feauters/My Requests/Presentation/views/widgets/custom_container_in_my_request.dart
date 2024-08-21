@@ -2,31 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
-class CustomContainerInMyRequest extends StatefulWidget {
-  const CustomContainerInMyRequest({super.key, required this.nameMyRequest, this.onTap});
+class CustomContainerInMyRequest extends StatelessWidget {
+  const CustomContainerInMyRequest({
+    super.key,
+    required this.nameMyRequest,
+    this.onTap,
+    required this.isSelected,
+  });
+
   final String nameMyRequest;
   final void Function()? onTap;
-
-  @override
-  _CustomContainerInMyRequestState createState() => _CustomContainerInMyRequestState();
-}
-
-class _CustomContainerInMyRequestState extends State<CustomContainerInMyRequest> {
-  bool isSelected = false;
-
-  void _toggleSelection() {
-    setState(() {
-      isSelected = !isSelected;
-    });
-    if (widget.onTap != null) {
-      widget.onTap!();
-    }
-  }
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _toggleSelection,
+      onTap: onTap,
       child: Container(
         width: 106,
         height: 40.h,
@@ -37,7 +28,7 @@ class _CustomContainerInMyRequestState extends State<CustomContainerInMyRequest>
         child: Align(
           alignment: Alignment.center,
           child: Text(
-            widget.nameMyRequest,
+            nameMyRequest,
             style: TextStyles.regular12.copyWith(
               color: isSelected ? Colors.white : Colors.black,
             ),

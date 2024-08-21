@@ -4,22 +4,22 @@ import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/widgets/custom_container_in_my_request.dart';
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/widgets/custom_rectangle_in_my_request.dart';
 
-class MyRequestsViewBody extends StatefulWidget {
-  const MyRequestsViewBody({super.key});
+class MyRequestHourlyViewBody extends StatefulWidget {
+  const MyRequestHourlyViewBody({super.key});
 
   @override
-  _MyRequestsViewBodyState createState() => _MyRequestsViewBodyState();
+  State<MyRequestHourlyViewBody> createState() => _MyRequestHourlyViewBodyState();
+  
 }
 
-class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
+class _MyRequestHourlyViewBodyState extends State<MyRequestHourlyViewBody> {
   String? selectedRequest; 
 
   void _onRequestSelected(String requestName) {
-    setState(() {
-      selectedRequest = requestName; 
-    });
-  }
 
+   setState(() {
+      selectedRequest = requestName; 
+    });}
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,16 +32,12 @@ class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomContainerInMyRequest(
-                  onTap: () {
-                    _onRequestSelected('الأفراد');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestsView();
-                } ));
-                  },
-                
                   nameMyRequest: 'الأفراد',
                   isSelected: selectedRequest == 'الأفراد',
-                  
+                  onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MyRequestsView()));
+                    
+                  },
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
@@ -49,35 +45,27 @@ class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
                   isSelected: selectedRequest == 'الساعات',
                   onTap: () {
                     _onRequestSelected('الساعات');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestHourlyView();
-                }
-                ));
+                    Navigator.of(context).pushNamed(MyRequestHourlyView.routeName);
                   },
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
                   nameMyRequest: 'الأعمال',
                   isSelected: selectedRequest == 'الأعمال',
-                   onTap: () {
-                    _onRequestSelected('الأفراد');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestsView();
-                } ));
+                  onTap: () {
+                    _onRequestSelected('الأعمال');
+                    
+                    Navigator.of(context).pushNamed(MyRequestHourlyView.routeName);
+
                   },
                 ),
               ],
             ),
             const SizedBox(height: 23),
             const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true),
-            const SizedBox(height: 17),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false),
-            const SizedBox(height: 17),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false),
-            const SizedBox(height: 17),
-          ],
-        ),
-      ),
-    );
+              ],
+            ),
+          )
+        );
   }
 }

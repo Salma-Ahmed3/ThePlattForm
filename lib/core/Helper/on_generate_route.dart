@@ -9,6 +9,7 @@ import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.da
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
 import 'package:nowproject/Feauters/LogIn/Presentation/Views/login_view.dart';
 import 'package:nowproject/Feauters/Logo/Presentation/Views/logo_view.dart';
+import 'package:nowproject/Feauters/My%20Request%20Hours/Presentation/views/my_request_hourly_view.dart';
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests_view.dart';
 import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
 import 'package:nowproject/Feauters/SignUp/Presentation/Views/signup_view.dart';
@@ -50,6 +51,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
    case ContractDetailsMaidView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractDetailsMaidView());
+
+   case MyRequestHourlyView.routeName:
+      return MaterialPageRoute(builder: (context) => const MyRequestHourlyView());
 
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());

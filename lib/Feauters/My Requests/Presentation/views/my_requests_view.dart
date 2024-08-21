@@ -26,19 +26,19 @@ static const routeName = 'MyRequestsView';
           },
           icon: const Icon(Icons.notifications),
         ),
-         floatingActionButton: Row(
+          floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           GestureDetector(
-             onTap: (){
-               Navigator.push(
-                 context,
-                 MaterialPageRoute(
-                     builder: (context) => const AddNewAddressView()),
-               );
-             },
-             child: SvgPicture.asset(Assets.imagesAddIcon)
-           )
+            GestureDetector(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddNewAddressView()),
+                );
+              },
+              child: SvgPicture.asset(Assets.imagesAddIcon)
+            )
           ],
         ),
       ),
