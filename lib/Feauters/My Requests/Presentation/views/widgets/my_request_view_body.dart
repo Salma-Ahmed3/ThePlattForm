@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/My%20Request%20Business/Presentation/Views/my_request_buiness_view.dart';
 import 'package:nowproject/Feauters/My%20Request%20Hours/Presentation/views/my_request_hourly_view.dart';
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests_view.dart';
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/widgets/custom_container_in_my_request.dart';
@@ -34,22 +35,27 @@ class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
                 CustomContainerInMyRequest(
                   onTap: () {
                     _onRequestSelected('الأفراد');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
                   return const MyRequestsView();
                 } ));
                   },
-                
+                  color: selectedRequest == 'الأفراد' ?  const Color(0xffD6D6D6) :Colors.black ,
+                    colorText: selectedRequest == 'الأفراد' ? Colors.black : Colors.white,
+                  
                   nameMyRequest: 'الأفراد',
                   isSelected: selectedRequest == 'الأفراد',
                   
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
+                  color: selectedRequest == 'الساعات' ? Colors.black :Color(0xffD6D6D6) ,
+                    colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
+
                   nameMyRequest: 'الساعات',
                   isSelected: selectedRequest == 'الساعات',
                   onTap: () {
                     _onRequestSelected('الساعات');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
                   return const MyRequestHourlyView();
                 }
                 ));
@@ -57,23 +63,26 @@ class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
+                  color: selectedRequest == 'الأعمال' ? Colors.black : const Color(0xffD6D6D6),
+                    colorText: selectedRequest == 'الأعمال' ? Colors.white : Colors.black,
+
                   nameMyRequest: 'الأعمال',
                   isSelected: selectedRequest == 'الأعمال',
-                   onTap: () {
-                    _onRequestSelected('الأفراد');
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestsView();
+                onTap: () {
+                    _onRequestSelected('الأعمال');
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
+                  return const MyRequestBuinessView();
                 } ));
                   },
                 ),
               ],
             ),
             const SizedBox(height: 23),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true),
+            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true, titleName: 'Lead-INDV-NO9822',),
             const SizedBox(height: 17),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false),
+            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false, titleName: 'Lead-INDV-NO9822',),
             const SizedBox(height: 17),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false),
+            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false, titleName: 'Lead-INDV-NO9822',),
             const SizedBox(height: 17),
           ],
         ),

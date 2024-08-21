@@ -7,13 +7,14 @@ class CustomContainerInMyRequest extends StatelessWidget {
     super.key,
     required this.nameMyRequest,
     this.onTap,
-    required this.isSelected,
+    required this.isSelected, required this.color, required this.colorText,
   });
 
   final String nameMyRequest;
   final void Function()? onTap;
   final bool isSelected;
-
+final Color color;
+final Color colorText;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,14 +24,14 @@ class CustomContainerInMyRequest extends StatelessWidget {
         height: 40.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          color: isSelected ? Colors.black : const Color(0xffD6D6D6),
+          color: color
         ),
         child: Align(
           alignment: Alignment.center,
           child: Text(
             nameMyRequest,
             style: TextStyles.regular12.copyWith(
-              color: isSelected ? Colors.white : Colors.black,
+              color: colorText,
             ),
           ),
         ),

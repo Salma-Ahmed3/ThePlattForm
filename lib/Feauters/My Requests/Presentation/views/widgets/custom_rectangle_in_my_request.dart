@@ -7,11 +7,12 @@ class CustomRectangleInMyRequest extends StatefulWidget {
   const CustomRectangleInMyRequest({
     super.key,
     required this.heightContainer,
-    this.isLatest = false,
+    this.isLatest = false, required this.titleName,
   });
 
   final double heightContainer;
   final bool isLatest;
+  final String titleName;
 
   @override
   State<CustomRectangleInMyRequest> createState() =>
@@ -54,7 +55,9 @@ class _CustomRectangleInMyRequestState
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(width: 20),
-              Text('Lead-INDV-NO9822', style: TextStyles.bold14),
+              Text(widget.titleName,
+              
+               style: TextStyles.bold14),
               const SizedBox(width: 20),
               if (widget.isLatest)
                 Container(

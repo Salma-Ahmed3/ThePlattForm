@@ -5,14 +5,14 @@ import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/widgets/custom_container_in_my_request.dart';
 import 'package:nowproject/Feauters/My%20Requests/Presentation/views/widgets/custom_rectangle_in_my_request.dart';
 
-class MyRequestHourlyViewBody extends StatefulWidget {
-  const MyRequestHourlyViewBody({super.key});
+class MyRequestBuinessViewBody extends StatefulWidget {
+  const MyRequestBuinessViewBody({super.key});
 
   @override
-  State<MyRequestHourlyViewBody> createState() => _MyRequestHourlyViewBodyState();
+  State<MyRequestBuinessViewBody> createState() => _MyRequestBuinessViewBodyState();
 }
 
-class _MyRequestHourlyViewBodyState extends State<MyRequestHourlyViewBody> {
+class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
   String? selectedRequest;
 
   void _onRequestSelected(String requestName) {
@@ -60,8 +60,8 @@ class _MyRequestHourlyViewBodyState extends State<MyRequestHourlyViewBody> {
                         builder: (BuildContext context) => const MyRequestHourlyView(),
                       ),
                     );
-                  }, color: selectedRequest == 'الساعات' ? const Color(0xffD6D6D6): Colors.black ,
-                    colorText: selectedRequest == 'الساعات' ? Colors.black : Colors.white,
+                  }, color: selectedRequest == 'الساعات' ? Colors.black : const Color(0xffD6D6D6),
+                    colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
 
                 ),
                 const SizedBox(width: 10),
@@ -78,16 +78,14 @@ class _MyRequestHourlyViewBodyState extends State<MyRequestHourlyViewBody> {
                       ),
                     );
                   },
-                    color: selectedRequest == 'الأعمال' ? Colors.black : const Color(0xffD6D6D6),
-                    colorText: selectedRequest == 'الأعمال' ? Colors.white : Colors.black,
-
+                    color: selectedRequest == 'الأعمال' ?  const Color(0xffD6D6D6): Colors.black,
+                    colorText: selectedRequest == 'الأعمال' ? Colors.black : Colors.white,
+                    
                 ),
               ],
             ),
             const SizedBox(height: 23),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true, titleName: 'Lead-HOURS-NO9822',),
-            const SizedBox(height: 23),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false, titleName: 'Lead-HOURS-NO9822',),
+            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true, titleName: 'Lead-BUSINESS-NO9822',),
           ],
         ),
       ),
