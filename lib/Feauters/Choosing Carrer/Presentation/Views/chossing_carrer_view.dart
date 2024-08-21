@@ -6,7 +6,7 @@ import '../../../Notification/Presentation/Views/notification_view.dart';
 
 class ChossingCarrerView extends StatelessWidget {
   const ChossingCarrerView({super.key});
-
+static const String routeName = 'ChossingCarrerView';
   @override
   Widget build(BuildContext context) {
     return Directionality(

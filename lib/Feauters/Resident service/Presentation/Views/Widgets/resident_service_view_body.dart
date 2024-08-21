@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Choosing%20Carrer/Presentation/Views/chossing_carrer_view.dart';
 import 'package:nowproject/Feauters/Resident%20service/Presentation/Views/Widgets/button_in_resident_service.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class ResidentServiceViewBody extends StatelessWidget {
-  const ResidentServiceViewBody({super.key});
-
+  const ResidentServiceViewBody({super.key, required this.onChanged});
+final  void Function(bool) onChanged;
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -19,36 +18,21 @@ class ResidentServiceViewBody extends StatelessWidget {
 
       ButtonInResidentService( 
         titletext: '15 طريق الثمامة الفرعي - الرياض المملكة العربية السعودية', 
-      onChanged: (bool value) { 
-         Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            );
-            },
+      onChanged: onChanged,
             colorBackGroun:Colors.transparent, colorBorder: Color(0xffACACAC),),
             
              SizedBox(height: 12.h,),
 
             ButtonInResidentService( 
               titletext:'طريق الامير تركي بن عبد العزيز 7898 الأول المعذر ، الرياض 12721، السعودية',
-            onChanged: (bool value) {    
-               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            );
-             },
+            onChanged: onChanged,
              colorBackGroun: Colors.transparent,
               colorBorder: const Color(0xffACACAC),),
 
              SizedBox(height: 12.h,),
 
             ButtonInResidentService( titletext: 'المهيني، الشرفية، الرياض 12724، السعودية',
-            onChanged: (bool value) 
-            {  Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            );
-            },
+            onChanged: onChanged,
               colorBackGroun: Colors.transparent,
               colorBorder: Color(0xffACACAC),),
 

@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/Feauters/Add%20New%20Address%20Google%20Maps/Presentation/views/add_new_address_google_maps_view.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
 import '../../../../../core/utils/app_text_style.dart';
-import '../../../../Home/Presentation/Views/Widgets/test_page.dart';
 
 class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
   const CustomButtonInAddNewAddreaseItem({super.key});
@@ -26,7 +26,7 @@ class CustomButtonInAddNewAddreaseItem extends StatelessWidget {
                  ),
                  CustomButtonInAddNewAddrease(
                   onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TestPage()));
+                    Navigator.pushNamed(context, AddNewAddressGoogleMapsView.routeName);
                   }, alignment:  Alignment.centerLeft, 
                   colorBackGround: Colors.black,
                   tixtInButton: Center(

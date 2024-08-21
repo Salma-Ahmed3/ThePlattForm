@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/add_new_address_view.dart';
+import 'package:nowproject/Feauters/Choosing%20Carrer/Presentation/Views/chossing_carrer_view.dart';
 import 'package:nowproject/Feauters/Notification/Presentation/Views/notification_view.dart';
 import 'package:nowproject/Feauters/Resident%20service/Presentation/Views/Widgets/resident_service_view_body.dart';
 import 'package:nowproject/core/Widgets/build_app_bar.dart';
@@ -23,7 +24,12 @@ class ResidentServiceView extends StatelessWidget {
           },
           icon: const Icon(Icons.notifications),
         ),
-        body: const ResidentServiceViewBody(),
+        body:  ResidentServiceViewBody(onChanged: (bool value) { 
+         Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
+            );
+            },),
         bottomNavigationBar: const CustomNavBar(),
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,

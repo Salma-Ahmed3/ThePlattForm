@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Add%20New%20Address%20Google%20Maps/Presentation/views/add_new_address_google_maps_view.dart';
+import 'package:nowproject/Feauters/Choose%20Addrease/Presentation/choose_addrese_view.dart';
+import 'package:nowproject/Feauters/Choosing%20Carrer/Presentation/Views/chossing_carrer_view.dart';
 import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/chossing_mid_view.dart';
 import 'package:nowproject/Feauters/Contract%20Details%20Maid/Presentation/views/contract_details_maid_view.dart';
 import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/contract_details_view.dart';
@@ -54,6 +57,15 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
    case MyRequestHourlyView.routeName:
       return MaterialPageRoute(builder: (context) => const MyRequestHourlyView());
+
+   case ChossingCarrerView.routeName:
+      return MaterialPageRoute(builder: (context) => const ChossingCarrerView());
+
+   case ChooseAddreseView.routeName:
+      return MaterialPageRoute(builder: (context) => const ChooseAddreseView());
+
+   case AddNewAddressGoogleMapsView.routeName:
+      return MaterialPageRoute(builder: (context) => const AddNewAddressGoogleMapsView());
 
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());

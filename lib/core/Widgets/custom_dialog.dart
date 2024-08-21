@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
+import 'package:nowproject/Feauters/Choose%20Addrease/Presentation/choose_addrese_view.dart';
 import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
@@ -67,7 +67,7 @@ class CustomDialogHourly extends StatelessWidget {
                               //  SizedBox(width: 19 ,),    
                               CustomButtonInAddNewAddrease(
                                 onTap: () {
-                                Navigator.of(context).pushNamed(TestPage.routeName);
+                                Navigator.of(context).pushNamed(ChooseAddreseView.routeName);
                                 },
                                 alignment: Alignment.centerRight, 
                                 colorBackGround: Colors.black, 
