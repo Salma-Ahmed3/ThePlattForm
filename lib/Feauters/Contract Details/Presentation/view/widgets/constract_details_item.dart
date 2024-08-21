@@ -9,7 +9,6 @@ class ContractDetailsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Stack(
       children: [
-         
                   Container(
                     width: 383,
                     height: 315,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nowproject/Feauters/Terms%20and%20Conditions/Presentation/Views/terms_and_conditions_view.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomContractItems extends StatelessWidget {
@@ -17,7 +18,17 @@ class CustomContractItems extends StatelessWidget {
               ),
               const SizedBox(width: 11),
               Text('بإكمالك الخطوات فأنت توافق على ',style: TextStyles.regular12,),
-              Text('شروط و أحكام الشركة',style: TextStyles.regular12.copyWith(color:Color(0xff24A19D)),),
+              GestureDetector(
+                onTap: () {
+                  showDialog(context: context, builder: 
+                  
+                  (context) {
+                  return const TermsAndConditionsView();
+                  }
+
+                  );
+                },
+                child: Text('شروط و أحكام الشركة',style: TextStyles.regular12.copyWith(color:Color(0xff24A19D)),)),
             ],
           ),
               const SizedBox(height: 11),
