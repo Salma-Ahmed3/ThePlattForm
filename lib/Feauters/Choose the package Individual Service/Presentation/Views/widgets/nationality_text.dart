@@ -21,7 +21,6 @@ class _NationalityTextState extends State<NationalityText> {
         setState(() {
           isSelected = !isSelected;
         });
-        Navigator.of(context).pushNamed(TestPage.routeName);
       },
       child: Container(
         width: 100.w,

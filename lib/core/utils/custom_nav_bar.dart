@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart';
 import 'package:nowproject/Feauters/Home/Presentation/Views/home_view.dart';
+import 'package:nowproject/Feauters/My%20Requests/Presentation/views/my_requests_view.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({super.key});
@@ -34,9 +35,10 @@ class CustomNavBar extends StatelessWidget {
       onTap: (index) {
         switch (index) {
           case 0:
-            Navigator.push(
+            Navigator.pushReplacementNamed(
+             
               context,
-              MaterialPageRoute(builder: (context) =>  HomeView()),
+              HomeView.routeName,
             );
             break;
           case 1:
@@ -46,9 +48,10 @@ class CustomNavBar extends StatelessWidget {
             );
             break;
           case 2:
-            Navigator.push(
+            Navigator.pushReplacementNamed(
+             
               context,
-              MaterialPageRoute(builder: (context) => const TestPage()),
+              MyRequestsView.routeName,
             );
             break;
           case 3:

@@ -4,6 +4,7 @@ import 'package:nowproject/Feauters/Choose%20Addrease/Presentation/choose_addres
 import 'package:nowproject/Feauters/Choose%20the%20package%20Hourly%20Service/Presentation/Views/choose_package_hourly_services_view.dart';
 import 'package:nowproject/Feauters/Choosing%20Carrer/Presentation/Views/chossing_carrer_view.dart';
 import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/chossing_mid_view.dart';
+import 'package:nowproject/Feauters/Contract%20Data/Presentation/views/contract_data_view.dart';
 import 'package:nowproject/Feauters/Contract%20Details%20Maid/Presentation/views/contract_details_maid_view.dart';
 import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/contract_details_view.dart';
 import 'package:nowproject/Feauters/Contract%20Success/Presentation/views/contract_success_view.dart';
@@ -70,6 +71,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
    case ChoosePackageHourlyServicesView.routeName:
       return MaterialPageRoute(builder: (context) => const ChoosePackageHourlyServicesView());
+
+   case ContractDataView.routeName:
+      return MaterialPageRoute(builder: (context) => const ContractDataView());
 
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());

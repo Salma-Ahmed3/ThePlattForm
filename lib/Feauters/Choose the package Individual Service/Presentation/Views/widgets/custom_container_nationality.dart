@@ -4,9 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
 class CustomContainerNationality extends StatelessWidget {
-  const CustomContainerNationality({super.key, required this.titleText, required this.widthContainer});
+  const CustomContainerNationality({super.key, required this.titleText, required this.widthContainer, required this.height});
 final String titleText;
 final double widthContainer;
+final double height;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +18,7 @@ final double widthContainer;
           children: [
             Container(
               width: double.infinity,
-              height: 81.h,
+              height:height,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
                 border: Border.all(
