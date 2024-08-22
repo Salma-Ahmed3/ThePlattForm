@@ -1,21 +1,21 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
-import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_dialoge_personal_in_app.dart';
-import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_detailes_dialoge_personal_receive_company.dart';
-import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
-import '../../../../../core/utils/app_text_style.dart';
+import 'package:nowproject/core/Widgets/custom_button_in_add_new_addrease.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package%20Individual%20Service/Presentation/Views/widgets/custom_detailes_dialoge_personal_in_house.dart';
+import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/chossing_mid_view.dart';
+import 'package:nowproject/core/utils/app_text_style.dart';
 
-class CustomDialogPersonal extends StatefulWidget {
-  const CustomDialogPersonal({super.key});
+import 'custom_detailes_dialoge_personal_receive_company.dart';
 
-  static const routeName = 'CustomDialog';
+class CustomDetailesDialogePersonalInApp extends StatefulWidget {
+  const CustomDetailesDialogePersonalInApp({super.key});
 
   @override
-  _CustomDialogPersonalState createState() => _CustomDialogPersonalState();
+  State<CustomDetailesDialogePersonalInApp> createState() => _CustomDetailesDialogePersonalState();
 }
 
-class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
+class _CustomDetailesDialogePersonalState extends State<CustomDetailesDialogePersonalInApp> {
   bool isDialogExpanded = false;
   bool isAppButtonSelected = false; 
   bool isCompanyButtonSelected = false; 
@@ -23,36 +23,25 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
   void toggleDialogSize(String button) {
     setState(() {
       isDialogExpanded = !isDialogExpanded;
-      if (button == 'app') {
+      if (button == 'inHouse') {
         isAppButtonSelected = !isAppButtonSelected;
         isCompanyButtonSelected = false; 
-      } else if (button == 'company') {
+      } else if (button == 'companytwo') {
         isCompanyButtonSelected = !isCompanyButtonSelected;
         isAppButtonSelected = false; 
       }
     });
   }
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Directionality(
-          textDirection: TextDirection.rtl,
-          child: Dialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: AnimatedContainer(
+    return AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              height: isDialogExpanded ? 600.h : null,
+              height: isDialogExpanded ? 350.h : null,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: 50),
                   Text(
-                    'كيف تريد اختيار العاملة',
+                    'طريقة استلام العاملة ؟',
                     style: TextStyles.semiBold18,
                   ),
                   const SizedBox(height: 32),
@@ -62,14 +51,22 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                       children: [
                         Expanded(
                           child: CustomButtonInAddNewAddrease(
-                            onTap: () => toggleDialogSize('app'),
+                            onTap: () => toggleDialogSize('inHouse'),
                             alignment: Alignment.center,
                             colorBackGround: isAppButtonSelected ? const Color(0xffACACAC) : const Color(0xffEFEFEF),
-                            tixtInButton: Center(
-                              child: Text(
-                                'من التطبيق',
-                                style: TextStyles.semiBold14,
-                              ),
+                            tixtInButton: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'توصيل للمنزل',
+                                  style: TextStyles.semiBold14,
+                                ),
+                                Text(
+                                  'مصاريف التوصيل 80 ريال',
+                                  style: TextStyles.regular10,
+                                  
+                                ),
+                              ],
                             ),
                             width: 130.w,
                             height: 90.h,
@@ -79,7 +76,7 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                         SizedBox(width: 16.w),
                         Expanded(
                           child: CustomButtonInAddNewAddrease(
-                            onTap: () => toggleDialogSize('company'),
+                            onTap: () => toggleDialogSize('companytwo'),
                             alignment: Alignment.center,
                             colorBackGround: isCompanyButtonSelected ? const Color(0xffACACAC) : const Color(0xffEFEFEF),
                             tixtInButton: Center(
@@ -98,22 +95,14 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 39.h),
-                  if (isAppButtonSelected) const CustomDetailesDialogePersonalInApp(),
-                  if (isCompanyButtonSelected)  const CustomDetailesDialogePersonalReceiveCompany (),
+                  if (isAppButtonSelected)  CustomDetailesDialogePersonalInHouse(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(ChoosingMaidView.routeName);
+                    },
+                  ),
+                  if (isCompanyButtonSelected)  CustomDetailesDialogePersonalReceiveCompany(sizedBox: SizedBox(height: 22.h,),),
+
                 ],
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: 
-          isDialogExpanded ? 80.h :  //normal
-          isCompanyButtonSelected ? 170.h :  //company
-          isAppButtonSelected ? 90.h : 263.h, // app
-          child: const CustomCircleAvatar(),
-        ),
-      ],
-    );
+      ),  );
   }
 }

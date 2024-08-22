@@ -6,7 +6,7 @@ import 'package:nowproject/core/utils/app_images.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-import '../../Feauters/Add New Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
+import 'custom_button_in_add_new_addrease.dart';
 
 class CustomDialogHourly extends StatelessWidget {
   const CustomDialogHourly({super.key});

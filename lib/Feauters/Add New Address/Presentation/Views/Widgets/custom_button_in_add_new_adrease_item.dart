@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Feauters/Add%20New%20Address%20Google%20Maps/Presentation/views/add_new_address_google_maps_view.dart';
-import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
+import 'package:nowproject/core/Widgets/custom_button_in_add_new_addrease.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class CustomButtonInAddNewAddreaseItem extends StatelessWidget {

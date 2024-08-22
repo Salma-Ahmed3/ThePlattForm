@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Add%20New%20Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
+import 'package:nowproject/core/Widgets/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/widgets/constract_details_item.dart';
 import 'package:nowproject/Feauters/Contract%20Details/Presentation/view/widgets/notes_contract_detailes.dart';
 import 'package:nowproject/Feauters/Contract/Presentation/View/contract_view.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/nationality_text.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package%20Individual%20Service/Presentation/Views/widgets/nationality_text.dart';
 import 'custom_container_nationality.dart';
 
 class CustomButtonNationality extends StatelessWidget {

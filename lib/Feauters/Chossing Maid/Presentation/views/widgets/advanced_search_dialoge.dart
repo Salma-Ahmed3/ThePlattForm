@@ -5,7 +5,7 @@ import 'package:nowproject/Feauters/Chossing%20Maid/Presentation/views/widgets/c
 import 'package:nowproject/core/Widgets/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
 
-import '../../../../Add New Address/Presentation/Views/Widgets/custom_button_in_add_new_addrease.dart';
+import '../../../../../core/Widgets/custom_button_in_add_new_addrease.dart';
 
 class AdvancedSearchDialog extends StatelessWidget {
   const AdvancedSearchDialog({super.key});

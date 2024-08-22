@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Choose%20the%20package/Presentation/Views/widgets/custom_container_nationality.dart';
+import 'package:nowproject/Feauters/Choose%20the%20package%20Individual%20Service/Presentation/Views/widgets/custom_container_nationality.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
 
