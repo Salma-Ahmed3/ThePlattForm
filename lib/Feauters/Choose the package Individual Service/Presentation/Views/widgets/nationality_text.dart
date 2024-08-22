@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/core/utils/app_text_style.dart';
-import 'package:nowproject/Feauters/Home/Presentation/Views/Widgets/test_page.dart'; // Import the TestPage
 
 class NationalityText extends StatefulWidget {
   const NationalityText({super.key, required this.nameNationality});
