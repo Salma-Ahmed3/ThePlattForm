@@ -42,6 +42,16 @@ abstract class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 12,
   );
+  static  TextStyle regular8 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w400,
+    fontSize: 8,
+  );
+  static  TextStyle bold8 = TextStyle(
+    fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 8,
+  );
   static  TextStyle regular16 = TextStyle(
     fontFamily: GoogleFonts.getFont( 'Alexandria').fontFamily,
     fontWeight: FontWeight.w400,
