@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nowproject/Screens/Home/components/test_page.dart';
 import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/My%20Requests/my_requests_view.dart';
+import 'package:nowproject/Screens/contact_us/contact_us_view.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({super.key});
@@ -61,9 +62,9 @@ class CustomNavBar extends StatelessWidget {
             );
             break;
           case 4:
-            Navigator.push(
+            Navigator.pushReplacementNamed(
               context,
-              MaterialPageRoute(builder: (context) => const TestPage()),
+              ContactUsView.routeName,
             );
             break;
         }

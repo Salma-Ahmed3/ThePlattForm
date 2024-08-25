@@ -18,6 +18,7 @@ import 'package:nowproject/Screens/My%20Request%20Hours/my_request_hourly_view.d
 import 'package:nowproject/Screens/My%20Requests/my_requests_view.dart';
 import 'package:nowproject/Screens/Notification/notification_view.dart';
 import 'package:nowproject/Screens/SignUp/signup_view.dart';
+import 'package:nowproject/Screens/contact_us/contact_us_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -74,6 +75,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
    case ContractDataView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractDataView());
+
+   case ContactUsView.routeName:
+      return MaterialPageRoute(builder: (context) => const ContactUsView());
 
    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());
