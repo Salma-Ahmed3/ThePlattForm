@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Feauters/Logo/Presentation/Views/logo_view.dart';
-import 'package:nowproject/core/Helper/on_generate_route.dart';
+import 'package:nowproject/Screens/Logo/logo_view.dart';
+import 'package:nowproject/routes/on_generate_route.dart';
 
 void main() {
   runApp(const PlattForm());
