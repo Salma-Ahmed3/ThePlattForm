@@ -28,10 +28,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
         ),
-  
         child: Column(
           children: [
-             SizedBox(
+            SizedBox(
               height: 24.h,
             ),
             const CustomTextFormFaild(

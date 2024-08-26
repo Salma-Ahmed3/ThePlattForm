@@ -1,8 +1,7 @@
-import 'package:either_dart/either.dart';
-import 'package:nowproject/Models/authentication/login.dart';
+import 'package:dartz/dartz.dart';
 import 'package:nowproject/components/error/failure.dart';
 
-abstract class AuthRepo {
-  Future<Either<Failure, LoginModel>> createUserWithEmailAndPassword(
-      String email, String password);
+abstract class LoginRepo {
+  Future<Either<Failure, dynamic>> login(
+      {required String email, required String password});
 }
