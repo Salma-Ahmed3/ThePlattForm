@@ -1,5 +1,5 @@
-class LoginModel {
-  LoginModel({
+class Login {
+  Login({
     this.userName,
     this.password,
   });
@@ -7,7 +7,7 @@ class LoginModel {
   String? userName;
   String? password;
 
-  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+  factory Login.fromJson(Map<String, dynamic> json) => Login(
     userName: json["UserName"],
     password: json["Password"],
   );

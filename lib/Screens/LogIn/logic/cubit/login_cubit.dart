@@ -1,25 +1,32 @@
+import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:nowproject/Screens/LogIn/logic/cubit/login_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nowproject/Screens/LogIn/logic/repo/login_repo.dart';
 
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.loginRepo) : super(LoginInitial());
+  LoginCubit() : super(LoginInitial());
 
-  final LoginRepo loginRepo;
+  Future<void> login(String email, String password) async {
+    emit(LoginLoading());
 
-  Future<void> login(
-   { required  String email, required password}) async {
-    emit(
-      LoginLoading(),
-    );
-    final result =
-        await loginRepo.login(email: email, password: password);
-    result.fold(
-      (failure) => emit(LoginFailuer(message: failure.errMessage)),
-      (LoginModel) => emit(
-        LoginSuccess(message: 'تم التسجيل بنجاح',),
-      ),
-    );
+    try {
+      final response = await Dio().post(
+        'https://mueen-apitest.azurewebsites.net/ar/api/Account/Login',
+        data: {
+          'email': email,
+          'password': password,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        emit(LoginSuccess(
+          message: 'تم التسجيل بنجاح',
+        ));
+      } else {
+        emit(LoginFailuer(message: 'خطأ في البريد الالكتروني او كلمة المرور'));
+      }
+    } catch (e) {
+      emit(LoginFailuer(message: email + password));
+    }
   }
 }
