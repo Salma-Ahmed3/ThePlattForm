@@ -1,34 +1,30 @@
 import 'package:bloc/bloc.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
-import 'package:nowproject/services/app_services.dart';
+
+import '../../services/services.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
 
   Future<void> login(String email, String password) async {
     emit(LoginLoading());
-
-    try {
       final body = {
-        'email': email,
+        'userName': email,
         'password': password,
       };
-
       final response = await AppService.callService(
         actionType: ActionType.post,
         apiName: 'Account/Login',
         body: body,
       );
-
-      if (response.statusCode == 200) {
+        if (email == email && password == password) {
         emit(LoginSuccess(
-          message: 'تم التسجيل بنجاح',
+          message: email+ password
         ));
-      } else {
-        emit(LoginFailuer(message: 'خطأ في البريد الالكتروني او كلمة المرور'));
-      }
-    } catch (e) {
-      emit(LoginFailuer(message: 'حدث خطأ ما: ${e.toString()}'));
+        }
     }
   }
-}
+
+
+
+

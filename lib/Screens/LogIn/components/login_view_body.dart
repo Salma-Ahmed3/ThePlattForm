@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/LogIn/components/social_login_button.dart';
@@ -5,12 +7,12 @@ import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_button.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart';
 import 'package:nowproject/Screens/LogIn/components/forget_password.dart';
-import 'package:nowproject/cubit/Login/login_cubit.dart';
-import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/Screens/SignUp/signup_view.dart';
 import 'package:nowproject/components/custom_text_account/custom_text_account.dart';
 import 'package:nowproject/components/custom_password_failed/password_failed.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/cubit/Login/login_cubit.dart';
+import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import '../../../utility/app_images.dart';
 
@@ -51,29 +53,33 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 SizedBox(height: 25.h),
                 const ForgetPassword(),
                 SizedBox(height: 33.h),
-            BlocConsumer<LoginCubit, LoginState>(
+    BlocConsumer<LoginCubit, LoginState>(
   listener: (context, state) {
     if (state is LoginSuccess) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar (content: Align(
+        SnackBar(content: Align(
           alignment: Alignment.center,
-          child: Text('تم تسجيل الدخول بنجاح' 
-          , style: TextStyles.regular16,),
+          child: Text('تم تسجيل الدخول بنجاح', style: TextStyles.regular16,),
         ),
         backgroundColor: Colors.blue),
       );
-      
-      Navigator.of(context).pushNamed(HomeView.routeName);
-    } else if (state is LoginFailuer) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Align(
-          alignment: Alignment.center,
-          child: Text('البريد الالكتروني او كلمة المرور غير صحيحة' 
-          , style: TextStyles.regular16,),
-        ),
-        backgroundColor: Colors.red),
-      );
-    }
+      Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const HomeView()),
+                                );
+    } if (state is LoginFailuer) {
+  log("Error: ${state.message}"); // Log the error for debugging
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Align(
+        alignment: Alignment.center,
+        child: Text(state.message, style: TextStyles.regular16,),
+      ),
+      backgroundColor: Colors.red,
+    ),
+  );
+}
+
   },
   builder: (context, state) {
     if (state is LoginLoading) {
@@ -84,13 +90,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          context.read<LoginCubit>().login(email, password);
+          context.read<LoginCubit>().login( email, password);
         }
       },
       text: 'تسجيل دخول',
     );
   },
 ),
+
 
                 SizedBox(height: 33.h),
                 CustomTextAccount(

@@ -1,7 +1,7 @@
 
 class AppSetting {
   static const String serviceURL =
-      'https://mueen-apitest.azurewebsites.net/ar/'; // Mueen
+      'mueen-apitest.azurewebsites.net'; // Mueen
    // 'https://mueen-apitest.azurewebsites.net/'; // Mueen test
   // 'https://mueenapitest.excp.sa/'; // Mueen
   // 'https://b2c.mueen.com.sa/api/'; // Mueen Live test apple pay
