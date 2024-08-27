@@ -12,7 +12,7 @@ final class LoginLoading extends LoginState {}
 final class LoginSuccess extends LoginState {
   final String message;
 
-  LoginSuccess({required this.message});
+  LoginSuccess({required this.message , });
 
 }
 

@@ -22,9 +22,12 @@ class LoginCubit extends Cubit<LoginState> {
           message: email+ password
         ));
         }
+        else if(email == null && password == null){
+        emit(LoginFailuer(
+        message: 'البريد الالكتروني اوكلمة المرور خاطئة'
+        ));
+        
     }
   }
-
-
-
+}
 
