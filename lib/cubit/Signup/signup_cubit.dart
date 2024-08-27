@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:nowproject/cubit/Signup/signup_state.dart';
-import 'package:nowproject/services/app_services.dart';
+import 'package:nowproject/services/services.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
@@ -12,11 +12,11 @@ class SignUpCubit extends Cubit<SignUpState> {
   }) async {
     emit(SignUpLoading());
 
-    try {
+    
       final body = {
-        "UserName": userName,
-        "Email": email,
-        "Password": password,
+        "userName": userName,
+        "email": email,
+        "password": password,
       };
 
       final response = await AppService.callService(
@@ -25,13 +25,16 @@ class SignUpCubit extends Cubit<SignUpState> {
         body: body,
       );
 
-      if (response.statusCode == 200) {
-        emit(SignUpSuccess());
-      } else {
-        emit(const SignUpFailure('تم إنشاء الحساب بنجاح'));
-      }
-    } catch (error) {
-      emit(const SignUpFailure('حدث خطأ ما حاول مرة اخرى'));
+    if (email == email && password == password) {
+        emit(SignUpSuccess(
+        
+        ));
+        }
+      else if(email == null && password == null){
+        emit(SignUpFailure(
+        'البريد الالكتروني اوكلمة المرور خاطئة'
+        ));
+        
     }
   }
 }
