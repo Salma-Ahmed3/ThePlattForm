@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
-
+import 'package:http/http.dart' as http;
 import 'package:nowproject/components/constant/constant.dart';
 import 'package:nowproject/helper/local_store.dart';
 import 'package:nowproject/utility/app_info.dart';
+import 'package:nowproject/utility/app_setting.dart';
 // import 'package:nowproject/utility/app_setting.dart';
 import 'package:nowproject/utility/local_storge_key.dart';
 
@@ -26,24 +27,23 @@ class AppService {
     }
   }
 
-  static Future callService(
-      {required ActionType actionType,
-      required String apiName,
-      String? umbracoUrl,
-      required body}) async {
+    static Future<http.Response> callService({
+    required ActionType actionType,
+    required String apiName,
+    String? umbracoUrl,
+    required Map<String, dynamic> body,
+  }) async {
     Random random = Random();
     int timeX = (1000 + random.nextInt(1000));
     var apiUrl = umbracoUrl != null
         ? Uri.parse("$umbracoUrl$apiName")
-        : Uri.parse('https://mueen-apitest.azurewebsites.net/ar/api/'
-            // "${AppSetting.serviceURL}$globalLang/api/${apiName.replaceAll('api/', '')}"
-            );
+        : Uri.parse("${AppSetting.serviceURL}$apiName");
+
     var header = {
       "content-type": 'application/json',
       "TimeX": timeX.toString(),
       "cache-control": "no-cache",
       "SignAuth": "$apikey${getSignature(apiUrl, timeX)}",
-      // "firebaseDeviceId": firebaseDeviceId!,
       "platform": platform,
       "version": AppInfo.packageInfo.version,
       "source": "1",
@@ -57,6 +57,19 @@ class AppService {
             ifAbsent: () => "bearer $token");
       }
     }
+
+    http.Response response;
+    if (actionType == ActionType.post) {
+      response = await http.post(apiUrl, headers: header, body: jsonEncode(body));
+    } else if (actionType == ActionType.get) {
+      response = await http.get(apiUrl, headers: header);
+    } else if (actionType == ActionType.put) {
+      response = await http.put(apiUrl, headers: header, body: jsonEncode(body));
+    } else {
+      throw Exception("Invalid ActionType");
+    }
+
+    return response;
   }
 
   static getStoredToken() async {
