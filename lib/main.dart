@@ -20,6 +20,7 @@ class PlattForm extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: onGenerateRoute,
         initialRoute: LogoView.routeName,
+        // initialRoute: HomeView.routeName,
       ),
     );
     }

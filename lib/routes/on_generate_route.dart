@@ -87,5 +87,72 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     default:
       return MaterialPageRoute(builder: (context) => const HomeView());
+  
+  
   }
+}
+
+class ScreenNames {
+  /// TODO REMOVE STRING FOR SCREEN AND WRITE STRING DIRECT HERE
+  static String splashScreen = "SplashScreen";
+  static String introScreen = "IntroScreen";
+  static String service = '/ServiceScreen';
+  static String fixedPackage = 'FixedPackage';
+  static String createFixedFirstStep = 'HourlySelectPackage';
+  static String offersScreen = "offersScreen";
+  static String offerDetails = "OfferDetails";
+  static String loginScreen = '/LoginScreen';
+  static String savedAddress = "SavedAddresses";
+  static String indivJobsScreen = "SelectProfession";
+  static String indivNationalityScreen = "SelectNationality";
+  static String individualPricingScreen = "IndividualSelectPackage";
+  // static String displayEmployeeDetails = '/DisplayEmployeeDetails';
+  static String createFixedSecondStep = 'HourlyPackagePromotion';
+  static String hourlySuccess = 'HourlyCreatedSuccess';
+  static String hourlyVisits = '/HourlyVisits';
+  static String hourlyContractDetailsScreen = "HourlyContractDetailsScreen";
+  static String indivEmployeeFilterScreen = "IndivEmployeeFilterScreen";
+  static String indivEmployeeScreen = 'SelectEmployee';
+  static String contractsScreen = 'ContractsScreen';
+  static String indivCreateRequest = 'ContractDetails';
+  static String indivDocument = 'ContractTemplate';
+  static String indivUploadImage = 'UploadAttachments';
+  static String indivSuccessScreen = 'IndividualCreatedSuccess';
+  static String indivRequestsScreen = '/IndivRequestsScreen';
+  static String indivRequestsDetails = '/IndivRequestsDetailsScreen';
+  static String indivContractsScreen = "IndivContractsScreen";
+  static String indivContractDetailsScreen = "IndivContractDetailsScreen";
+  static String userProfileScreen = "UserProfileDashBordScreen";
+  static String leadScreen = "OtherOrdersScreen";
+  static String customerTicketScreen = '/CustomerTicketScreen';
+  static String customerTicketAddScreen = '/CustomerTicketAddscreen';
+  static String callUs = '/CallUs';
+  static String changePassword = '/ChangePassword';
+  static String signUp = '/SignUp';
+  static String forgetPassStepTwo = "ForgetPassStepTwo";
+  static String forgetPassStepOne = '/ForgetPassStepOne';
+  static String indivAddLocationStepOne = "AddNewAddressLocation";
+  static String indivAddLocationStepTwo = "AddNewAddressMap";
+  static String completeProfile = "CompleteProfile";
+  static String editProfileScreen = "EditProfileScreen";
+  static String termsScreen = "TermsScreen";
+  static String userNotificationScreen = "UserNotificationScreen";
+  static String reNewIndivContractScreen = "RenewPricing";
+  static String indivRenewSuccess = "IndividualRenewContractSuccess";
+  static String verifyCodeScreen = '/verifyCode';
+  static String userProfileMyAccountScreen = "UserProfileMyAccount";
+  static String savedAddressProfileScreen = "SavedAddressProfile";
+  static String createLeadIndiv = "AddLeadScreen";
+  static String showAddressScreen = "DisplayAddressInMap";
+  static String indivContractBeforeRenewDetailsScreen = "RenewDetails";
+  static String shopperResultPaymentScreen = '/payment';
+  static String createLeadHourly = "CreateLeadHourly";
+  static String getContract = '/GetContract';
+  static String hourlyVisitsScreen = "HourlyVisitsScreen";
+  static String servicesScreen = "ServicesScreen";
+  static String expectedVisits = "ExpectedVisits";
+  static const String createBusinessLeadScreen = "CreateBusinessLeadScreen";
+  static const String businessServicesScreen = "BusinessServicesScreen";
+  static const String createSpecialBusinessLeadScreen =
+      "CreateSpecialBusinessLeadScreen";
 }

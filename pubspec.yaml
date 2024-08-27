@@ -28,9 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  url_launcher: ^6.3.0
+  firebase_core: ^3.2.0
+  firebase_analytics: ^11.2.0
+  firebase_performance: ^0.10.0+3
+  shared_preferences: ^2.3.2
+  http: ^1.2.2
+  get: ^4.6.6
+  package_info_plus: ^8.0.2
   dartz: ^0.10.1
   flutter_bloc: ^8.1.6
-  dio: ^5.6.0
+  equatable:
+
   either_dart: ^1.0.0
   table_calendar: ^3.1.2
   google_fonts: ^6.2.1

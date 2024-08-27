@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 
 abstract class Failure {
   final String errMessage;
@@ -9,36 +9,21 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.errMessage);
 
-  factory ServerFailure.fromDioError(DioError dioError) {
-    switch (dioError.type) {
-      case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection timeout with ApiServer');
+  factory ServerFailure.fromHttpError(http.Response response) {
+    return ServerFailure.fromResponse(response.statusCode, response.body);
+  }
 
-      case DioExceptionType.sendTimeout:
-        return ServerFailure('Send timeout with ApiServer');
-
-      case DioExceptionType.receiveTimeout:
-        return ServerFailure('Receive timeout with ApiServer');
-
-      case DioExceptionType.badResponse:
-        return ServerFailure.fromResponse(
-            dioError.response?.statusCode, dioError.response?.data);
-      case DioExceptionType.cancel:
-        return ServerFailure('Request to ApiServer was canceled');
-
-      case DioExceptionType.unknown:
-        if (dioError.error != null && dioError.error.toString().contains('SocketException')) {
-          return ServerFailure('No Internet Connection');
-        }
-        return ServerFailure('Unexpected Error, Please try again!');
-      default:
-        return ServerFailure('Oops, There was an Error, Please try again');
+  factory ServerFailure.fromException(Exception exception) {
+    if (exception is http.ClientException) {
+      return ServerFailure('No Internet Connection');
+    } else {
+      return ServerFailure('Unexpected Error, Please try again!');
     }
   }
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(response['error']['message']);
+      return ServerFailure(response);
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {

@@ -25,7 +25,7 @@ class AppSetting {
 
 bool isNormalLogin = false;
 
-String globalLang = '';
+String globalLang = ''; 
 int numOfUnReadedNotification = 0;
 const String updateTokenVersion = '2.0.0';
 bool isArabic = true;

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
-import 'package:nowproject/Screens/LogIn/logic/cubit/login_state.dart';
-
+import 'package:nowproject/cubit/Login/login_state.dart';
+import 'package:nowproject/services/app_services.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
@@ -10,12 +9,15 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LoginLoading());
 
     try {
-      final response = await Dio().post(
-        'https://mueen-apitest.azurewebsites.net/ar/api/Account/Login',
-        data: {
-          'email': email,
-          'password': password,
-        },
+      final body = {
+        'email': email,
+        'password': password,
+      };
+
+      final response = await AppService.callService(
+        actionType: ActionType.post,
+        apiName: 'Account/Login',
+        body: body,
       );
 
       if (response.statusCode == 200) {
@@ -26,7 +28,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginFailuer(message: 'خطأ في البريد الالكتروني او كلمة المرور'));
       }
     } catch (e) {
-      emit(LoginFailuer(message: email + password));
+      emit(LoginFailuer(message: 'حدث خطأ ما: ${e.toString()}'));
     }
   }
 }
