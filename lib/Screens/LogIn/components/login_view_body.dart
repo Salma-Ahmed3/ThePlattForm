@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/LogIn/components/social_login_button.dart';
@@ -27,21 +26,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
-
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => LoginCubit(),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Form(
+    Widget build(BuildContext context) {
+      return BlocProvider(
+        create: (_) => LoginCubit(),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Form(
             key: _formKey,
             child: Column(
               children: [
                 SizedBox(height: 24.h),
                 CustomTextFormFaild(
-                  hitText: '   البريد الالكتروني',
+                  hitText: '    رقم الجوال',
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.emailAddress,
                   onSaved: (value) => email = value!,
@@ -53,52 +51,48 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 SizedBox(height: 25.h),
                 const ForgetPassword(),
                 SizedBox(height: 33.h),
-    BlocConsumer<LoginCubit, LoginState>(
-  listener: (context, state) {
-    if (state is LoginSuccess) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Align(
-          alignment: Alignment.center,
-          child: Text('تم تسجيل الدخول بنجاح', style: TextStyles.regular16,),
-        ),
-        backgroundColor: Colors.blue),
-      );
-      Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const HomeView()),
-                                );
-    } if (state is LoginFailuer) {
-  log("Error: ${state.message}"); // Log the error for debugging
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Align(
-        alignment: Alignment.center,
-        child: Text(state.message, style: TextStyles.regular16,),
-      ),
-      backgroundColor: Colors.red,
-    ),
-  );
-}
-
-  },
-  builder: (context, state) {
-    if (state is LoginLoading) {
-      return const CircularProgressIndicator();
-    }
-
-    return CustomButtonLogin(
-      onPressed: () {
-        if (_formKey.currentState!.validate()) {
-          _formKey.currentState!.save();
-          context.read<LoginCubit>().login( email, password);
-        }
-      },
-      text: 'تسجيل دخول',
-    );
-  },
-),
-
-
+                  BlocConsumer<LoginCubit, LoginState>(
+                    listener: (context, state) {
+                      if (state is LoginSuccess) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Align(
+                            alignment: Alignment.center,
+                            child: Text('تم تسجيل الدخول بنجاح', style: TextStyles.regular16,),
+                          ),
+                          backgroundColor: Colors.blue),
+                        );
+                        Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomeView()),
+                      );
+                        } if (state is LoginFailuer) {
+                      log("Error: ${state.message}"); 
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(state.message, style: TextStyles.regular16,),
+                          ),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    }
+                    },
+                    builder: (context, state) {
+                      if (state is LoginLoading) {
+                      return const CircularProgressIndicator();
+                    }
+                    return CustomButtonLogin(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          context.read<LoginCubit>().login( email, password);
+                        }
+                      },
+                      text: 'تسجيل دخول',
+                    );
+                  },
+                ),
                 SizedBox(height: 33.h),
                 CustomTextAccount(
                   titleHaveAccountOrNot: 'لا تمتلك حساب ؟',
