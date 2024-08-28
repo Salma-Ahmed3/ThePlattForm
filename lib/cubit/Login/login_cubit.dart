@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
-
-import '../../services/services.dart';
+import 'package:nowproject/services/app_services.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
@@ -17,17 +16,17 @@ class LoginCubit extends Cubit<LoginState> {
         apiName: 'Account/Login',
         body: body,
       );
-        if (email == email && password == password) {
+      
+        if (email == '0588638638' && password == '111111') {
         emit(LoginSuccess(
-          message: email+ password
+          message: response.toString(),
         ));
         }
-        else if(email == null && password == null){
+        else if(email != body && password !=body){
         emit(LoginFailuer(
-        message: 'البريد الالكتروني اوكلمة المرور خاطئة'
+        message: ' رقم الجوال او كلمة المرور خاطئة'
         ));
         
     }
   }
 }
-
