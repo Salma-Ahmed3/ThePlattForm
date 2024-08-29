@@ -1,8 +1,6 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nowproject/Screens/LogIn/components/social_login_button.dart';
 import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_button.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart';
@@ -14,7 +12,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/cubit/Login/login_cubit.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/utility/app_text_style.dart';
-import '../../../utility/app_images.dart';
 
             class LoginViewBody extends StatefulWidget {
               const LoginViewBody({super.key});

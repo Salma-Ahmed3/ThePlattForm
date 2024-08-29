@@ -119,7 +119,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           content: Align(
                             alignment: Alignment.center,
                             child: Text(
-                             ' تم انشاء الحساب بنجاح',
+                              ' تم انشاء الحساب بنجاح',
                               style: TextStyles.regular16,
                             ),
                           ),

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/cubit/Signup/signup_state.dart';
-import 'package:nowproject/services/services.dart';
+import 'package:nowproject/services/app_services.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
@@ -37,7 +37,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     );
 
     if (response != null && response['status'] == 200) {
-      emit(SignUpSuccess(message: 'تم انشاء الحساب بنجاح'));
+      emit(const SignUpSuccess(message: 'تم انشاء الحساب بنجاح'));
     } else if (response != null && response['message'] != null) {
       emit(SignUpFailure(error: response['message']));
     } else {
