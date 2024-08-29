@@ -12,7 +12,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   }) async {
     emit(SignUpLoading());
 
-    
+    try {
       final body = {
         "userName": userName,
         "email": email,
@@ -25,16 +25,20 @@ class SignUpCubit extends Cubit<SignUpState> {
         body: body,
       );
 
-    if (email == email && password == password) {
-        emit(SignUpSuccess(
+      if (response != null) {
+        // Assuming response is a JSON object with a status field
+        final responseData = response as Map<String, dynamic>;
         
-        ));
+        if (responseData['status'] == 200) {
+          emit(SignUpSuccess());
+        } else {
+          emit(SignUpFailure('Sign-up failed: ${responseData['message'] ?? 'Unknown error'}'));
         }
-      else if(email == null && password == null){
-        emit(SignUpFailure(
-        'البريد الالكتروني اوكلمة المرور خاطئة'
-        ));
-        
+      } else {
+        emit(SignUpFailure('No response received'));
+      }
+    } catch (e) {
+      emit(SignUpFailure('An error occurred: $e'));
     }
   }
 }
