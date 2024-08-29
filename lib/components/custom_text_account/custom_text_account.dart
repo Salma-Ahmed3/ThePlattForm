@@ -25,7 +25,7 @@ class CustomTextAccount extends StatelessWidget {
           TextSpan(
             text: titleNewAccount,
             style: TextStyles.regular18.copyWith(
-              color: Colors.green,
+              color: Color(0xff24A19D),
             ),
             recognizer: TapGestureRecognizer()..onTap = onTap,
             // Navigator.pushNamed(context, SignUpView.routeName);

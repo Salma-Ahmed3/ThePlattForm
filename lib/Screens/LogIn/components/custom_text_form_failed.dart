@@ -39,28 +39,26 @@ class CustomTextFormFaild extends StatelessWidget {
         ),
         textInputAction: textInputAction,
         decoration: InputDecoration(
-          fillColor: Color(0xffF8F8F8),
-          filled: true,
+          // fillColor: Colors.white,
+          // filled: true,
           suffixIcon: suffixIcon,
           hintText: hitText,
           hintStyle: TextStyles.regular16,
           border: buildBorder(),
-          enabledBorder: buildBorder(),
+          // enabledBorder: buildBorder(),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide:  BorderSide(
-              color: Colors.white,
-              width: 2.w,
-            ),
+            borderRadius: BorderRadius.circular(4),
+          
           ),
         ),
       ),
     );
   }
 
+
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(4),
       borderSide:  BorderSide(
         color: const Color.fromARGB(255, 37, 33, 1),
         width: 0.3.w,

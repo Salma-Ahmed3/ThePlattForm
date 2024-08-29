@@ -4,11 +4,11 @@ import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart
 class PasswordFailed extends StatefulWidget {
   const PasswordFailed({
     super.key,
-    this.onSaved,
+    this.onSaved, required this.hintText,
   });
 
   final void Function(String?)? onSaved;
-
+final String hintText;
   @override
   State<PasswordFailed> createState() => _PasswordFailedState();
 }
@@ -21,7 +21,7 @@ class _PasswordFailedState extends State<PasswordFailed> {
     return CustomTextFormFaild(
       obscureText: obscureText,
       onSaved: widget.onSaved, 
-      hitText: '  كلمة المرور',
+      hitText: widget.hintText,
       textInputAction: TextInputAction.done,
       keyboardType: TextInputType.visiblePassword,
       suffixIcon: GestureDetector(

@@ -16,30 +16,44 @@ import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import '../../../utility/app_images.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+            class LoginViewBody extends StatefulWidget {
+              const LoginViewBody({super.key});
 
-  @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
-}
+              @override
+              State<LoginViewBody> createState() => _LoginViewBodyState();
+            }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
-   final _formKey = GlobalKey<FormState>();
-  late String email;
-  late String password;
+            class _LoginViewBodyState extends State<LoginViewBody> {
+              final _formKey = GlobalKey<FormState>();
+              late String email;
+              late String password;
+                @override
+                Widget build(BuildContext context) {
+                return BlocProvider(
+                create: (_) => LoginCubit(),
+                child: SingleChildScrollView(
+                child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Form(
+                key: _formKey,
+                child: Column(
+                  
+                children: [
+                SizedBox(height: 146.h),
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => LoginCubit(),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                SizedBox(height: 24.h),
+                    Text(
+                      'LOGO',
+                      style: TextStyles.bold40,
+                    ),
+                SizedBox(height: 105.h),
+                  Text(
+                      'تسجيل الدخول',
+                      style: TextStyles.regular20,
+                    ),
+                    SizedBox(height: 11.h),
+                    Text('يرجى إدخال رقم جوالك المسجل لدينا و كلمة المرور', style: TextStyles.regular12),
+                    SizedBox(height: 63.h),
+              
                 CustomTextFormFaild(
                   hitText: '    رقم الجوال',
                   textInputAction: TextInputAction.next,
@@ -48,57 +62,53 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
                 SizedBox(height: 28.h),
                 PasswordFailed(
-                  onSaved: (value) => password = value!,
+                  onSaved: (value) => password = value!, hintText: '  كلمة المرور',
                 ),
                 SizedBox(height: 25.h),
                 const ForgetPassword(),
                 SizedBox(height: 33.h),
-    BlocConsumer<LoginCubit, LoginState>(
-  listener: (context, state) {
-    if (state is LoginSuccess) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Align(
-          alignment: Alignment.center,
-          child: Text('تم تسجيل الدخول بنجاح', style: TextStyles.regular16,),
-        ),
-        backgroundColor: Colors.blue),
-      );
-      Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const HomeView()),
-                                );
-    } if (state is LoginFailuer) {
-  log("Error: ${state.error}"); // Log the error for debugging
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Align(
-        alignment: Alignment.center,
-        child: Text(state.error, style: TextStyles.regular16,),
-      ),
-      backgroundColor: Colors.red,
-    ),
-  );
-}
-
-  },
-  builder: (context, state) {
-    if (state is LoginLoading) {
-      return const CircularProgressIndicator();
-    }
-
-    return CustomButtonLogin(
-      onPressed: () {
-        if (_formKey.currentState!.validate()) {
-          _formKey.currentState!.save();
-          context.read<LoginCubit>().login( email, password);
-        }
-      },
-      text: 'تسجيل دخول',
-    );
-  },
-),
-
-
+                BlocConsumer<LoginCubit, LoginState>(
+                listener: (context, state) {
+                if (state is LoginSuccess) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Align(
+                alignment: Alignment.center,
+                child: Text('تم تسجيل الدخول بنجاح', style: TextStyles.regular16,),
+                  ),
+                  backgroundColor: Colors.blue),
+                );
+                    Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeView()),
+                    );
+                    } if (state is LoginFailuer) {
+                  log("Error: ${state.error}"); 
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Align(
+                        alignment: Alignment.center,
+                        child: Text(state.error, style: TextStyles.regular16,),
+                      ),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                }
+                  },
+                builder: (context, state) {
+                  if (state is LoginLoading) {
+                    return const CircularProgressIndicator();
+                  }
+                  return CustomButtonLogin(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        context.read<LoginCubit>().login( email, password);
+                      }
+                    },
+                    text: 'تسجيل دخول',
+                  );
+                },
+              ),
                 SizedBox(height: 33.h),
                 CustomTextAccount(
                   titleHaveAccountOrNot: 'لا تمتلك حساب ؟',
@@ -109,24 +119,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
                 SizedBox(height: 41.h),
                 SizedBox(height: 16.h),
-                SocialLoginButton(
-                  onPressed: () {},
-                  title: 'تسجيل بواسطة جوجل',
-                  images: Assets.imagesGoogleIcons,
-                ),
-                SizedBox(height: 18.h),
-                SocialLoginButton(
-                  onPressed: () {},
-                  title: 'تسجيل بواسطة أبل',
-                  images: Assets.imagesAppleIcons,
-                ),
-                SizedBox(height: 18.h),
-                SocialLoginButton(
-                  onPressed: () {},
-                  title: 'تسجيل بواسطة فيسبوك',
-                  images: Assets.imagesFacebookIcons,
-                ),
-              ],
+                            ],
             ),
           ),
         ),

@@ -13,28 +13,29 @@ class CustomButtonLogin extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: double.infinity,
-          height: 54.h,
+          width: 176,
+          height: 47.h,
           child: GestureDetector(
             onTap: onPressed,
             child: Container(
               decoration: BoxDecoration(
+                color:  Colors.black,
                 borderRadius: BorderRadius.circular(16),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff38C473),
-                    Color(0xff2E8B57), 
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    blurRadius: 8.0,
-                    offset: const Offset(7, 7),
-                  ),
-                ],
+                // gradient: const LinearGradient(
+                //   colors: [
+                //     Color(0xff38C473),
+                //     Color(0xff2E8B57), 
+                //   ],
+                //   begin: Alignment.topLeft,
+                //   end: Alignment.bottomRight,
+                // ),
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.black.withOpacity(0.5),
+                //     blurRadius: 8.0,
+                //     offset: const Offset(7, 7),
+                //   ),
+                // ],
               ),
               alignment: Alignment.center,
               child: Text(

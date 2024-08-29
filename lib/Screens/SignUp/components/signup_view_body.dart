@@ -5,11 +5,11 @@ import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_button.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart';
 import 'package:nowproject/Screens/SignUp/components/sign_up_terms_and_condition.dart';
+import 'package:nowproject/components/custom_password_failed/password_failed.dart';
+import 'package:nowproject/components/custom_text_account/custom_text_account.dart';
 import 'package:nowproject/cubit/Signup/signup_cubit.dart';
 import 'package:nowproject/cubit/Signup/signup_state.dart';
-import 'package:nowproject/components/custom_password_failed/password_failed.dart';
 import 'package:nowproject/utility/app_text_style.dart';
-import '../../../components/custom_text_account/custom_text_account.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -21,8 +21,15 @@ class SignUpViewBody extends StatefulWidget {
 class _SignUpViewBodyState extends State<SignUpViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  late String email, userName, password;
-  late bool isTermsAccepted = false;
+  String email = '';
+  String userName = '';
+  String password = '';
+  String confirmPassword = '';
+  String name = '';
+  String firstName = '';
+  String middleName = '';
+  String lastName = '';
+  bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +46,43 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 SizedBox(height: 24.h),
                 CustomTextFormFaild(
                   onSaved: (value) {
-                    userName = value!;
+                    firstName = value ?? '';
                   },
-                  hitText: 'الاسم كامل',
+                  hitText: 'الاسم الأول',
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.name,
                 ),
                 SizedBox(height: 20.h),
                 CustomTextFormFaild(
                   onSaved: (value) {
-                    email = value!;
+                    middleName = value ?? '';
+                  },
+                  hitText: ' الاسم الأوسط',
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.name,
+                ),
+                SizedBox(height: 20.h),
+                CustomTextFormFaild(
+                  onSaved: (value) {
+                    lastName = value ?? '';
+                  },
+                  hitText: ' الاسم الأخير',
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.name,
+                ),
+                SizedBox(height: 20.h),
+                CustomTextFormFaild(
+                  onSaved: (value) {
+                    userName = value ?? '';
+                  },
+                  hitText: 'رقم الجوال',
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.phone,
+                ),
+                SizedBox(height: 20.h),
+                CustomTextFormFaild(
+                  onSaved: (value) {
+                    email = value ?? '';
                   },
                   hitText: 'البريد الإلكتروني',
                   textInputAction: TextInputAction.next,
@@ -57,8 +91,16 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 SizedBox(height: 20.h),
                 PasswordFailed(
                   onSaved: (value) {
-                    password = value!;
-                  },
+                    password = value ?? '';
+                  }, 
+                  hintText: '  كلمة المرور',
+                ),
+                SizedBox(height: 20.h),
+                PasswordFailed(
+                  onSaved: (value) {
+                    confirmPassword = value ?? '';
+                  }, 
+                  hintText: '  تأكيد كلمة المرور',
                 ),
                 SizedBox(height: 18.h),
                 SignUpTermsAndCondition(
@@ -73,16 +115,30 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   listener: (context, state) {
                     if (state is SignUpSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Align(
-                          alignment: Alignment.center,
-                          child: Text('تم تسجيل الحساب بنجاح', style: TextStyles.regular16)),backgroundColor: Colors.blue),
+                        SnackBar(
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                             ' تم انشاء الحساب بنجاح',
+                              style: TextStyles.regular16,
+                            ),
+                          ),
+                          backgroundColor: Colors.blue,
+                        ),
                       );
                       Navigator.of(context).pushNamed(HomeView.routeName);
                     } else if (state is SignUpFailure) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Align(
-                          alignment: Alignment.center,
-                          child: Text('هناك خطاء في تسجيل الحساب', style: TextStyles.regular16)),backgroundColor: Colors.red)
+                        SnackBar(
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              state.error,
+                              style: TextStyles.regular16,
+                            ),
+                          ),
+                          backgroundColor: Colors.red,
+                        ),
                       );
                     }
                   },
@@ -94,16 +150,29 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     return CustomButtonLogin(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          if (isTermsAccepted) {
-                            formKey.currentState!.save();
-                            context.read<SignUpCubit>().signUp(
-                                  userName: userName,
-                                  email: email,
-                                  password: password,
-                                );
+                          if (password == confirmPassword) {
+                            if (isTermsAccepted) {
+                              formKey.currentState!.save();
+                              context.read<SignUpCubit>().signUp(
+                                    userName: userName,
+                                    email: email,
+                                    password: password,
+                                    name: name,
+                                    confirmPassword: confirmPassword,
+                                    firstName: firstName,
+                                    middleName: middleName,
+                                    lastName: lastName,
+                                  );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('يرجى قبول الشروط والأحكام')),
+                              );
+                            }
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('يرجى قبول الشروط والأحكام')),
+                              const SnackBar(
+                                  content: Text('كلمة المرور وتأكيد كلمة المرور غير متطابقين')),
                             );
                           }
                         } else {

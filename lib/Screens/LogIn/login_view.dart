@@ -9,17 +9,17 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Scaffold(
-      appBar: AppBar(
-      backgroundColor: const Color(0xffF8F8F8),
-      centerTitle: true,
-      title:  Text(
-        'تسجيل الدخول',
-        style: TextStyles.semiBold18,
-        textAlign: TextAlign.center,
-      ),
-      elevation: 0,),
-      body: const LoginViewBody(),
+      child: const Scaffold(
+      // appBar: AppBar(
+      // backgroundColor: const Color(0xffF8F8F8),
+      // centerTitle: true,
+      // title:  Text(
+      //   'تسجيل الدخول',
+      //   style: TextStyles.semiBold18,
+      //   textAlign: TextAlign.center,
+      // ),
+      // elevation: 0,),
+      body: LoginViewBody(),
       ),
       
     );

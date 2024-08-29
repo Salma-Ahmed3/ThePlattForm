@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:nowproject/Screens/Home/components/test_page.dart';
+import 'package:nowproject/Screens/LogIn/login_view.dart';
+import 'package:nowproject/Screens/Logo/logo_view.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -149,7 +151,9 @@ class _MenueBarState extends State<MenueBar> {
                       Navigator.of(context).pushNamed(TestPage.routeName);
                     },
                     
-                    child: Text('تسجيل الخروج', style: TextStyles.regular16)),
+                    child: GestureDetector(
+                       onTap: () => Navigator.of(context).pushNamed(LoginView.routeName),
+                      child: Text('تسجيل الخروج', style: TextStyles.regular16))),
                 ],
               ),
             ),
