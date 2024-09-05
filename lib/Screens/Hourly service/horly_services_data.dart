@@ -20,11 +20,12 @@ mixin class ServiceData {
     loading.show;
     isHourlySectorAvailable =
         await HourlyContractController.isHourlySectorAvailable();
-     List<ServiceItems> services = await ServiceController.getService(
-        serviceType: BlocProvider.of<DynamicStepCubit>(Get.context!, listen: false)
-           
-            .toString());
-      // لو عملتها isEmpty هيظهرلي لا يوجد بيانات حاليا
+    List<ServiceItems> services = await ServiceController.getService(
+        serviceType:
+            BlocProvider.of<DynamicStepCubit>(Get.context!, listen: false)
+                .serviceType
+                .toString());
+      // لو عملتها isEmpty هيظهرلي لا يوجد ب يانات حاليا
     if (services.isNotEmpty) {
       serviceApp.update(data: services);
     } else {
@@ -33,6 +34,3 @@ mixin class ServiceData {
     loading.hide;
   }
 }
-
-
-

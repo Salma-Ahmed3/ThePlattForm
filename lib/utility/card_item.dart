@@ -1,84 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/utility/app_text_style.dart';
 
 class CustomButton extends StatelessWidget {
-  final String titletext;
+  const CustomButton({
+    super.key, 
+    required this.subtitletext, 
+    required this.titletext, 
+    required this.colorSmallContainer, 
+    this.onTap,
+  });
   final String subtitletext;
+  final String titletext;
   final Color colorSmallContainer;
-
-  CustomButton({
-    Key? key,
-    required this.titletext,
-    required this.subtitletext,
-    this.colorSmallContainer = const Color(0xffD6D6D6), this.onTap,
-  }) : super(key: key);
   final void Function()? onTap;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(8.sp),
-        margin: EdgeInsets.symmetric(vertical: 8.h),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.sp),
-          color: colorSmallContainer,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade300,
-              spreadRadius: 2,
-              blurRadius: 5,
-            ),
-          ],
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Left-side icon or image
-            Container(
-              width: 50.w,
-              height: 50.h,
+      onTap: onTap ?? () {
+      },
+      child:
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: Container(
+              width: double.infinity,
+              height: 75,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.grey.shade300,
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(
+                  color: const Color(0xff000000),
+                  width: 1,
+                ),
               ),
-              child: Icon(
-                Icons.cleaning_services,
-                size: 24.w,
-                color: Colors.black,
+              
+              child: 
+                  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 7),
+      child: Row(
+        children: [
+          Container(
+                width: 52,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: colorSmallContainer,
+                  borderRadius: BorderRadius.circular(14),
+                ),
               ),
+              const SizedBox(width: 13,),
+                Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 14,),
+              Text(titletext, style: TextStyles.regular16),
+              const SizedBox(height: 5,),
+              Text(subtitletext,style: TextStyles.regular12),
+            ],
+          ),
+            ],),
+    ) 
             ),
-            SizedBox(width: 16.w),
-            // Text Column
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    titletext,
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    subtitletext,
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey.shade600,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 }
