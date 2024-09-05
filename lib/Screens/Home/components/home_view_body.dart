@@ -7,7 +7,7 @@ import 'package:nowproject/Screens/Home/components/social_media_icons_item.dart'
 import 'package:nowproject/Screens/Hourly%20service/hourly_service_view.dart';
 import 'package:nowproject/Screens/Resident%20service/resident_service_view.dart';
 import 'package:nowproject/utility/app_text_style.dart';
-import 'package:nowproject/utility/custom_button.dart';
+import 'package:nowproject/utility/card_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

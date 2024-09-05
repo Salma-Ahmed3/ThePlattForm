@@ -11,11 +11,11 @@ class AppService {
   static String apiRequestHTML = "RequestTemplate,";
   static String platform = getPlatformName();
 
-  static Future<Map<String, dynamic>?> callService({
+  static callService({
     required ActionType actionType,
     required String apiName,
     Map<String, dynamic>? query,
-    required Map<String, dynamic> body,
+    required body,
   }) async {
     Random random = Random();
     String lang = 'ar';

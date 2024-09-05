@@ -23,6 +23,7 @@ class Assets {
   static const String imagesSuccessSmall = "assets/images/SuccessSmall.png" ;
   static const String imagesSuccessVerySmall = "assets/images/SuccessVerySmall.png" ;
   static const String imagesUserIcon = "assets/images/userIcon.png" ;
+  static const String imagesclockloader = "assets/images/clock_loader.gif" ;
 
 
 
