@@ -17,8 +17,11 @@ class HourlyServicesViewBody extends StatelessWidget {
     return BlocBuilder<HourlyServicesCubit, HourlyServicesState>(
       builder: (context, state) {
         if (state is HourlyServicesLoading) {
-          return const Center(
-            child: CircularProgressIndicator()
+          return  Center(
+            child: SizedBox(
+              width: 80.w,
+              height: 100.h,
+              child: Image.asset('assets/images/clock_loader.gif'))
             );
         } else if (state is HourlyServicesFailure) {
           return Center(child: Text(state.error));
