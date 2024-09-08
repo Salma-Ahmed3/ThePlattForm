@@ -11,45 +11,46 @@ class AppService {
   static String apiRequestHTML = "RequestTemplate,";
   static String platform = getPlatformName();
 
-  static callService({
+  static Future<Map<String, dynamic>?> callService({
     required ActionType actionType,
     required String apiName,
     Map<String, dynamic>? query,
-    required body,
+    required Map<String, dynamic> body,
   }) async {
-    Random random = Random();
-    String lang = 'ar';
-    int timeX = 1000 + random.nextInt(1000);
-    var apiUrl = Uri.https(
-      AppSetting.serviceURL,
-      "$lang/api/$apiName",
-      query,
-    );
-    var header = {
-      "content-type": 'application/json',
-      "TimeX": timeX.toString(),
-      "cache-control": "no-cache",
-      "SignAuth": "$apikey${getSignature(apiUrl, timeX)}",
-      "platform": platform,
-      "version": '7.0.0',
-      "source": "3",
-      "Accept": 'application/json, text/plain, */*',
-    };
-
     try {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
         HttpWithMiddleware http = HttpWithMiddleware.build(
           middlewares: [
-            HttpLogger(
-              logLevel: LogLevel.BODY,
-            ),
+            HttpLogger(logLevel: LogLevel.BODY),
           ],
         );
 
+        // Construct the URL with query parameters
+        var apiUrl = Uri.https(AppSetting.serviceURL, "ar/api/$apiName", query);
+
+        // Construct the headers
+        var header = {
+          "content-type": 'application/json',
+          "TimeX": DateTime.now().millisecondsSinceEpoch.toString(),
+          "cache-control": "no-cache",
+          "SignAuth": "$apikey${getSignature(apiUrl, 1000)}",
+          "platform": platform,
+          "version": '7.0.0',
+          "source": "3",
+          "Accept": 'application/json, text/plain, */*',
+        };
+
+        print("Request URL: $apiUrl");
+        print("Headers: $header");
+
+        // Make the HTTP request
         final response = actionType == ActionType.get
             ? await http.get(apiUrl, headers: header)
             : await http.post(apiUrl, headers: header, body: json.encode(body));
+
+        print("Response Status: ${response.statusCode}");
+        print("Response Body: ${response.body}");
 
         if (response.statusCode == 200) {
           return json.decode(response.body);
@@ -60,16 +61,10 @@ class AppService {
           };
         }
       } else {
-        return {
-          'status': 500,
-          'message': 'No internet connection.',
-        };
+        return {'status': 500, 'message': 'No internet connection.'};
       }
     } catch (e) {
-      return {
-        'status': 500,
-        'message': 'An error occurred: $e',
-      };
+      return {'status': 500, 'message': 'An error occurred: $e'};
     }
   }
 

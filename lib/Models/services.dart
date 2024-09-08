@@ -1,38 +1,28 @@
-import 'dart:convert';
+class Service {
+  final String id;
+  final String name;
+  final String description;
+  final String iconUrl;
+  final String? serviceBackImageUrl;
+  final String? serviceNote;
 
-List<ServiceItems> serviceFromJson(String str) => List<ServiceItems>.from(json.decode(str).map((x) => ServiceItems.fromJson(x)));
-class ServiceItems {
-  ServiceItems({
-    this.id,
-    this.name,
-    this.description,
-    this.iconUrl,
+  Service({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.iconUrl,
     this.serviceBackImageUrl,
     this.serviceNote,
   });
 
-  String? id;
-  String? name;
-  String? description;
-  String? iconUrl;
-  String? serviceBackImageUrl;
-  String? serviceNote;
-
-  factory ServiceItems.fromJson(Map<String, dynamic> json) => ServiceItems(
-    id: json["id"] ?? null,
-    name: json["name"] ?? null,
-    description: json["description"] ?? null,
-    iconUrl: json["iconUrl"] ?? null,
-    serviceBackImageUrl: json["serviceBackImageUrl"] ?? null,
-    serviceNote: json["serviceNote"] ?? null,
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id ?? null,
-    "name": name ?? null,
-    "description": description ?? null,
-    "iconUrl": iconUrl ?? null,
-    "serviceBackImageUrl": serviceBackImageUrl ?? null,
-    "serviceNote": serviceNote ?? null,
-  };
+  factory Service.fromJson(Map<String, dynamic> json) {
+    return Service(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      iconUrl: json['iconUrl'],
+      serviceBackImageUrl: json['serviceBackImageUrl'],
+      serviceNote: json['serviceNote'],
+    );
+  }
 }

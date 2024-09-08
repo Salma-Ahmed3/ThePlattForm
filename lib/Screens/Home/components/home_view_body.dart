@@ -27,6 +27,7 @@ class HomeViewBody extends StatelessWidget {
               const DistinguishedServices(),
                SizedBox(height: 17.h,),
               CustomButton(
+                image: '',
                 titletext: 'خدمة بالساعة',
                 subtitletext:'خدمات منزلية بنظام الساعات',
                 colorSmallContainer: const Color(0xffD6D6D6),
@@ -39,6 +40,7 @@ class HomeViewBody extends StatelessWidget {
               ),
                SizedBox(height: 20.h,),
               CustomButton(
+                image: '',
                 titletext: 'خدمة مقيمة',
                 subtitletext: 'نظام الباقات الشهرية والسنوية',
                 colorSmallContainer: const Color(0xffACACAC),
