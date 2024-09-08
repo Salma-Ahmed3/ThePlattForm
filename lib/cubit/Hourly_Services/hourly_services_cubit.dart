@@ -29,7 +29,8 @@ class HourlyServicesCubit extends Cubit<HourlyServicesState> {
     } else {
       emit(const HourlyServicesFailure(
         error:  ' لا يوجد خدمات متاحه',
-      ));
+        ),
+      );  
     }
   }
 }

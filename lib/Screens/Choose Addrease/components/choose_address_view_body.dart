@@ -9,12 +9,13 @@ class ChooseAddressViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
             ResidentServiceViewBody(onChanged: (bool value) { 
-         Navigator.of(context).pushNamed(ChoosePackageHourlyServicesView.routeName);
+                     Navigator.of(context).pushNamed(ChoosePackageHourlyServicesView.routeName);
             },),
             const SizedBox(height: 11,),
-            const CustomAddressNotAvliable(),
+            // const CustomAddressNotAvliable(),
             
       ],
     );

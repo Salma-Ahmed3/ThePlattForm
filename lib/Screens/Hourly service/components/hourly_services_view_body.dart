@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/cubit/Hourly_Services/hourly_services_cubit.dart';
 import 'package:nowproject/components/custom_dialog/custom_dialog.dart';
+import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
 
@@ -21,7 +22,7 @@ class HourlyServicesViewBody extends StatelessWidget {
             child: SizedBox(
               width: 80.w,
               height: 100.h,
-              child: Image.asset('assets/images/clock_loader.gif'),
+              child: Image.asset(Assets.imagesclockloader),
               ),
             );
         } else if (state is HourlyServicesFailure) {
