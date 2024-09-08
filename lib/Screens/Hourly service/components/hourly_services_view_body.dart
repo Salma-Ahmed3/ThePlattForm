@@ -21,12 +21,12 @@ class HourlyServicesViewBody extends StatelessWidget {
             child: SizedBox(
               width: 80.w,
               height: 100.h,
-              child: Image.asset('assets/images/clock_loader.gif'))
+              child: Image.asset('assets/images/clock_loader.gif'),
+              ),
             );
         } else if (state is HourlyServicesFailure) {
           return Center(child: Text(state.error));
         } else if (state is HourlyServicesSuccess) {
-          // Render the list of services from API
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: Column(

@@ -11,7 +11,7 @@ class HourlyServicesCubit extends Cubit<HourlyServicesState> {
   Future<void> fetchHourlyServices(String serviceType) async {
     emit(HourlyServicesLoading());
 
-    final queryParameters = {'serviceType': serviceType}; // Using dynamic serviceType
+    final queryParameters = {'serviceType': serviceType}; 
 
     final response = await AppService.callService(
       actionType: ActionType.get,
