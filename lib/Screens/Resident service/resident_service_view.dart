@@ -6,7 +6,7 @@ import 'package:nowproject/Screens/Resident%20service/components/resident_servic
 import 'package:nowproject/components/custom_app_bar/build_app_bar.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/custom_nav_bar.dart';
-import 'package:svg_flutter/svg.dart';
+import 'package:svg_flutter/svg.dart'; 
 
 class ResidentServiceView extends StatelessWidget {
   const ResidentServiceView({super.key});
@@ -16,7 +16,7 @@ class ResidentServiceView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-  appBar: buildAppBar(
+        appBar: buildAppBar(
           context,
           titleAppBar: 'اختيار العنوان',
           onPressedRightIcon: () {
@@ -24,28 +24,27 @@ class ResidentServiceView extends StatelessWidget {
           },
           icon: const Icon(Icons.notifications),
         ),
-        body:  ResidentServiceViewBody(onChanged: (bool value) { 
-         Navigator.push(
+        body: ResidentServiceViewBody(
+          onChanged: (bool value) {
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
             );
-            },),
-        bottomNavigationBar: const CustomNavBar(),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-           GestureDetector(
-             onTap: (){
-               Navigator.push(
-                 context,
-                 MaterialPageRoute(
-                     builder: (context) => const AddNewAddressView()),
-               );
-             },
-             child: SvgPicture.asset(Assets.imagesAddIcon)
-           )
-          ],
+          },
         ),
+        bottomNavigationBar: const CustomNavBar(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddNewAddressView()),
+            );
+          },
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: SvgPicture.asset(Assets.imagesAddIcon), // Ensure path is correct
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // Ensure correct FAB location
       ),
     );
   }

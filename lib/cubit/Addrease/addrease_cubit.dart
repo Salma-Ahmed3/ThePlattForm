@@ -1,47 +1,48 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:nowproject/Models/address/saved_address.dart';
+import 'package:nowproject/Screens/Hourly%20service/data/hourly_global_data.dart';
+import 'package:nowproject/Screens/Resident%20service/data/indiv_global_data.dart';
+import 'package:nowproject/controller/saved_content_location.dart';
 import 'package:nowproject/cubit/Addrease/addrease_state.dart';
-import 'package:nowproject/services/app_services.dart';
+import 'package:nowproject/cubit/Login/login_cubit.dart';
+import 'package:nowproject/cubit/loading_cubit/loading_cubit.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
+import 'package:nowproject/utility/enums.dart';
 
-import '../../Models/address/saved_address.dart';
+class AddreaseCubit extends Cubit<SavedAddressState> {
+  AddreaseCubit() : super(SavedAddressInitial());
+  final Loading loading = Loading();
+ 
+  getSavedAddress() async {
+    emit(SavedAddressLoading());  // Emit loading state
 
-class AddreaseCubit extends Cubit<AddreaseState> {
-  AddreaseCubit() : super(AddreaseInitial());
+    try {
+      if (!BlocProvider.of<LoginCubit>(Get.context!, listen: false).iSUserVisitor) {
+        String contactId = BlocProvider.of<LoginCubit>(Get.context!, listen: false).userData!.crmUserId!;
+        String? serviceId = hourlyGlobalData.serviceId;
+        String? pricingId = offerGlobalData.currentOffers != null ? offerGlobalData.currentOffers!.pricingId : "";
 
-  Future<void> fetchAddrease(String contactId) async {
-    emit(AddreaseLoading());
+        if (BlocProvider.of<FirstStepCubit>(Get.context!, listen: false).serviceType != ServiceType.hourlyServiceType) {
+          serviceId = null;
+        }
 
-    final queryParameters = {'contactId': contactId}; 
+        SavedAddressClass savedAddressClass = await SavedContactLocationController.getAllUserAddress(
+          crmUserId: contactId, 
+          serviceId: serviceId, 
+          selectedHourlyPricingId: pricingId
+        );
 
-    final response = await AppService.callService(
-      actionType: ActionType.get,
-      apiName: 'SavedContactLocation/ContactSavedAddress',
-      body: {},
-      query: queryParameters,
-    );
-
-    if (response != null && response['status'] == 200) {
-      if (response['data'] == null || (response['data'] as List).isEmpty || response['data'][0] == null) {
-        emit(const AddreaseFailure(error: 'لا يوجد بيانات متاحة'));
-      } else {
-        List<SavedAddressClass> addrease = (response['data'] as List)
-            .map((addreaseData) => SavedAddressClass.fromJson(addreaseData))
-            .toList();
-
-        emit(AddreaseSuccess(addrease: addrease));
+        loading.hide;
+        emit(SavedAddressUpdate(
+          savedAddressClass: savedAddressClass, 
+          change: !state.change!
+        ));
       }
-    }
-    if (response != null && response['status'] == 500) {
-      if (response['data'] == null || (response['data'] as List).isEmpty || response['data'][0] == null) {
-        emit(const AddreaseFailure(error: 'لا يوجد بيانات متاحة'));
-      } else {
-        List<SavedAddressClass> addrease = (response['data'] as List)
-            .map((addreaseData) => SavedAddressClass.fromJson(addreaseData))
-            .toList();
-
-        emit(AddreaseSuccess(addrease: addrease));
-      }
-    } else {
-      emit(const AddreaseFailure(error: 'حدث خطأ أثناء تحميل البيانات'));
+    } catch (e) {
+      loading.hide;
+      emit(SavedAddressFailure(error: 'Error fetching data'));
     }
   }
 }

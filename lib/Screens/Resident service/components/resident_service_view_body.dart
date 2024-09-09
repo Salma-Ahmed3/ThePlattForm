@@ -2,61 +2,75 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Screens/Resident%20service/components/button_in_resident_service.dart';
+import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
 import 'package:nowproject/cubit/Addrease/addrease_state.dart';
-import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
-import 'package:nowproject/cubit/Addrease/addrease_cubit.dart'; // Import your cubit
 
-class ResidentServiceViewBody extends StatelessWidget {
+class ResidentServiceViewBody extends StatefulWidget {
   const ResidentServiceViewBody({super.key, required this.onChanged});
   final void Function(bool) onChanged;
 
   @override
-  Widget build(BuildContext context) {
-    context.read<AddreaseCubit>().fetchAddrease('contactId');  // Fetch addresses
+  State<ResidentServiceViewBody> createState() => _ResidentServiceViewBodyState();
+}
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
-      child: BlocBuilder<AddreaseCubit, AddreaseState>(
-        builder: (context, state) {
-          if (state is AddreaseLoading) {
-            return   Center(
-            child: SizedBox(
-              width: 80.w,
-              height: 100.h,
-              child: Image.asset(Assets.imagesclockloader),
-              ),
-            );
-          } else if (state is AddreaseFailure) {
-            return Center(
-              child:
-              Text(state.error, style: TextStyles.regular18),);
-          } else if (state is AddreaseSuccess) {
-            return Column(
-              children: [
-                SizedBox(height: 30.h),
-                Text('اختيار العنوان من عناوينك السابقة', style: TextStyles.regular18),
-                SizedBox(height: 32.h),
-                ...state.addrease.map((address) {
-                  return Column(     
+class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: BlocConsumer<AddreaseCubit, SavedAddressState>(
+            builder: (context, state) {
+              // Handle different states
+              if (state is SavedAddressUpdate) {
+                // Check if data is present
+                if (state.savedAddressClass?.mainLocations != null || state.savedAddressClass?.subLocation?.isNotEmpty == true) {
+                  return Column(
                     children: [
-                      ButtonInResidentService(
-                        titletext: address.mainLocations.toString(),
-                        onChanged: onChanged,
-                        colorBackGroun: Colors.transparent,
-                        colorBorder: const Color(0xffACACAC),
+                      SizedBox(height: 30.h),
+                      Text(
+                        'اختيار العنوان من عناوينك السابقة',
+                        style: TextStyles.regular18,
                       ),
-                      SizedBox(height: 12.h),
+                      SizedBox(height: 32.h),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: state.savedAddressClass!.mainLocations!.length,
+                          itemBuilder: (context, index) {
+                            return ButtonInResidentService(
+                              savedAddressClass: state.savedAddressClass!.mainLocations![index],
+                              isAddressMain: true,
+                              showIsAddressMain: false,
+                              onTapAction: true,
+                              onChanged: widget.onChanged,
+                              colorBackGroun: Colors.transparent,
+                              colorBorder: const Color(0xffACACAC),
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(height: 24.h),
                     ],
                   );
-                }).toList(),
-              ],
-            );
-          } else {
-            return const Center(child: Text("لا يوجد عنواين متاحه"));
-          }
-        },
-      ),
+                } else {
+                  return const Center(child: Text('لا يوجد عناوين محفوظة'));
+                }
+              } else if (state is SavedAddressLoading) {
+                return const Center(child: CircularProgressIndicator());
+              } else {
+                return const Center(child: Text('هناك خطأ ما'));
+              }
+            },
+            listener: (context, state) {
+              // Optionally handle any state changes here
+            },
+          ),
+        ),
+        // You can uncomment the Loader here if it's defined in your project
+        // Loader(loading: context.read<AddreaseCubit>().loading),
+      ],
     );
   }
 }

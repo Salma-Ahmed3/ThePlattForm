@@ -1,9 +1,13 @@
 import 'package:bloc/bloc.dart';
+import 'package:nowproject/Models/authentication/user_data.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/services/app_services.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(LoginInitial());
+  LoginCubit({this.userData}) : super(LoginInitial());
+  bool iSUserVisitor = true;
+  final User? userData;
+
 
   Future<void> login(String email, String password) async {
     emit(LoginLoading());

@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/Models/address/saved_address.dart';
 import 'package:nowproject/components/custom_check_box/custom_check_box.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
 class ButtonInResidentService extends StatefulWidget {
   const ButtonInResidentService({
     super.key,
-    required this.titletext,
+    // required this.titletext,
     this.onCheck,
     required this.onChanged,
     required this.colorBackGroun,
-    required this.colorBorder,
+    required this.colorBorder, this.savedAddressClass, this.isAddressMain, required this.showIsAddressMain, this.onTapAction,
   });
 
   final ValueChanged<bool> onChanged;
   final void Function()? onCheck;
-  final String titletext;
+  // final String titletext;
   final Color colorBackGroun;
   final Color colorBorder;
+    final Location? savedAddressClass;
+  final bool? isAddressMain;
+  final bool showIsAddressMain;
+  final bool? onTapAction;
 
   @override
   State<ButtonInResidentService> createState() =>
@@ -53,7 +58,7 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
                 children: [
                   SizedBox(
                     width: 245.w,
-                    child: Text(widget.titletext,
+                    child: Text('',
                     style: TextStyles.regular16),
                     ),
                      SizedBox(width: 15.w,),

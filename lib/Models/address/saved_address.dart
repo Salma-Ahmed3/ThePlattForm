@@ -4,18 +4,18 @@ class SavedAddressClass {
     this.subLocation,
   });
 
-  Location? mainLocations;
+  List <Location>? mainLocations;
   List<Location>? subLocation;
   bool state = false ;
   String cityId ='';
 
   factory SavedAddressClass.  fromJson(Map<String, dynamic> json) => SavedAddressClass(
-    mainLocations: json["mainLocations"] == null ? null : Location.fromJson(json["mainLocations"]),
+    mainLocations: json["mainLocations"] == null ? null :  List<Location>.from(json["mainLocations"]),
     subLocation: json["subLocation"] == null ? [] : List<Location>.from(json["subLocation"].map((x) => Location.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
-    "mainLocations": mainLocations == null ? null : mainLocations!.toJson(),
+    "mainLocations": List<dynamic>.from(mainLocations!.map((x) => x.toJson())),
     "subLocation": List<dynamic>.from(subLocation!.map((x) => x.toJson())),
   };
 }

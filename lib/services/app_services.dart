@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:nowproject/utility/app_setting.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
