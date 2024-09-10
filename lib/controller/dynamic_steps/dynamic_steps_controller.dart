@@ -1,9 +1,7 @@
-import 'dart:convert';
-
 import 'package:nowproject/services/app_services.dart';
 
 class DynamicStepsController {
-static Future<Map<String, dynamic>?> firstStepAction({
+  static Future<Map<String, dynamic>?> firstStepAction({
     required String contactId,
     required String serviceId,
   }) async {
@@ -14,7 +12,6 @@ static Future<Map<String, dynamic>?> firstStepAction({
       query: {
         'contactId': contactId,
         'serviceId': serviceId,
-
       },
     );
 
@@ -23,7 +20,5 @@ static Future<Map<String, dynamic>?> firstStepAction({
     } else {
       throw Exception('Failed to fetch data');
     }
-  
-}
-
+  }
 }

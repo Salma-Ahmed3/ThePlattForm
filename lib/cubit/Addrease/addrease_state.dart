@@ -1,42 +1,47 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:nowproject/Models/address/saved_address.dart';
 
+// Default empty MainLocation to avoid repetition
+MainLocation defaultMainLocation = MainLocation(
+
+  
+
+);
+
 abstract class SavedAddressState extends Equatable {
-  final SavedAddressClass? savedAddressClass;
-  final bool? change;
-  const SavedAddressState({this.savedAddressClass, this.change});
+  final MainLocation mainLocation;
+  final bool change;
+
+  const SavedAddressState({required this.mainLocation, this.change = false});
+
+  @override
+  List<Object?> get props => [mainLocation, change];
 }
 
 class SavedAddressLoading extends SavedAddressState {
-  SavedAddressLoading() : super(savedAddressClass: SavedAddressClass(), change: false);
-  @override
-  List<Object?> get props => [savedAddressClass, change];
+  SavedAddressLoading() : super(mainLocation: defaultMainLocation, change: false);
 }
+
 class SavedAddressInitial extends SavedAddressState {
-  SavedAddressInitial() : super(savedAddressClass: SavedAddressClass(), change: false);
-  @override
-  List<Object?> get props => [savedAddressClass, change];
+  SavedAddressInitial() : super(mainLocation: defaultMainLocation, change: false);
 }
-
-
 
 class SavedAddressSuccess extends SavedAddressState {
-  const SavedAddressSuccess({SavedAddressClass? savedAddressClass, bool? change})
-      : super(savedAddressClass: savedAddressClass, change: change);
-  @override
-  List<Object?> get props => [savedAddressClass, change];
+  const SavedAddressSuccess({required MainLocation mainLocation, bool change = false})
+      : super(mainLocation: mainLocation, change: change);
 }
 
 class SavedAddressFailure extends SavedAddressState {
   final String error;
-  SavedAddressFailure({required this.error}) : super(savedAddressClass: SavedAddressClass(), change: false);
+
+  SavedAddressFailure({required this.error})
+      : super(mainLocation: defaultMainLocation, change: false);
+
   @override
-  List<Object?> get props => [error, savedAddressClass, change];
+  List<Object?> get props => [error, mainLocation, change];
 }
+
 class SavedAddressUpdate extends SavedAddressState {
-  const SavedAddressUpdate({SavedAddressClass? savedAddressClass, bool? change})
-      : super(savedAddressClass: savedAddressClass, change: change);
-  @override
-  List<Object?> get props => [savedAddressClass, change];
+  const SavedAddressUpdate({required MainLocation mainLocation, bool change = false})
+      : super(mainLocation: mainLocation, change: change);
 }

@@ -15,9 +15,7 @@ class FirstStepCubit extends Cubit<FirstStepState> {
       {
       String? serviceId,
       String? contactId,
-      bool? removeAllRoute,
-      dynamic args,
-      bool hourlyPackageSettingFromOffer = false,
+  
       }) async {
     loading.show;
     var result = await DynamicStepsController.firstStepAction(

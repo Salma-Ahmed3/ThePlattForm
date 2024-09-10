@@ -8,27 +8,26 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
 
   void getSavedAddress(String serviceId, String contactId) async {
     try {
-      emit(SavedAddressLoading()); // Emit loading state
-
+      emit(SavedAddressLoading());
       final savedAddressesJson = await DynamicStepsController.firstStepAction(
         contactId: contactId,
         serviceId: serviceId,
       );
 
       if (savedAddressesJson != null) {
-        final savedAddressesc = SavedAddressClass.fromJson( savedAddressesJson);
+        final mainLocation = MainLocation.fromJson(savedAddressesJson);
 
-        if (savedAddressesc.mainLocations != null &&
-            savedAddressesc.mainLocations!.isNotEmpty) {
-          emit(SavedAddressUpdate(savedAddressClass: savedAddressesc));
+        if (mainLocation.displayValue.isNotEmpty &&
+            mainLocation.availabilityMessage.isNotEmpty) {
+          emit(SavedAddressUpdate(mainLocation: mainLocation));
         } else {
-          emit(SavedAddressUpdate(savedAddressClass: null));
+          emit(SavedAddressUpdate(mainLocation: mainLocation));
         }
       } else {
         emit(SavedAddressFailure(error: 'لا يوجد عنواين محفوظة'));
       }
     } catch (e) {
-      emit(SavedAddressFailure(error: 'حدث خطأ غير متوقع: $e'));
+      emit(SavedAddressFailure(error: ' خطأ غير متوقع: $e'));
     }
   }
 }
