@@ -13,18 +13,18 @@ class FirstStepCubit extends Cubit<FirstStepState> {
   String serviceType = ServiceType.none; 
   getFirstStep(
       {
-      String? serviceType,
-      String? object,
+      String? serviceId,
+      String? contactId,
       bool? removeAllRoute,
       dynamic args,
       bool hourlyPackageSettingFromOffer = false,
       }) async {
     loading.show;
     var result = await DynamicStepsController.firstStepAction(
-        serviceType: serviceType, object: object);
+        serviceId: 'serviceId', contactId: 'contactId');
     loading.hide;
     if (result != null) {
-      firstStep = result;
+      firstStep = StepDetailsVm.fromJson(result);
       actionStep.stepDetailsVm = firstStep;
         }
       }

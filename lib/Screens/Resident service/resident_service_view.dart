@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/Add%20New%20Address/add_new_address_view.dart';
 import 'package:nowproject/Screens/Choosing%20Carrer/chossing_carrer_view.dart';
 import 'package:nowproject/Screens/Notification/notification_view.dart';
 import 'package:nowproject/Screens/Resident%20service/components/resident_service_view_body.dart';
 import 'package:nowproject/components/custom_app_bar/build_app_bar.dart';
+import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/custom_nav_bar.dart';
-import 'package:svg_flutter/svg.dart'; 
+import 'package:svg_flutter/svg.dart';
 
 class ResidentServiceView extends StatelessWidget {
   const ResidentServiceView({super.key});
@@ -24,27 +26,35 @@ class ResidentServiceView extends StatelessWidget {
           },
           icon: const Icon(Icons.notifications),
         ),
-        body: ResidentServiceViewBody(
-          onChanged: (bool value) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChossingCarrerView()),
-            );
-          },
+
+        body: BlocProvider(
+          create: (context) => AddreaseCubit(),
+          child: ResidentServiceViewBody(
+            onChanged: (bool value) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ChossingCarrerView()),
+              );
+            },
+          ),
         ),
         bottomNavigationBar: const CustomNavBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const AddNewAddressView()),
+              MaterialPageRoute(
+                  builder: (context) => const AddNewAddressView()),
             );
           },
           backgroundColor: Colors.transparent,
           elevation: 0,
-          child: SvgPicture.asset(Assets.imagesAddIcon), // Ensure path is correct
+          child:
+              SvgPicture.asset(Assets.imagesAddIcon), // Ensure path is correct
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // Ensure correct FAB location
+        floatingActionButtonLocation: FloatingActionButtonLocation
+            .centerDocked, // Ensure correct FAB location
       ),
     );
   }
