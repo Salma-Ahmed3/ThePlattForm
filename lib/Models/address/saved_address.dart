@@ -1,21 +1,21 @@
 class MainLocation {
   MainLocation({
     this.id,
-    this.displayValue = "Not Found -", 
+  required  this.displayValue, 
     this.houseType,
     this.apartmentNumber,
     this.houseNumber,
     this.cityId,
     this.districtId,
     this.type,
-    this.cityName = "Unknown City", 
-    this.districtName = "Unknown District", 
+    this.cityName , 
+    this.districtName , 
     this.floorNo,
-    this.availableForHourly = false, 
-    this.availableForIndividual = false, 
+    this.availableForHourly, 
+    this.availableForIndividual, 
     this.latitude,
     this.longitude,
-    this.availabilityMessage = "Not Available", 
+   required this.availabilityMessage , 
   });
 
   String? id;
@@ -38,21 +38,21 @@ class MainLocation {
 
   factory MainLocation.fromJson(Map<String, dynamic> json) => MainLocation(
     id: json["id"],
-    displayValue: json["displayValue"]??'displayValue',
+    displayValue: json["displayValue"] = '${json["displayValue"]}' ,
     houseType: json["houseType"],
     apartmentNumber: json["apartmentNumber"],
     houseNumber: json["houseNumber"],
     cityId: json["cityId"],
     districtId: json["districtId"],
     type: json["type"],
-    cityName: json["cityName"] ?? "Unknown City",
-    districtName: json["districtName"] ?? "Unknown District",
+    cityName: json["cityName"] ,
+    districtName: json["districtName"] ,
     floorNo: json["floorNo"],
     availableForHourly: json["availableForHourly"] ?? false,
     availableForIndividual: json["availableForIndividual"] ?? false,
     latitude: json["latitude"],
     longitude: json["longitude"],
-    availabilityMessage: json["availabilityMessage"]??'availabilityMessage',
+    availabilityMessage: json["availabilityMessage"] = '${json["availabilityMessage"]}'
   );
 
   Map<String, dynamic> toJson() => {
