@@ -11,10 +11,10 @@ class HourlyService extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Directionality(
+    return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-           drawer: const MenueBar(),
+        drawer: const MenueBar(),
         appBar: buildAppBar(
           context,
           titleAppBar: 'اختر الخدمة',
@@ -23,9 +23,8 @@ class HourlyService extends StatelessWidget {
           },
           icon: const Icon(Icons.notifications),
         ),
-        body:const HourlyServicesViewBody() ,
+        body: const HourlyServicesViewBody(),
         bottomNavigationBar: const CustomNavBar(),
-      
       ),
     );
   }

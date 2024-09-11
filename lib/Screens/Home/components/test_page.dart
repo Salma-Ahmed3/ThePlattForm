@@ -9,9 +9,10 @@ class TestPage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Column(
-          
           children: [
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             Text('TEST')
           ],
         ),

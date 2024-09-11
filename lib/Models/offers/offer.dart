@@ -11,7 +11,8 @@ class Offers {
     this.individualDiscountCode,
     this.offerDateFrom,
     this.offersDateTo,
-    this.description,});
+    this.description,
+  });
 
   Offers.fromJson(dynamic json) {
     offerName = json['offerName'];
@@ -39,7 +40,8 @@ class Offers {
   String? offerDateFrom;
   String? offersDateTo;
   String? description;
-  Offers copyWith({  String? offerName,
+  Offers copyWith({
+    String? offerName,
     String? offerId,
     num? offerSector,
     String? pricingId,
@@ -51,19 +53,22 @@ class Offers {
     String? offerDateFrom,
     String? offersDateTo,
     String? sliderDescription,
-  }) => Offers(  offerName: offerName ?? this.offerName,
-    offerId: offerId ?? this.offerId,
-    offerSector: offerSector ?? this.offerSector,
-    pricingId: pricingId ?? this.pricingId,
-    image: image ?? this.image,
-    sliderItemId: sliderItemId ?? this.sliderItemId,
-    sliderItemName: sliderItemName ?? this.sliderItemName,
-    individualDiscountId: individualDiscountId ?? this.individualDiscountId,
-    individualDiscountCode: individualDiscountCode ?? this.individualDiscountCode,
-    offerDateFrom: offerDateFrom ?? this.offerDateFrom,
-    offersDateTo: offersDateTo ?? this.offersDateTo,
-    description: sliderDescription ?? this.description,
-  );
+  }) =>
+      Offers(
+        offerName: offerName ?? this.offerName,
+        offerId: offerId ?? this.offerId,
+        offerSector: offerSector ?? this.offerSector,
+        pricingId: pricingId ?? this.pricingId,
+        image: image ?? this.image,
+        sliderItemId: sliderItemId ?? this.sliderItemId,
+        sliderItemName: sliderItemName ?? this.sliderItemName,
+        individualDiscountId: individualDiscountId ?? this.individualDiscountId,
+        individualDiscountCode:
+            individualDiscountCode ?? this.individualDiscountCode,
+        offerDateFrom: offerDateFrom ?? this.offerDateFrom,
+        offersDateTo: offersDateTo ?? this.offersDateTo,
+        description: sliderDescription ?? this.description,
+      );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['offerName'] = offerName;
@@ -80,5 +85,4 @@ class Offers {
     map['sliderDescription'] = description;
     return map;
   }
-
 }

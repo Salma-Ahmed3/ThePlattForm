@@ -17,18 +17,18 @@ class CustomDialogPersonal extends StatefulWidget {
 
 class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
   bool isDialogExpanded = false;
-  bool isAppButtonSelected = false; 
-  bool isCompanyButtonSelected = false; 
+  bool isAppButtonSelected = false;
+  bool isCompanyButtonSelected = false;
 
   void toggleDialogSize(String button) {
     setState(() {
       isDialogExpanded = !isDialogExpanded;
       if (button == 'app') {
         isAppButtonSelected = !isAppButtonSelected;
-        isCompanyButtonSelected = false; 
+        isCompanyButtonSelected = false;
       } else if (button == 'company') {
         isCompanyButtonSelected = !isCompanyButtonSelected;
-        isAppButtonSelected = false; 
+        isAppButtonSelected = false;
       }
     });
   }
@@ -64,7 +64,9 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                           child: CustomButtonInAddNewAddrease(
                             onTap: () => toggleDialogSize('app'),
                             alignment: Alignment.center,
-                            colorBackGround: isAppButtonSelected ? const Color(0xffACACAC) : const Color(0xffEFEFEF),
+                            colorBackGround: isAppButtonSelected
+                                ? const Color(0xffACACAC)
+                                : const Color(0xffEFEFEF),
                             tixtInButton: Center(
                               child: Text(
                                 'من التطبيق',
@@ -73,7 +75,8 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                             ),
                             width: 130.w,
                             height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF), borderRadius: BorderRadius.circular(8),
+                            colorBorder: const Color(0xffEFEFEF),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         SizedBox(width: 16.w),
@@ -81,7 +84,9 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                           child: CustomButtonInAddNewAddrease(
                             onTap: () => toggleDialogSize('company'),
                             alignment: Alignment.center,
-                            colorBackGround: isCompanyButtonSelected ? const Color(0xffACACAC) : const Color(0xffEFEFEF),
+                            colorBackGround: isCompanyButtonSelected
+                                ? const Color(0xffACACAC)
+                                : const Color(0xffEFEFEF),
                             tixtInButton: Center(
                               child: Text(
                                 'من مقر الشركة',
@@ -90,27 +95,33 @@ class _CustomDialogPersonalState extends State<CustomDialogPersonal> {
                             ),
                             width: 130.w,
                             height: 90.h,
-                            colorBorder: const Color(0xffEFEFEF), borderRadius: BorderRadius.circular(8),
+                            colorBorder: const Color(0xffEFEFEF),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          
                         ),
-                        
                       ],
                     ),
                   ),
                   SizedBox(height: 39.h),
-                  if (isAppButtonSelected) const CustomDetailesDialogePersonalInApp(),
-                  if (isCompanyButtonSelected)  const CustomDetailesDialogePersonalReceiveCompany (),
+                  if (isAppButtonSelected)
+                    const CustomDetailesDialogePersonalInApp(),
+                  if (isCompanyButtonSelected)
+                    const CustomDetailesDialogePersonalReceiveCompany(),
                 ],
               ),
             ),
           ),
         ),
         Positioned(
-          top: 
-          isDialogExpanded ? 80.h :  //normal
-          isCompanyButtonSelected ? 170.h :  //company
-          isAppButtonSelected ? 90.h : 263.h, // app
+          top: isDialogExpanded
+              ? 80.h
+              : //normal
+              isCompanyButtonSelected
+                  ? 170.h
+                  : //company
+                  isAppButtonSelected
+                      ? 90.h
+                      : 263.h, // app
           child: const CustomCircleAvatar(),
         ),
       ],

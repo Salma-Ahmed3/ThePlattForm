@@ -8,7 +8,6 @@ class LoginCubit extends Cubit<LoginState> {
   bool iSUserVisitor = true;
   final User? userData;
 
-
   Future<void> login(String email, String password) async {
     emit(LoginLoading());
 
@@ -30,7 +29,7 @@ class LoginCubit extends Cubit<LoginState> {
         ));
       } else {
         emit(LoginFailuer(
-          error:'رقم الجوال او كلمة المرور خاطئة',
+          error: 'رقم الجوال او كلمة المرور خاطئة',
         ));
       }
     } else {

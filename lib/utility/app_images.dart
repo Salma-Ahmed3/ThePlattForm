@@ -1,7 +1,6 @@
 class Assets {
   Assets._();
 
-
   static const String imagesCheckBox = "assets/images/Check_box.svg";
   static const String imagesDeleteIcon = "assets/images/deleteIcon.png";
   static const String imagesPicIcon = "assets/images/picture.png";
@@ -18,13 +17,11 @@ class Assets {
   static const String imagesFacebookIcons = "assets/images/facebook_Icons.svg";
   static const String imagesGoogleIcons = "assets/images/google_Icons.svg";
   static const String imagesErrorIcon = "assets/images/ErrorIcon.svg";
-  static const String imagesSuccess = "assets/images/Success.png" ;
-  static const String imagesSuccessMedium = "assets/images/SuccessMedium.png" ;
-  static const String imagesSuccessSmall = "assets/images/SuccessSmall.png" ;
-  static const String imagesSuccessVerySmall = "assets/images/SuccessVerySmall.png" ;
-  static const String imagesUserIcon = "assets/images/userIcon.png" ;
-  static const String imagesclockloader = "assets/images/clock_loader.gif" ;
-
-
-
+  static const String imagesSuccess = "assets/images/Success.png";
+  static const String imagesSuccessMedium = "assets/images/SuccessMedium.png";
+  static const String imagesSuccessSmall = "assets/images/SuccessSmall.png";
+  static const String imagesSuccessVerySmall =
+      "assets/images/SuccessVerySmall.png";
+  static const String imagesUserIcon = "assets/images/userIcon.png";
+  static const String imagesclockloader = "assets/images/clock_loader.gif";
 }

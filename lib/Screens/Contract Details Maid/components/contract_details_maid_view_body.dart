@@ -15,46 +15,60 @@ class ContractDetailsMaidViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 21),
       child: Column(
         children: [
-          SizedBox(height: 21.h,),
-               CustomMaidDetailes(
-                onTap:  (){
+          SizedBox(
+            height: 21.h,
+          ),
+          CustomMaidDetailes(
+            onTap: () {
               //  Navigator.pop(context);
-                },
-              ),
-          SizedBox(height: 26.h,),
+            },
+          ),
+          SizedBox(
+            height: 26.h,
+          ),
           const ContractDetailsItem(),
-          SizedBox(height: 32.h,),
-          
-                Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomButtonInAddNewAddrease(  onTap: () {
-                    Navigator.pop(context);
-                  }, 
-                      alignment:  Alignment.centerRight, 
-                      colorBackGround: Colors.transparent, 
-                      tixtInButton:  Center(
-                        child: Text('السابق',
-                        style: TextStyles.regular18,
-                        ),
-                      ), width: 108.w, height: 47.h,
-                        colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8) ,
-                        ),
-                CustomButtonInAddNewAddrease(  onTap: () {
-                    Navigator.of(context).pushNamed(ContractView.routeName);
-                  }, 
-                      alignment:   Alignment.centerLeft, 
-                      colorBackGround: Colors.black,
-                      tixtInButton: Center(
-                      child: Text('التالي',
-                      style: TextStyles.regular18.copyWith(color: Colors.white),
-                      ),
+          SizedBox(
+            height: 32.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomButtonInAddNewAddrease(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                alignment: Alignment.centerRight,
+                colorBackGround: Colors.transparent,
+                tixtInButton: Center(
+                  child: Text(
+                    'السابق',
+                    style: TextStyles.regular18,
                   ),
-                      width: 108.w, height: 47.h, 
-                      colorBorder:  const Color(0xff000000), borderRadius:  BorderRadius.circular(8) ,
-                        ),
-              ],
-            ),
+                ),
+                width: 108.w,
+                height: 47.h,
+                colorBorder: const Color(0xff000000),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              CustomButtonInAddNewAddrease(
+                onTap: () {
+                  Navigator.of(context).pushNamed(ContractView.routeName);
+                },
+                alignment: Alignment.centerLeft,
+                colorBackGround: Colors.black,
+                tixtInButton: Center(
+                  child: Text(
+                    'التالي',
+                    style: TextStyles.regular18.copyWith(color: Colors.white),
+                  ),
+                ),
+                width: 108.w,
+                height: 47.h,
+                colorBorder: const Color(0xff000000),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ],
+          ),
         ],
       ),
     );

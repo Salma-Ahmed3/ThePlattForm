@@ -12,38 +12,40 @@ class ContractViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           const SizedBox(height: 23),
           const CustomTextContract(),
           const SizedBox(height: 16),
-          CustomButtonInAddNewAddrease( 
-                        alignment:   Alignment.center, 
-                        colorBackGround: Colors.black,
-                        tixtInButton: Center(
-                        child: Text('تحميل التعاقد',
-                        style: TextStyles.regular12.copyWith(color: Colors.white),
-                        ),
-                    ),
-                        width: 108.w, height: 40.h, 
-                        colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(10) ,
-                          ),
-                          const SizedBox(height: 23),
-                          const CustomContractItems() , 
-                          const SizedBox(height: 32),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 26),
-                              child: CustomButtonNext(
-                              onTap:  () {
-                              Navigator.of(context).pushNamed(ContractAttachmentsView.routeName);
-                                }, 
-                                  ),
-
-                          ),
-                          const SizedBox(height: 32),
-
-                ],
+          CustomButtonInAddNewAddrease(
+            alignment: Alignment.center,
+            colorBackGround: Colors.black,
+            tixtInButton: Center(
+              child: Text(
+                'تحميل التعاقد',
+                style: TextStyles.regular12.copyWith(color: Colors.white),
+              ),
+            ),
+            width: 108.w,
+            height: 40.h,
+            colorBorder: const Color(0xff000000),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          const SizedBox(height: 23),
+          const CustomContractItems(),
+          const SizedBox(height: 32),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 26),
+            child: CustomButtonNext(
+              onTap: () {
+                Navigator.of(context)
+                    .pushNamed(ContractAttachmentsView.routeName);
+              },
+            ),
+          ),
+          const SizedBox(height: 32),
+        ],
       ),
     );
   }

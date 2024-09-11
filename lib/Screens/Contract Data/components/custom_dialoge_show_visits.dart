@@ -12,54 +12,64 @@ class DialogeShowVisits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Directionality(
+    return Stack(alignment: Alignment.topCenter, children: [
+      Directionality(
           textDirection: TextDirection.rtl,
           child: Dialog(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(height: 50),
-                Text('الزيارات المتوقعة', style: TextStyles.semiBold18),
-                const SizedBox(height: 20),
-                const RectangleShowVisits(text: 'الأحد, ‏26 أغسطس 2023',),
-                const SizedBox(height: 4),
-                const RectangleShowVisits(text: 'الأربعاء, 29 أغسطس 2023',),
-                const SizedBox(height: 4),
-                const RectangleShowVisits(text: 'الأحد, 01 سبتمبر 2023',),
-                const SizedBox(height: 4),
-                const RectangleShowVisitsNotAvaliable(text: 'السبت, 23 سبتمبر', textNotAvailable: 'الخدمة غير متاحة بسبب أجازة\n اليوم الوطني السعودي',),
-                const SizedBox(height: 4),
-                const RectangleShowVisits(text:'الخميس, 28 سبتمبر',),
-                const SizedBox(height: 4),
-                const RectangleShowVisitsGift(text: 'السبت, 23 سبتمبر', textGift: 'زيارة هدية مجانية',),
-                const SizedBox(height: 22),
-                    CustomButtonInAddNewAddrease(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          alignment: Alignment.centerRight, 
-                          colorBackGround: Colors.black, 
-                          tixtInButton:  Center(
-                          child: Text('اغلاق',
-                          style: TextStyles.regular18.copyWith(color:  Colors.white),
-                          ),
-                          ), width: 108,
-                          height: 47, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8),
-                        ),
-                const SizedBox(height: 31),
-                  ]
-              )
-          )
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+            const SizedBox(height: 50),
+            Text('الزيارات المتوقعة', style: TextStyles.semiBold18),
+            const SizedBox(height: 20),
+            const RectangleShowVisits(
+              text: 'الأحد, ‏26 أغسطس 2023',
             ),
-              const Positioned(
-                                  top: 172,
-                                  child: CustomCircleAvatar(),
-                                ),
-        ]
-        );
+            const SizedBox(height: 4),
+            const RectangleShowVisits(
+              text: 'الأربعاء, 29 أغسطس 2023',
+            ),
+            const SizedBox(height: 4),
+            const RectangleShowVisits(
+              text: 'الأحد, 01 سبتمبر 2023',
+            ),
+            const SizedBox(height: 4),
+            const RectangleShowVisitsNotAvaliable(
+              text: 'السبت, 23 سبتمبر',
+              textNotAvailable:
+                  'الخدمة غير متاحة بسبب أجازة\n اليوم الوطني السعودي',
+            ),
+            const SizedBox(height: 4),
+            const RectangleShowVisits(
+              text: 'الخميس, 28 سبتمبر',
+            ),
+            const SizedBox(height: 4),
+            const RectangleShowVisitsGift(
+              text: 'السبت, 23 سبتمبر',
+              textGift: 'زيارة هدية مجانية',
+            ),
+            const SizedBox(height: 22),
+            CustomButtonInAddNewAddrease(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              alignment: Alignment.centerRight,
+              colorBackGround: Colors.black,
+              tixtInButton: Center(
+                child: Text(
+                  'اغلاق',
+                  style: TextStyles.regular18.copyWith(color: Colors.white),
+                ),
+              ),
+              width: 108,
+              height: 47,
+              colorBorder: const Color(0xff000000),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            const SizedBox(height: 31),
+          ]))),
+      const Positioned(
+        top: 172,
+        child: CustomCircleAvatar(),
+      ),
+    ]);
   }
 }
-

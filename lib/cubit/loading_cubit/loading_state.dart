@@ -10,13 +10,14 @@ abstract class LoadingState extends Equatable {
 }
 
 class LoadingInitial extends LoadingState {
-  const LoadingInitial() : super(loading: false,change: false);
-  @override
-  List<Object?> get props => [loading, change];
-}
-class LoadingChange extends LoadingState {
-  const LoadingChange(bool change,bool loading) : super(change: change,loading: loading);
+  const LoadingInitial() : super(loading: false, change: false);
   @override
   List<Object?> get props => [loading, change];
 }
 
+class LoadingChange extends LoadingState {
+  const LoadingChange(bool change, bool loading)
+      : super(change: change, loading: loading);
+  @override
+  List<Object?> get props => [loading, change];
+}

@@ -14,18 +14,18 @@ class GetResponse {
   dynamic message;
 
   factory GetResponse.fromJson(Map<String, dynamic> json) => GetResponse(
-    status: json["status"],
-    data: json["data"],
-    location: json["location"],
-    code: json["code"],
-    message: json["message"],
-  );
+        status: json["status"],
+        data: json["data"],
+        location: json["location"],
+        code: json["code"],
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "status": status,
-    "data": data,
-    "location": location,
-    "code": code,
-    "message": message,
-  };
+        "status": status,
+        "data": data,
+        "location": location,
+        "code": code,
+        "message": message,
+      };
 }

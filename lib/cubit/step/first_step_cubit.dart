@@ -10,13 +10,11 @@ class FirstStepCubit extends Cubit<FirstStepState> {
   final Loading loading = Loading();
   StepDetailsVm firstStep = StepDetailsVm();
   ActionStep actionStep = ActionStep();
-  String serviceType = ServiceType.none; 
-  getFirstStep(
-      {
-      String? serviceId,
-      String? contactId,
-  
-      }) async {
+  String serviceType = ServiceType.none;
+  getFirstStep({
+    String? serviceId,
+    String? contactId,
+  }) async {
     loading.show;
     var result = await DynamicStepsController.firstStepAction(
         serviceId: 'serviceId', contactId: 'contactId');
@@ -24,16 +22,15 @@ class FirstStepCubit extends Cubit<FirstStepState> {
     if (result != null) {
       firstStep = StepDetailsVm.fromJson(result);
       actionStep.stepDetailsVm = firstStep;
-        }
-      }
     }
+  }
+}
 // class FirstStepCubit {
 //   String? serviceId;
 //   String? selectedPricingId;
 //   bool? fromOffer;
 //   final Loading loading = Loading();
 //   ActionStep actionStep = ActionStep();
-
 
 //   FirstStepCubit({
 //     this.serviceId,
@@ -64,13 +61,13 @@ class FirstStepCubit extends Cubit<FirstStepState> {
 //       serviceId: serviceId,
 //     ).toJson());
 //     var firstStep = await DynamicStepsController.firstStepAction(
-//       serviceType: serviceType, 
-//       object: object, 
+//       serviceType: serviceType,
+//       object: object,
 //     );
-//     loading.hide; 
+//     loading.hide;
 //     if (firstStep != null) {
 //       firstStep = firstStep;
-//       actionStep.stepDetailsVm = firstStep; 
+//       actionStep.stepDetailsVm = firstStep;
 //     }
 //   }
 // }

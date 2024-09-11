@@ -1,4 +1,3 @@
-
 import 'package:nowproject/Models/authentication/login.dart';
 
 class ReGenerateCodeResult {

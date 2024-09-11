@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -6,8 +5,7 @@ class HouseType extends StatefulWidget {
   const HouseType({super.key});
 
   @override
-  _HouseTypeState createState() =>
-      _HouseTypeState();
+  _HouseTypeState createState() => _HouseTypeState();
 }
 
 class _HouseTypeState extends State<HouseType> {
@@ -17,7 +15,6 @@ class _HouseTypeState extends State<HouseType> {
     'مكتب',
     'شركة',
     'فيلا',
-
   ];
 
   @override
@@ -26,7 +23,6 @@ class _HouseTypeState extends State<HouseType> {
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'نوع المنزل',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -35,7 +31,7 @@ class _HouseTypeState extends State<HouseType> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

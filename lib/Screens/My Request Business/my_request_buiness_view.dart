@@ -29,15 +29,15 @@ class MyRequestBuinessView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BusinessSectorServiceRequestView()),
-                );
-              },
-              child: SvgPicture.asset(Assets.imagesAddIcon)
-            )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const BusinessSectorServiceRequestView()),
+                  );
+                },
+                child: SvgPicture.asset(Assets.imagesAddIcon))
           ],
         ),
       ),

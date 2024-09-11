@@ -12,17 +12,17 @@ class BusinessSectorServiceRequestView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          appBar: buildAppBar(
-            context,
-            titleAppBar: 'طلب خدمة قطاع الأعمال',
-            onPressedRightIcon: () {
-              Navigator.of(context).pushNamed(NotificationView.routeName);
-            },
-            icon: const Icon(Icons.notifications),
-          ),
-          body: const BusinessSectorServiceRequestViewBody(),
-          bottomNavigationBar: const CustomNavBar(),
+        appBar: buildAppBar(
+          context,
+          titleAppBar: 'طلب خدمة قطاع الأعمال',
+          onPressedRightIcon: () {
+            Navigator.of(context).pushNamed(NotificationView.routeName);
+          },
+          icon: const Icon(Icons.notifications),
         ),
+        body: const BusinessSectorServiceRequestViewBody(),
+        bottomNavigationBar: const CustomNavBar(),
+      ),
     );
   }
 }

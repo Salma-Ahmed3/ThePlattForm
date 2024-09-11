@@ -16,7 +16,8 @@ void main() {
           create: (context) => FirstStepCubit(),
         ),
         BlocProvider<HourlyServicesCubit>(
-          create: (context) => HourlyServicesCubit()..fetchHourlyServices('hourly'),
+          create: (context) =>
+              HourlyServicesCubit()..fetchHourlyServices('hourly'),
         ),
         BlocProvider<AddreaseCubit>(
           create: (context) => AddreaseCubit(),

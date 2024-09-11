@@ -8,10 +8,10 @@ import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class ChoosePackageHourlyServicesView extends StatelessWidget {
   const ChoosePackageHourlyServicesView({super.key});
-static const routeName = 'ChoosePackageHourlyServicesView';
+  static const routeName = 'ChoosePackageHourlyServicesView';
   @override
   Widget build(BuildContext context) {
-    return  Directionality(
+    return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         bottomNavigationBar: const CustomNavBar(),
@@ -24,33 +24,36 @@ static const routeName = 'ChoosePackageHourlyServicesView';
           },
           icon: const Icon(Icons.notifications),
         ),
-         floatingActionButton: Row(
+        floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DesignYourPresentationView()),
-                );
-              },
-              child: Container(
-                height: 46,
-                width: 168,
-                decoration: BoxDecoration(
-                  color:  Colors.black,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1,
-                  )
-                ),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text('صمم باقة تناسبك' , style: TextStyles.regular14.copyWith(color: Colors.white),)),
-              )
-            )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DesignYourPresentationView()),
+                  );
+                },
+                child: Container(
+                  height: 46,
+                  width: 168,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1,
+                      )),
+                  child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'صمم باقة تناسبك',
+                        style:
+                            TextStyles.regular14.copyWith(color: Colors.white),
+                      )),
+                ))
           ],
         ),
       ),

@@ -11,12 +11,16 @@ class ChooseAddressViewBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-            ResidentServiceViewBody(onChanged: (bool value) { 
-                     Navigator.of(context).pushNamed(ChoosePackageHourlyServicesView.routeName);
-            },),
-            const SizedBox(height: 11,),
-            // const CustomAddressNotAvliable(),
-            
+        ResidentServiceViewBody(
+          onChanged: (bool value) {
+            Navigator.of(context)
+                .pushNamed(ChoosePackageHourlyServicesView.routeName);
+          },
+        ),
+        const SizedBox(
+          height: 11,
+        ),
+        // const CustomAddressNotAvliable(),
       ],
     );
   }

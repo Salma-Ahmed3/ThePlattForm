@@ -6,7 +6,7 @@ import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class ContractDetailsMaidView extends StatelessWidget {
   const ContractDetailsMaidView({super.key});
-static const routeName = 'ContractDetailsMaidView';
+  static const routeName = 'ContractDetailsMaidView';
   @override
   Widget build(BuildContext context) {
     return Directionality(

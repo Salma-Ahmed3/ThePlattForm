@@ -11,9 +11,10 @@ class ForgotPasswordPost {
       );
 
   Map<String, dynamic> toJson() => {
-    "phoneNumber": phoneNumber,
-  };
+        "phoneNumber": phoneNumber,
+      };
 }
+
 class ForgotPasswordCodeResult {
   ForgotPasswordCodeResult({
     this.code,
@@ -27,9 +28,10 @@ class ForgotPasswordCodeResult {
       );
 
   Map<String, dynamic> toJson() => {
-    "code": code,
-  };
+        "code": code,
+      };
 }
+
 class ResetPasswordPost {
   ResetPasswordPost({
     this.code,
@@ -52,9 +54,9 @@ class ResetPasswordPost {
       );
 
   Map<String, dynamic> toJson() => {
-    "code": code,
-    "password": password,
-    "confirmPassword": confirmPassword,
-    "phoneNumber": phoneNumber,
-  };
+        "code": code,
+        "password": password,
+        "confirmPassword": confirmPassword,
+        "phoneNumber": phoneNumber,
+      };
 }

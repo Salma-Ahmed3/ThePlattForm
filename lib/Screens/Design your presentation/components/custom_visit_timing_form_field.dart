@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -11,7 +9,8 @@ class CustomVisitTimingFormField extends StatefulWidget {
       _CustomVisitTimingFormFieldState();
 }
 
-class _CustomVisitTimingFormFieldState extends State<CustomVisitTimingFormField> {
+class _CustomVisitTimingFormFieldState
+    extends State<CustomVisitTimingFormField> {
   String? selectedCountry;
   final List<String> countries = [
     'من 8 ص الى 10 ص',
@@ -19,7 +18,6 @@ class _CustomVisitTimingFormFieldState extends State<CustomVisitTimingFormField>
     'من 12 ص الى 2 م',
     ' من 2 م الى 4 م',
     'من 4 م الى 6 م',
-
   ];
 
   @override
@@ -28,7 +26,6 @@ class _CustomVisitTimingFormFieldState extends State<CustomVisitTimingFormField>
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'توقيت الزيارة',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -37,7 +34,7 @@ class _CustomVisitTimingFormFieldState extends State<CustomVisitTimingFormField>
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

@@ -9,13 +9,13 @@ class CustomButtonPush extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-         showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const CustomDialogPush();
-                },
-              );
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return const CustomDialogPush();
+          },
+        );
       },
       child: Container(
         width: 305.w,
@@ -23,10 +23,13 @@ class CustomButtonPush extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.black,
-          ),
-          child: Align(
+        ),
+        child: Align(
             alignment: Alignment.center,
-            child: Text('ادفع 110 ريال لتفعيل التعاقد' ,style: TextStyles.regular18.copyWith(color: Colors.white), )) ,
+            child: Text(
+              'ادفع 110 ريال لتفعيل التعاقد',
+              style: TextStyles.regular18.copyWith(color: Colors.white),
+            )),
       ),
     );
   }

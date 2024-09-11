@@ -17,47 +17,69 @@ class DesignYourPresentationViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          const SizedBox(height: 27,),
-          const CustomNationaltyFormField(),
-          const SizedBox(height: 25,),
-          const CustomNumberOfFemaleWorkersFormField(),
-          const SizedBox(height: 25,),
-          const CustomContractDurationFormField(),
-          const SizedBox(height: 22,),
-          const CustomChoosePeriodFormField(),
-          const SizedBox(height: 16,),
-          const CustomDeliveryTimes(),
-          const SizedBox(height: 25,),
-          const CustomVisitTimingFormField(),
-          const SizedBox(height: 25,),
-          const CustomNumberOfVisitFormField(),
-          const SizedBox(height: 25,),
-          const CustomDateOfFirstVisitFormField(),
-          const SizedBox(height: 32,),
-          CustomButtonInAddNewAddrease(  onTap: () {
-                    Navigator.of(context).pushNamed(ContractDataView.routeName);
-                  }, 
-                      alignment:   Alignment.centerLeft, 
-                      colorBackGround: Colors.black,
-                      tixtInButton: Center(
-                      child: Text('التالي',
-                      style: TextStyles.regular18.copyWith(color: Colors.white),
-                      ),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const SizedBox(
+                height: 27,
+              ),
+              const CustomNationaltyFormField(),
+              const SizedBox(
+                height: 25,
+              ),
+              const CustomNumberOfFemaleWorkersFormField(),
+              const SizedBox(
+                height: 25,
+              ),
+              const CustomContractDurationFormField(),
+              const SizedBox(
+                height: 22,
+              ),
+              const CustomChoosePeriodFormField(),
+              const SizedBox(
+                height: 16,
+              ),
+              const CustomDeliveryTimes(),
+              const SizedBox(
+                height: 25,
+              ),
+              const CustomVisitTimingFormField(),
+              const SizedBox(
+                height: 25,
+              ),
+              const CustomNumberOfVisitFormField(),
+              const SizedBox(
+                height: 25,
+              ),
+              const CustomDateOfFirstVisitFormField(),
+              const SizedBox(
+                height: 32,
+              ),
+              CustomButtonInAddNewAddrease(
+                onTap: () {
+                  Navigator.of(context).pushNamed(ContractDataView.routeName);
+                },
+                alignment: Alignment.centerLeft,
+                colorBackGround: Colors.black,
+                tixtInButton: Center(
+                  child: Text(
+                    'التالي',
+                    style: TextStyles.regular18.copyWith(color: Colors.white),
                   ),
-                      width: 108.w, height: 47.h, 
-                      colorBorder:  const Color(0xff000000), borderRadius:  BorderRadius.circular(8) ,
-                        ),
-          const SizedBox(height: 32,),
-          ],
-        )
-      ),
+                ),
+                width: 108.w,
+                height: 47.h,
+                colorBorder: const Color(0xff000000),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+            ],
+          )),
     );
   }
 }
-

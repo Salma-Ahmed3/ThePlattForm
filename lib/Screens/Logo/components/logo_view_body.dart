@@ -9,7 +9,8 @@ class LogoViewBody extends StatefulWidget {
   State<LogoViewBody> createState() => _LogoViewBodyState();
 }
 
-class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderStateMixin {
+class _LogoViewBodyState extends State<LogoViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -36,7 +37,7 @@ class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderSt
     return Center(
       child: FadeTransition(
         opacity: _animation,
-        child:   Text(
+        child: Text(
           'LOGO',
           style: TextStyles.bold40,
         ),
@@ -52,13 +53,15 @@ class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderSt
 
   Route _createRoute() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => const LoginView(),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          const LoginView(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
         const curve = Curves.ease;
 
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var offsetAnimation = animation.drive(tween);
 
         return SlideTransition(
@@ -69,4 +72,3 @@ class _LogoViewBodyState extends State<LogoViewBody> with SingleTickerProviderSt
     );
   }
 }
-

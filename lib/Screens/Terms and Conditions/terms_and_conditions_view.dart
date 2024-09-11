@@ -12,7 +12,7 @@ class TermsAndConditionsView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
-         width: 0.8 * MediaQuery.of(context).size.width,
+        width: 0.8 * MediaQuery.of(context).size.width,
         child: Dialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
@@ -31,10 +31,11 @@ class TermsAndConditionsView extends StatelessWidget {
                 const Expanded(
                   child: SingleChildScrollView(
                     child: CustomTextContract(),
-                    
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 CustomButtonInAddNewAddrease(
                   onTap: () {
                     Navigator.of(context).pop();
@@ -53,7 +54,6 @@ class TermsAndConditionsView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 const SizedBox(height: 15),
-
               ],
             ),
           ),

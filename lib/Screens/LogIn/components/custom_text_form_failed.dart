@@ -23,7 +23,6 @@ class CustomTextFormFaild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
-        
         obscureText: obscureText,
         onSaved: onSaved,
         validator: (value) {
@@ -48,18 +47,16 @@ class CustomTextFormFaild extends StatelessWidget {
           // enabledBorder: buildBorder(),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4),
-          
           ),
         ),
       ),
     );
   }
 
-
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
-      borderSide:  BorderSide(
+      borderSide: BorderSide(
         color: const Color.fromARGB(255, 37, 33, 1),
         width: 0.3.w,
       ),

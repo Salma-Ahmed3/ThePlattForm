@@ -1,4 +1,3 @@
-
 import 'package:nowproject/Models/offers/offer.dart';
 
 OfferGlobalData offerGlobalData = OfferGlobalData();

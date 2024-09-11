@@ -1,8 +1,6 @@
-
 class AppSetting {
-  static const String serviceURL =
-      'mueen-apitest.azurewebsites.net'; // Mueen
-   // 'https://mueen-apitest.azurewebsites.net/'; // Mueen test
+  static const String serviceURL = 'mueen-apitest.azurewebsites.net'; // Mueen
+  // 'https://mueen-apitest.azurewebsites.net/'; // Mueen test
   // 'https://mueenapitest.excp.sa/'; // Mueen
   // 'https://b2c.mueen.com.sa/api/'; // Mueen Live test apple pay
   // 'https://b2c.mueen.com.sa:8006/'; // Mueen Live
@@ -25,7 +23,7 @@ class AppSetting {
 
 bool isNormalLogin = false;
 
-String globalLang = ''; 
+String globalLang = '';
 int numOfUnReadedNotification = 0;
 const String updateTokenVersion = '2.0.0';
 bool isArabic = true;

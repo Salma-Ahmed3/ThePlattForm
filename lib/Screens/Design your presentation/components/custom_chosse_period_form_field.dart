@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -10,12 +9,11 @@ class CustomChoosePeriodFormField extends StatefulWidget {
       _CustomChoosePeriodFormFieldState();
 }
 
-class _CustomChoosePeriodFormFieldState extends State<CustomChoosePeriodFormField> {
+class _CustomChoosePeriodFormFieldState
+    extends State<CustomChoosePeriodFormField> {
   String? selectedCountry;
   final List<String> countries = [
     'اختر الفتره',
-   
-
   ];
 
   @override
@@ -24,7 +22,6 @@ class _CustomChoosePeriodFormFieldState extends State<CustomChoosePeriodFormFiel
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'الفترات',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -33,7 +30,7 @@ class _CustomChoosePeriodFormFieldState extends State<CustomChoosePeriodFormFiel
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

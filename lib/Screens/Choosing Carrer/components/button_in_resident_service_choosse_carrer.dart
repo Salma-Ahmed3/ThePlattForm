@@ -32,42 +32,43 @@ class _ButtonInResidentServiceChooseCareerState
   @override
   Widget build(BuildContext context) {
     return Container(
-            width: 343.w,
-            height: 76.h,
-            decoration: BoxDecoration(
-              color: isTermsAccepted ? Color(0xffF8F8F8) : widget.colorBackGroun,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: isTermsAccepted ? Colors.black : widget.colorBorder,
-                width: 1.w,
-              ),
-            ),
-          child: 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      width: 343.w,
+      height: 76.h,
+      decoration: BoxDecoration(
+        color: isTermsAccepted ? Color(0xffF8F8F8) : widget.colorBackGroun,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: isTermsAccepted ? Colors.black : widget.colorBorder,
+          width: 1.w,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(widget.titletext, style: TextStyles.bold14),
-                    SizedBox(height: 5.h,),
-                    Text(widget.subtext, style: TextStyles.regular12),
-                  ],
-                  ),
-                   CustomCheckBox(
-                    onChecked: (value) {
-                      setState(() {
-                        isTermsAccepted = value;
-                        widget.onChanged(value);
-                      });
-                    },
-                    isChecked: isTermsAccepted,
-                  ),
+                Text(widget.titletext, style: TextStyles.bold14),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(widget.subtext, style: TextStyles.regular12),
               ],
             ),
-         ),
-        );
+            CustomCheckBox(
+              onChecked: (value) {
+                setState(() {
+                  isTermsAccepted = value;
+                  widget.onChanged(value);
+                });
+              },
+              isChecked: isTermsAccepted,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

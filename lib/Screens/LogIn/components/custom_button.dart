@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
 class CustomButtonLogin extends StatelessWidget {
-  const CustomButtonLogin({super.key, required this.onPressed, required this.text});
+  const CustomButtonLogin(
+      {super.key, required this.onPressed, required this.text});
 
   final VoidCallback onPressed;
   final String text;
@@ -19,12 +20,12 @@ class CustomButtonLogin extends StatelessWidget {
             onTap: onPressed,
             child: Container(
               decoration: BoxDecoration(
-                color:  Colors.black,
+                color: Colors.black,
                 borderRadius: BorderRadius.circular(16),
                 // gradient: const LinearGradient(
                 //   colors: [
                 //     Color(0xff38C473),
-                //     Color(0xff2E8B57), 
+                //     Color(0xff2E8B57),
                 //   ],
                 //   begin: Alignment.topLeft,
                 //   end: Alignment.bottomRight,

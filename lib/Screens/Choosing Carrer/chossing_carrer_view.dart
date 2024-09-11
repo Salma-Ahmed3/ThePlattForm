@@ -6,13 +6,13 @@ import '../Notification/notification_view.dart';
 
 class ChossingCarrerView extends StatelessWidget {
   const ChossingCarrerView({super.key});
-static const String routeName = 'ChossingCarrerView';
+  static const String routeName = 'ChossingCarrerView';
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-      appBar: buildAppBar(
+        appBar: buildAppBar(
           context,
           titleAppBar: 'اختيار المهنة',
           onPressedRightIcon: () {

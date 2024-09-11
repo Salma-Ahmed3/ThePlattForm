@@ -12,25 +12,36 @@ class AddNewAddressViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   SingleChildScrollView(
-      child:  Padding(
-        padding:  const EdgeInsets.symmetric(horizontal: 20),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-                  SizedBox(height: 41.h,),
-                  const CountryNameFormField(),
-                  SizedBox(height: 16.h,),
-                  const NameAddressFormField(),
-                  SizedBox(height: 16.h,),
-                  const HouseType(),
-                  SizedBox(height: 16.h,),
-                  const PhoneNumber(),
-                  SizedBox(height: 16.h,),
-                  const NamePlaceNear(),
-                  SizedBox(height: 16.h,),
-                  const CustomButtonInAddNewAddreaseItem()
-                
-                ],
+            SizedBox(
+              height: 41.h,
+            ),
+            const CountryNameFormField(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const NameAddressFormField(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const HouseType(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const PhoneNumber(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const NamePlaceNear(),
+            SizedBox(
+              height: 16.h,
+            ),
+            const CustomButtonInAddNewAddreaseItem()
+          ],
         ),
       ),
     );

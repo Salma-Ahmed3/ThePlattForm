@@ -25,70 +25,76 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case LogoView.routeName:
       return MaterialPageRoute(builder: (context) => const LogoView());
 
-   case LoginView.routeName:
+    case LoginView.routeName:
       return MaterialPageRoute(builder: (context) => const LoginView());
 
-   case SignupView.routeName:
+    case SignupView.routeName:
       return MaterialPageRoute(builder: (context) => const SignupView());
-      
-   case HomeView.routeName:
+
+    case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => const HomeView());
 
-   case NotificationView.routeName:
+    case NotificationView.routeName:
       return MaterialPageRoute(builder: (context) => const NotificationView());
 
-   case ChoosingMaidView.routeName:
+    case ChoosingMaidView.routeName:
       return MaterialPageRoute(builder: (context) => const ChoosingMaidView());
 
-   case ContractDetailsView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractDetailsView());
+    case ContractDetailsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ContractDetailsView());
 
-   case ContractView.routeName:
+    case ContractView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractView());
 
-   case ContractAttachmentsView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractAttachmentsView());
+    case ContractAttachmentsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ContractAttachmentsView());
 
-   case ContractSuccessView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractSuccessView());
+    case ContractSuccessView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ContractSuccessView());
 
-   case MyRequestsView.routeName:
+    case MyRequestsView.routeName:
       return MaterialPageRoute(builder: (context) => const MyRequestsView());
 
-   case ContractDetailsMaidView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractDetailsMaidView());
+    case ContractDetailsMaidView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ContractDetailsMaidView());
 
-   case MyRequestHourlyView.routeName:
-      return MaterialPageRoute(builder: (context) => const MyRequestHourlyView());
+    case MyRequestHourlyView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const MyRequestHourlyView());
 
-   case ChossingCarrerView.routeName:
-      return MaterialPageRoute(builder: (context) => const ChossingCarrerView());
+    case ChossingCarrerView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ChossingCarrerView());
 
-   case ChooseAddreseView.routeName:
+    case ChooseAddreseView.routeName:
       return MaterialPageRoute(builder: (context) => const ChooseAddreseView());
 
-   case AddNewAddressGoogleMapsView.routeName:
-      return MaterialPageRoute(builder: (context) => const AddNewAddressGoogleMapsView());
+    case AddNewAddressGoogleMapsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const AddNewAddressGoogleMapsView());
 
-   case ChoosePackageHourlyServicesView.routeName:
-      return MaterialPageRoute(builder: (context) => const ChoosePackageHourlyServicesView());
+    case ChoosePackageHourlyServicesView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const ChoosePackageHourlyServicesView());
 
-   case ContractDataView.routeName:
+    case ContractDataView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractDataView());
 
-   case ContactUsView.routeName:
+    case ContactUsView.routeName:
       return MaterialPageRoute(builder: (context) => const ContactUsView());
 
-   case TestPage.routeName:
+    case TestPage.routeName:
       return MaterialPageRoute(builder: (context) => const TestPage());
-      
-  //  case CustomDialog.routeName:
-  //     return MaterialPageRoute(builder: (context) => const CustomDialog());
+
+    //  case CustomDialog.routeName:
+    //     return MaterialPageRoute(builder: (context) => const CustomDialog());
 
     default:
       return MaterialPageRoute(builder: (context) => const HomeView());
-  
-  
   }
 }
 

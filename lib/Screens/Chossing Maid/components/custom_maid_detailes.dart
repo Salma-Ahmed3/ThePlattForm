@@ -4,7 +4,7 @@ import 'package:nowproject/Screens/Chossing%20Maid/components/custom_detailes_it
 
 class CustomMaidDetailes extends StatelessWidget {
   const CustomMaidDetailes({super.key, this.onTap});
-final void Function()? onTap;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,12 +14,13 @@ final void Function()? onTap;
         color: Color(0xffF8F8F8),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color:  Colors.black,
+          color: Colors.black,
           width: 1,
         ),
       ),
-      child:  CustomMaidDetailesItem(onTap: onTap,),
-      );
-
+      child: CustomMaidDetailesItem(
+        onTap: onTap,
+      ),
+    );
   }
 }

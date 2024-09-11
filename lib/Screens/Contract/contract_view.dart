@@ -7,7 +7,7 @@ import '../Notification/notification_view.dart';
 
 class ContractView extends StatelessWidget {
   const ContractView({super.key});
-static const routeName = 'ContractView';
+  static const routeName = 'ContractView';
   @override
   Widget build(BuildContext context) {
     return Directionality(

@@ -8,7 +8,7 @@ class SliderItem {
     this.sliderType,
     this.sliderTypeName,
     this.externalUrl,
-   });
+  });
 
   SliderItem.fromJson(dynamic json) {
     sliderItemId = json['sliderItemId'];
@@ -19,7 +19,6 @@ class SliderItem {
     sliderType = json['sliderType'];
     sliderTypeName = json['sliderTypeName'];
     externalUrl = json['externalUrl'];
-
   }
   String? sliderItemId;
   String? name;
@@ -29,7 +28,6 @@ class SliderItem {
   num? sliderType;
   String? sliderTypeName;
   dynamic externalUrl;
-
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -44,6 +42,4 @@ class SliderItem {
 
     return map;
   }
-
-
 }

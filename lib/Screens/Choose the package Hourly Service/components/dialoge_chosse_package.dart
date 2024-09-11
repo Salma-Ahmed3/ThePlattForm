@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/Screens/Contract%20Data/contract_data_view.dart';
 import 'package:nowproject/components/custom_button/custom_button_in_add_new_addrease.dart';
@@ -14,7 +13,7 @@ class DialogeChossePackage extends StatefulWidget {
 }
 
 class _DialogeChossePackageState extends State<DialogeChossePackage> {
-    DateTime _selectedDay = DateTime.now();  // Initial selected date
+  DateTime _selectedDay = DateTime.now(); // Initial selected date
   DateTime _focusedDay = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -39,8 +38,8 @@ class _DialogeChossePackageState extends State<DialogeChossePackage> {
                   },
                   onDaySelected: (selectedDay, focusedDay) {
                     setState(() {
-                      _selectedDay = selectedDay;  
-                      _focusedDay = focusedDay;  
+                      _selectedDay = selectedDay;
+                      _focusedDay = focusedDay;
                     });
                   },
                   calendarFormat: CalendarFormat.month,
@@ -51,40 +50,47 @@ class _DialogeChossePackageState extends State<DialogeChossePackage> {
                   ),
                   calendarStyle: const CalendarStyle(
                     selectedDecoration: BoxDecoration(
-                      color: Colors.black,  
+                      color: Colors.black,
                       shape: BoxShape.circle,
                     ),
                     todayDecoration: BoxDecoration(
-                      color: Colors.grey,  
+                      color: Colors.grey,
                       shape: BoxShape.circle,
                     ),
                   ),
                 ),
-                  const SizedBox(height: 20,),
-                  CustomButtonInAddNewAddrease(
-                    onTap: () {
-                      
-                     Navigator.pushNamed(context, ContractDataView.routeName);
-                    },
-                                          alignment: Alignment.centerRight, 
-                                          colorBackGround: Colors.black, 
-                                          tixtInButton:  Center(
-                                          child: Text('التالي',
-                                          style: TextStyles.regular18.copyWith(color:  Colors.white),
-                                          ),
-                                          ), width: 108,
-                                          height: 47, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8),
-                                        ), 
-                          const SizedBox(height: 30,),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                const Positioned(
-                                  top: 125,
-                                  child: CustomCircleAvatar(),
-                                ),
-                              ],
-                            );
-                          }
-                        }
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomButtonInAddNewAddrease(
+                  onTap: () {
+                    Navigator.pushNamed(context, ContractDataView.routeName);
+                  },
+                  alignment: Alignment.centerRight,
+                  colorBackGround: Colors.black,
+                  tixtInButton: Center(
+                    child: Text(
+                      'التالي',
+                      style: TextStyles.regular18.copyWith(color: Colors.white),
+                    ),
+                  ),
+                  width: 108,
+                  height: 47,
+                  colorBorder: const Color(0xff000000),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Positioned(
+          top: 125,
+          child: CustomCircleAvatar(),
+        ),
+      ],
+    );
+  }
+}

@@ -1,4 +1,3 @@
-
 import 'package:nowproject/utility/app_setting.dart';
 
 class LocalStoreNames {

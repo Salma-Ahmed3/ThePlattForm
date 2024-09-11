@@ -10,18 +10,18 @@ class DesignYourPresentationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        bottomNavigationBar: const CustomNavBar(),
-        body: const DesignYourPresentationViewBody(),
-        appBar: buildAppBar(
-          context,
-          titleAppBar: 'صمم عرضك',
-          onPressedRightIcon: () {
-            Navigator.of(context).pushNamed(NotificationView.routeName);
-          },
-          icon: const Icon(Icons.notifications),
-          
-        ), ));
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          bottomNavigationBar: const CustomNavBar(),
+          body: const DesignYourPresentationViewBody(),
+          appBar: buildAppBar(
+            context,
+            titleAppBar: 'صمم عرضك',
+            onPressedRightIcon: () {
+              Navigator.of(context).pushNamed(NotificationView.routeName);
+            },
+            icon: const Icon(Icons.notifications),
+          ),
+        ));
   }
 }

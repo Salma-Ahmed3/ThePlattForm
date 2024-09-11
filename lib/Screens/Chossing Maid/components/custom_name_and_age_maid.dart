@@ -9,15 +9,25 @@ class CustomNameAndAgeMaid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('CONSTELLA KAIDZA BARAKA', style: TextStyles.bold14, ),
-                      SizedBox(height: 5.w ,),
-                      const CustomRowText(),
-                      SizedBox(height: 5.w ,),
-                      Text('‏3 سنوات خبرة', style: TextStyles.regular14, ),
-                    ],
-                  );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'CONSTELLA KAIDZA BARAKA',
+          style: TextStyles.bold14,
+        ),
+        SizedBox(
+          height: 5.w,
+        ),
+        const CustomRowText(),
+        SizedBox(
+          height: 5.w,
+        ),
+        Text(
+          '‏3 سنوات خبرة',
+          style: TextStyles.regular14,
+        ),
+      ],
+    );
   }
 }

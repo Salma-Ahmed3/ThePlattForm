@@ -12,16 +12,16 @@ class ChangePassword {
   String? confirmPassword;
 
   factory ChangePassword.fromJson(Map<String, dynamic> json) => ChangePassword(
-    userId: json["userId"],
-    oldPassword: json["oldPassword"],
-    newPassword: json["newPassword"],
-    confirmPassword: json["confirmPassword"],
-  );
+        userId: json["userId"],
+        oldPassword: json["oldPassword"],
+        newPassword: json["newPassword"],
+        confirmPassword: json["confirmPassword"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "userId": userId,
-    "oldPassword": oldPassword,
-    "newPassword": newPassword,
-    "confirmPassword": confirmPassword,
-  };
+        "userId": userId,
+        "oldPassword": oldPassword,
+        "newPassword": newPassword,
+        "confirmPassword": confirmPassword,
+      };
 }

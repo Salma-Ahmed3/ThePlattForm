@@ -6,7 +6,7 @@ import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class ContactUsView extends StatelessWidget {
   const ContactUsView({super.key});
-static const routeName = 'ContactUs'; 
+  static const routeName = 'ContactUs';
   @override
   Widget build(BuildContext context) {
     return Directionality(

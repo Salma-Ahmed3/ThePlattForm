@@ -8,14 +8,14 @@ class TextChoosingCarrer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment:CrossAxisAlignment.start ,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
-                Text('سائق خاص' , style: TextStyles.bold14),
-                SizedBox(height: 5.h,),
-                  Text(
-                    'تقدم الخدمة بعقود شهرية من شهر الي 24 شهر' ,
-                  style: TextStyles.regular12),
+        Text('سائق خاص', style: TextStyles.bold14),
+        SizedBox(
+          height: 5.h,
+        ),
+        Text('تقدم الخدمة بعقود شهرية من شهر الي 24 شهر',
+            style: TextStyles.regular12),
       ],
     );
   }

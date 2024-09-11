@@ -13,11 +13,11 @@ class MyRequestsViewBody extends StatefulWidget {
 }
 
 class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
-  String? selectedRequest; 
+  String? selectedRequest;
 
   void _onRequestSelected(String requestName) {
     setState(() {
-      selectedRequest = requestName; 
+      selectedRequest = requestName;
     });
   }
 
@@ -35,82 +35,95 @@ class _MyRequestsViewBodyState extends State<MyRequestsViewBody> {
                 CustomContainerInMyRequest(
                   onTap: () {
                     _onRequestSelected('الأفراد');
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestsView();
-                } ));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const MyRequestsView();
+                    }));
                   },
-                  color: selectedRequest == 'الأفراد' ?  const Color(0xffD6D6D6) :Colors.black ,
-                    colorText: selectedRequest == 'الأفراد' ? Colors.black : Colors.white,
-                  
+                  color: selectedRequest == 'الأفراد'
+                      ? const Color(0xffD6D6D6)
+                      : Colors.black,
+                  colorText: selectedRequest == 'الأفراد'
+                      ? Colors.black
+                      : Colors.white,
                   nameMyRequest: 'الأفراد',
                   isSelected: selectedRequest == 'الأفراد',
-                  
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
-                  color: selectedRequest == 'الساعات' ? Colors.black :Color(0xffD6D6D6) ,
-                    colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
-
+                  color: selectedRequest == 'الساعات'
+                      ? Colors.black
+                      : Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الساعات'
+                      ? Colors.white
+                      : Colors.black,
                   nameMyRequest: 'الساعات',
                   isSelected: selectedRequest == 'الساعات',
                   onTap: () {
                     _onRequestSelected('الساعات');
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestHourlyView();
-                }
-                ));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const MyRequestHourlyView();
+                    }));
                   },
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
-                  color: selectedRequest == 'الأعمال' ? Colors.black : const Color(0xffD6D6D6),
-                    colorText: selectedRequest == 'الأعمال' ? Colors.white : Colors.black,
-
+                  color: selectedRequest == 'الأعمال'
+                      ? Colors.black
+                      : const Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الأعمال'
+                      ? Colors.white
+                      : Colors.black,
                   nameMyRequest: 'الأعمال',
                   isSelected: selectedRequest == 'الأعمال',
-                onTap: () {
+                  onTap: () {
                     _onRequestSelected('الأعمال');
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
-                  return const MyRequestBuinessView();
-                } ));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const MyRequestBuinessView();
+                    }));
                   },
                 ),
               ],
             ),
             const SizedBox(height: 23),
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: true,
-            titleName: 'Lead-INDV-NO9822',
-            firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
-            secoundText: 'تاريخ الطلب : 12-12-2022',
-            thirdText: 'الجنسية : بنجلاديش',
-            fourText: 'المهنة المطلوبة : عاملة منزلية',
-            fiveText: 'تفاصيل الطلب',
-            finalText:'طلب اختيار افراد من التطبيق', 
-              ),
+            const CustomRectangleInMyRequest(
+              heightContainer: 53,
+              isLatest: true,
+              titleName: 'Lead-INDV-NO9822',
+              firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
+              secoundText: 'تاريخ الطلب : 12-12-2022',
+              thirdText: 'الجنسية : بنجلاديش',
+              fourText: 'المهنة المطلوبة : عاملة منزلية',
+              fiveText: 'تفاصيل الطلب',
+              finalText: 'طلب اختيار افراد من التطبيق',
+            ),
             const SizedBox(height: 17),
-            
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false,
-            titleName: 'Lead-INDV-NO9822',
-            firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
-            secoundText: 'تاريخ الطلب : 12-12-2022',
-            thirdText: 'الجنسية : بنجلاديش',
-            fourText: 'المهنة المطلوبة : عاملة منزلية',
-            fiveText: 'تفاصيل الطلب',
-            finalText:'طلب اختيار افراد من التطبيق', 
-              ),
+            const CustomRectangleInMyRequest(
+              heightContainer: 53,
+              isLatest: false,
+              titleName: 'Lead-INDV-NO9822',
+              firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
+              secoundText: 'تاريخ الطلب : 12-12-2022',
+              thirdText: 'الجنسية : بنجلاديش',
+              fourText: 'المهنة المطلوبة : عاملة منزلية',
+              fiveText: 'تفاصيل الطلب',
+              finalText: 'طلب اختيار افراد من التطبيق',
+            ),
             const SizedBox(height: 17),
-            
-            const CustomRectangleInMyRequest(heightContainer: 53, isLatest: false,
-            titleName: 'Lead-INDV-NO9822',
-            firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
-            secoundText: 'تاريخ الطلب : 12-12-2022',
-            thirdText: 'الجنسية : بنجلاديش',
-            fourText: 'المهنة المطلوبة : عاملة منزلية',
-            fiveText: 'تفاصيل الطلب',
-            finalText:'طلب اختيار افراد من التطبيق', 
-              ),
+            const CustomRectangleInMyRequest(
+              heightContainer: 53,
+              isLatest: false,
+              titleName: 'Lead-INDV-NO9822',
+              firstText: 'صاحب الطلب : Ahmed Abo Alfadl',
+              secoundText: 'تاريخ الطلب : 12-12-2022',
+              thirdText: 'الجنسية : بنجلاديش',
+              fourText: 'المهنة المطلوبة : عاملة منزلية',
+              fiveText: 'تفاصيل الطلب',
+              finalText: 'طلب اختيار افراد من التطبيق',
+            ),
             const SizedBox(height: 17),
-            
           ],
         ),
       ),

@@ -11,7 +11,7 @@ class HourlyServicesCubit extends Cubit<HourlyServicesState> {
   Future<void> fetchHourlyServices(String serviceType) async {
     emit(HourlyServicesLoading());
 
-    final queryParameters = {'serviceType': serviceType}; 
+    final queryParameters = {'serviceType': serviceType};
 
     final response = await AppService.callService(
       actionType: ActionType.get,
@@ -27,10 +27,11 @@ class HourlyServicesCubit extends Cubit<HourlyServicesState> {
 
       emit(HourlyServicesSuccess(services: services));
     } else {
-      emit(const HourlyServicesFailure(
-        error:  ' لا يوجد خدمات متاحه',
+      emit(
+        const HourlyServicesFailure(
+          error: ' لا يوجد خدمات متاحه',
         ),
-      );  
+      );
     }
   }
 }

@@ -35,18 +35,18 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
         child: BlocConsumer<AddreaseCubit, SavedAddressState>(
           builder: (context, state) {
             if (state is SavedAddressUpdate) {
-              final mainLocation = state.mainLocation;
+              final modelAddrease = state.modelAddrease;
 
-              if (mainLocation.displayValue.isNotEmpty &&
-                  mainLocation.availabilityMessage.isNotEmpty) {
+              if (modelAddrease.mainLocations!=null &&
+                  modelAddrease.subLocation!.isNotEmpty) {
                 return Column(
                   children: [
                     SizedBox(height: 30.h),
                     Text('اختيار العنوان من عناوينك السابقة', style: TextStyles.regular18),
                     SizedBox(height: 32.h),
                   ButtonInResidentService(
-                        titleText: mainLocation.displayValue,
-                        subTitleText: mainLocation.availabilityMessage,
+                        titleText: state.modelAddrease.mainLocations!.displayValue!,
+                        subTitleText: state.modelAddrease.subLocation![0].availabilityMessage ?? 'لا يوجد',
                         isAddressMain: true,
                         showIsAddressMain: false,
                         onTapAction: true,
@@ -85,3 +85,79 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
     );
   }
 }
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:nowproject/Models/model_addrease/model_addrease.dart';
+// import 'package:nowproject/Screens/Resident%20service/components/button_in_resident_service.dart';
+// import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
+// import 'package:nowproject/cubit/Addrease/addrease_state.dart';
+// import 'package:nowproject/utility/app_images.dart';
+// import 'package:nowproject/utility/app_text_style.dart';
+
+// class ResidentServiceViewBody extends StatefulWidget {
+//   const ResidentServiceViewBody({
+//     super.key,
+//     required this.onChanged,
+//   });
+//   final void Function(bool) onChanged;
+
+//   @override
+//   State<ResidentServiceViewBody> createState() =>
+//       _ResidentServiceViewBodyState();
+// }
+
+// class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
+//   final String serviceId = 'serviceId';
+//   final String contactId = '1f87f7f3-6466-4013-9be3-e23ce4e62a55';
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     BlocProvider.of<AddreaseCubit>(context)
+//         .getSavedAddress(serviceId, contactId);
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SingleChildScrollView(
+//       child: Padding(
+//         padding: const EdgeInsets.symmetric(horizontal: 32),
+//         child: BlocConsumer<AddreaseCubit, SavedAddressState>(
+//           builder: (context, state) {
+//             if (state is SavedAddressUpdate) {
+//               final modelAddrease = state.modelAddrease;
+//                                 return Column(
+//                                   children: [
+//                                     Text(
+//                                   modelAddrease.mainLocations?.displayValue?.toString() ?? 'displayValue',
+//                                   style: TextStyles.regular18,
+//                                 ),
+//                                     SizedBox(height: 8),
+//                                     Text(
+//                     modelAddrease.subLocation?.toString() ?? 'Default Value',
+//                     style: TextStyles.regular18,
+//                   ),
+//                 ],
+//               );
+//             } else if (state is SavedAddressLoading) {
+//               return Center(
+//                   child: SizedBox(
+//                 width: 80.w,
+//                 height: 100.h,
+//                 child: Image.asset(Assets.imagesclockloader),
+//               ));
+//             } else if (state is SavedAddressFailure) {
+//               return Center(child: Text(state.error));
+//             } else {
+//               return const Center(child: Text('No data available.'));
+//             }
+//           },
+//           listener: (context, state) {
+//             print(state);
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -7,10 +7,14 @@ import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service
 import 'package:nowproject/utility/app_text_style.dart';
 
 class CustomDetailesInChoosePackege extends StatefulWidget {
-  const CustomDetailesInChoosePackege({super.key, required this.workerData, required this.heightContainer, required this.textPackageDuration});
-final String workerData;
-final String textPackageDuration;
-final double heightContainer;
+  const CustomDetailesInChoosePackege(
+      {super.key,
+      required this.workerData,
+      required this.heightContainer,
+      required this.textPackageDuration});
+  final String workerData;
+  final String textPackageDuration;
+  final double heightContainer;
   @override
   State<CustomDetailesInChoosePackege> createState() =>
       _CustomDetailesInChoosePackegeState();
@@ -56,13 +60,13 @@ class _CustomDetailesInChoosePackegeState
                     SizedBox(
                       width: 250.w,
                       child: Text(
-                      widget.workerData,
+                        widget.workerData,
                         style: TextStyles.bold14,
                       ),
                     ),
                     SizedBox(height: 12.h),
-                      CustomPackageDuration(
-                      textPackageDuration: widget.textPackageDuration, 
+                    CustomPackageDuration(
+                      textPackageDuration: widget.textPackageDuration,
                     ),
                     SizedBox(height: 11.h),
                     const CustomSalary(),
@@ -77,7 +81,6 @@ class _CustomDetailesInChoosePackegeState
                       isRectangleVisible ? Icons.remove : Icons.add,
                       color: Colors.black,
                     ),
-                    
                   ),
                 ),
               ],
@@ -86,13 +89,13 @@ class _CustomDetailesInChoosePackegeState
         ),
         if (isRectangleVisible)
           GestureDetector(
-            onTap: (){
+            onTap: () {
               showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const CustomDialogPersonal();
-              },
-            );
+                context: context,
+                builder: (BuildContext context) {
+                  return const CustomDialogPersonal();
+                },
+              );
             },
             child: Container(
               width: 700.w,

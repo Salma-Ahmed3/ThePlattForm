@@ -11,28 +11,34 @@ class CustomChosseMaidRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-          Text('اختر العاملة التي تناسبك' , style: TextStyles.semiBold16,), 
-          Container(
-            width: 92.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color:  Colors.black,
-            ),
-            child: GestureDetector(
-              onTap: () {
-                showDialog(context: context, builder: (BuildContext context) {
-                  return const AdvancedSearchDialog();
-                });
-              },
-              child: Align(
-                alignment: Alignment.center,
-                child: Text('بحث متقدم' ,
+        Text(
+          'اختر العاملة التي تناسبك',
+          style: TextStyles.semiBold16,
+        ),
+        Container(
+          width: 92.w,
+          height: 40.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.black,
+          ),
+          child: GestureDetector(
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const AdvancedSearchDialog();
+                  });
+            },
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                'بحث متقدم',
                 style: TextStyles.regular12.copyWith(color: Colors.white),
-                  ),
-                ),
+              ),
             ),
-          )
+          ),
+        )
       ],
     );
   }

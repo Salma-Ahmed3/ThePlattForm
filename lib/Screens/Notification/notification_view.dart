@@ -15,13 +15,11 @@ class NotificationView extends StatelessWidget {
         appBar: buildAppBar(
           context,
           titleAppBar: 'الإشعارات',
-          onPressedRightIcon: () {
-          },
+          onPressedRightIcon: () {},
           icon: const Icon(Icons.notifications),
         ),
         body: const NotificationViewBody(),
-      bottomNavigationBar: const CustomNavBar(),
-
+        bottomNavigationBar: const CustomNavBar(),
       ),
     );
   }

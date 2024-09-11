@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -10,18 +9,16 @@ class CustomNumberOfVisitFormField extends StatefulWidget {
       _CustomNumberOfVisitFormFieldState();
 }
 
-class _CustomNumberOfVisitFormFieldState extends State<CustomNumberOfVisitFormField> {
+class _CustomNumberOfVisitFormFieldState
+    extends State<CustomNumberOfVisitFormField> {
   String? selectedCountry;
   final List<String> countries = [
-
     '1',
     '2',
     '3',
     '4',
     '5',
     '6',
- 
-
   ];
 
   @override
@@ -30,7 +27,6 @@ class _CustomNumberOfVisitFormFieldState extends State<CustomNumberOfVisitFormFi
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'عدد الزيارات',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -39,7 +35,7 @@ class _CustomNumberOfVisitFormFieldState extends State<CustomNumberOfVisitFormFi
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

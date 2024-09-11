@@ -9,46 +9,65 @@ class BusinessSectorServiceRequestViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-      child:  Padding(
-        padding:  const EdgeInsets.symmetric(horizontal: 23),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 23),
         child: Column(
           children: [
-                  SizedBox(height: 18.h,),
-                  const CustomButtonInRequestBusiness(
-                  labelText:'اسم العميل / الشركة',
-                  hintText: 'الاسم' ,),
-                  SizedBox(height: 16.h,),
-                  const CustomButtonInRequestBusiness(
-                  labelText:'رقم الجوال',
-                  hintText: 'الرقم' ,),
-                  SizedBox(height: 16.h,),
-                  const CustomButtonInRequestBusiness(
-                  labelText:'نشاط الشركة',
-                  hintText: 'البريد' ,),
-                  SizedBox(height: 16.h,),
-                  const SizedBox(
-                    width: double.infinity,  
-                    height: 200,
-                    child: CustomButtonInRequestBusiness(
-                      maxLines: 7,
-                    labelText:'تفاصيل الطلب',
-                    hintText: 'التفاصيل' ,),
-                    
-                  ),
-                  SizedBox(height: 34.h,),
-                CustomButtonInAddNewAddrease(
-                  onTap: () {
-                    Navigator.pop(context);
-                  }, alignment:  Alignment.centerLeft, 
-                  colorBackGround: Colors.black,
-                  tixtInButton: Center(
-                    child: Text('إرسال الطلب',
-                      style: TextStyles.regular18.copyWith(color: Colors.white),
-                      ),
-                  ), width: 179.w, height: 47.h, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(8) ,
-                  ),
-                ],
+            SizedBox(
+              height: 18.h,
+            ),
+            const CustomButtonInRequestBusiness(
+              labelText: 'اسم العميل / الشركة',
+              hintText: 'الاسم',
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            const CustomButtonInRequestBusiness(
+              labelText: 'رقم الجوال',
+              hintText: 'الرقم',
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            const CustomButtonInRequestBusiness(
+              labelText: 'نشاط الشركة',
+              hintText: 'البريد',
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            const SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: CustomButtonInRequestBusiness(
+                maxLines: 7,
+                labelText: 'تفاصيل الطلب',
+                hintText: 'التفاصيل',
+              ),
+            ),
+            SizedBox(
+              height: 34.h,
+            ),
+            CustomButtonInAddNewAddrease(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              alignment: Alignment.centerLeft,
+              colorBackGround: Colors.black,
+              tixtInButton: Center(
+                child: Text(
+                  'إرسال الطلب',
+                  style: TextStyles.regular18.copyWith(color: Colors.white),
+                ),
+              ),
+              width: 179.w,
+              height: 47.h,
+              colorBorder: const Color(0xff000000),
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ],
         ),
       ),
     );

@@ -11,29 +11,48 @@ class ContractDataViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 27,),
+          const SizedBox(
+            height: 27,
+          ),
           const CustomButtonCopon(),
-          const SizedBox(height: 19,),
+          const SizedBox(
+            height: 19,
+          ),
           const CustomFavorteDate(),
-          const SizedBox(height: 23,),
+          const SizedBox(
+            height: 23,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomDetailesInChoosePackege(workerData: 'باقة زيارة واحدة أسبوعيا لمدة 3 شهور',
-                heightContainer: 128.h, textPackageDuration: 'سعر الزيارة 240 ر .س',
-                ),
+            child: CustomDetailesInChoosePackege(
+              workerData: 'باقة زيارة واحدة أسبوعيا لمدة 3 شهور',
+              heightContainer: 128.h,
+              textPackageDuration: 'سعر الزيارة 240 ر .س',
+            ),
           ),
-          const SizedBox(height: 16,),
-          Text('بإكمالك الخطوات فأنت توافق على', style: TextStyles.regular14,),
-          const SizedBox(height: 5,),
-          Text('شروط و أحكام الشركة', style: TextStyles.regular14.copyWith(color: Color(0xff24A19D)),),
-          const SizedBox(height: 37,),
+          const SizedBox(
+            height: 16,
+          ),
+          Text(
+            'بإكمالك الخطوات فأنت توافق على',
+            style: TextStyles.regular14,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            'شروط و أحكام الشركة',
+            style: TextStyles.regular14.copyWith(color: Color(0xff24A19D)),
+          ),
+          const SizedBox(
+            height: 37,
+          ),
           const CustomClickInContractData(),
         ],
       ),
-          
     );
   }
 }

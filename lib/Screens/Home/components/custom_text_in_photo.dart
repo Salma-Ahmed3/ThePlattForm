@@ -8,22 +8,19 @@ class CustomTextInPhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  
-         Center(
-          
-           child: Column(
-             children: [
-               SizedBox(
-                  height: 49.h,
-                ),
-                       Image.asset(Assets.imagesPicIcon),      
-                        SizedBox(
-                        height: 16.h,
-                       ),
-                        Text('صورة مصممه خصيصاً للعروض',style: TextStyles.regular12),
-             ],
-           ),
-         );
-     
+    return Center(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 49.h,
+          ),
+          Image.asset(Assets.imagesPicIcon),
+          SizedBox(
+            height: 16.h,
+          ),
+          Text('صورة مصممه خصيصاً للعروض', style: TextStyles.regular12),
+        ],
+      ),
+    );
   }
 }

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nowproject/utility/app_text_style.dart';
@@ -8,10 +6,12 @@ class CustomDateOfFirstVisitFormField extends StatefulWidget {
   const CustomDateOfFirstVisitFormField({super.key});
 
   @override
-  _CustomDateOfFirstVisitFormFieldState createState() => _CustomDateOfFirstVisitFormFieldState();
+  _CustomDateOfFirstVisitFormFieldState createState() =>
+      _CustomDateOfFirstVisitFormFieldState();
 }
 
-class _CustomDateOfFirstVisitFormFieldState extends State<CustomDateOfFirstVisitFormField> {
+class _CustomDateOfFirstVisitFormFieldState
+    extends State<CustomDateOfFirstVisitFormField> {
   final TextEditingController _dateController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
 
@@ -39,7 +39,7 @@ class _CustomDateOfFirstVisitFormFieldState extends State<CustomDateOfFirstVisit
           readOnly: true,
           decoration: InputDecoration(
             labelText: 'تاريخ اول زياره',
-            labelStyle: TextStyles.regular14, 
+            labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.black),
               borderRadius: BorderRadius.circular(4),
@@ -56,7 +56,6 @@ class _CustomDateOfFirstVisitFormFieldState extends State<CustomDateOfFirstVisit
             ),
           ),
         ),
-       
       ],
     );
   }

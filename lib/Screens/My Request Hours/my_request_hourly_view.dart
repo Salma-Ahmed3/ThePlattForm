@@ -9,7 +9,7 @@ import 'package:svg_flutter/svg.dart';
 
 class MyRequestHourlyView extends StatelessWidget {
   const MyRequestHourlyView({super.key});
-static const routeName = 'my_request_hourly_view';
+  static const routeName = 'my_request_hourly_view';
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -25,19 +25,19 @@ static const routeName = 'my_request_hourly_view';
           },
           icon: const Icon(Icons.notifications),
         ),
-         floatingActionButton: Row(
+        floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BusinessSectorServiceRequestView()),
-                );
-              },
-              child: SvgPicture.asset(Assets.imagesAddIcon)
-            )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const BusinessSectorServiceRequestView()),
+                  );
+                },
+                child: SvgPicture.asset(Assets.imagesAddIcon))
           ],
         ),
       ),

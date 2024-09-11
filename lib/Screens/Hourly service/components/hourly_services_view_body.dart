@@ -18,13 +18,13 @@ class HourlyServicesViewBody extends StatelessWidget {
     return BlocBuilder<HourlyServicesCubit, HourlyServicesState>(
       builder: (context, state) {
         if (state is HourlyServicesLoading) {
-          return  Center(
+          return Center(
             child: SizedBox(
               width: 80.w,
               height: 100.h,
               child: Image.asset(Assets.imagesclockloader),
-              ),
-            );
+            ),
+          );
         } else if (state is HourlyServicesFailure) {
           return Center(child: Text(state.error));
         } else if (state is HourlyServicesSuccess) {

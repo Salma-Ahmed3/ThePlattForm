@@ -5,10 +5,12 @@ class CustomNumberOfFemaleWorkersFormField extends StatefulWidget {
   const CustomNumberOfFemaleWorkersFormField({super.key});
 
   @override
-  _CustomNumberOfFemaleWorkersFormFieldState createState() => _CustomNumberOfFemaleWorkersFormFieldState();
+  _CustomNumberOfFemaleWorkersFormFieldState createState() =>
+      _CustomNumberOfFemaleWorkersFormFieldState();
 }
 
-class _CustomNumberOfFemaleWorkersFormFieldState extends State<CustomNumberOfFemaleWorkersFormField> {
+class _CustomNumberOfFemaleWorkersFormFieldState
+    extends State<CustomNumberOfFemaleWorkersFormField> {
   int _numberOfFemaleWorkers = 0;
   final TextEditingController _controller = TextEditingController();
 
@@ -38,7 +40,6 @@ class _CustomNumberOfFemaleWorkersFormFieldState extends State<CustomNumberOfFem
   Widget build(BuildContext context) {
     return Row(
       children: [
-      
         Expanded(
           child: TextFormField(
             controller: _controller,
@@ -46,7 +47,8 @@ class _CustomNumberOfFemaleWorkersFormFieldState extends State<CustomNumberOfFem
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               labelText: 'عدد العاملات',
-              labelStyle: TextStyles.regular14, // Replace with your `TextStyles.regular14`
+              labelStyle: TextStyles
+                  .regular14, // Replace with your `TextStyles.regular14`
               border: OutlineInputBorder(
                 borderSide: const BorderSide(color: Colors.black),
                 borderRadius: BorderRadius.circular(4),
@@ -59,33 +61,33 @@ class _CustomNumberOfFemaleWorkersFormFieldState extends State<CustomNumberOfFem
               ),
             ),
           ),
-        ), 
+        ),
         SizedBox(width: 7),
-         Container(
-            width: 46,
-            height: 44,
+        Container(
+          width: 46,
+          height: 44,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-          color: Color(0xffD6D6D6),),
-           child: IconButton(
+            color: Color(0xffD6D6D6),
+          ),
+          child: IconButton(
             icon: Icon(Icons.add),
             onPressed: _increment,
-                   ),
-         ),
+          ),
+        ),
         SizedBox(width: 7),
-
-         Container(
-           width: 46,
-            height: 44,
+        Container(
+          width: 46,
+          height: 44,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-          color: Color(0xffD6D6D6),),
-           child: IconButton(
+            color: Color(0xffD6D6D6),
+          ),
+          child: IconButton(
             icon: Icon(Icons.remove),
             onPressed: _decrement,
-                   ),
-         ),
-       
+          ),
+        ),
       ],
     );
   }

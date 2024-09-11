@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -6,8 +5,7 @@ class CountryNameFormField extends StatefulWidget {
   const CountryNameFormField({super.key});
 
   @override
-  _CountryNameFormFieldState createState() =>
-      _CountryNameFormFieldState();
+  _CountryNameFormFieldState createState() => _CountryNameFormFieldState();
 }
 
 class _CountryNameFormFieldState extends State<CountryNameFormField> {
@@ -31,7 +29,6 @@ class _CountryNameFormFieldState extends State<CountryNameFormField> {
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'مدينة الإقامة',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -40,7 +37,7 @@ class _CountryNameFormFieldState extends State<CountryNameFormField> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

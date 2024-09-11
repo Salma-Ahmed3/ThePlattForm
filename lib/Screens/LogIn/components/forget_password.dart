@@ -16,10 +16,7 @@ class ForgetPassword extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushReplacementNamed(TestPage.routeName);
             },
-            child:  Text(
-              'نسيت كلمة المرور؟',
-              style: TextStyles.regular16
-            ),
+            child: Text('نسيت كلمة المرور؟', style: TextStyles.regular16),
           ),
         ),
       ],

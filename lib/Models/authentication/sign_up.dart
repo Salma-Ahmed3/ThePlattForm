@@ -17,28 +17,29 @@ class SignUpUserPost {
   String? lastName;
   String? email;
   String? password;
-  String? confirmPassword ;
+  String? confirmPassword;
 
   factory SignUpUserPost.fromJson(Map<String, dynamic> json) => SignUpUserPost(
-    userName: json["userName"] ?? null,
-    firstName: json["firstName"] ?? null,
-    middleName: json["middleName"] ?? null,
-    lastName: json["lastName"] ?? null,
-    email: json["email"] ?? null,
-    password: json["password"] ?? null,
-    confirmPassword: json["confirmPassword"] ?? null,
-  );
+        userName: json["userName"] ?? null,
+        firstName: json["firstName"] ?? null,
+        middleName: json["middleName"] ?? null,
+        lastName: json["lastName"] ?? null,
+        email: json["email"] ?? null,
+        password: json["password"] ?? null,
+        confirmPassword: json["confirmPassword"] ?? null,
+      );
 
   Map<String, dynamic> toJson() => {
-    "userName": userName ?? null,
-    "firstName": firstName ?? null,
-    "middleName": middleName ?? null,
-    "lastName": lastName ?? null,
-    "email": email ?? null,
-    "Password": password ?? null,
-    "confirmPassword": confirmPassword ?? null,
-  };
+        "userName": userName ?? null,
+        "firstName": firstName ?? null,
+        "middleName": middleName ?? null,
+        "lastName": lastName ?? null,
+        "email": email ?? null,
+        "Password": password ?? null,
+        "confirmPassword": confirmPassword ?? null,
+      };
 }
+
 class SignUpUserResult {
   SignUpUserResult({
     this.phoneNumber,
@@ -62,10 +63,9 @@ class SignUpUserResult {
       );
 
   Map<String, dynamic> toJson() => {
-    "phoneNumber": phoneNumber,
-    "password": password,
-    "userId": userId,
-    "rememberMe": rememberMe,
-  };
+        "phoneNumber": phoneNumber,
+        "password": password,
+        "userId": userId,
+        "rememberMe": rememberMe,
+      };
 }
-

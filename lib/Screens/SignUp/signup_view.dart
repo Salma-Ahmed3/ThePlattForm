@@ -11,16 +11,16 @@ class SignupView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xffF8F8F8),
-        centerTitle: true,
-        title:  Text(
-          'إنشاء حساب جديد',
-          style: TextStyles.semiBold18,
-          textAlign: TextAlign.center,
+        appBar: AppBar(
+          backgroundColor: const Color(0xffF8F8F8),
+          centerTitle: true,
+          title: Text(
+            'إنشاء حساب جديد',
+            style: TextStyles.semiBold18,
+            textAlign: TextAlign.center,
+          ),
+          elevation: 0,
         ),
-        elevation: 0,),
-      
         body: const SignUpViewBody(),
       ),
     );

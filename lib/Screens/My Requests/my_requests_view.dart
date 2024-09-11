@@ -10,7 +10,7 @@ import '../../utility/app_images.dart';
 
 class MyRequestsView extends StatelessWidget {
   const MyRequestsView({super.key});
-static const routeName = 'MyRequestsView';
+  static const routeName = 'MyRequestsView';
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -26,23 +26,22 @@ static const routeName = 'MyRequestsView';
           },
           icon: const Icon(Icons.notifications),
         ),
-          floatingActionButton: Row(
+        floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BusinessSectorServiceRequestView()),
-                );
-              },
-              child: SvgPicture.asset(Assets.imagesAddIcon)
-            )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const BusinessSectorServiceRequestView()),
+                  );
+                },
+                child: SvgPicture.asset(Assets.imagesAddIcon))
           ],
         ),
       ),
     );
   }
 }
-

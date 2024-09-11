@@ -17,7 +17,6 @@ class SocialLoginButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-      
       ),
       child: TextButton(
         style: TextButton.styleFrom(
@@ -35,7 +34,7 @@ class SocialLoginButton extends StatelessWidget {
           visualDensity: const VisualDensity(
             horizontal: VisualDensity.minimumDensity,
           ),
-          leading:SvgPicture.asset(images),
+          leading: SvgPicture.asset(images),
           title: Text(
             title,
             textAlign: TextAlign.center,

@@ -32,9 +32,8 @@ class _NationalityTextState extends State<NationalityText> {
           child: Text(
             widget.nameNationality,
             style: TextStyles.regular12.copyWith(
-          color: isSelected ? Colors.white : Colors.black,
-
-              ),
+              color: isSelected ? Colors.white : Colors.black,
+            ),
           ),
         ),
       ),

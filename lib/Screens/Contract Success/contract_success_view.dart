@@ -6,7 +6,7 @@ import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class ContractSuccessView extends StatelessWidget {
   const ContractSuccessView({super.key});
-static const routeName = 'ContractSuccessView';
+  static const routeName = 'ContractSuccessView';
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -24,5 +24,5 @@ static const routeName = 'ContractSuccessView';
         ),
       ),
     );
-    }
-    }
+  }
+}

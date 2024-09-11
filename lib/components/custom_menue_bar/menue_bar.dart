@@ -25,11 +25,9 @@ class _MenueBarState extends State<MenueBar> {
     }
   }
 
-  void setNightMode() {
-  }
+  void setNightMode() {}
 
-  void setLightMode() {
-  }
+  void setLightMode() {}
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,7 @@ class _MenueBarState extends State<MenueBar> {
               child: ListView(
                 children: [
                   const SizedBox(height: 81),
-                   Text('محمد مصطفى', style: TextStyles.regular20),
+                  Text('محمد مصطفى', style: TextStyles.regular20),
                   const SizedBox(height: 59),
                   Container(
                     width: double.infinity,
@@ -56,101 +54,81 @@ class _MenueBarState extends State<MenueBar> {
                       children: [
                         const SizedBox(width: 5),
                         Image.asset(Assets.imagesWalletIcon),
-                         const SizedBox(width: 9),
-                         Text('رصيد المحفظة', style: TextStyles.regular16),
-                         const SizedBox(width: 10),
-                         Text('‏80,228.58 ريال', style: TextStyles.regular16),
-                         const SizedBox(width: 5),
+                        const SizedBox(width: 9),
+                        Text('رصيد المحفظة', style: TextStyles.regular16),
+                        const SizedBox(width: 10),
+                        Text('‏80,228.58 ريال', style: TextStyles.regular16),
+                        const SizedBox(width: 5),
                       ],
                     ),
                   ),
-                   const SizedBox(height: 39),
-                   GestureDetector(
-                    onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('لوحة المعلومات', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
-                      onTap: () {                     
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('الاشعارات', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
+                  const SizedBox(height: 39),
+                  GestureDetector(
                       onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('تعاقداتي', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child:
+                          Text('لوحة المعلومات', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
                       onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('طلباتي', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('الاشعارات', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
                       onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('طلبات الأفراد', style: TextStyles.regular16)),
-                 
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('تعاقداتي', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
                       onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('زياراتي', style: TextStyles.regular16)),
-                
-                   const SizedBox(height: 24),
-
-                   GestureDetector(
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('طلباتي', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
                       onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('تذاكر الدعم والمساعدة', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(  onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('اتصل بنا', style: TextStyles.regular16)),
-                   
-                   const SizedBox(height: 24),
-
-                   GestureDetector(  onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    child: Text('English', style: TextStyles.regular16)),
-                  
-                   const SizedBox(height: 24),
-
-                   GestureDetector(  onTap: () {
-                      
-                      Navigator.of(context).pushNamed(TestPage.routeName);
-                    },
-                    
-                    child: GestureDetector(
-                       onTap: () => Navigator.of(context).pushNamed(LoginView.routeName),
-                      child: Text('تسجيل الخروج', style: TextStyles.regular16))),
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child:
+                          Text('طلبات الأفراد', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('زياراتي', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('تذاكر الدعم والمساعدة',
+                          style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('اتصل بنا', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: Text('English', style: TextStyles.regular16)),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(TestPage.routeName);
+                      },
+                      child: GestureDetector(
+                          onTap: () => Navigator.of(context)
+                              .pushNamed(LoginView.routeName),
+                          child: Text('تسجيل الخروج',
+                              style: TextStyles.regular16))),
                 ],
               ),
             ),
@@ -163,11 +141,14 @@ class _MenueBarState extends State<MenueBar> {
               inactiveTrackColor: Colors.white,
               inactiveThumbColor: const Color(0xff24A19D),
               tileColor: Colors.white,
-              selectedTileColor:Colors.white,
+              selectedTileColor: Colors.white,
               // dark mode
-               activeColor:Colors.black,
+              activeColor: Colors.black,
               activeTrackColor: Colors.white,
-              title:  Text('وضع ليلي', style: TextStyles.regular14,),
+              title: Text(
+                'وضع ليلي',
+                style: TextStyles.regular14,
+              ),
               value: isNightMode,
               onChanged: (bool value) {
                 toggleNightMode();

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -6,8 +5,7 @@ class NameAddressFormField extends StatefulWidget {
   const NameAddressFormField({super.key});
 
   @override
-  _NameAddressFormFieldState createState() =>
-      _NameAddressFormFieldState();
+  _NameAddressFormFieldState createState() => _NameAddressFormFieldState();
 }
 
 class _NameAddressFormFieldState extends State<NameAddressFormField> {
@@ -21,7 +19,6 @@ class _NameAddressFormFieldState extends State<NameAddressFormField> {
     'حي الياسمين ',
     ' حي النرجس ',
     ' حي الملك سلمان ',
-  
   ];
 
   @override
@@ -30,7 +27,6 @@ class _NameAddressFormFieldState extends State<NameAddressFormField> {
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'اسم الحي',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -39,7 +35,7 @@ class _NameAddressFormFieldState extends State<NameAddressFormField> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

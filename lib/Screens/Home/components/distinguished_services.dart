@@ -6,15 +6,21 @@ class DistinguishedServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         Align(
-          alignment: Alignment.centerRight, 
-          child: Text('خدماتنا المميزة', style: TextStyles.regular16,),
+          alignment: Alignment.centerRight,
+          child: Text(
+            'خدماتنا المميزة',
+            style: TextStyles.regular16,
+          ),
         ),
         Align(
-          alignment: Alignment.centerRight, 
-          child: Text('مجموعة خدمات لا غنى عنها', style: TextStyles.regular16,),
+          alignment: Alignment.centerRight,
+          child: Text(
+            'مجموعة خدمات لا غنى عنها',
+            style: TextStyles.regular16,
+          ),
         ),
       ],
     );

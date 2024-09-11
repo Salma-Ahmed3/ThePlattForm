@@ -9,10 +9,8 @@ class LoginView extends StatelessWidget {
     return const Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-     
-      body: LoginViewBody(),
+        body: LoginViewBody(),
       ),
-      
     );
   }
 }

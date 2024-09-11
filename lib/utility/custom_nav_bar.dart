@@ -37,7 +37,6 @@ class CustomNavBar extends StatelessWidget {
         switch (index) {
           case 0:
             Navigator.pushReplacementNamed(
-             
               context,
               HomeView.routeName,
             );
@@ -50,7 +49,6 @@ class CustomNavBar extends StatelessWidget {
             break;
           case 2:
             Navigator.pushReplacementNamed(
-             
               context,
               MyRequestsView.routeName,
             );

@@ -9,7 +9,7 @@ class CustomDotCircle extends StatefulWidget {
 }
 
 class _CustomDotCircleState extends State<CustomDotCircle> {
-  int selectedIndex = 0; 
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _CustomDotCircleState extends State<CustomDotCircle> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectedIndex = index; 
+          selectedIndex = index;
         });
       },
       child: Container(
@@ -32,11 +32,10 @@ class _CustomDotCircleState extends State<CustomDotCircle> {
         margin: const EdgeInsets.symmetric(horizontal: 7),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: selectedIndex == index
-              ? const Color(0xffACACAC) 
-              : Colors.white, 
+          color:
+              selectedIndex == index ? const Color(0xffACACAC) : Colors.white,
           border: Border.all(
-            color: const Color(0xffACACAC), 
+            color: const Color(0xffACACAC),
             width: 1,
           ),
         ),

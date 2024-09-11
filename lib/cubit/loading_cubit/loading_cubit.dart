@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +17,7 @@ class Loading extends Cubit<LoadingState> {
   }
 
   get show {
-      FocusScope.of(Get.context!).unfocus();
+    FocusScope.of(Get.context!).unfocus();
     emit(LoadingChange(!state.change!, true));
   }
 }

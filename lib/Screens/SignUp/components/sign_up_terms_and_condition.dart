@@ -28,7 +28,7 @@ class _SignUpTermsAndConditionState extends State<SignUpTermsAndCondition> {
           },
           isChecked: isTermsAccepted,
         ),
-         SizedBox(
+        SizedBox(
           width: 16.w,
         ),
         Expanded(
@@ -43,9 +43,7 @@ class _SignUpTermsAndConditionState extends State<SignUpTermsAndCondition> {
                 ),
                 TextSpan(
                   text: 'الشروط والأحكام',
-                  style: TextStyles.regular16.copyWith(
-                    color: Colors.green
-                  ),
+                  style: TextStyles.regular16.copyWith(color: Colors.green),
                 ),
                 TextSpan(
                   text: ' ',
@@ -55,9 +53,7 @@ class _SignUpTermsAndConditionState extends State<SignUpTermsAndCondition> {
                 ),
                 TextSpan(
                   text: 'الخاصة',
-                  style: TextStyles.regular16.copyWith(
-                    color:Colors.green
-                  ),
+                  style: TextStyles.regular16.copyWith(color: Colors.green),
                 ),
                 TextSpan(
                   text: ' ',
@@ -67,9 +63,7 @@ class _SignUpTermsAndConditionState extends State<SignUpTermsAndCondition> {
                 ),
                 TextSpan(
                   text: 'بنا',
-                  style: TextStyles.regular16.copyWith(
-                    color:Colors.green
-                  ),
+                  style: TextStyles.regular16.copyWith(color: Colors.green),
                 ),
               ],
             ),

@@ -10,10 +10,17 @@ class CustomSalary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-                Text('‏9,800.00  ريال' , style: TextStyles.regular14,),
-                 SizedBox(width: 10.w,),
-                Text('‏12,800.00 ' , style: TextStyles.regular14.copyWith(decoration: TextDecoration.lineThrough,)
-                ),
+        Text(
+          '‏9,800.00  ريال',
+          style: TextStyles.regular14,
+        ),
+        SizedBox(
+          width: 10.w,
+        ),
+        Text('‏12,800.00 ',
+            style: TextStyles.regular14.copyWith(
+              decoration: TextDecoration.lineThrough,
+            )),
       ],
     );
   }

@@ -8,5 +8,4 @@ class FireBaseHandling {
     });
     await FirebaseAnalytics.instance.setCurrentScreen(screenName: screenName);
   }
-
 }

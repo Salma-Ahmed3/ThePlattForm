@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -6,8 +5,7 @@ class PhoneNumber extends StatefulWidget {
   const PhoneNumber({super.key});
 
   @override
-  _PhoneNumberState createState() =>
-      _PhoneNumberState();
+  _PhoneNumberState createState() => _PhoneNumberState();
 }
 
 class _PhoneNumberState extends State<PhoneNumber> {
@@ -17,7 +15,6 @@ class _PhoneNumberState extends State<PhoneNumber> {
     // 'مكتب',
     // 'شركة',
     // 'فيلا',
-
   ];
 
   @override
@@ -26,7 +23,6 @@ class _PhoneNumberState extends State<PhoneNumber> {
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'رقم المنزل',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -35,7 +31,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

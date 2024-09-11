@@ -92,14 +92,14 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 PasswordFailed(
                   onSaved: (value) {
                     password = value ?? '';
-                  }, 
+                  },
                   hintText: '  كلمة المرور',
                 ),
                 SizedBox(height: 20.h),
                 PasswordFailed(
                   onSaved: (value) {
                     confirmPassword = value ?? '';
-                  }, 
+                  },
                   hintText: '  تأكيد كلمة المرور',
                 ),
                 SizedBox(height: 18.h),
@@ -172,7 +172,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content: Text('كلمة المرور وتأكيد كلمة المرور غير متطابقين')),
+                                  content: Text(
+                                      'كلمة المرور وتأكيد كلمة المرور غير متطابقين')),
                             );
                           }
                         } else {

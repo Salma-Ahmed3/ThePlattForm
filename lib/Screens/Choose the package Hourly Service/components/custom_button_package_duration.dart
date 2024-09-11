@@ -24,7 +24,8 @@ class CustomButtonPackageDuration extends StatelessWidget {
         tixtInButton: Center(
           child: Text(
             text,
-            style: TextStyles.regular12.copyWith(color:isSelected ?  const Color(0xffFFE5E5) : Colors.black ),
+            style: TextStyles.regular12.copyWith(
+                color: isSelected ? const Color(0xffFFE5E5) : Colors.black),
           ),
         ),
         width: 71,

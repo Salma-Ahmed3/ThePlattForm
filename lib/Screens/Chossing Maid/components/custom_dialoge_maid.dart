@@ -20,71 +20,101 @@ class CustomDialogeMaid extends StatelessWidget {
         Directionality(
           textDirection: TextDirection.rtl,
           child: Dialog(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 44),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // const SizedBox(height: 44),
+                  Text(
+                    'تفاصيل عاملة',
+                    style: TextStyles.semiBold18,
+                  ),
+                  SizedBox(
+                    height: 32.h,
+                  ),
+                  Row(
+                    children: [
+                      const CustomImageMaid(),
+                      SizedBox(
+                        width: 12.w,
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 44),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            // const SizedBox(height: 44),
-                            Text(
-                            'تفاصيل عاملة',
-                              style: TextStyles.semiBold18,
-                            ),
-                                SizedBox(height: 32.h,),
-                                Row(
-                              children: [
-                                const CustomImageMaid(),
-                                SizedBox(width: 12.w,),
-                                const CustomNameAndAgeMaid(),
-                              ],
-                            ),
-                                  SizedBox(height: 20.h ,),
-                            Row(
-                          children: [
-                            CustomMaidSkillsItem(skillsName: 'إيجاد الطبخ', width: 70.w,),
-                                SizedBox(width: 7.w,),
-                            CustomMaidSkillsItem(skillsName: 'رعاية كبار السن', width: 90.w,),
-                                SizedBox(width: 7.w,),
-                            CustomMaidSkillsItem(skillsName: 'اللغة الانجليزية', width: 90.w,),
-                          ],
-                        ),
-                      SizedBox(height: 10.h ,),
-                        Row(
-                        children: [
-                          CustomMaidSkillsItem(skillsName: 'التعامل مع الاطفال', width: 129.w,),
-                                SizedBox(width: 7.w,),
-                          CustomMaidSkillsItem(skillsName: 'اللغة العربية', width: 88.w,),
-                        ],
+                      const CustomNameAndAgeMaid(),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Row(
+                    children: [
+                      CustomMaidSkillsItem(
+                        skillsName: 'إيجاد الطبخ',
+                        width: 70.w,
                       ),
-                      SizedBox(height: 24.w ,),
-                              CustomButtonInAddNewAddrease(
-                              onTap: () {
-                             Navigator.of(context).pushNamed(ContractDetailsMaidView.routeName);
-                              },
-                              alignment: Alignment.center, 
-                              colorBackGround: Colors.transparent, 
-                              tixtInButton:  Center(
-                              child: Text('اختيار العاملة والتالي',
-                              style: TextStyles.medium16,
-                              ),
-                              ), width: 202.w ,
-                              height: 48.h, colorBorder:  const Color(0xff000000), borderRadius: BorderRadius.circular(4),
+                      SizedBox(
+                        width: 7.w,
+                      ),
+                      CustomMaidSkillsItem(
+                        skillsName: 'رعاية كبار السن',
+                        width: 90.w,
+                      ),
+                      SizedBox(
+                        width: 7.w,
+                      ),
+                      CustomMaidSkillsItem(
+                        skillsName: 'اللغة الانجليزية',
+                        width: 90.w,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Row(
+                    children: [
+                      CustomMaidSkillsItem(
+                        skillsName: 'التعامل مع الاطفال',
+                        width: 129.w,
+                      ),
+                      SizedBox(
+                        width: 7.w,
+                      ),
+                      CustomMaidSkillsItem(
+                        skillsName: 'اللغة العربية',
+                        width: 88.w,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 24.w,
+                  ),
+                  CustomButtonInAddNewAddrease(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(ContractDetailsMaidView.routeName);
+                    },
+                    alignment: Alignment.center,
+                    colorBackGround: Colors.transparent,
+                    tixtInButton: Center(
+                      child: Text(
+                        'اختيار العاملة والتالي',
+                        style: TextStyles.medium16,
+                      ),
                     ),
-                            
-                          ],
-                          
-                        ),
-                        
-                      ),
-                      
-                    ),
+                    width: 202.w,
+                    height: 48.h,
+                    colorBorder: const Color(0xff000000),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
-          Positioned(
-          top: 200.h,
-          child: const CustomCircleAvatar()),
+        Positioned(top: 200.h, child: const CustomCircleAvatar()),
       ],
     );
   }

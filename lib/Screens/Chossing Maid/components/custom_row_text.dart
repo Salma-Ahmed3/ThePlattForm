@@ -8,9 +8,17 @@ class CustomRowText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-                      Text('‏31 سنة', style: TextStyles.regular14, ),
-                      SizedBox(width: 23.w ,),
-                      Text('مسلمة', style: TextStyles.regular14, ),
+        Text(
+          '‏31 سنة',
+          style: TextStyles.regular14,
+        ),
+        SizedBox(
+          width: 23.w,
+        ),
+        Text(
+          'مسلمة',
+          style: TextStyles.regular14,
+        ),
       ],
     );
   }

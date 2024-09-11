@@ -14,25 +14,23 @@ class SignUpCubit extends Cubit<SignUpState> {
     required String email,
     required String password,
     required String confirmPassword,
-
   }) async {
     emit(SignUpLoading());
 
     final body = {
-  "userName": userName,
-  "name": name,
-  "firstName": firstName,
-  "middleName": middleName,
-  "lastName": lastName,
-  "email": email,
-  "password": password,
-  "confirmPassword": confirmPassword,
-  
+      "userName": userName,
+      "name": name,
+      "firstName": firstName,
+      "middleName": middleName,
+      "lastName": lastName,
+      "email": email,
+      "password": password,
+      "confirmPassword": confirmPassword,
     };
 
     final response = await AppService.callService(
       actionType: ActionType.post,
-      apiName: 'Account/Register', 
+      apiName: 'Account/Register',
       body: body,
     );
 

@@ -9,7 +9,8 @@ class MyRequestBuinessViewBody extends StatefulWidget {
   const MyRequestBuinessViewBody({super.key});
 
   @override
-  State<MyRequestBuinessViewBody> createState() => _MyRequestBuinessViewBodyState();
+  State<MyRequestBuinessViewBody> createState() =>
+      _MyRequestBuinessViewBodyState();
 }
 
 class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
@@ -40,12 +41,17 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => const MyRequestsView(),
+                        builder: (BuildContext context) =>
+                            const MyRequestsView(),
                       ),
                     );
                   },
-                  color: selectedRequest == 'الأفراد' ? Colors.black : const Color(0xffD6D6D6),
-                  colorText: selectedRequest == 'الأفراد' ? Colors.white : Colors.black,
+                  color: selectedRequest == 'الأفراد'
+                      ? Colors.black
+                      : const Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الأفراد'
+                      ? Colors.white
+                      : Colors.black,
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
@@ -56,12 +62,17 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => const MyRequestHourlyView(),
+                        builder: (BuildContext context) =>
+                            const MyRequestHourlyView(),
                       ),
                     );
                   },
-                  color: selectedRequest == 'الساعات' ? Colors.black : const Color(0xffD6D6D6),
-                  colorText: selectedRequest == 'الساعات' ? Colors.white : Colors.black,
+                  color: selectedRequest == 'الساعات'
+                      ? Colors.black
+                      : const Color(0xffD6D6D6),
+                  colorText: selectedRequest == 'الساعات'
+                      ? Colors.white
+                      : Colors.black,
                 ),
                 const SizedBox(width: 10),
                 CustomContainerInMyRequest(
@@ -72,12 +83,17 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => const MyRequestBuinessView(),
+                        builder: (BuildContext context) =>
+                            const MyRequestBuinessView(),
                       ),
                     );
                   },
-                  color: selectedRequest == 'الأعمال' ? const Color(0xffD6D6D6): Colors.black ,
-                  colorText: selectedRequest == 'الأعمال' ? Colors.black : Colors.white,
+                  color: selectedRequest == 'الأعمال'
+                      ? const Color(0xffD6D6D6)
+                      : Colors.black,
+                  colorText: selectedRequest == 'الأعمال'
+                      ? Colors.black
+                      : Colors.white,
                 ),
               ],
             ),
@@ -88,7 +104,7 @@ class _MyRequestBuinessViewBodyState extends State<MyRequestBuinessViewBody> {
               titleName: 'Lead-BUSINESS-NO9822',
               firstText: 'شركة الشركة للاعاشة : صاحب الطلب',
               secoundText: 'تاريخ الطلب : 20/05/2021',
-              fourText: 'تفاصيل الطلب', 
+              fourText: 'تفاصيل الطلب',
               fiveText: 'نحتاج إلى فريق عمل كامل لمكان في الرياض لمدة 5 شهور',
             ),
           ],

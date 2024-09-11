@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -10,7 +9,8 @@ class CustomContractDurationFormField extends StatefulWidget {
       _CustomContractDurationFormFieldState();
 }
 
-class _CustomContractDurationFormFieldState extends State<CustomContractDurationFormField> {
+class _CustomContractDurationFormFieldState
+    extends State<CustomContractDurationFormField> {
   String? selectedCountry;
   final List<String> countries = [
     '1شهر',
@@ -18,7 +18,6 @@ class _CustomContractDurationFormFieldState extends State<CustomContractDuration
     '3شهور',
     '6شهور',
     'سنه',
-
   ];
 
   @override
@@ -27,7 +26,6 @@ class _CustomContractDurationFormFieldState extends State<CustomContractDuration
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'مدة التعاقد',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -36,7 +34,7 @@ class _CustomContractDurationFormFieldState extends State<CustomContractDuration
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

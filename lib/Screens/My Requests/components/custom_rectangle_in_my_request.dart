@@ -7,13 +7,25 @@ class CustomRectangleInMyRequest extends StatefulWidget {
   const CustomRectangleInMyRequest({
     super.key,
     required this.heightContainer,
-    this.isLatest = false, required this.titleName, this.firstText, this.secoundText, this.thirdText, this.fourText, this.fiveText, this.finalText,
+    this.isLatest = false,
+    required this.titleName,
+    this.firstText,
+    this.secoundText,
+    this.thirdText,
+    this.fourText,
+    this.fiveText,
+    this.finalText,
   });
 
   final double heightContainer;
   final bool isLatest;
   final String titleName;
-  final String? firstText, secoundText, thirdText, fourText, fiveText, finalText;
+  final String? firstText,
+      secoundText,
+      thirdText,
+      fourText,
+      fiveText,
+      finalText;
 
   @override
   State<CustomRectangleInMyRequest> createState() =>
@@ -56,9 +68,7 @@ class _CustomRectangleInMyRequestState
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(width: 20),
-              Text(widget.titleName,
-              
-                style: TextStyles.bold14),
+              Text(widget.titleName, style: TextStyles.bold14),
               const SizedBox(width: 20),
               if (widget.isLatest)
                 Container(
@@ -100,14 +110,14 @@ class _CustomRectangleInMyRequestState
                 color: Colors.black,
               ),
             ),
-            child:  CustomDetailesInMyRequest(showAllData: true,
-              firstText: widget.firstText,
-              secoundText: widget.secoundText, 
-              thirdText: widget.thirdText, 
-              fourText: widget.fourText, 
-              fiveText: widget.fiveText, 
-              finalText: widget.finalText
-            ),
+            child: CustomDetailesInMyRequest(
+                showAllData: true,
+                firstText: widget.firstText,
+                secoundText: widget.secoundText,
+                thirdText: widget.thirdText,
+                fourText: widget.fourText,
+                fiveText: widget.fiveText,
+                finalText: widget.finalText),
           ),
         if (!isRectangleVisible)
           Container(
@@ -123,14 +133,14 @@ class _CustomRectangleInMyRequestState
                 color: Colors.black,
               ),
             ),
-            child:  CustomDetailesInMyRequest(
-              showAllData: false ,
-              firstText: widget.firstText,
-              secoundText: widget.secoundText, 
-              thirdText: widget.thirdText, 
-              fourText: widget.fourText, 
-              fiveText: widget.fiveText, 
-              finalText: widget.finalText),
+            child: CustomDetailesInMyRequest(
+                showAllData: false,
+                firstText: widget.firstText,
+                secoundText: widget.secoundText,
+                thirdText: widget.thirdText,
+                fourText: widget.fourText,
+                fiveText: widget.fiveText,
+                finalText: widget.finalText),
           ),
       ],
     );

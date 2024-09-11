@@ -24,8 +24,8 @@ class ButtonInResidentService extends StatefulWidget {
   final bool? isAddressMain;
   final bool showIsAddressMain;
   final bool? onTapAction;
-  final String titleText;  
-  final String subTitleText;  
+  final String titleText;
+  final String subTitleText;
 
   @override
   State<ButtonInResidentService> createState() =>

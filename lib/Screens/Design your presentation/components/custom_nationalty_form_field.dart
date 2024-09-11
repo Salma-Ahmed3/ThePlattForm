@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
@@ -18,7 +17,6 @@ class _CustomNationaltyFormFieldState extends State<CustomNationaltyFormField> {
     'تايلاند',
     'الهند',
     'اندونيسيا',
-    
   ];
 
   @override
@@ -27,7 +25,6 @@ class _CustomNationaltyFormFieldState extends State<CustomNationaltyFormField> {
       children: [
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
-            
             labelText: 'الجنسيه',
             labelStyle: TextStyles.regular14,
             border: OutlineInputBorder(
@@ -36,7 +33,7 @@ class _CustomNationaltyFormFieldState extends State<CustomNationaltyFormField> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color:  Colors.black,
+                color: Colors.black,
               ),
               borderRadius: BorderRadius.circular(4),
             ),

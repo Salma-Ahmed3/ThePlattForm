@@ -7,7 +7,7 @@ import '../../utility/custom_nav_bar.dart';
 
 class ContractAttachmentsView extends StatelessWidget {
   const ContractAttachmentsView({super.key});
-static const routeName = 'ContractAttachmentsView';
+  static const routeName = 'ContractAttachmentsView';
   @override
   Widget build(BuildContext context) {
     return Directionality(

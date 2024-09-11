@@ -11,5 +11,5 @@ void buildSuccessBar(BuildContext context, String message) {
         style: TextStyles.regular16,
       ),
     ),
-  ); 
+  );
 }

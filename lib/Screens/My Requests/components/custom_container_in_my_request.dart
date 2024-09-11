@@ -7,14 +7,16 @@ class CustomContainerInMyRequest extends StatelessWidget {
     super.key,
     required this.nameMyRequest,
     this.onTap,
-    required this.isSelected, required this.color, required this.colorText,
+    required this.isSelected,
+    required this.color,
+    required this.colorText,
   });
 
   final String nameMyRequest;
   final void Function()? onTap;
   final bool isSelected;
-final Color color;
-final Color colorText;
+  final Color color;
+  final Color colorText;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,9 +25,7 @@ final Color colorText;
         width: 106,
         height: 40.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          color: color
-        ),
+            borderRadius: BorderRadius.circular(14), color: color),
         child: Align(
           alignment: Alignment.center,
           child: Text(

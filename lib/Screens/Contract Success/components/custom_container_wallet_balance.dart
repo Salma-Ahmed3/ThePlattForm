@@ -15,8 +15,9 @@ class CustomContainerWalletBalance extends StatelessWidget {
         color: Color(0xffF8F8F8),
         border: Border.all(
           color: Color(0xffE9E9E9),
-        ),),
-        child:const CustomWalletBalance() ,
+        ),
+      ),
+      child: const CustomWalletBalance(),
     );
   }
 }

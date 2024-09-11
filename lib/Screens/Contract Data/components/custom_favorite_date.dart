@@ -9,35 +9,51 @@ class CustomFavorteDate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-    children: [
-       CustomContainerNationality(titleText: 'الأيام المفضله', widthContainer: 110.w, height: 119,),
-      const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-        child: 
-        
-        Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                NationalityText(nameNationality: 'السبت',),
-                NationalityText(nameNationality: 'الاحد',),
-                NationalityText(nameNationality: 'الاثنين',)
-              ],
-            ),
-                SizedBox(height: 5,),
-          
-      Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            NationalityText(nameNationality: 'الثلاثاء',),
-            NationalityText(nameNationality: 'الاربعاء',),
-            NationalityText(nameNationality: 'الخميس',)
-          ],
+      children: [
+        CustomContainerNationality(
+          titleText: 'الأيام المفضله',
+          widthContainer: 110.w,
+          height: 119,
         ),
-    ],),
-      ),
-    ],
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NationalityText(
+                    nameNationality: 'السبت',
+                  ),
+                  NationalityText(
+                    nameNationality: 'الاحد',
+                  ),
+                  NationalityText(
+                    nameNationality: 'الاثنين',
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NationalityText(
+                    nameNationality: 'الثلاثاء',
+                  ),
+                  NationalityText(
+                    nameNationality: 'الاربعاء',
+                  ),
+                  NationalityText(
+                    nameNationality: 'الخميس',
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

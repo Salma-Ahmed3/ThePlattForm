@@ -1,7 +1,5 @@
-
 abstract class SignUpState {
   const SignUpState();
-
 }
 
 class SignUpInitial extends SignUpState {}
@@ -9,7 +7,6 @@ class SignUpInitial extends SignUpState {}
 class SignUpLoading extends SignUpState {}
 
 class SignUpSuccess extends SignUpState {
-
   final String message;
 
   const SignUpSuccess({
@@ -23,5 +20,4 @@ class SignUpFailure extends SignUpState {
   const SignUpFailure({
     required this.error,
   });
-
 }
