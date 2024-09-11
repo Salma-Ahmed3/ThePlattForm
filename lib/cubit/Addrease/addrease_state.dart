@@ -1,48 +1,47 @@
 import 'package:equatable/equatable.dart';
-import 'package:nowproject/Models/model_addrease/model_addrease.dart';
+import 'package:nowproject/Models/address/saved_address.dart';
 
 // Default empty MainLocation to avoid repetition
-ModelAddrease defaultMainLocation = ModelAddrease(
+MainLocation defaultMainLocation = MainLocation(
+
+  
+
 );
 
 abstract class SavedAddressState extends Equatable {
-  final ModelAddrease modelAddrease;
+  final MainLocation mainLocation;
   final bool change;
 
-  const SavedAddressState({required this.modelAddrease, this.change = false});
+  const SavedAddressState({required this.mainLocation, this.change = false});
 
   @override
-  List<Object?> get props => [modelAddrease, change];
+  List<Object?> get props => [mainLocation, change];
 }
 
 class SavedAddressLoading extends SavedAddressState {
-  SavedAddressLoading()
-      : super(modelAddrease: defaultMainLocation, change: false);
+  SavedAddressLoading() : super(mainLocation: defaultMainLocation, change: false);
 }
 
 class SavedAddressInitial extends SavedAddressState {
-  SavedAddressInitial()
-      : super(modelAddrease: defaultMainLocation, change: false);
+  SavedAddressInitial() : super(mainLocation: defaultMainLocation, change: false);
 }
 
 class SavedAddressSuccess extends SavedAddressState {
-  const SavedAddressSuccess(
-      {required ModelAddrease modeladdrease, bool change = false})
-      : super(modelAddrease: modeladdrease, change: change);
+  const SavedAddressSuccess({required MainLocation mainLocation, bool change = false})
+      : super(mainLocation: mainLocation, change: change);
 }
 
 class SavedAddressFailure extends SavedAddressState {
   final String error;
 
   SavedAddressFailure({required this.error})
-      : super(modelAddrease: defaultMainLocation, change: false);
+      : super(mainLocation: defaultMainLocation, change: false);
 
   @override
-  List<Object?> get props => [error, modelAddrease, change];
+  List<Object?> get props => [error, mainLocation, change];
 }
 
 class SavedAddressUpdate extends SavedAddressState {
-  const SavedAddressUpdate(
-      {required ModelAddrease modeladdrease, bool change = false})
-      : super(modelAddrease: modeladdrease, change: change);
+  const SavedAddressUpdate({required MainLocation mainLocation, bool change = false})
+      : super(mainLocation: mainLocation, change: change);
 }

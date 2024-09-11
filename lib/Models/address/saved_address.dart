@@ -1,82 +1,76 @@
-// class MainLocation {
-//   final String displayValue;
-//   final String availabilityMessage;
-//   final String id;
-//   final int houseType;
-//   final String apartmentNumber;
-//   final String houseNumber;
-//   final String cityId;
-//   final String cityName;
-//   final String districtName;
-//   final String districtId;
-//   final int floorNo;
-//   final bool availableForHourly;
-//   final bool availableForIndividual;
-//   final String latitude;
-//   final String longitude;
-//   final String addressNotes;
+class MainLocation {
+  MainLocation({
+    this.id,
+    this.displayValue = "Not Found -", 
+    this.houseType,
+    this.apartmentNumber,
+    this.houseNumber,
+    this.cityId,
+    this.districtId,
+    this.type,
+    this.cityName = "Unknown City", 
+    this.districtName = "Unknown District", 
+    this.floorNo,
+    this.availableForHourly = false, 
+    this.availableForIndividual = false, 
+    this.latitude,
+    this.longitude,
+    this.availabilityMessage = "Not Available", 
+  });
 
-//   // Constructor
-//   MainLocation({
-//     required this.displayValue,
-//     required this.availabilityMessage,
-//     required this.id,
-//     required this.houseType,
-//     required this.apartmentNumber,
-//     required this.houseNumber,
-//     required this.cityId,
-//     required this.cityName,
-//     required this.districtName,
-//     required this.districtId,
-//     required this.floorNo,
-//     required this.availableForHourly,
-//     required this.availableForIndividual,
-//     required this.latitude,
-//     required this.longitude,
-//     required this.addressNotes,
-//   });
+  String? id;
+  String displayValue;
+  int? houseType;
+  String? apartmentNumber;
+  String? houseNumber;
+  String? cityId;
+  String? districtId;
+  int? type;
+  String? cityName;
+  String? districtName;
+  int? floorNo;
+  bool? availableForHourly;
+  bool? availableForIndividual;
+  bool state = false;
+  String? latitude;
+  String? longitude;
+  String availabilityMessage;
 
-//   // Empty constructor for default values
-//   factory MainLocation.empty() {
-//     return MainLocation(
-//       displayValue: '',
-//       availabilityMessage: '',
-//       id: '',
-//       houseType: 0,
-//       apartmentNumber: '',
-//       houseNumber: '',
-//       cityId: '',
-//       cityName: '',
-//       districtName: '',
-//       districtId: '',
-//       floorNo: 0,
-//       availableForHourly: false,
-//       availableForIndividual: false,
-//       latitude: '',
-//       longitude: '',
-//       addressNotes: '',
-//     );
-//   }
+  factory MainLocation.fromJson(Map<String, dynamic> json) => MainLocation(
+    id: json["id"],
+    displayValue: json["displayValue"]??'displayValue',
+    houseType: json["houseType"],
+    apartmentNumber: json["apartmentNumber"],
+    houseNumber: json["houseNumber"],
+    cityId: json["cityId"],
+    districtId: json["districtId"],
+    type: json["type"],
+    cityName: json["cityName"] ?? "Unknown City",
+    districtName: json["districtName"] ?? "Unknown District",
+    floorNo: json["floorNo"],
+    availableForHourly: json["availableForHourly"] ?? false,
+    availableForIndividual: json["availableForIndividual"] ?? false,
+    latitude: json["latitude"],
+    longitude: json["longitude"],
+    availabilityMessage: json["availabilityMessage"]??'availabilityMessage',
+  );
 
-//   // JSON constructor
-//   factory MainLocation.fromJson(Map<String, dynamic> json) {
-//     return MainLocation(
-//       displayValue: json['displayValue'] ?? '',
-//       availabilityMessage: json['availabilityMessage'] ?? '',
-//       id: json['id'] ?? '',
-//       houseType: json['houseType'] ?? 0,
-//       apartmentNumber: json['apartmentNumber'] ?? '',
-//       houseNumber: json['houseNumber'] ?? '',
-//       cityId: json['cityId'] ?? '',
-//       cityName: json['cityName'] ?? '',
-//       districtName: json['districtName'] ?? '',
-//       districtId: json['districtId'] ?? '',
-//       floorNo: json['floorNo'] ?? 0,
-//       availableForHourly: json['availableForHourly'] ?? false,
-//       availableForIndividual: json['availableForIndividual'] ?? false,
-//       latitude: json['latitude'] ?? '',
-//       longitude: json['longitude'] ?? '',
-//       addressNotes: json['addressNotes'] ?? '',
-//     );
-//   }
-// }
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "displayValue": displayValue,
+    "houseType": houseType,
+    "apartmentNumber": apartmentNumber,
+    "houseNumber": houseNumber,
+    "cityId": cityId,
+    "districtId": districtId,
+    "type": type,
+    "cityName": cityName,
+    "districtName": districtName,
+    "floorNo": floorNo,
+    "availableForHourly": availableForHourly,
+    "availableForIndividual": availableForIndividual,
+    "latitude": latitude,
+    "longitude": longitude,
+    "availabilityMessage": availabilityMessage,
+  };
+}
