@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/components/custom_check_box/custom_check_box.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
-class ButtonInResidentService extends StatefulWidget {
+class ButtonInResidentService extends StatelessWidget {
   const ButtonInResidentService({
     super.key,
-    this.onCheck,
+    required this.isSelected,
     required this.onChanged,
+    this.onCheck,
     required this.colorBackGroun,
     required this.colorBorder,
     this.isAddressMain,
@@ -17,6 +18,7 @@ class ButtonInResidentService extends StatefulWidget {
     required this.subTitleText,
   });
 
+  final bool isSelected;
   final ValueChanged<bool> onChanged;
   final void Function()? onCheck;
   final Color colorBackGroun;
@@ -28,30 +30,19 @@ class ButtonInResidentService extends StatefulWidget {
   final String subTitleText;
 
   @override
-  State<ButtonInResidentService> createState() =>
-      _ButtonInResidentServiceState();
-}
-
-class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
-  bool isTermsAccepted = false;
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          isTermsAccepted = !isTermsAccepted;
-          widget.onChanged(isTermsAccepted);
-        });
+        onChanged(!isSelected);  // Pass the new selection state to the parent
       },
       child: Container(
         width: double.infinity,
         height: 100.h,
         decoration: BoxDecoration(
-          color: isTermsAccepted ? Color(0xffF8F8F8) : widget.colorBackGroun,
+          color: isSelected ? Color(0xffF8F8F8) : colorBackGroun,
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
-            color: isTermsAccepted ? Colors.black : widget.colorBorder,
+            color: isSelected ? Colors.black : colorBorder,
             width: 1.w,
           ),
         ),
@@ -65,28 +56,25 @@ class _ButtonInResidentServiceState extends State<ButtonInResidentService> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      widget.titleText,
+                      titleText,
                       style: TextStyles.regular16,
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      widget.subTitleText,
-                      style: TextStyles.regular16,
+                      subTitleText,
+                      style: TextStyles.regular12.copyWith(color: Colors.red),
                     ),
                   ],
                 ),
               ),
               SizedBox(width: 15.w),
               GestureDetector(
-                onTap: widget.onCheck ?? () {},
+                onTap: onCheck ?? () {},
                 child: CustomCheckBox(
                   onChecked: (value) {
-                    setState(() {
-                      isTermsAccepted = value;
-                      widget.onChanged(value);
-                    });
+                    onChanged(value);
                   },
-                  isChecked: isTermsAccepted,
+                  isChecked: isSelected,
                 ),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +9,7 @@ import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
 class ResidentServiceViewBody extends StatefulWidget {
-  const ResidentServiceViewBody({super.key, required this.onChanged, });
+  const ResidentServiceViewBody({super.key, required this.onChanged});
   final void Function(bool) onChanged;
 
   @override
@@ -16,18 +17,18 @@ class ResidentServiceViewBody extends StatefulWidget {
 }
 
 class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
-  final String serviceId = '4dc0edee-8e92-ee11-b766-000d3a236f24';
+  final String serviceId = 'serviceId';
   final String contactId = '1f87f7f3-6466-4013-9be3-e23ce4e62a55';
-       
+  bool isUserSelectAddress = false;
   @override
   void initState() {
     super.initState();
     BlocProvider.of<AddreaseCubit>(context).getSavedAddress(
-      serviceId , contactId
+      serviceId, contactId,
     );
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
@@ -36,26 +37,44 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
           builder: (context, state) {
             if (state is SavedAddressUpdate) {
               final mainLocation = state.mainLocation;
-
+              log("Location: ${mainLocation.toJson()}");
+              
               if (mainLocation.displayValue.isNotEmpty &&
                   mainLocation.availabilityMessage.isNotEmpty) {
-                return Column(
-                  children: [
-                    SizedBox(height: 30.h),
-                    Text('اختيار العنوان من عناوينك السابقة', style: TextStyles.regular18),
-                    SizedBox(height: 32.h),
-                  ButtonInResidentService(
-                        titleText: mainLocation.displayValue,
-                        subTitleText: mainLocation.availabilityMessage,
-                        isAddressMain: true,
-                        showIsAddressMain: false,
-                        onTapAction: true,
-                        onChanged: widget.onChanged,
-                        colorBackGroun: Colors.transparent,
-                        colorBorder: const Color(0xffACACAC),
+                return SizedBox(
+                  height: 650.h, 
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 20.h),
+                      Text(
+                        'اختيار العنوان من عناوينك السابقة',
+                        style: TextStyles.regular18,
                       ),
-                    SizedBox(height: 24.h),
-                  ],
+                      SizedBox(height: 32.h),
+                      Expanded(  
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: state.mainLocation.displayValue.length,
+                          itemBuilder: (context, index) {
+                            return ButtonInResidentService(
+                              titleText: mainLocation.displayValue,
+                              subTitleText: mainLocation.availabilityMessage,
+                              isAddressMain: true,
+                              showIsAddressMain: false,
+                              onTapAction: true,
+                              onChanged: widget.onChanged,
+                              colorBackGroun: Colors.transparent,
+                              colorBorder: const Color(0xffACACAC),
+                              isSelected: isUserSelectAddress ? true : false,
+                            );
+                          },
+                        ),
+                      ),
+                    
+                    ],
+                  ),
                 );
               } else {
                 return Center(
@@ -77,11 +96,12 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
             }
           },
           listener: (context, state) {
-            print('State changed: $state');
-            
+            // print('State changed: $state');
           },
         ),
       ),
     );
   }
 }
+
+

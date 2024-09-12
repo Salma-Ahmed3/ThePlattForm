@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Models/address/saved_address.dart';
 import 'package:nowproject/controller/dynamic_steps/dynamic_steps_controller.dart';
@@ -15,8 +17,8 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
       );
 
       if (savedAddressesJson != null) {
-        final mainLocation = MainLocation.fromJson(savedAddressesJson);
-
+        final mainLocation = MainLocation.fromJson(savedAddressesJson["data"]['mainLocations']);
+          log("maaain location2 : ${ savedAddressesJson}"); 
         if (mainLocation.displayValue.isNotEmpty &&
             mainLocation.availabilityMessage.isNotEmpty) {
           emit(SavedAddressUpdate(mainLocation: mainLocation));
@@ -26,7 +28,8 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
       } else {
         emit(SavedAddressFailure(error: 'لا يوجد عنواين محفوظة'));
       }
-    } catch (e) {
+    } catch (e ,s ) {
+      log(e.toString()+s.toString());
       emit(SavedAddressFailure(error: ' خطأ غير متوقع: $e'));
     }
   }

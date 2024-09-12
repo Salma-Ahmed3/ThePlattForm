@@ -1,11 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:nowproject/Models/address/saved_address.dart';
 
-// Default empty MainLocation to avoid repetition
 MainLocation defaultMainLocation = MainLocation(displayValue: '', availabilityMessage: ''
-   
-   
-  
+
 
 );
 
