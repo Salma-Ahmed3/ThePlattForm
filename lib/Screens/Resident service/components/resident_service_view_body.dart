@@ -19,7 +19,7 @@ class ResidentServiceViewBody extends StatefulWidget {
 class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
   final String serviceId = 'serviceId';
   final String contactId = '1f87f7f3-6466-4013-9be3-e23ce4e62a55';
-  bool isUserSelectAddress = false;
+  bool isUserSelectAddress=false;
   @override
   void initState() {
     super.initState();
@@ -67,7 +67,7 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                               onChanged: widget.onChanged,
                               colorBackGroun: Colors.transparent,
                               colorBorder: const Color(0xffACACAC),
-                              isSelected: isUserSelectAddress ? true : false,
+                              isSelected: isUserSelectAddress  ?? true,
                             );
                           },
                         ),
