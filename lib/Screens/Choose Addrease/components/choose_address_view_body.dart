@@ -16,10 +16,7 @@ class ChooseAddressViewBody extends StatelessWidget {
                 .pushNamed(ChoosePackageHourlyServicesView.routeName);
           },
         ),
-        // const SizedBox(
-        //   height: 11,
-        // ),
-        // const CustomAddressNotAvliable(),
+       
       ],
     );
   }

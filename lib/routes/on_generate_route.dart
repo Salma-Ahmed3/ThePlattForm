@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nowproject/Screens/Add%20New%20Address%20Google%20Maps/add_new_address_google_maps_view.dart';
+import 'package:nowproject/Screens/Add%20New%20Address/add_new_address_view.dart';
 import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
 import 'package:nowproject/Screens/Choose%20the%20package%20Hourly%20Service/choose_package_hourly_services_view.dart';
 import 'package:nowproject/Screens/Choosing%20Carrer/chossing_carrer_view.dart';
@@ -72,6 +73,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     case ChooseAddreseView.routeName:
       return MaterialPageRoute(builder: (context) => const ChooseAddreseView());
+
+    case AddNewAddressView.routeName:
+      return MaterialPageRoute(builder: (context) => const AddNewAddressView());
 
     case AddNewAddressGoogleMapsView.routeName:
       return MaterialPageRoute(

@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:nowproject/Models/address/saved_address.dart';
 
-MainLocation defaultMainLocation = MainLocation(displayValue: '', availabilityMessage: ''
+SavedAddressClass defaultMainLocation = SavedAddressClass(mainLocations: null, subLocation: []
 
 
 );
 
 abstract class SavedAddressState extends Equatable {
-  final MainLocation mainLocation;
+  final SavedAddressClass mainLocation;
   final bool change;
 
   const SavedAddressState({required this.mainLocation, this.change = false});
@@ -25,7 +25,7 @@ class SavedAddressInitial extends SavedAddressState {
 }
 
 class SavedAddressSuccess extends SavedAddressState {
-  const SavedAddressSuccess({required MainLocation mainLocation, bool change = false})
+  const SavedAddressSuccess({required SavedAddressClass mainLocation, bool change = false})
       : super(mainLocation: mainLocation, change: change);
 }
 
@@ -40,6 +40,6 @@ class SavedAddressFailure extends SavedAddressState {
 }
 
 class SavedAddressUpdate extends SavedAddressState {
-  const SavedAddressUpdate({required MainLocation mainLocation, bool change = false})
+  const SavedAddressUpdate({required SavedAddressClass mainLocation, bool change = false})
       : super(mainLocation: mainLocation, change: change);
 }

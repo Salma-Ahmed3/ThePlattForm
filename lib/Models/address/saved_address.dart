@@ -1,25 +1,27 @@
-class MainLocation {
-  MainLocation({
-    this.id,
-  required  this.displayValue, 
-    this.houseType,
-    this.apartmentNumber,
-    this.houseNumber,
-    this.cityId,
-    this.districtId,
-    this.type,
-    this.cityName , 
-    this.districtName , 
-    this.floorNo,
-    this.availableForHourly, 
-    this.availableForIndividual, 
-    this.latitude,
-    this.longitude,
-   required this.availabilityMessage , 
+class SavedAddressClass {
+  SavedAddressClass({
+    this.mainLocations,
+    this.subLocation,
   });
 
+  Location? mainLocations;
+  List<Location>? subLocation;
+  bool state = false ;
+  String cityId ='';
+
+  factory SavedAddressClass.  fromJson(Map<String, dynamic> json) => SavedAddressClass(
+    mainLocations: json["mainLocations"] == null ? null : Location.fromJson(json["mainLocations"]),
+    subLocation: json["subLocation"] == null ? [] : List<Location>.from(json["subLocation"].map((x) => Location.fromJson(x))),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "mainLocations": mainLocations == null ? null : mainLocations!.toJson(),
+    "subLocation": List<dynamic>.from(subLocation!.map((x) => x.toJson())),
+  };
+}
+class Location {
   String? id;
-  String displayValue;
+  String? displayValue;
   int? houseType;
   String? apartmentNumber;
   String? houseNumber;
@@ -34,25 +36,44 @@ class MainLocation {
   bool state = false;
   String? latitude;
   String? longitude;
-  String availabilityMessage;
+  String? availabilityMessage;
 
-  factory MainLocation.fromJson(Map<String, dynamic> json) => MainLocation(
+  Location({
+    this.id,
+    this.displayValue,
+    this.houseType,
+    this.apartmentNumber,
+    this.houseNumber,
+    this.cityId,
+    this.districtId,
+    this.type,
+    this.cityName,
+    this.districtName,
+    this.floorNo,
+    this.availableForHourly,
+    this.availableForIndividual,
+    this.latitude,
+    this.longitude,
+    this.availabilityMessage,
+  });
+
+  factory Location.fromJson(Map<String, dynamic> json) => Location(
     id: json["id"],
-    displayValue: json["displayValue"] = '${json["displayValue"]}' ,
+    displayValue: json["displayValue"] ?? "Not Found",
     houseType: json["houseType"],
     apartmentNumber: json["apartmentNumber"],
     houseNumber: json["houseNumber"],
     cityId: json["cityId"],
     districtId: json["districtId"],
     type: json["type"],
-    cityName: json["cityName"] ,
-    districtName: json["districtName"] ,
+    cityName: json["cityName"],
+    districtName: json["districtName"],
     floorNo: json["floorNo"],
-    availableForHourly: json["availableForHourly"] ?? false,
-    availableForIndividual: json["availableForIndividual"] ?? false,
+    availableForHourly: json["availableForHourly"],
+    availableForIndividual: json["availableForIndividual"],
     latitude: json["latitude"],
     longitude: json["longitude"],
-    availabilityMessage: json["availabilityMessage"] = '${json["availabilityMessage"]}'
+    availabilityMessage: json["availabilityMessage"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -73,4 +94,9 @@ class MainLocation {
     "longitude": longitude,
     "availabilityMessage": availabilityMessage,
   };
+
+  @override
+  String toString() {
+    return 'Location(id: $id, displayValue: $displayValue, availabilityMessage: $availabilityMessage)';
+  }
 }

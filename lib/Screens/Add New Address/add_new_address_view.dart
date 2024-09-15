@@ -6,7 +6,7 @@ import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class AddNewAddressView extends StatelessWidget {
   const AddNewAddressView({super.key});
-
+static const routeName = 'AddNewAddressView';
   @override
   Widget build(BuildContext context) {
     return Directionality(
