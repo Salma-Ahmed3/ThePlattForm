@@ -21,8 +21,7 @@ class NationalityInitial extends NationalityState {
 }
 
 class NationalitySuccess extends NationalityState {
-  const NationalitySuccess(
-      {required Nationality nationality})
+  const NationalitySuccess({required Nationality nationality})
       : super(nationality: nationality);
 }
 
@@ -37,12 +36,13 @@ class NationalityFailure extends NationalityState {
 }
 
 class NationalityUpdate extends NationalityState {
-  const NationalityUpdate(
-      {required Nationality nationality})
+  const NationalityUpdate({required Nationality nationality})
       : super(nationality: nationality);
 }
+
 class NationalityListUpdate extends NationalityState {
   final List<Nationality> nationalities;
 
-  NationalityListUpdate({required this.nationalities}) : super(nationality: defaultNationality);
+  NationalityListUpdate({required this.nationalities})
+      : super(nationality: defaultNationality);
 }

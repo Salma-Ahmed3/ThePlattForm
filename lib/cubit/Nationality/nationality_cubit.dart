@@ -1,32 +1,37 @@
 import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nowproject/controller/dynamic_steps/dynamic_steps_controller.dart';
 import 'package:nowproject/cubit/Nationality/nationality_state.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import '../../Models/nationality/nationality.dart';
 
 class NationalityCubit extends Cubit<NationalityState> {
-  NationalityCubit() : super(NationalityInitial());
+  final FirstStepCubit firstStepCubit;
 
-  void nationality(String serviceId) async {
+  NationalityCubit({required this.firstStepCubit})
+      : super(NationalityInitial());
+
+  void fetchNationalities(String serviceId) async {
     try {
       emit(NationalityLoading());
-      final nationalityJson = await DynamicStepsController.nationality(serviceId: serviceId);
+
+      final nationalityJson =
+          await firstStepCubit.getNationality(serviceId: serviceId);
 
       if (nationalityJson != null) {
-        // Handle the list of nationalities
+        // Parse the nationality data
         final nationalities = (nationalityJson['data'] as List<dynamic>)
             .map((json) => Nationality.fromJson(json as Map<String, dynamic>))
             .toList();
-        
-        log("Nationalities: $nationalities");
-        
+
+        log("Fetched Nationalities: $nationalities");
+
         if (nationalities.isNotEmpty) {
           emit(NationalityListUpdate(nationalities: nationalities));
         } else {
-          emit(NationalityFailure(error: 'لا يوجد عناوين محفوظة'));
+          emit(NationalityFailure(error: 'لا توجد جنسيات متاحة'));
         }
       } else {
-        emit(NationalityFailure(error: 'لا يوجد عنواين محفوظة'));
+        emit(NationalityFailure(error: 'فشل في جلب الجنسيات'));
       }
     } catch (e, s) {
       log('Error: $e\nStacktrace: $s');

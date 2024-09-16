@@ -17,10 +17,12 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
       );
 
       if (savedAddressesJson != null) {
-        final mainLocation = SavedAddressClass.fromJson(savedAddressesJson['data']);
+        final mainLocation =
+            SavedAddressClass.fromJson(savedAddressesJson['data']);
         log("main location: ${savedAddressesJson}");
-        
-        if (mainLocation.mainLocations != null && mainLocation.subLocation!.isNotEmpty) {
+
+        if (mainLocation.mainLocations != null &&
+            mainLocation.subLocation!.isNotEmpty) {
           emit(SavedAddressUpdate(mainLocation: mainLocation));
         } else {
           emit(SavedAddressUpdate(mainLocation: mainLocation));

@@ -15,10 +15,12 @@ class CustomButtonNationaltyInChoossePackage extends StatefulWidget {
   final String image;
 
   @override
-  _CustomButtonNationaltyInChoossePackageState createState() => _CustomButtonNationaltyInChoossePackageState();
+  _CustomButtonNationaltyInChoossePackageState createState() =>
+      _CustomButtonNationaltyInChoossePackageState();
 }
 
-class _CustomButtonNationaltyInChoossePackageState extends State<CustomButtonNationaltyInChoossePackage> {
+class _CustomButtonNationaltyInChoossePackageState
+    extends State<CustomButtonNationaltyInChoossePackage> {
   bool isSelected = false;
 
   @override
@@ -33,13 +35,18 @@ class _CustomButtonNationaltyInChoossePackageState extends State<CustomButtonNat
         children: [
           CustomButtonInAddNewAddrease(
             alignment: Alignment.center,
-            colorBackGround: isSelected ? const Color(0xffD6D6D6) : Colors.white,
+            colorBackGround:
+                isSelected ? const Color(0xffD6D6D6) : Colors.white,
             tixtInButton: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
                 children: [
                   Image.network(
-                    widget.image.isNotEmpty ? widget.image : Assets.imagesUserIcon,
+                    width: 25.w,
+                    height: 25.h,
+                    widget.image.isNotEmpty
+                        ? widget.image
+                        : Assets.imagesUserIcon,
                     errorBuilder: (context, error, stackTrace) {
                       return const Icon(Icons.error);
                     },

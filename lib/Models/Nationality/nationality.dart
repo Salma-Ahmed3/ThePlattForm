@@ -34,7 +34,3 @@ class Nationality extends Equatable {
   @override
   List<Object?> get props => [image, hasPackage, description, key, value];
 }
-
-
-
-

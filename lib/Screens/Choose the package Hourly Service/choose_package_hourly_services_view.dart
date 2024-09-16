@@ -18,7 +18,7 @@ class ChoosePackageHourlyServicesView extends StatelessWidget {
         body: const ChoosePackageHourlyServicesViewBody(),
         appBar: buildAppBar(
           context,
-          titleAppBar: 'اختيار باقتك',
+          titleAppBar: 'الباقات الثابته',
           onPressedRightIcon: () {
             Navigator.of(context).pushNamed(NotificationView.routeName);
           },

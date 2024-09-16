@@ -1,53 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/components/custom_button/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
-class CustomButtonPeriodsInChoosePackage extends StatelessWidget {
-  const CustomButtonPeriodsInChoosePackage(
-      {super.key,
-      required this.text1,
-      required this.text2,
-      required this.width,
-      required this.height});
-  final String text1, text2;
-  final double width, height;
+class CustomButtonPeriodsInChoosePackage extends StatefulWidget {
+  const CustomButtonPeriodsInChoosePackage({
+    super.key,
+    required this.periodtime,
+  });
+
+  final String periodtime;
+
+  @override
+  _CustomButtonPeriodsInChoosePackageState createState() =>
+      _CustomButtonPeriodsInChoosePackageState();
+}
+
+class _CustomButtonPeriodsInChoosePackageState
+    extends State<CustomButtonPeriodsInChoosePackage> {
+  bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CustomButtonInAddNewAddrease(
-          alignment: Alignment.centerRight,
-          colorBackGround: Colors.black,
-          tixtInButton: Center(
-            child: Text(
-              text1,
-              style:
-                  TextStyles.regular12.copyWith(color: const Color(0xffFFE5E5)),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isSelected = !isSelected;
+        });
+      },
+      child: Row(
+        children: [
+          CustomButtonInAddNewAddrease(
+            alignment: Alignment.center,
+            colorBackGround:
+                isSelected ? const Color(0xffD6D6D6) : Colors.white,
+            tixtInButton: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                children: [
+                  const SizedBox(width: 5),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.periodtime,
+                      style: TextStyles.regular12.copyWith(
+                        color: isSelected ? Colors.black : Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
+            width: 80.w,
+            height: 35.h,
+            colorBorder: isSelected ? Colors.black : const Color(0xffD6D6D6),
+            borderRadius: BorderRadius.circular(10),
           ),
-          width: width,
-          height: height,
-          colorBorder: const Color(0xff000000),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        const SizedBox(
-          width: 5,
-        ),
-        CustomButtonInAddNewAddrease(
-          alignment: Alignment.centerRight,
-          colorBackGround: Color(0xffD6D6D6),
-          tixtInButton: Center(
-            child: Text(
-              text2,
-              style: TextStyles.regular12,
-            ),
-          ),
-          width: width,
-          height: height,
-          colorBorder: const Color(0xffD6D6D6),
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ],
+          const SizedBox(width: 5),
+        ],
+      ),
     );
   }
 }

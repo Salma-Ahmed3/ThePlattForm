@@ -16,7 +16,7 @@ abstract class SavedAddressState extends Equatable {
 
 class SavedAddressLoading extends SavedAddressState {
   SavedAddressLoading()
-      : super(mainLocation: defaultMainLocation, change: false); 
+      : super(mainLocation: defaultMainLocation, change: false);
 }
 
 class SavedAddressInitial extends SavedAddressState {

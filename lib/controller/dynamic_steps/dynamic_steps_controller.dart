@@ -28,6 +28,7 @@ class DynamicStepsController {
     }
     return null;
   }
+
   static Future<Map<String, dynamic>?> nationality({
     required String serviceId,
   }) async {
@@ -35,6 +36,31 @@ class DynamicStepsController {
       var result = await AppService.callService(
         actionType: ActionType.get,
         apiName: 'ResourceGroup/GetResourceGroupsByService',
+        body: {},
+        query: {
+          'serviceId': serviceId,
+        },
+      );
+      log("firstStepActionss: $result");
+      if (result != null) {
+        return result;
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
+
+  static Future<Map<String, dynamic>?> periodTime({
+    required String serviceId,
+  }) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'HourlyContract/Shifts',
         body: {},
         query: {
           'serviceId': serviceId,
