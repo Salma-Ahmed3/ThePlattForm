@@ -17,9 +17,10 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
       );
 
       if (savedAddressesJson != null) {
-        final mainLocation = SavedAddressClass.fromJson(savedAddressesJson['data']);
-          log("maaain location2 : ${ savedAddressesJson}"); 
-        if (mainLocation.mainLocations!=null &&
+        final mainLocation =
+            SavedAddressClass.fromJson(savedAddressesJson['data']);
+        log("maaain location2 : ${savedAddressesJson}");
+        if (mainLocation.mainLocations != null &&
             mainLocation.subLocation!.isNotEmpty) {
           emit(SavedAddressUpdate(mainLocation: mainLocation));
         } else {
@@ -28,8 +29,8 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
       } else {
         emit(SavedAddressFailure(error: 'لا يوجد عنواين محفوظة'));
       }
-    } catch (e ,s ) {
-      log(e.toString()+s.toString());
+    } catch (e, s) {
+      log(e.toString() + s.toString());
       emit(SavedAddressFailure(error: ' خطأ غير متوقع: $e'));
     }
   }

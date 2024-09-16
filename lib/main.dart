@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
 import 'package:nowproject/cubit/Hourly_Services/hourly_services_cubit.dart';
+import 'package:nowproject/cubit/Nationality/nationality_cubit.dart';
 import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/routes/on_generate_route.dart';
 
@@ -20,6 +21,9 @@ void main() {
         ),
         BlocProvider<AddreaseCubit>(
           create: (context) => AddreaseCubit(),
+        ),
+        BlocProvider<NationalityCubit>(
+          create: (context) => NationalityCubit(),
         ),
       ],
       child: const PlattForm(),

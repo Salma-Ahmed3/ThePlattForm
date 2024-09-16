@@ -1,4 +1,3 @@
-
 // import 'package:nowproject/Models/items.dart';
 import 'package:nowproject/utility/enums.dart';
 
@@ -9,5 +8,5 @@ class HourlyGlobalData {
   String? serviceId = "";
   // Item? calenderOptionsFromTimeSlot;
   String timeSlotId = "";
-  bool hourlyOffer = false ;
+  bool hourlyOffer = false;
 }

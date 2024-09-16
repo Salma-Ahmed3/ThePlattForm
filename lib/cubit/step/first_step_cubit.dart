@@ -11,7 +11,7 @@ class FirstStepCubit extends Cubit<FirstStepState> {
   StepDetailsVm firstStep = StepDetailsVm();
   ActionStep actionStep = ActionStep();
   String serviceType = ServiceType.none;
-  
+
   getFirstStep({
     String? serviceId,
     String? contactId,

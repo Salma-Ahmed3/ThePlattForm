@@ -33,7 +33,7 @@ class ButtonInResidentService extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onChanged(!isSelected);  // Pass the new selection state to the parent
+        onChanged(!isSelected);
       },
       child: Container(
         width: double.infinity,

@@ -32,8 +32,8 @@ class ChoosePackageHourlyServicesView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            const DesignYourPresentationView(),),
+                      builder: (context) => const DesignYourPresentationView(),
+                    ),
                   );
                 },
                 child: Container(

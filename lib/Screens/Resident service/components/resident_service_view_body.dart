@@ -14,8 +14,10 @@ class ResidentServiceViewBody extends StatefulWidget {
   final void Function(bool) onChanged;
 
   @override
-  State<ResidentServiceViewBody> createState() => _ResidentServiceViewBodyState();
+  State<ResidentServiceViewBody> createState() =>
+      _ResidentServiceViewBodyState();
 }
+
 class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
   final String serviceId = 'c97fdb23-4687-ec11-a837-000d3abe20f8';
   final String contactId = '1f87f7f3-6466-4013-9be3-e23ce4e62a55';
@@ -24,7 +26,8 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<AddreaseCubit>(context).getSavedAddress(serviceId, contactId);
+    BlocProvider.of<AddreaseCubit>(context)
+        .getSavedAddress(serviceId, contactId);
   }
 
   @override
@@ -62,18 +65,23 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                           shrinkWrap: true,
                           itemCount: mainLocation.subLocation!.length,
                           itemBuilder: (context, index) {
-                            final subLocation = mainLocation.subLocation![index];
+                            final subLocation =
+                                mainLocation.subLocation![index];
                             return Column(
                               children: [
                                 ButtonInResidentService(
-                                  titleText: subLocation.displayValue ?? 'لا يوجد عنواين متاحة',
-                                  subTitleText: subLocation.availabilityMessage ?? '',
+                                  titleText: subLocation.displayValue ??
+                                      'لا يوجد عنواين متاحة',
+                                  subTitleText:
+                                      subLocation.availabilityMessage ?? '',
                                   isAddressMain: true,
                                   showIsAddressMain: false,
                                   onTapAction: true,
                                   onChanged: (value) {
-                                    if (subLocation.availabilityMessage == null ||
-                                        subLocation.availabilityMessage!.isEmpty) {
+                                    if (subLocation.availabilityMessage ==
+                                            null ||
+                                        subLocation
+                                            .availabilityMessage!.isEmpty) {
                                       setState(() {
                                         selectedAddressIndex = index;
                                       });
@@ -85,59 +93,88 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                                           return AlertDialog(
                                             title: Align(
                                               alignment: Alignment.center,
-                                              child: Text('عفوا'  ,
-                                              style: TextStyles.regular18.copyWith(color: Colors.yellow)),
+                                              child: Text('عفوا',
+                                                  style: TextStyles.regular18
+                                                      .copyWith(
+                                                          color:
+                                                              Colors.yellow)),
                                             ),
-                                            content: Text('اشعرني عند توافر الخدمة بالمدينه' , style: TextStyles.regular18),
+                                            content: Text(
+                                                'اشعرني عند توافر الخدمة بالمدينه',
+                                                style: TextStyles.regular18),
                                             actions: [
-                                              
                                               TextButton(
                                                 onPressed: () {
                                                   Navigator.of(context).pop();
                                                 },
-                                                child:
-                                                  Center(
-                                                    child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                      children: [
-                                                        CustomButtonInAddNewAddrease(
-                                                                                onTap: () {
-                                                                                  Navigator.pushNamed(context,AddNewAddressView.routeName);
-                                                                                },
-                                                                                alignment: Alignment.centerRight,
-                                                                                colorBackGround: Colors.transparent,
-                                                                                tixtInButton: Center(
-                                                                                  child: Text(
-                                                                                    'انشاء طلب جديد',
-                                                                                    style: TextStyles.regular18.copyWith(color: Colors.black),
-                                                                                  ),
-                                                                                ),
-                                                                                width: 200.w,
-                                                                                height: 40.h,
-                                                                                colorBorder: const Color(0xff000000),
-                                                                                borderRadius: BorderRadius.circular(4),
-                                                                              ),
-                                                                              SizedBox(height: 16.h),
-                                                                              CustomButtonInAddNewAddrease(
-                                                                                onTap: () {
-                                                                                  Navigator.pop(context);
-                                                                                },
-                                                                                alignment: Alignment.centerRight,
-                                                                                colorBackGround: Colors.transparent,
-                                                                                tixtInButton: Center(
-                                                                                  child: Text(
-                                                                                    'الغاء',
-                                                                                    style: TextStyles.regular18.copyWith(color: Colors.black),
-                                                                                  ),
-                                                                                ),
-                                                                                width: 100.w,
-                                                                                height: 40.h,
-                                                                                colorBorder: const Color(0xff000000),
-                                                                                borderRadius: BorderRadius.circular(4),
-                                                                              ),
-                                                      ],
-                                                    ),
+                                                child: Center(
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      CustomButtonInAddNewAddrease(
+                                                        onTap: () {
+                                                          Navigator.pushNamed(
+                                                              context,
+                                                              AddNewAddressView
+                                                                  .routeName);
+                                                        },
+                                                        alignment: Alignment
+                                                            .centerRight,
+                                                        colorBackGround:
+                                                            Colors.transparent,
+                                                        tixtInButton: Center(
+                                                          child: Text(
+                                                            'انشاء طلب جديد',
+                                                            style: TextStyles
+                                                                .regular18
+                                                                .copyWith(
+                                                                    color: Colors
+                                                                        .black),
+                                                          ),
+                                                        ),
+                                                        width: 200.w,
+                                                        height: 40.h,
+                                                        colorBorder:
+                                                            const Color(
+                                                                0xff000000),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(4),
+                                                      ),
+                                                      SizedBox(height: 16.h),
+                                                      CustomButtonInAddNewAddrease(
+                                                        onTap: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        alignment: Alignment
+                                                            .centerRight,
+                                                        colorBackGround:
+                                                            Colors.transparent,
+                                                        tixtInButton: Center(
+                                                          child: Text(
+                                                            'الغاء',
+                                                            style: TextStyles
+                                                                .regular18
+                                                                .copyWith(
+                                                                    color: Colors
+                                                                        .black),
+                                                          ),
+                                                        ),
+                                                        width: 100.w,
+                                                        height: 40.h,
+                                                        colorBorder:
+                                                            const Color(
+                                                                0xff000000),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(4),
+                                                      ),
+                                                    ],
                                                   ),
+                                                ),
                                               ),
                                             ],
                                           );
@@ -147,9 +184,10 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                                   },
                                   colorBackGroun: Colors.transparent,
                                   colorBorder: selectedAddressIndex == index
-                                      ? Colors.black // Highlight selected address
+                                      ? Colors
+                                          .black // Highlight selected address
                                       : const Color(0xffACACAC),
-                                  isSelected: selectedAddressIndex == index, 
+                                  isSelected: selectedAddressIndex == index,
                                 ),
                                 SizedBox(height: 16.h),
                               ],
@@ -162,7 +200,8 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                 );
               } else {
                 return Center(
-                  child: Text('لا توجد بيانات متاحة.', style: TextStyles.regular18),
+                  child: Text('لا توجد بيانات متاحة.',
+                      style: TextStyles.regular18),
                 );
               }
             } else if (state is SavedAddressLoading) {

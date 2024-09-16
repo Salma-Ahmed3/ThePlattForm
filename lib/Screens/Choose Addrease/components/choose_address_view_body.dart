@@ -16,7 +16,6 @@ class ChooseAddressViewBody extends StatelessWidget {
                 .pushNamed(ChoosePackageHourlyServicesView.routeName);
           },
         ),
-       
       ],
     );
   }
