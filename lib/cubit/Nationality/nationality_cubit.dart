@@ -23,7 +23,7 @@ class NationalityCubit extends Cubit<NationalityState> {
         if (nationalities.isNotEmpty) {
           emit(NationalityListUpdate(nationalities: nationalities));
         } else {
-          emit(NationalityFailure(error: 'لا يوجد عنواين محفوظة'));
+          emit(NationalityFailure(error: 'لا يوجد عناوين محفوظة'));
         }
       } else {
         emit(NationalityFailure(error: 'لا يوجد عنواين محفوظة'));

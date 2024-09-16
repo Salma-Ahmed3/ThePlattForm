@@ -33,7 +33,7 @@ class _CustomButtonNationaltyInChoossePackageState extends State<CustomButtonNat
         children: [
           CustomButtonInAddNewAddrease(
             alignment: Alignment.center,
-            colorBackGround: isSelected ? Color(0xffD6D6D6) : Colors.white,
+            colorBackGround: isSelected ? const Color(0xffD6D6D6) : Colors.white,
             tixtInButton: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
@@ -59,7 +59,7 @@ class _CustomButtonNationaltyInChoossePackageState extends State<CustomButtonNat
             ),
             width: 117.w,
             height: 35.h,
-            colorBorder: isSelected ? Colors.black : Color(0xffD6D6D6),
+            colorBorder: isSelected ? Colors.black : const Color(0xffD6D6D6),
             borderRadius: BorderRadius.circular(10),
           ),
           const SizedBox(width: 5),
