@@ -20,17 +20,17 @@ class CustomButtonPackageDuration extends StatelessWidget {
       onTap: onTap,
       child: CustomButtonInAddNewAddrease(
         alignment: Alignment.centerRight,
-        colorBackGround: isSelected ? Colors.black : const Color(0xffD6D6D6),
+        colorBackGround: isSelected ?Color(0xffD6D6D6) :Colors.white  ,
         tixtInButton: Center(
           child: Text(
             text,
             style: TextStyles.regular12.copyWith(
-                color: isSelected ? const Color(0xffFFE5E5) : Colors.black),
+                color: isSelected ?  Colors.black : Colors.black),
           ),
         ),
-        width: 71,
+        width: 100,
         height: 35,
-        colorBorder: isSelected ? Colors.black : const Color(0xffD6D6D6),
+        colorBorder: isSelected ? Colors.black :const Color(0xffD6D6D6) ,
         borderRadius: BorderRadius.circular(10),
       ),
     );

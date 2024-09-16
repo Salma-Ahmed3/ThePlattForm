@@ -24,7 +24,7 @@ class _CustomButtonPackageDurationItemState
     return Row(
       children: [
         CustomButtonPackageDuration(
-          text: 'شهر',
+          text: 'زيارة مفردة',
           isSelected: selectedIndex == 0,
           onTap: () => _handleButtonTap(0),
         ),
@@ -32,42 +32,14 @@ class _CustomButtonPackageDurationItemState
           width: 6,
         ),
         CustomButtonPackageDuration(
-          text: 'شهرين',
+          text: 'زيارة متعددة',
           isSelected: selectedIndex == 1,
           onTap: () => _handleButtonTap(1),
         ),
         SizedBox(
           width: 6,
         ),
-        CustomButtonPackageDuration(
-          text: '3شهور',
-          isSelected: selectedIndex == 2,
-          onTap: () => _handleButtonTap(2),
-        ),
-        SizedBox(
-          width: 6,
-        ),
-        CustomButtonPackageDuration(
-          text: '6شهور',
-          isSelected: selectedIndex == 3,
-          onTap: () => _handleButtonTap(3),
-        ),
-        SizedBox(
-          width: 6,
-        ),
-        CustomButtonPackageDuration(
-          text: '12شهر',
-          isSelected: selectedIndex == 4,
-          onTap: () => _handleButtonTap(4),
-        ),
-        SizedBox(
-          width: 6,
-        ),
-        CustomButtonPackageDuration(
-          text: 'سنه',
-          isSelected: selectedIndex == 5,
-          onTap: () => _handleButtonTap(5),
-        ),
+       
       ],
     );
   }

@@ -113,8 +113,8 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                           },
                         ),
                   
-                  const SizedBox(height: 20),
-                  Text('مدة الباقه', style: TextStyles.regular12),
+                  const SizedBox(height: 12),
+                  Text('نوع العقد', style: TextStyles.regular16),
                   const SizedBox(height: 12),
                   const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
