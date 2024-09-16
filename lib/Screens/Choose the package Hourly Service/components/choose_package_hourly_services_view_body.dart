@@ -120,6 +120,43 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: CustomButtonPackageDurationItem(),
                   ),
+                  const SizedBox(height: 24),
+                          BlocConsumer<PeriodCubit, PeriodState>(
+                          listener: (context, state) {
+                            if (state is PeriodFailure) {
+                              // You can uncomment this if you need to show a SnackBar on failure
+                              // ScaffoldMessenger.of(context).showSnackBar(
+                              //   SnackBar(content: Text(state.error)),
+                              // );
+                            }
+                          },
+                          builder: (context, state) {
+                            if (state is PeriodListUpdate) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'عدد الساعات',
+                                    style: TextStyles.regular16,
+                                  ),
+                                  SizedBox(
+                                    height: 60.h,
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: state.periodmodel.length, 
+                                      itemBuilder: (context, index) {
+                                        return CustomButtonPeriodsInChoosePackage(
+                                          periodtime:state.periodmodel[index].value!,
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }
+                            return const SizedBox.shrink();
+                          },
+                        ),
                 ],
               ),
             ),
@@ -129,3 +166,5 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
     );
   }
 }
+
+
