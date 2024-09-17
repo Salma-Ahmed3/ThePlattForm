@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:nowproject/Models/Period_time/period_model/datum.dart';
+import 'package:nowproject/Models/hourly/Period_time/period_model/datum.dart';
 
 PeriodModel defaultPeriod = const PeriodModel();
 

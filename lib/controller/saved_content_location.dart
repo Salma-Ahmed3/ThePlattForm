@@ -1,4 +1,4 @@
-import 'package:nowproject/Models/address/saved_address.dart';
+import 'package:nowproject/Models/hourly/address/saved_address.dart';
 import 'package:nowproject/services/app_services.dart';
 
 class SavedContactLocationController {

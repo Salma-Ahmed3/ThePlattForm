@@ -28,7 +28,7 @@ class _CustomButtonPackageDurationItemState
           isSelected: selectedIndex == 0,
           onTap: () => _handleButtonTap(0),
         ),
-        SizedBox(
+        const SizedBox(
           width: 6,
         ),
         CustomButtonPackageDuration(
@@ -36,10 +36,9 @@ class _CustomButtonPackageDurationItemState
           isSelected: selectedIndex == 1,
           onTap: () => _handleButtonTap(1),
         ),
-        SizedBox(
+        const SizedBox(
           width: 6,
         ),
-       
       ],
     );
   }

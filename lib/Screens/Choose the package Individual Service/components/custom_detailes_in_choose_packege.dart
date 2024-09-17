@@ -69,7 +69,7 @@ class _CustomDetailesInChoosePackegeState
                       textPackageDuration: widget.textPackageDuration,
                     ),
                     SizedBox(height: 11.h),
-                    const CustomSalary(),
+                    const CustomSalary(packagePrice: '', packagePriceWithoutDiscount: '',),
                   ],
                 ),
                 CircleAvatar(

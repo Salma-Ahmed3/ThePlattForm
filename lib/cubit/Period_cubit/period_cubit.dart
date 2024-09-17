@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:nowproject/Models/Period_time/period_model/datum.dart';
+import 'package:nowproject/Models/hourly/Period_time/period_model/datum.dart';
 import 'package:nowproject/cubit/Period_cubit/period_state.dart';
 import 'package:nowproject/cubit/step/first_step_cubit.dart';
 
@@ -23,7 +23,7 @@ class PeriodCubit extends Cubit<PeriodState> {
             .map((json) => PeriodModel.fromJson(json as Map<String, dynamic>))
             .toList();
 
-        log("Fetched Timeeeeeee: $periodTime");
+        log("Fetched Favorite Time: $periodTime");
 
         if (periodTime.isNotEmpty) {
           emit(PeriodListUpdate(periodmodel: periodTime));

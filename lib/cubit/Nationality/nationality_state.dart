@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:nowproject/Models/nationality/nationality.dart';
+
+import '../../Models/hourly/Nationality/nationality.dart';
 
 Nationality defaultNationality = const Nationality();
 

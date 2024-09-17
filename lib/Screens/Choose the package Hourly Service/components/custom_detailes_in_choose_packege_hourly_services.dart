@@ -8,8 +8,9 @@ import 'package:nowproject/utility/app_text_style.dart';
 class CustomDetailesInChoosePackegeHourlyServices extends StatefulWidget {
   const CustomDetailesInChoosePackegeHourlyServices({
     super.key,
+    required this.titleText, required this.packagePrice, required this.packagePriceWithoutDiscount,
   });
-
+  final String titleText , packagePrice , packagePriceWithoutDiscount;
   @override
   State<CustomDetailesInChoosePackegeHourlyServices> createState() =>
       _CustomDetailesInChoosePackegeHourlyServicesState();
@@ -53,13 +54,13 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'باقة زيارة واحدة أسبوعيا لمدة 3 شهور',
+                      widget.titleText,
                       style: TextStyles.bold14,
                     ),
                     SizedBox(
                       height: 5,
                     ),
-                    const CustomSalary(),
+                     CustomSalary(packagePrice:widget.packagePrice, packagePriceWithoutDiscount:widget. packagePriceWithoutDiscount,),
                   ],
                 ),
                 CircleAvatar(

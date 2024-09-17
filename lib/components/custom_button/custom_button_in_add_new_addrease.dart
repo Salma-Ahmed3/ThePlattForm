@@ -8,7 +8,7 @@ class CustomButtonInAddNewAddrease extends StatelessWidget {
       required this.alignment,
       required this.colorBackGround,
       required this.tixtInButton,
-      required this.width,
+      this.width,
       required this.height,
       required this.colorBorder,
       this.borderRadius});
@@ -17,7 +17,7 @@ class CustomButtonInAddNewAddrease extends StatelessWidget {
   final Color colorBackGround;
   final Color colorBorder;
   final Widget tixtInButton;
-  final double width;
+  final double? width;
   final double height;
   final BorderRadiusGeometry? borderRadius;
   @override

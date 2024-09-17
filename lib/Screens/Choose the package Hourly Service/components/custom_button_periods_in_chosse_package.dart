@@ -6,10 +6,10 @@ import 'package:nowproject/utility/app_text_style.dart';
 class CustomButtonPeriodsInChoosePackage extends StatefulWidget {
   const CustomButtonPeriodsInChoosePackage({
     super.key,
-    required this.periodtime,
+    required this.time,
   });
 
-  final String periodtime;
+  final String time;
 
   @override
   _CustomButtonPeriodsInChoosePackageState createState() =>
@@ -42,7 +42,7 @@ class _CustomButtonPeriodsInChoosePackageState
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      widget.periodtime,
+                      widget.time,
                       style: TextStyles.regular12.copyWith(
                         color: isSelected ? Colors.black : Colors.black,
                       ),
@@ -51,7 +51,7 @@ class _CustomButtonPeriodsInChoosePackageState
                 ],
               ),
             ),
-            width: 80.w,
+            // width: 80,
             height: 35.h,
             colorBorder: isSelected ? Colors.black : const Color(0xffD6D6D6),
             borderRadius: BorderRadius.circular(10),

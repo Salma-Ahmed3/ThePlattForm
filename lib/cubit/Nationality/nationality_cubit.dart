@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nowproject/Models/hourly/Nationality/nationality.dart';
 import 'package:nowproject/cubit/Nationality/nationality_state.dart';
 import 'package:nowproject/cubit/step/first_step_cubit.dart';
-import '../../Models/nationality/nationality.dart';
 
 class NationalityCubit extends Cubit<NationalityState> {
   final FirstStepCubit firstStepCubit;

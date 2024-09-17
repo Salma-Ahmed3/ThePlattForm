@@ -16,7 +16,7 @@ class DynamicStepsController {
           'serviceId': serviceId,
         },
       );
-      log("firstStepActionss: $result");
+      log("Services: $result");
       if (result != null) {
         return result;
       } else {
@@ -41,7 +41,7 @@ class DynamicStepsController {
           'serviceId': serviceId,
         },
       );
-      log("firstStepActionss: $result");
+      log("Addrease: $result");
       if (result != null) {
         return result;
       } else {
@@ -66,7 +66,84 @@ class DynamicStepsController {
           'serviceId': serviceId,
         },
       );
-      log("firstStepActionss: $result");
+      log("Period Time: $result");
+      if (result != null) {
+        return result;
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
+
+  static Future<Map<String, dynamic>?> hourlyTime({
+    required String serviceId,
+    required String shift,
+  }) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'HourlyContract/ShiftHours',
+        body: {},
+        query: {
+          'serviceId': serviceId,
+          'shift': shift
+          },
+      );
+      log("TimeHours Response: $result");
+      if (result != null) {
+        return result; // Ensure this is a map with "data" as a list of maps
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
+
+  static Future<Map<String, dynamic>?> visitTime({
+    required String timeSlotId,
+  }) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'HourlyTimeSlot/GetArrivalTime',
+        body: {},
+        query: {
+          'TimeSlotId': timeSlotId,
+        },
+      );
+      log("Visit Time: $result");
+      if (result != null) {
+        return result;
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
+
+  static Future<Map<String, dynamic>?> fetchFixedPackage({
+    required String stepId,
+  }) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'HourlyContract/FixedPackage',
+        body: {},
+        query: {
+          'stepId': stepId,
+        },
+      );
+      log("Fixed Package: $result");
       if (result != null) {
         return result;
       } else {

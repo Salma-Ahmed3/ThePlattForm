@@ -39,4 +39,38 @@ class FirstStepCubit extends Cubit<FirstStepState> {
     }
     return null;
   }
+
+  getTimeHours({
+    required String serviceId,
+    required String shift,
+  }) async {
+    var result = await DynamicStepsController.hourlyTime(
+        serviceId: serviceId, shift: shift);
+    if (result != null) {
+      return result;
+    }
+    return null;
+  }
+
+  fetchVisitTime({
+    required String timeSlotId,
+  }) async {
+    var result = await DynamicStepsController.visitTime(timeSlotId: timeSlotId);
+    if (result != null) {
+      return result;
+    }
+    return null;
+  }
+
+  fetchFixedPackage({
+    required String stepId,
+  }) async {
+    var result = await DynamicStepsController.fetchFixedPackage(
+      stepId: stepId,
+    );
+    if (result != null) {
+      return result;
+    }
+    return null;
+  }
 }
