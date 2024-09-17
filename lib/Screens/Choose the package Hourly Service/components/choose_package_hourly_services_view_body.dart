@@ -222,7 +222,7 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                   return CustomDetailesInChoosePackegeHourlyServices(
                                   titleText: state.fixedPackag.data?.selectedPackages?[index].displayName ?? 'Default Title',
                                   packagePrice: state.fixedPackag.data?.selectedPackages![index].packagePrice.toString()??'',
-                                  packagePriceWithoutDiscount: '',
+                                  packagePriceWithoutDiscount: state.fixedPackag.data?.selectedPackages![index].packagePrice.toString()??'',
                                   );
                                 },
                               ),
