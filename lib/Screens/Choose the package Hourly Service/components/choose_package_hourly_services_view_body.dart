@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -197,38 +195,40 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                   ),
                   BlocConsumer<FixedPackageCubit, FixedPackageState>(
                     builder: (context, state) {
-                      log(state.toString(), name: "state222");
                       if (state is FixedPackageLoading) {
-                        return Center(
-                          child: SizedBox(
-                            width: 80.w,
-                            height: 100.h,
-                            child: Image.asset(Assets.imagesclockloader),
-                          ),
-                        );
-                      } else if (state is FixedPackageListUpdate ) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 500.h,
-                              child: ListView.builder(
-                                scrollDirection: Axis.vertical,
-                                itemCount:
-                                1,
-                                itemBuilder: (context, index) {
+                        // return Center(
+                        //   child: SizedBox(
+                        //     width: 80.w,
+                        //     height: 100.h,
+                        //     child: Image.asset(Assets.imagesclockloader),
+                        //   ),
+                        // );
+                      } else if (state is FixedPackageListUpdate && state.fixedPackag.data?.selectedPackages != null) {
+                        if (state.fixedPackag.data!.selectedPackages!.isEmpty) {
+                            return const Center(child: Text('لا توجد باقات متاحه'));
+                        }else {
+                      return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                                SizedBox(
+                                  height: 500.h,
+                                  child: Column(
+                                    children: List.generate(
+                                      state.fixedPackag.data!.selectedPackages!.length,
+                                      (index) {
+                                        return CustomDetailesInChoosePackegeHourlyServices(
+                                          titleText: state.fixedPackag.data!.selectedPackages![index].displayName ?? '',
+                                          packagePrice: state.fixedPackag.data!.selectedPackages![index].packagePrice.toString(),
+                                          packagePriceWithoutDiscount: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                )
 
-                                // log(state.fixedPackag.data!.selectedPackages![index].displayName! , name: "name");
-                                  return CustomDetailesInChoosePackegeHourlyServices(
-                                  titleText: state.fixedPackag.data?.selectedPackages?[index].displayName ?? 'Default Title',
-                                  packagePrice: state.fixedPackag.data?.selectedPackages![index].packagePrice.toString()??'',
-                                  packagePriceWithoutDiscount: state.fixedPackag.data?.selectedPackages![index].packagePrice.toString()??'',
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
+                            ],
                         );
+                        }
                       }
                       return const SizedBox.shrink();
                     },

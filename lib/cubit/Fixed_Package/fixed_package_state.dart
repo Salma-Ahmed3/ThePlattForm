@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:nowproject/Models/fixed_package_models/data.dart';
 import 'package:nowproject/Models/fixed_package_models/fixed_package_models.dart';
 import 'package:nowproject/Models/fixed_package_models/selected_package.dart';
 
@@ -23,7 +24,7 @@ class FixedPackageInitial extends FixedPackageState {
 
 class FixedPackageSuccess extends FixedPackageState {
   const FixedPackageSuccess(
-      {required FixedPackageModel fixedPackag, bool change = false})
+      {required FixedPackageModel fixedPackag})
       : super(
           fixedPackag: fixedPackag,
         );
@@ -49,10 +50,13 @@ class FixedPackageUpdate extends FixedPackageState {
 }
 
 class FixedPackageListUpdate extends FixedPackageState {
-  final List<SelectedPackage> fixedPackage;
+  final List<SelectedPackage> selectedPackages;
 
-  FixedPackageListUpdate({required this.fixedPackage})
+  FixedPackageListUpdate({required this.selectedPackages})
       : super(
-          fixedPackag: defaultfixedPackag,
+          fixedPackag: FixedPackageModel(data: Data(selectedPackages: selectedPackages)),
         );
+
+  @override
+  List<Object?> get props => [selectedPackages, fixedPackag];
 }

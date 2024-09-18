@@ -32,7 +32,7 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
       children: [
         Container(
           width: 384.w,
-          height: 90,
+          // height: 100,
           decoration: BoxDecoration(
             color: const Color(0xffD6D6D6),
             borderRadius: isRectangleVisible
@@ -50,18 +50,25 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.titleText,
-                      style: TextStyles.bold14,
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                     CustomSalary(packagePrice:widget.packagePrice, packagePriceWithoutDiscount:widget. packagePriceWithoutDiscount,),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                   Text(
+                    widget.titleText,
+                    style: TextStyles.bold14,
+                    maxLines: 5, 
+                    overflow: TextOverflow.ellipsis, 
+                  ),
+                  
+                      const SizedBox(
+                        height: 7,
+                      ),
+                        CustomSalary(
+                        packagePrice:widget.packagePrice,
+                        packagePriceWithoutDiscount:widget. packagePriceWithoutDiscount,),
+                    ],
+                  ),
                 ),
                 CircleAvatar(
                   radius: 20.r,
@@ -104,6 +111,7 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
               child: const CustomDetailesInChoosePackegeHorlyItem(),
             ),
           ),
+          SizedBox(height: 15.h),
       ],
     );
   }

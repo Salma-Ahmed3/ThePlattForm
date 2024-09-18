@@ -11,13 +11,12 @@ final String packagePrice , packagePriceWithoutDiscount;
     return Row(
       children: [
         Text(
-         packagePrice,
-          style: TextStyles.regular14,
-        ),
+            ' ${packagePrice} ريال', style: TextStyles.regular14),
+        
         SizedBox(
-          width: 10.w,
+          width: 7.w,
         ),
-        Text(packagePriceWithoutDiscount,
+        Text( ' ${packagePriceWithoutDiscount} ريال',
             style: TextStyles.regular14.copyWith(
               decoration: TextDecoration.lineThrough,
             )),

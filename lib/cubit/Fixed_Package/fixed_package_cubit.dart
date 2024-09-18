@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:nowproject/Models/fixed/fixed.dart';
 import 'package:nowproject/Models/fixed_package_models/fixed_package_models.dart';
 
 import 'package:nowproject/cubit/Fixed_Package/fixed_package_state.dart';
@@ -14,28 +13,25 @@ class FixedPackageCubit extends Cubit<FixedPackageState> {
 
   void getFixedPackage(String stepId) async {
     try {
-      emit(FixedPackageLoading());
+  emit(FixedPackageLoading());
 
-      final fixedPackageJson =
-          await firstStepCubit.fetchFixedPackage(stepId: stepId);
+  final fixedPackageJson = await firstStepCubit.fetchFixedPackage(stepId: stepId);
 
-      if (fixedPackageJson != null) {
-        final fixedPackage = FixedPackageModel.fromJson(
-            fixedPackageJson);
-        log("Fixed Package: $fixedPackageJson");
+  if (fixedPackageJson != null) {
+    final fixedPackage = FixedPackageModel.fromJson(fixedPackageJson);
 
-        if (fixedPackage.data != null) {
-          log("Fixesddddd2: $fixedPackage");
-          emit(FixedPackageListUpdate(fixedPackage: fixedPackage.data!.selectedPackages!));
-        } else {
-          emit(FixedPackageUpdate(fixedPackag: fixedPackage));
-        }
-      } else {
-        emit(FixedPackageFailure(error: 'لا يوجد باقات متاحه'));
-      }
-    } catch (e, s) {
-      log(e.toString() + s.toString());
-      emit(FixedPackageFailure(error: ' هناك خطأ ما: $e'));
+    if (fixedPackage.data != null && fixedPackage.data!.selectedPackages != null) {
+      emit(FixedPackageListUpdate(selectedPackages: fixedPackage.data!.selectedPackages!));
+    } else {
+      emit(FixedPackageFailure(error: 'لا توجد باقات متاحه'));
     }
+  } else {
+    emit(FixedPackageFailure(error: 'هناك خطأ ما'));
+  }
+} catch (e, s) {
+  log('Error: $e\nStackTrace: $s');
+  emit(FixedPackageFailure(error: 'هناك خطأ ما: $e'));
+}
+
   }
 }
