@@ -8,9 +8,20 @@ import 'package:nowproject/utility/app_text_style.dart';
 class CustomDetailesInChoosePackegeHourlyServices extends StatefulWidget {
   const CustomDetailesInChoosePackegeHourlyServices({
     super.key,
-    required this.titleText, required this.packagePrice, required this.packagePriceWithoutDiscount,
+    required this.titleText,
+    required this.packagePrice,
+    required this.packagePriceWithoutDiscount,
+    required this.employeeNumberName,
+    required this.hoursNumber,
+    required this.weeklyVisitName, 
+    required this.packagePriceAfterPackageDiscount,
+    required this.promotionCodeDescription, 
+    required this.totalPriceWithVatBeforePromotion,
   });
-  final String titleText , packagePrice , packagePriceWithoutDiscount;
+  final String titleText , packagePrice , packagePriceWithoutDiscount ,
+    employeeNumberName , hoursNumber , weeklyVisitName ,
+    packagePriceAfterPackageDiscount , promotionCodeDescription,
+    totalPriceWithVatBeforePromotion;
   @override
   State<CustomDetailesInChoosePackegeHourlyServices> createState() =>
       _CustomDetailesInChoosePackegeHourlyServicesState();
@@ -108,7 +119,15 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
                   color: Colors.black,
                 ),
               ),
-              child: const CustomDetailesInChoosePackegeHorlyItem(),
+              child:  CustomDetailesInChoosePackegeHorlyItem(
+                packagePrice: widget.packagePrice,
+                employeeNumberName: widget.employeeNumberName,
+                hoursNumber:widget.hoursNumber,
+                weeklyVisitName: widget.weeklyVisitName,
+                packagePriceAfterPackageDiscount:widget.packagePriceAfterPackageDiscount,
+                promotionCodeDescription: widget.promotionCodeDescription,
+                totalPriceWithVatBeforePromotion: widget.totalPriceWithVatBeforePromotion,
+                ),
             ),
           ),
           SizedBox(height: 15.h),

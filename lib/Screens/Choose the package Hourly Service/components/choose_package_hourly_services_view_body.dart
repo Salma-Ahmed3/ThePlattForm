@@ -211,7 +211,7 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                                 SizedBox(
-                                  height: 500.h,
+                                  // height: 100000.h,
                                   child: Column(
                                     children: List.generate(
                                       state.fixedPackag.data!.selectedPackages!.length,
@@ -220,6 +220,12 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                           titleText: state.fixedPackag.data!.selectedPackages![index].displayName ?? '',
                                           packagePrice: state.fixedPackag.data!.selectedPackages![index].packagePrice.toString(),
                                           packagePriceWithoutDiscount: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
+                                          employeeNumberName: state.fixedPackag.data!.selectedPackages![index].employeeNumberName??'',
+                                          hoursNumber: state.fixedPackag.data!.selectedPackages![index].hoursNumber.toString(),
+                                          weeklyVisitName: state.fixedPackag.data!.selectedPackages![index].weeklyVisitName??'',
+                                          packagePriceAfterPackageDiscount: state.fixedPackag.data!.selectedPackages![index].packagePriceAfterPackageDiscount.toString(),
+                                          promotionCodeDescription: state.fixedPackag.data!.selectedPackages![index].promotionCodeDescription??'',
+                                          totalPriceWithVatBeforePromotion: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
                                         );
                                       },
                                     ),

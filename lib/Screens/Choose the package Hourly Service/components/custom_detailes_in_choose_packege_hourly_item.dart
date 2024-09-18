@@ -4,8 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utility/app_text_style.dart';
 
 class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
-  const CustomDetailesInChoosePackegeHorlyItem({super.key});
-
+  const CustomDetailesInChoosePackegeHorlyItem({
+    super.key,
+      required this.packagePrice,
+      required this.employeeNumberName,
+      required this.hoursNumber,
+      required this.weeklyVisitName,
+      required this.packagePriceAfterPackageDiscount,
+      required this.promotionCodeDescription,
+      required this.totalPriceWithVatBeforePromotion,
+      
+      
+      });
+final String packagePrice , employeeNumberName ,
+  hoursNumber , weeklyVisitName ,totalPriceWithVatBeforePromotion ,
+  packagePriceAfterPackageDiscount , promotionCodeDescription;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,10 +35,9 @@ class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
                 'سعر الباقه : ',
                 style: TextStyles.regular14,
               ),
-              Text(
-                '12,800.00',
-                style: TextStyles.regular14
-                    .copyWith(color: const Color(0XFF24A19D)),
+              
+                Text(
+               ' ${packagePrice} ريال', style: TextStyles.regular14.copyWith(color: const Color(0XFF24A19D)),
               ),
               Text(
                 ' ريال ',
@@ -37,14 +49,14 @@ class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
             height: 5.h,
           ),
           Text(
-            'عدد العاملات : 1 عاملة',
+            'عدد العاملات : $employeeNumberName ',
             style: TextStyles.regular14,
           ),
           SizedBox(
             height: 5.h,
           ),
           Text(
-            'عدد الساعات : 4 ساعة للزيارة',
+            'عدد الساعات :$hoursNumber ساعة للزيارة',
             style: TextStyles.regular14,
           ),
           SizedBox(
@@ -54,7 +66,7 @@ class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
             height: 5.h,
           ),
           Text(
-            'عدد الزيارات : 1 زيارة',
+            'عدد الزيارات :$weeklyVisitName ',
             style: TextStyles.regular14,
           ),
           SizedBox(
@@ -67,7 +79,7 @@ class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
                 style: TextStyles.regular14,
               ),
               Text(
-                '3570.99',
+                packagePriceAfterPackageDiscount,
                 style: TextStyles.regular14
                     .copyWith(color: const Color(0XFF24A19D)),
               ),
@@ -81,21 +93,21 @@ class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
             height: 5.h,
           ),
           Text(
-            'نسبه الضريبة 15%',
+            'نسبه الخصم : $promotionCodeDescription',
             style: TextStyles.regular14,
           ),
           SizedBox(
             height: 5.h,
           ),
           Text(
-            'قيمة الضريبه للسعر النهائي : 472.17 ريال',
+            'قيمة الضريبه للسعر النهائي :$totalPriceWithVatBeforePromotion ريال',
             style: TextStyles.regular14,
           ),
           SizedBox(
             height: 5.h,
           ),
           Text(
-            'السعر النهائي : 3620.00',
+            'السعر النهائي : $packagePrice ريال',
             style: TextStyles.regular14,
           ),
           SizedBox(
