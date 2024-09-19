@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
-class NationalityText extends StatefulWidget {
-  const NationalityText({super.key, required this.nameNationality});
+class ButtonTextRectangle extends StatefulWidget {
+  const ButtonTextRectangle({super.key, required this.nameNationality});
   final String nameNationality;
 
   @override
-  _NationalityTextState createState() => _NationalityTextState();
+  _ButtonTextRectangleState createState() => _ButtonTextRectangleState();
 }
 
-class _NationalityTextState extends State<NationalityText> {
+class _ButtonTextRectangleState extends State<ButtonTextRectangle> {
   bool isSelected = false;
 
   @override

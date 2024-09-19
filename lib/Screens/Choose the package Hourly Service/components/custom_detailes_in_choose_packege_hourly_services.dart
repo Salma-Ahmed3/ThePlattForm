@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Screens/Choose%20the%20package%20Hourly%20Service/components/custom_detailes_in_choose_packege_hourly_item.dart';
 import 'package:nowproject/Screens/Choose%20the%20package%20Hourly%20Service/components/dialoge_chosse_package.dart';
 import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service/components/custom_salary.dart';
+import 'package:nowproject/cubit/Calender/calender_cubit.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 
 class CustomDetailesInChoosePackegeHourlyServices extends StatefulWidget {
@@ -16,12 +19,12 @@ class CustomDetailesInChoosePackegeHourlyServices extends StatefulWidget {
     required this.weeklyVisitName, 
     required this.packagePriceAfterPackageDiscount,
     required this.promotionCodeDescription, 
-    required this.totalPriceWithVatBeforePromotion,
+    required this.totalPriceWithVatBeforePromotion, required this.promotionCode,
   });
   final String titleText , packagePrice , packagePriceWithoutDiscount ,
     employeeNumberName , hoursNumber , weeklyVisitName ,
     packagePriceAfterPackageDiscount , promotionCodeDescription,
-    totalPriceWithVatBeforePromotion;
+    totalPriceWithVatBeforePromotion , promotionCode;
   @override
   State<CustomDetailesInChoosePackegeHourlyServices> createState() =>
       _CustomDetailesInChoosePackegeHourlyServicesState();
@@ -99,13 +102,22 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
         if (isRectangleVisible)
           GestureDetector(
             onTap: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const DialogeChossePackage();
-                },
-              );
-            },
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      final calenderCubit = CalenderCubit(firstStepCubit: context.read<FirstStepCubit>());
+      calenderCubit.getCalenderDay('c97fdb23-4687-ec11-a837-000d3abe20f8', '1');
+
+      return BlocProvider.value(
+        value: calenderCubit,
+        child: DialogeChossePackage(
+          promotionCode: widget.promotionCode,
+          promotionCodeDescription: widget.promotionCodeDescription,
+        ),
+      );
+    },
+  );
+},
             child: Container(
               width: 700.w,
               height: 260.h,

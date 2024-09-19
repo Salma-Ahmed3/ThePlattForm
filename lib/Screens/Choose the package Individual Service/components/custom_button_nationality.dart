@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service/components/nationality_text.dart';
+import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service/components/button_text_ectangle.dart';
 import 'custom_container_nationality.dart';
 
 class CustomButtonNationality extends StatelessWidget {
@@ -21,13 +21,13 @@ class CustomButtonNationality extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              NationalityText(
+              ButtonTextRectangle(
                 nameNationality: 'الفلبين',
               ),
-              NationalityText(
+              ButtonTextRectangle(
                 nameNationality: 'تايلاند',
               ),
-              NationalityText(
+              ButtonTextRectangle(
                 nameNationality: 'اندونيسيا',
               )
             ],

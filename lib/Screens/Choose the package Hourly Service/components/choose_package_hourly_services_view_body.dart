@@ -226,6 +226,7 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                           packagePriceAfterPackageDiscount: state.fixedPackag.data!.selectedPackages![index].packagePriceAfterPackageDiscount.toString(),
                                           promotionCodeDescription: state.fixedPackag.data!.selectedPackages![index].promotionCodeDescription??'',
                                           totalPriceWithVatBeforePromotion: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
+                                          promotionCode: state.fixedPackag.data!.selectedPackages![index].promotionCode??'',
                                         );
                                       },
                                     ),

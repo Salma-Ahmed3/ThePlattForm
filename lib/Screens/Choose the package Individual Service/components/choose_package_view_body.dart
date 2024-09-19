@@ -5,8 +5,8 @@ import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service
 import 'custom_button_copon.dart';
 
 class ChoosePackageViewBody extends StatelessWidget {
-  const ChoosePackageViewBody({super.key});
-
+  const ChoosePackageViewBody({super.key, required this.promotionCode, required this.promotionCodeDescription});
+final String promotionCode , promotionCodeDescription;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,7 +19,7 @@ class ChoosePackageViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-          const CustomButtonCopon(),
+           CustomButtonCopon(promotionCode: promotionCode, promotionCodeDescription: promotionCodeDescription,),
           SizedBox(
             height: 15.h,
           ),

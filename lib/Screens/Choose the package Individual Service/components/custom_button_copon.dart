@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service/components/custom_container_nationality.dart';
-
 import '../../../utility/app_text_style.dart';
+import 'custom_container_nationality.dart';
 
-class CustomButtonCopon extends StatelessWidget {
-  const CustomButtonCopon({super.key});
+class CustomButtonCopon extends StatefulWidget {
+  const CustomButtonCopon({super.key, required this.promotionCode, required this.promotionCodeDescription});
+final String promotionCode , promotionCodeDescription;
+  @override
+  State<CustomButtonCopon> createState() => _CustomButtonCoponState();
+}
+
+class _CustomButtonCoponState extends State<CustomButtonCopon> {
+  // Variable to store the discount message
+  String? discountMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -18,27 +25,50 @@ class CustomButtonCopon extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 37, vertical: 18),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'ادخل رقم الكوبون من فضلك',
-                style: TextStyles.regular12,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    discountMessage ?? 'ادخل رقم الكوبون من فضلك',
+                    style: TextStyles.regular12,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        discountMessage = widget.promotionCode;
+                      });
+                    },
+                    child: Container(
+                      width: 92.w,
+                      height: 40.h,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'تطبيق الخصم',
+                          style: TextStyles.regular12
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                width: 92.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
+              SizedBox(height: 12,),
+              if (discountMessage != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
                   child: Text(
-                    'تطبيق الخصم',
-                    style: TextStyles.regular12.copyWith(color: Colors.white),
+                    'تم تطبيق ${widget.promotionCodeDescription}',
+                    // discountMessage!,
+                    style: TextStyles.regular12.copyWith(color: Colors.red),
                   ),
                 ),
-              ),
             ],
           ),
         ),

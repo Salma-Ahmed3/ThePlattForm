@@ -37,7 +37,7 @@ final String packagePrice , employeeNumberName ,
               ),
               
                 Text(
-               ' ${packagePrice} ريال', style: TextStyles.regular14.copyWith(color: const Color(0XFF24A19D)),
+               ' ${packagePrice}', style: TextStyles.regular14.copyWith(color: const Color(0XFF24A19D)),
               ),
               Text(
                 ' ريال ',

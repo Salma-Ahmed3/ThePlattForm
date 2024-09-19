@@ -7,24 +7,30 @@ import 'package:nowproject/Screens/Contract%20Data/components/custom_favorite_da
 import 'package:nowproject/utility/app_text_style.dart';
 
 class ContractDataViewBody extends StatelessWidget {
-  const ContractDataViewBody({super.key});
+  const ContractDataViewBody({
+    super.key,
+    required this.promotionCode,
+    required this.promotionCodeDescription,
+    required this.selectedDate, // Add this parameter
+  });
+
+  final String promotionCode;
+  final String promotionCodeDescription;
+  final DateTime selectedDate; // Add this property
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(
-            height: 27,
+          const SizedBox(height: 27),
+          CustomButtonCopon(
+            promotionCode: promotionCode,
+            promotionCodeDescription: promotionCodeDescription,
           ),
-          const CustomButtonCopon(),
-          const SizedBox(
-            height: 19,
-          ),
-          const CustomFavorteDate(),
-          const SizedBox(
-            height: 23,
-          ),
+          const SizedBox(height: 19),
+          CustomFavorteDate(selectedDate: selectedDate),
+          const SizedBox(height: 23),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
@@ -33,23 +39,17 @@ class ContractDataViewBody extends StatelessWidget {
               textPackageDuration: 'سعر الزيارة 240 ر .س',
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
           Text(
             'بإكمالك الخطوات فأنت توافق على',
             style: TextStyles.regular14,
           ),
-          const SizedBox(
-            height: 5,
-          ),
+          const SizedBox(height: 5),
           Text(
             'شروط و أحكام الشركة',
             style: TextStyles.regular14.copyWith(color: Color(0xff24A19D)),
           ),
-          const SizedBox(
-            height: 37,
-          ),
+          const SizedBox(height: 37),
           const CustomClickInContractData(),
         ],
       ),

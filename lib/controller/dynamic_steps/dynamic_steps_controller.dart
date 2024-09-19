@@ -155,4 +155,29 @@ class DynamicStepsController {
     }
     return null;
   }
+  static Future<Map<String, dynamic>?> fetchCalenderDays({
+    required String serviceId,visitShift
+  }) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'HourlyContract/CalenderOptions',
+        body: {},
+        query: {
+        'serviceId': serviceId,
+        'visitShift': visitShift
+        },
+      );
+      log("Calender Days: $result");
+      if (result != null) {
+        return result;
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
 }

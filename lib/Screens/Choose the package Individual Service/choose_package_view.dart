@@ -13,7 +13,7 @@ class ChoosePackageView extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         bottomNavigationBar: const CustomNavBar(),
-        body: const ChoosePackageViewBody(),
+        body:  ChoosePackageViewBody(promotionCode: '', promotionCodeDescription: '',),
         appBar: buildAppBar(
           context,
           titleAppBar: 'اختيار الباقة',
