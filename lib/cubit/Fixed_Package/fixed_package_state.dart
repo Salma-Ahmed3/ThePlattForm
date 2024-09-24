@@ -23,8 +23,7 @@ class FixedPackageInitial extends FixedPackageState {
 }
 
 class FixedPackageSuccess extends FixedPackageState {
-  const FixedPackageSuccess(
-      {required FixedPackageModel fixedPackag})
+  const FixedPackageSuccess({required FixedPackageModel fixedPackag})
       : super(
           fixedPackag: fixedPackag,
         );
@@ -54,7 +53,8 @@ class FixedPackageListUpdate extends FixedPackageState {
 
   FixedPackageListUpdate({required this.selectedPackages})
       : super(
-          fixedPackag: FixedPackageModel(data: Data(selectedPackages: selectedPackages)),
+          fixedPackag:
+              FixedPackageModel(data: Data(selectedPackages: selectedPackages)),
         );
 
   @override

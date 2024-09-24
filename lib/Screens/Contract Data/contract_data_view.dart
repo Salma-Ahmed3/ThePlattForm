@@ -26,16 +26,17 @@ class ContractDataView extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         bottomNavigationBar: const CustomNavBar(),
-        body:BlocProvider(
-              create: (context) => FixedPackageCubit(
-                  firstStepCubit: context.read<FirstStepCubit>())
+        body: BlocProvider(
+          create: (context) =>
+              FixedPackageCubit(firstStepCubit: context.read<FirstStepCubit>())
                 ..getFixedPackage(
                   "67f56d27-256c-47d0-84f2-a0755d7a5636",
                 ),
           child: ContractDataViewBody(
             promotionCode: promotionCode,
             promotionCodeDescription: promotionCodeDescription,
-            selectedDate: selectedDate, onChanged: (bool value) {  },
+            selectedDate: selectedDate,
+            onChanged: (bool value) {},
           ),
         ),
         appBar: buildAppBar(

@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:nowproject/Models/Calender/calender_model.dart';
 
-
 CalenderModel defaultCalender = CalenderModel();
 
 abstract class CalenderState extends Equatable {
@@ -22,8 +21,7 @@ class CalenderInitial extends CalenderState {
 }
 
 class CalenderSuccess extends CalenderState {
-  const CalenderSuccess(
-      {required CalenderModel calenderModel})
+  const CalenderSuccess({required CalenderModel calenderModel})
       : super(
           calenderModel: calenderModel,
         );
@@ -53,7 +51,9 @@ class CalenderListUpdate extends CalenderState {
 
   CalenderListUpdate({required this.calenderDays})
       : super(
-          calenderModel: calenderDays.isNotEmpty ? calenderDays.first : CalenderModel(),  // Ensuring valid model
+          calenderModel: calenderDays.isNotEmpty
+              ? calenderDays.first
+              : CalenderModel(), // Ensuring valid model
         );
 
   @override

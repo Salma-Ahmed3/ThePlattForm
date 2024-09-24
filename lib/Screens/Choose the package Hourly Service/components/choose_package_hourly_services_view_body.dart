@@ -203,37 +203,89 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                         //     child: Image.asset(Assets.imagesclockloader),
                         //   ),
                         // );
-                      } else if (state is FixedPackageListUpdate && state.fixedPackag.data?.selectedPackages != null) {
+                      } else if (state is FixedPackageListUpdate &&
+                          state.fixedPackag.data?.selectedPackages != null) {
                         if (state.fixedPackag.data!.selectedPackages!.isEmpty) {
-                            return const Center(child: Text('لا توجد باقات متاحه'));
-                        }else {
-                      return Column(
+                          return const Center(
+                              child: Text('لا توجد باقات متاحه'));
+                        } else {
+                          return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                                SizedBox(
-                                  child: Column(
-                                    children: List.generate(
-                                      state.fixedPackag.data!.selectedPackages!.length,
-                                      (index) {
-                                        return CustomDetailesInChoosePackegeHourlyServices (
-                                          titleText: state.fixedPackag.data!.selectedPackages![index].displayName ?? '',
-                                          packagePrice: state.fixedPackag.data!.selectedPackages![index].packagePrice.toString(),
-                                          packagePriceWithoutDiscount: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
-                                          employeeNumberName: state.fixedPackag.data!.selectedPackages![index].employeeNumberName??'',
-                                          hoursNumber: state.fixedPackag.data!.selectedPackages![index].hoursNumber.toString(),
-                                          weeklyVisitName: state.fixedPackag.data!.selectedPackages![index].weeklyVisitName??'',
-                                          packagePriceAfterPackageDiscount: state.fixedPackag.data!.selectedPackages![index].packagePriceAfterPackageDiscount.toString(),
-                                          promotionCodeDescription: state.fixedPackag.data!.selectedPackages![index].promotionCodeDescription??'',
-                                          totalPriceWithVatBeforePromotion: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
-                                          promotionCode: state.fixedPackag.data!.selectedPackages![index].promotionCode??'',
-                                        );
-                                      },
-                                    ),
+                              SizedBox(
+                                child: Column(
+                                  children: List.generate(
+                                    state.fixedPackag.data!.selectedPackages!
+                                        .length,
+                                    (index) {
+                                      return CustomDetailesInChoosePackegeHourlyServices(
+                                        titleText: state
+                                                .fixedPackag
+                                                .data!
+                                                .selectedPackages![index]
+                                                .displayName ??
+                                            '',
+                                        packagePrice: state
+                                            .fixedPackag
+                                            .data!
+                                            .selectedPackages![index]
+                                            .packagePrice
+                                            .toString(),
+                                        packagePriceWithoutDiscount: state
+                                            .fixedPackag
+                                            .data!
+                                            .selectedPackages![index]
+                                            .totalPriceWithVatBeforePromotion
+                                            .toString(),
+                                        employeeNumberName: state
+                                                .fixedPackag
+                                                .data!
+                                                .selectedPackages![index]
+                                                .employeeNumberName ??
+                                            '',
+                                        hoursNumber: state
+                                            .fixedPackag
+                                            .data!
+                                            .selectedPackages![index]
+                                            .hoursNumber
+                                            .toString(),
+                                        weeklyVisitName: state
+                                                .fixedPackag
+                                                .data!
+                                                .selectedPackages![index]
+                                                .weeklyVisitName ??
+                                            '',
+                                        packagePriceAfterPackageDiscount: state
+                                            .fixedPackag
+                                            .data!
+                                            .selectedPackages![index]
+                                            .packagePriceAfterPackageDiscount
+                                            .toString(),
+                                        promotionCodeDescription: state
+                                                .fixedPackag
+                                                .data!
+                                                .selectedPackages![index]
+                                                .promotionCodeDescription ??
+                                            '',
+                                        totalPriceWithVatBeforePromotion: state
+                                            .fixedPackag
+                                            .data!
+                                            .selectedPackages![index]
+                                            .totalPriceWithVatBeforePromotion
+                                            .toString(),
+                                        promotionCode: state
+                                                .fixedPackag
+                                                .data!
+                                                .selectedPackages![index]
+                                                .promotionCode ??
+                                            '',
+                                      );
+                                    },
                                   ),
-                                )
-
+                                ),
+                              )
                             ],
-                        );
+                          );
                         }
                       }
                       return const SizedBox.shrink();

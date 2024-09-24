@@ -16,15 +16,22 @@ class CustomDetailesInChoosePackegeHourlyServices extends StatefulWidget {
     required this.packagePriceWithoutDiscount,
     required this.employeeNumberName,
     required this.hoursNumber,
-    required this.weeklyVisitName, 
+    required this.weeklyVisitName,
     required this.packagePriceAfterPackageDiscount,
-    required this.promotionCodeDescription, 
-    required this.totalPriceWithVatBeforePromotion, required this.promotionCode,
+    required this.promotionCodeDescription,
+    required this.totalPriceWithVatBeforePromotion,
+    required this.promotionCode,
   });
-  final String titleText , packagePrice , packagePriceWithoutDiscount ,
-    employeeNumberName , hoursNumber , weeklyVisitName ,
-    packagePriceAfterPackageDiscount , promotionCodeDescription,
-    totalPriceWithVatBeforePromotion , promotionCode;
+  final String titleText,
+      packagePrice,
+      packagePriceWithoutDiscount,
+      employeeNumberName,
+      hoursNumber,
+      weeklyVisitName,
+      packagePriceAfterPackageDiscount,
+      promotionCodeDescription,
+      totalPriceWithVatBeforePromotion,
+      promotionCode;
   @override
   State<CustomDetailesInChoosePackegeHourlyServices> createState() =>
       _CustomDetailesInChoosePackegeHourlyServicesState();
@@ -68,19 +75,20 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                   Text(
-                    widget.titleText,
-                    style: TextStyles.bold14,
-                    maxLines: 5, 
-                    overflow: TextOverflow.ellipsis, 
-                  ),
-                  
+                      Text(
+                        widget.titleText,
+                        style: TextStyles.bold14,
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       const SizedBox(
                         height: 7,
                       ),
-                        CustomSalary(
-                        packagePrice:widget.packagePrice,
-                        packagePriceWithoutDiscount:widget. packagePriceWithoutDiscount,),
+                      CustomSalary(
+                        packagePrice: widget.packagePrice,
+                        packagePriceWithoutDiscount:
+                            widget.packagePriceWithoutDiscount,
+                      ),
                     ],
                   ),
                 ),
@@ -102,22 +110,24 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
         if (isRectangleVisible)
           GestureDetector(
             onTap: () {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      final calenderCubit = CalenderCubit(firstStepCubit: context.read<FirstStepCubit>());
-      calenderCubit.getCalenderDay('c97fdb23-4687-ec11-a837-000d3abe20f8', '1');
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  final calenderCubit = CalenderCubit(
+                      firstStepCubit: context.read<FirstStepCubit>());
+                  calenderCubit.getCalenderDay(
+                      'c97fdb23-4687-ec11-a837-000d3abe20f8', '1');
 
-      return BlocProvider.value(
-        value: calenderCubit,
-        child: DialogeChossePackage(
-          promotionCode: widget.promotionCode,
-          promotionCodeDescription: widget.promotionCodeDescription,
-        ),
-      );
-    },
-  );
-},
+                  return BlocProvider.value(
+                    value: calenderCubit,
+                    child: DialogeChossePackage(
+                      promotionCode: widget.promotionCode,
+                      promotionCodeDescription: widget.promotionCodeDescription,
+                    ),
+                  );
+                },
+              );
+            },
             child: Container(
               width: 700.w,
               height: 260.h,
@@ -131,18 +141,20 @@ class _CustomDetailesInChoosePackegeHourlyServicesState
                   color: Colors.black,
                 ),
               ),
-              child:  CustomDetailesInChoosePackegeHorlyItem(
+              child: CustomDetailesInChoosePackegeHorlyItem(
                 packagePrice: widget.packagePrice,
                 employeeNumberName: widget.employeeNumberName,
-                hoursNumber:widget.hoursNumber,
+                hoursNumber: widget.hoursNumber,
                 weeklyVisitName: widget.weeklyVisitName,
-                packagePriceAfterPackageDiscount:widget.packagePriceAfterPackageDiscount,
+                packagePriceAfterPackageDiscount:
+                    widget.packagePriceAfterPackageDiscount,
                 promotionCodeDescription: widget.promotionCodeDescription,
-                totalPriceWithVatBeforePromotion: widget.totalPriceWithVatBeforePromotion,
-                ),
+                totalPriceWithVatBeforePromotion:
+                    widget.totalPriceWithVatBeforePromotion,
+              ),
             ),
           ),
-          SizedBox(height: 15.h),
+        SizedBox(height: 15.h),
       ],
     );
   }

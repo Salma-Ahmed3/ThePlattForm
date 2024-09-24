@@ -7,14 +7,13 @@ class FixedPackageModel extends Equatable {
 
   const FixedPackageModel({this.data});
 
-factory FixedPackageModel.fromJson(Map<String, dynamic> json) {
-  return FixedPackageModel(
-    data: json['data'] == null
-        ? null
-        : Data.fromJson(json['data'] as Map<String, dynamic>),
-  );
-}
-
+  factory FixedPackageModel.fromJson(Map<String, dynamic> json) {
+    return FixedPackageModel(
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'data': data?.toJson(),

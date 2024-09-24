@@ -73,12 +73,22 @@ class FirstStepCubit extends Cubit<FirstStepState> {
     }
     return null;
   }
-  fetchCalenderDays({
-    required String serviceId, visitShift
-  }) async {
+
+  fetchCalenderDays({required String serviceId, visitShift}) async {
     var result = await DynamicStepsController.fetchCalenderDays(
-      serviceId: serviceId,
-      visitShift: visitShift
+        serviceId: serviceId, visitShift: visitShift);
+    if (result != null) {
+      return result;
+    }
+    return null;
+  }
+    fetchContractSuccess({
+    required String id,
+    required String type
+  }) async {
+    var result = await DynamicStepsController.fetchContractSuccess(
+     id: id,
+     type: type
     );
     if (result != null) {
       return result;

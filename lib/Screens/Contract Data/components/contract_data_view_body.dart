@@ -17,7 +17,8 @@ class ContractDataViewBody extends StatefulWidget {
     super.key,
     required this.promotionCode,
     required this.promotionCodeDescription,
-    required this.selectedDate, required this.onChanged,
+    required this.selectedDate,
+    required this.onChanged,
   });
 
   final String promotionCode;
@@ -43,58 +44,72 @@ class _ContractDataViewBodyState extends State<ContractDataViewBody> {
             promotionCodeDescription: widget.promotionCodeDescription,
           ),
           const SizedBox(height: 19),
-          CustomFavorteDate(selectedDate: widget.selectedDate ),
+          CustomFavorteDate(selectedDate: widget.selectedDate),
           const SizedBox(height: 23),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child:
-            BlocConsumer<FixedPackageCubit, FixedPackageState>(
-                    builder: (context, state) {
-                      if (state is FixedPackageLoading) {
-                        return Center(
-                          child: SizedBox(
-                            width: 80.w,
-                            height: 100.h,
-                            child: Image.asset(Assets.imagesclockloader),
+            child: BlocConsumer<FixedPackageCubit, FixedPackageState>(
+              builder: (context, state) {
+                if (state is FixedPackageLoading) {
+                  return Center(
+                    child: SizedBox(
+                      width: 80.w,
+                      height: 100.h,
+                      child: Image.asset(Assets.imagesclockloader),
+                    ),
+                  );
+                } else if (state is FixedPackageListUpdate &&
+                    state.fixedPackag.data?.selectedPackages != null) {
+                  if (state.fixedPackag.data!.selectedPackages!.isEmpty) {
+                    return const Center(child: Text('لا توجد باقات متاحه'));
+                  } else {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          child: Column(
+                            children: List.generate(
+                              state.fixedPackag.data!.selectedPackages!.length,
+                              (index) {
+                                return CustomDetailesInChoosePackege(
+                                  workerData: state
+                                      .fixedPackag
+                                      .data!
+                                      .selectedPackages![index]
+                                      .resourceGroupName!,
+                                  textPackageDuration: state
+                                      .fixedPackag
+                                      .data!
+                                      .selectedPackages![index]
+                                      .promotionCodeDescription!,
+                                  packagePrice: state.fixedPackag.data!
+                                      .selectedPackages![index].packagePrice
+                                      .toString(),
+                                  packagePriceWithoutDiscount: state
+                                      .fixedPackag
+                                      .data!
+                                      .selectedPackages![index]
+                                      .totalPriceWithVatBeforePromotion
+                                      .toString(),
+                                );
+                              },
+                            ),
                           ),
-                        );
-                      } else if (state is FixedPackageListUpdate && state.fixedPackag.data?.selectedPackages != null) {
-                        if (state.fixedPackag.data!.selectedPackages!.isEmpty) {
-                            return const Center(child: Text('لا توجد باقات متاحه'));
-                        }else {
-                      return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                                SizedBox(
-                                  child: Column(
-                                    children: List.generate(
-                                      state.fixedPackag.data!.selectedPackages!.length,
-                                      (index) {
-                                        return  CustomDetailesInChoosePackege(
-                                          workerData:state.fixedPackag.data!.selectedPackages![index].resourceGroupName!,
-                                          textPackageDuration: state.fixedPackag.data!.selectedPackages![index].promotionCodeDescription!,
-                                          packagePrice: state.fixedPackag.data!.selectedPackages![index].packagePrice.toString(),
-                                          packagePriceWithoutDiscount: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                )
-
-                            ],
-                        );
-                        }
-                      }
-                      return const SizedBox.shrink();
-                    },
-                    listener: (context, state) {
-                      if (state is FixedPackageFailure) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(state.error)),
-                        );
-                      }
-                    },
-                  ),
+                        )
+                      ],
+                    );
+                  }
+                }
+                return const SizedBox.shrink();
+              },
+              listener: (context, state) {
+                if (state is FixedPackageFailure) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(state.error)),
+                  );
+                }
+              },
+            ),
           ),
           const SizedBox(height: 16),
           Row(
@@ -102,33 +117,35 @@ class _ContractDataViewBodyState extends State<ContractDataViewBody> {
             children: [
               CustomCheckBox(
                 onChecked: (value) {
-                isTermsAccepted = value;
-                widget.onChanged(value);
-                setState(() {});
-              },
+                  isTermsAccepted = value;
+                  widget.onChanged(value);
+                  setState(() {});
+                },
                 isChecked: isTermsAccepted,
               ),
-          const SizedBox(width: 16),
-
-                        Column(
-                          children: [
-                            Text(
-                            'بإكمالك الخطوات فأنت توافق على',
-                            style: TextStyles.regular14,
-                            ),
-                            const SizedBox(height: 5),
-                            Text(
-                            'شروط و أحكام الشركة',
-                            style: TextStyles.regular14.copyWith(color: const Color(0xff24A19D)),
-                            ),
-                          ],
-                        ),
-              ],
+              const SizedBox(width: 16),
+              Column(
+                children: [
+                  Text(
+                    'بإكمالك الخطوات فأنت توافق على',
+                    style: TextStyles.regular14,
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    'شروط و أحكام الشركة',
+                    style: TextStyles.regular14
+                        .copyWith(color: const Color(0xff24A19D)),
+                  ),
+                ],
+              ),
+            ],
           ),
           const SizedBox(height: 37),
-          CustomClickInContractData(isTermsAccepted: isTermsAccepted, selectedDate: widget.selectedDate,),
+          CustomClickInContractData(
+            isTermsAccepted: isTermsAccepted,
+            selectedDate: widget.selectedDate,
+          ),
           const SizedBox(height: 40),
-
         ],
       ),
     );

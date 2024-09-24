@@ -42,28 +42,34 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ChoosingMaidView());
 
     case ContractDetailsView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractDetailsView());
+      return MaterialPageRoute(
+          builder: (context) => const ContractDetailsView());
 
     case ContractView.routeName:
       return MaterialPageRoute(builder: (context) => const ContractView());
 
     case ContractAttachmentsView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractAttachmentsView());
+      return MaterialPageRoute(
+          builder: (context) => const ContractAttachmentsView());
 
     case ContractSuccessView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractSuccessView());
+      return MaterialPageRoute(
+          builder: (context) => const ContractSuccessView());
 
     case MyRequestsView.routeName:
       return MaterialPageRoute(builder: (context) => const MyRequestsView());
 
     case ContractDetailsMaidView.routeName:
-      return MaterialPageRoute(builder: (context) => const ContractDetailsMaidView());
+      return MaterialPageRoute(
+          builder: (context) => const ContractDetailsMaidView());
 
     case MyRequestHourlyView.routeName:
-      return MaterialPageRoute(builder: (context) => const MyRequestHourlyView());
+      return MaterialPageRoute(
+          builder: (context) => const MyRequestHourlyView());
 
     case ChossingCarrerView.routeName:
-      return MaterialPageRoute(builder: (context) => const ChossingCarrerView());
+      return MaterialPageRoute(
+          builder: (context) => const ChossingCarrerView());
 
     case ChooseAddreseView.routeName:
       return MaterialPageRoute(builder: (context) => const ChooseAddreseView());
@@ -72,10 +78,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const AddNewAddressView());
 
     case AddNewAddressGoogleMapsView.routeName:
-      return MaterialPageRoute(builder: (context) => const AddNewAddressGoogleMapsView());
+      return MaterialPageRoute(
+          builder: (context) => const AddNewAddressGoogleMapsView());
 
     case ChoosePackageHourlyServicesView.routeName:
-      return MaterialPageRoute(builder: (context) => const ChoosePackageHourlyServicesView());
+      return MaterialPageRoute(
+          builder: (context) => const ChoosePackageHourlyServicesView());
 
     case ContractDataView.routeName:
       final args = settings.arguments as Map<String, dynamic>?;

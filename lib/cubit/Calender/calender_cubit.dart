@@ -7,24 +7,21 @@ import 'package:nowproject/cubit/step/first_step_cubit.dart';
 
 class CalenderCubit extends Cubit<CalenderState> {
   final FirstStepCubit firstStepCubit;
-  
-  CalenderCubit({required this.firstStepCubit})
-      : super(CalenderInitial());
 
-  void getCalenderDay(String serviceId , String visitShift) async {
+  CalenderCubit({required this.firstStepCubit}) : super(CalenderInitial());
+
+  void getCalenderDay(String serviceId, String visitShift) async {
     try {
       emit(CalenderLoading());
 
       final calenderJson = await firstStepCubit.fetchCalenderDays(
-      serviceId: serviceId,
-      visitShift: visitShift
-      );
+          serviceId: serviceId, visitShift: visitShift);
 
       if (calenderJson != null) {
         final calenderDays = CalenderModel.fromJson(calenderJson['data']);
 
         if (calenderDays.maxDate != null && calenderDays.minDate != null) {
-          emit(CalenderListUpdate(calenderDays: [calenderDays]));  
+          emit(CalenderListUpdate(calenderDays: [calenderDays]));
         } else {
           emit(CalenderFailure(error: 'لا توجد ايام متاحه'));
         }

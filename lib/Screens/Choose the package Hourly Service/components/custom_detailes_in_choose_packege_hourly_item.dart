@@ -6,19 +6,21 @@ import '../../../utility/app_text_style.dart';
 class CustomDetailesInChoosePackegeHorlyItem extends StatelessWidget {
   const CustomDetailesInChoosePackegeHorlyItem({
     super.key,
-      required this.packagePrice,
-      required this.employeeNumberName,
-      required this.hoursNumber,
-      required this.weeklyVisitName,
-      required this.packagePriceAfterPackageDiscount,
-      required this.promotionCodeDescription,
-      required this.totalPriceWithVatBeforePromotion,
-      
-      
-      });
-final String packagePrice , employeeNumberName ,
-  hoursNumber , weeklyVisitName ,totalPriceWithVatBeforePromotion ,
-  packagePriceAfterPackageDiscount , promotionCodeDescription;
+    required this.packagePrice,
+    required this.employeeNumberName,
+    required this.hoursNumber,
+    required this.weeklyVisitName,
+    required this.packagePriceAfterPackageDiscount,
+    required this.promotionCodeDescription,
+    required this.totalPriceWithVatBeforePromotion,
+  });
+  final String packagePrice,
+      employeeNumberName,
+      hoursNumber,
+      weeklyVisitName,
+      totalPriceWithVatBeforePromotion,
+      packagePriceAfterPackageDiscount,
+      promotionCodeDescription;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,9 +37,10 @@ final String packagePrice , employeeNumberName ,
                 'سعر الباقه : ',
                 style: TextStyles.regular14,
               ),
-              
-                Text(
-               ' ${packagePrice}', style: TextStyles.regular14.copyWith(color: const Color(0XFF24A19D)),
+              Text(
+                ' ${packagePrice}',
+                style: TextStyles.regular14
+                    .copyWith(color: const Color(0XFF24A19D)),
               ),
               Text(
                 ' ريال ',

@@ -8,10 +8,12 @@ class CustomDetailesInChoosePackege extends StatefulWidget {
   const CustomDetailesInChoosePackege(
       {super.key,
       required this.workerData,
-      required this.textPackageDuration, required this.packagePrice, required this.packagePriceWithoutDiscount});
+      required this.textPackageDuration,
+      required this.packagePrice,
+      required this.packagePriceWithoutDiscount});
   final String workerData;
   final String textPackageDuration;
-  final String packagePrice , packagePriceWithoutDiscount;
+  final String packagePrice, packagePriceWithoutDiscount;
   @override
   State<CustomDetailesInChoosePackege> createState() =>
       _CustomDetailesInChoosePackegeState();
@@ -37,10 +39,9 @@ class _CustomDetailesInChoosePackegeState
           decoration: const BoxDecoration(
             color: Color(0xffD6D6D6),
             backgroundBlendMode: BlendMode.colorBurn,
-            borderRadius: 
-                BorderRadius.all(
-                  Radius.circular(14),
-                  ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(14),
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -62,15 +63,16 @@ class _CustomDetailesInChoosePackegeState
                       textPackageDuration: widget.textPackageDuration,
                     ),
                     SizedBox(height: 11.h),
-                    CustomSalary(packagePrice: widget.packagePrice, packagePriceWithoutDiscount:widget.packagePriceWithoutDiscount,),
-              
+                    CustomSalary(
+                      packagePrice: widget.packagePrice,
+                      packagePriceWithoutDiscount:
+                          widget.packagePriceWithoutDiscount,
+                    ),
                   ],
                 ),
               ],
-              
             ),
           ),
-          
         ),
         SizedBox(height: 20.h),
       ],

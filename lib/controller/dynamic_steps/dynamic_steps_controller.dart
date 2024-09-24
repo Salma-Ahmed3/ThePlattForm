@@ -88,10 +88,7 @@ class DynamicStepsController {
         actionType: ActionType.get,
         apiName: 'HourlyContract/ShiftHours',
         body: {},
-        query: {
-          'serviceId': serviceId,
-          'shift': shift
-          },
+        query: {'serviceId': serviceId, 'shift': shift},
       );
       log("TimeHours Response: $result");
       if (result != null) {
@@ -155,20 +152,40 @@ class DynamicStepsController {
     }
     return null;
   }
-  static Future<Map<String, dynamic>?> fetchCalenderDays({
-    required String serviceId,visitShift
-  }) async {
+
+  static Future<Map<String, dynamic>?> fetchCalenderDays(
+      {required String serviceId, visitShift}) async {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
         apiName: 'HourlyContract/CalenderOptions',
         body: {},
-        query: {
-        'serviceId': serviceId,
-        'visitShift': visitShift
-        },
+        query: {'serviceId': serviceId, 'visitShift': visitShift},
       );
       log("Calender Days: $result");
+      if (result != null) {
+        return result;
+      } else {
+        throw Exception('Failed to fetch data');
+      }
+    } on Exception catch (e, s) {
+      print(e.toString() + s.toString());
+      // TODO
+    }
+    return null;
+  }
+  static Future<Map<String, dynamic>?> fetchContractSuccess(
+      {required String id, required String type}) async {
+    try {
+      var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName: 'Payment/ShopperResult',
+        body: {},
+        query: {
+        'id': id, 
+        'type': type},
+      );
+      log("Contract Success: $result");
       if (result != null) {
         return result;
       } else {

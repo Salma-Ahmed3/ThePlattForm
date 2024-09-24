@@ -4,8 +4,11 @@ import '../../../utility/app_text_style.dart';
 import 'custom_container_nationality.dart';
 
 class CustomButtonCopon extends StatefulWidget {
-  const CustomButtonCopon({super.key, required this.promotionCode, required this.promotionCodeDescription});
-final String promotionCode , promotionCodeDescription;
+  const CustomButtonCopon(
+      {super.key,
+      required this.promotionCode,
+      required this.promotionCodeDescription});
+  final String promotionCode, promotionCodeDescription;
   @override
   State<CustomButtonCopon> createState() => _CustomButtonCoponState();
 }
@@ -59,7 +62,9 @@ class _CustomButtonCoponState extends State<CustomButtonCopon> {
                   ),
                 ],
               ),
-              SizedBox(height: 12,),
+              SizedBox(
+                height: 12,
+              ),
               if (discountMessage != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 10),

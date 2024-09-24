@@ -5,8 +5,11 @@ import 'package:nowproject/Screens/Choose%20the%20package%20Individual%20Service
 import 'custom_button_copon.dart';
 
 class ChoosePackageViewBody extends StatelessWidget {
-  const ChoosePackageViewBody({super.key, required this.promotionCode, required this.promotionCodeDescription});
-final String promotionCode , promotionCodeDescription;
+  const ChoosePackageViewBody(
+      {super.key,
+      required this.promotionCode,
+      required this.promotionCodeDescription});
+  final String promotionCode, promotionCodeDescription;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,7 +22,10 @@ final String promotionCode , promotionCodeDescription;
           SizedBox(
             height: 24.h,
           ),
-           CustomButtonCopon(promotionCode: promotionCode, promotionCodeDescription: promotionCodeDescription,),
+          CustomButtonCopon(
+            promotionCode: promotionCode,
+            promotionCodeDescription: promotionCodeDescription,
+          ),
           SizedBox(
             height: 15.h,
           ),
@@ -28,7 +34,8 @@ final String promotionCode , promotionCodeDescription;
             child: CustomDetailesInChoosePackege(
               workerData: 'سائق خاص- باكستان - شهر',
               // heightContainer: 128.h,
-              textPackageDuration: 'مدة الباقة 1 شهر', packagePrice: '', packagePriceWithoutDiscount: '',
+              textPackageDuration: 'مدة الباقة 1 شهر', packagePrice: '',
+              packagePriceWithoutDiscount: '',
             ),
           ),
           SizedBox(

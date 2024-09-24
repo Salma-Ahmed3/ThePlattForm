@@ -54,11 +54,13 @@ class _DialogeChossePackageState extends State<DialogeChossePackage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const SizedBox(height: 50),
-                      Text('اختيار تاريخ اول زيارة', style: TextStyles.semiBold18),
+                      Text('اختيار تاريخ اول زيارة',
+                          style: TextStyles.semiBold18),
                       const SizedBox(height: 20),
                       TableCalendar(
                         firstDay: firstDay ?? DateTime.now(),
-                        lastDay: lastDay ?? DateTime.now().add(const Duration(days: 365)),
+                        lastDay: lastDay ??
+                            DateTime.now().add(const Duration(days: 365)),
                         focusedDay: _focusedDay,
                         selectedDayPredicate: (day) {
                           return isSameDay(_selectedDay, day);
@@ -69,18 +71,20 @@ class _DialogeChossePackageState extends State<DialogeChossePackage> {
                             _focusedDay = focusedDay;
                           });
 
-                      Navigator.pushNamed(
-                      context,
-                      ContractDataView.routeName,
-                      arguments: {
-                        'promotionCode': widget.promotionCode,
-                        'promotionCodeDescription': widget.promotionCodeDescription,
-                        'selectedDate': _selectedDay,
-                      },
-                    );
+                          Navigator.pushNamed(
+                            context,
+                            ContractDataView.routeName,
+                            arguments: {
+                              'promotionCode': widget.promotionCode,
+                              'promotionCodeDescription':
+                                  widget.promotionCodeDescription,
+                              'selectedDate': _selectedDay,
+                            },
+                          );
                         },
                         enabledDayPredicate: (day) {
-                          return day.isAfter(DateTime.now().subtract(const Duration(days: 1))) &&
+                          return day.isAfter(DateTime.now()
+                                  .subtract(const Duration(days: 1))) &&
                               day.weekday != DateTime.friday;
                         },
                         calendarFormat: CalendarFormat.month,
@@ -108,7 +112,8 @@ class _DialogeChossePackageState extends State<DialogeChossePackage> {
                         tixtInButton: Center(
                           child: Text(
                             'التالي',
-                            style: TextStyles.regular18.copyWith(color: Colors.white),
+                            style: TextStyles.regular18
+                                .copyWith(color: Colors.white),
                           ),
                         ),
                         width: 108,

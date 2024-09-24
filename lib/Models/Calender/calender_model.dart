@@ -23,4 +23,3 @@ class CalenderModel {
     return data;
   }
 }
-

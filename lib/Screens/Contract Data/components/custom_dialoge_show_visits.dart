@@ -12,22 +12,28 @@ class DialogeShowVisits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selectedDateFormatted = '${selectedDate.day}, ${selectedDate.toLocal().toString().split(' ')[0]}'; // Format the date if needed
+    final selectedDateFormatted =
+        '${selectedDate.day}, ${selectedDate.toLocal().toString().split(' ')[0]}'; // Format the date if needed
     final daysOfWeek = [
-      'السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'
+      'السبت',
+      'الأحد',
+      'الاثنين',
+      'الثلاثاء',
+      'الأربعاء',
+      'الخميس',
+      'الجمعة'
     ];
-    return Stack(
-      alignment: Alignment.topCenter, children: [
+    return Stack(alignment: Alignment.topCenter, children: [
       Directionality(
           textDirection: TextDirection.rtl,
           child: Dialog(
-              child: Column(mainAxisSize: MainAxisSize.min,
-              children: [
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
             const SizedBox(height: 50),
             Text('الزيارات المتوقعة', style: TextStyles.semiBold18),
             const SizedBox(height: 20),
             RectangleShowVisits(
-              text: ' ${daysOfWeek[selectedDate.weekday - 0]}    $selectedDateFormatted  ',
+              text:
+                  ' ${daysOfWeek[selectedDate.weekday - 0]}    $selectedDateFormatted  ',
             ),
             const SizedBox(height: 20),
             CustomButtonInAddNewAddrease(

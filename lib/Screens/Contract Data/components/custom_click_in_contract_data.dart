@@ -10,11 +10,13 @@ class CustomClickInContractData extends StatefulWidget {
 
   const CustomClickInContractData({
     super.key,
-    required this.isTermsAccepted, required this.selectedDate,
+    required this.isTermsAccepted,
+    required this.selectedDate,
   });
 
   @override
-  State<CustomClickInContractData> createState() => _CustomClickInContractDataState();
+  State<CustomClickInContractData> createState() =>
+      _CustomClickInContractDataState();
 }
 
 class _CustomClickInContractDataState extends State<CustomClickInContractData> {
@@ -32,9 +34,8 @@ class _CustomClickInContractDataState extends State<CustomClickInContractData> {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return  DialogeShowVisits(
-                    selectedDate:widget.selectedDate,
-
+                  return DialogeShowVisits(
+                    selectedDate: widget.selectedDate,
                   );
                 },
               );
@@ -60,9 +61,10 @@ class _CustomClickInContractDataState extends State<CustomClickInContractData> {
                       ContractSuccessView.routeName,
                     );
                   }
-                : null, 
+                : null,
             alignment: Alignment.centerRight,
-            colorBackGround: widget.isTermsAccepted ? Colors.black : Colors.grey,
+            colorBackGround:
+                widget.isTermsAccepted ? Colors.black : Colors.grey,
             tixtInButton: Center(
               child: Text(
                 'إتمام التعاقد',

@@ -13,25 +13,27 @@ class FixedPackageCubit extends Cubit<FixedPackageState> {
 
   void getFixedPackage(String stepId) async {
     try {
-  emit(FixedPackageLoading());
+      emit(FixedPackageLoading());
 
-  final fixedPackageJson = await firstStepCubit.fetchFixedPackage(stepId: stepId);
+      final fixedPackageJson =
+          await firstStepCubit.fetchFixedPackage(stepId: stepId);
 
-  if (fixedPackageJson != null) {
-    final fixedPackage = FixedPackageModel.fromJson(fixedPackageJson);
+      if (fixedPackageJson != null) {
+        final fixedPackage = FixedPackageModel.fromJson(fixedPackageJson);
 
-    if (fixedPackage.data != null && fixedPackage.data!.selectedPackages != null) {
-      emit(FixedPackageListUpdate(selectedPackages: fixedPackage.data!.selectedPackages!));
-    } else {
-      emit(FixedPackageFailure(error: 'لا توجد باقات متاحه'));
+        if (fixedPackage.data != null &&
+            fixedPackage.data!.selectedPackages != null) {
+          emit(FixedPackageListUpdate(
+              selectedPackages: fixedPackage.data!.selectedPackages!));
+        } else {
+          emit(FixedPackageFailure(error: 'لا توجد باقات متاحه'));
+        }
+      } else {
+        emit(FixedPackageFailure(error: 'هناك خطأ ما'));
+      }
+    } catch (e, s) {
+      log('Error: $e\nStackTrace: $s');
+      emit(FixedPackageFailure(error: 'هناك خطأ ما: $e'));
     }
-  } else {
-    emit(FixedPackageFailure(error: 'هناك خطأ ما'));
-  }
-} catch (e, s) {
-  log('Error: $e\nStackTrace: $s');
-  emit(FixedPackageFailure(error: 'هناك خطأ ما: $e'));
-}
-
   }
 }

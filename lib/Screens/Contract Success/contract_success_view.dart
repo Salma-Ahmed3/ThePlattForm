@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/Contract%20Success/components/contract_success_view_body.dart';
 import 'package:nowproject/Screens/Notification/notification_view.dart';
 import 'package:nowproject/components/custom_app_bar/build_app_bar.dart';
+import 'package:nowproject/cubit/contract_success/contract_success_cubit.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class ContractSuccessView extends StatelessWidget {
@@ -13,7 +16,16 @@ class ContractSuccessView extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         bottomNavigationBar: const CustomNavBar(),
-        body: const ContractSuccessViewBody(),
+        body: BlocProvider(
+          create: (context) => ContractSuccessCubit(
+          firstStepCubit: context.read<FirstStepCubit>()
+          ..fetchContractSuccess(
+            id: 'cb522172-f6e6-41ef-8329-e05276252c42',
+            type: '1'
+            ,)
+        ),
+          child: const ContractSuccessViewBody(id: 'cb522172-f6e6-41ef-8329-e05276252c42', type: '1',),
+        ),
         appBar: buildAppBar(
           context,
           titleAppBar: 'نجاح التعاقد',

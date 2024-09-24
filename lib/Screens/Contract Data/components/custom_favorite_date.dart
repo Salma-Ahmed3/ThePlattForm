@@ -13,13 +13,13 @@ class CustomFavorteDate extends StatefulWidget {
 }
 
 class _CustomFavorteDateState extends State<CustomFavorteDate> {
-  DateTime? _selectedDate; 
-  bool _isDaySelected = true; 
+  DateTime? _selectedDate;
+  bool _isDaySelected = true;
 
   @override
   void initState() {
     super.initState();
-    _selectedDate = widget.selectedDate; 
+    _selectedDate = widget.selectedDate;
   }
 
   List<DateTime> _getDaysToDisplay() {
@@ -34,7 +34,13 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
   @override
   Widget build(BuildContext context) {
     final daysOfWeek = [
-      'السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'
+      'السبت',
+      'الأحد',
+      'الاثنين',
+      'الثلاثاء',
+      'الأربعاء',
+      'الخميس',
+      'الجمعة'
     ];
 
     final daysToDisplay = _getDaysToDisplay();
@@ -73,7 +79,9 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
                     ),
                 ],
               ),
-              const SizedBox(height: 6,),
+              const SizedBox(
+                height: 6,
+              ),
               if (_selectedDate == null)
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
@@ -89,17 +97,18 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
     );
   }
 
-  Widget _buildDayContainer(String dayOfWeek, DateTime date, {bool isSelected = false}) {
+  Widget _buildDayContainer(String dayOfWeek, DateTime date,
+      {bool isSelected = false}) {
     return GestureDetector(
       onTap: () {
         setState(() {
           if (_selectedDate == date && _isDaySelected) {
             _selectedDate = null;
-            _isDaySelected = false; 
+            _isDaySelected = false;
           } else if (_selectedDate == null && !_isDaySelected) {
             if (date == widget.selectedDate) {
               _selectedDate = date;
-              _isDaySelected = true; 
+              _isDaySelected = true;
             }
           }
         });

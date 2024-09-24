@@ -17,9 +17,7 @@ class RectangleShowVisits extends StatelessWidget {
           ),
           child: Align(
             alignment: Alignment.centerRight,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               const SizedBox(
                 width: 20,
               ),
