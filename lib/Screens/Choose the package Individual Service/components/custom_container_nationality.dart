@@ -37,7 +37,8 @@ class CustomContainerNationality extends StatelessWidget {
                 width: widthContainer,
                 height: 18.h,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  // color:  Colors.blueGrey[100],
+                  color:  Color.fromARGB(255, 208, 216, 220),
                 ),
                 child: Center(
                   child: Text(

@@ -211,12 +211,11 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                                 SizedBox(
-                                  // height: 100000.h,
                                   child: Column(
                                     children: List.generate(
                                       state.fixedPackag.data!.selectedPackages!.length,
                                       (index) {
-                                        return CustomDetailesInChoosePackegeHourlyServices(
+                                        return CustomDetailesInChoosePackegeHourlyServices (
                                           titleText: state.fixedPackag.data!.selectedPackages![index].displayName ?? '',
                                           packagePrice: state.fixedPackag.data!.selectedPackages![index].packagePrice.toString(),
                                           packagePriceWithoutDiscount: state.fixedPackag.data!.selectedPackages![index].totalPriceWithVatBeforePromotion.toString(),

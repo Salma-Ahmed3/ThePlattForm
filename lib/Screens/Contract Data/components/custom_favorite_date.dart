@@ -13,12 +13,18 @@ class CustomFavorteDate extends StatefulWidget {
 }
 
 class _CustomFavorteDateState extends State<CustomFavorteDate> {
-  // Get the list of days to display
+  DateTime? _selectedDate; 
+  bool _isDaySelected = true; 
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedDate = widget.selectedDate; 
+  }
+
   List<DateTime> _getDaysToDisplay() {
     List<DateTime> days = [];
-    // Add the selected day
     days.add(widget.selectedDate);
-    // Add 5 days after the selected day
     for (int i = 1; i <= 5; i++) {
       days.add(widget.selectedDate.add(Duration(days: i)));
     }
@@ -36,7 +42,7 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
     return Stack(
       children: [
         CustomContainerNationality(
-          titleText: 'الأيام المفضله',
+          titleText: 'الأيام المفضله *',
           widthContainer: 110.w,
           height: 119,
         ),
@@ -44,7 +50,6 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
           child: Column(
             children: [
-              // Display the top row with three days
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -52,7 +57,7 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
                     _buildDayContainer(
                       daysOfWeek[daysToDisplay[i].weekday % 7],
                       daysToDisplay[i],
-                      isSelected: daysToDisplay[i] == widget.selectedDate,
+                      isSelected: daysToDisplay[i] == _selectedDate,
                     ),
                 ],
               ),
@@ -64,12 +69,19 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
                     _buildDayContainer(
                       daysOfWeek[daysToDisplay[i].weekday % 7],
                       daysToDisplay[i],
-                      isSelected: daysToDisplay[i] == widget.selectedDate,
+                      isSelected: daysToDisplay[i] == _selectedDate,
                     ),
                 ],
               ),
-              SizedBox(height: 6,),
-            
+              const SizedBox(height: 6,),
+              if (_selectedDate == null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    'الرجاء اختيار الايام المفضله كامله',
+                    style: TextStyles.regular12.copyWith(color: Colors.red),
+                  ),
+                ),
             ],
           ),
         ),
@@ -79,9 +91,17 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
 
   Widget _buildDayContainer(String dayOfWeek, DateTime date, {bool isSelected = false}) {
     return GestureDetector(
-      
       onTap: () {
         setState(() {
+          if (_selectedDate == date && _isDaySelected) {
+            _selectedDate = null;
+            _isDaySelected = false; 
+          } else if (_selectedDate == null && !_isDaySelected) {
+            if (date == widget.selectedDate) {
+              _selectedDate = date;
+              _isDaySelected = true; 
+            }
+          }
         });
       },
       child: Column(
@@ -104,19 +124,8 @@ class _CustomFavorteDateState extends State<CustomFavorteDate> {
               ),
             ),
           ),
-          
         ],
       ),
     );
   }
 }
-
-  //  if (widget.selectedDate != null)
-  //               Padding(
-  //                 padding: const EdgeInsets.only(top: 10),
-  //                 child: Text(
-  //                   'الرجاء اختيار يوم من الأيام',
-  //                   // discountMessage!,
-  //                   style: TextStyles.regular12.copyWith(color: Colors.red),
-  //                 ),
-  //               ),

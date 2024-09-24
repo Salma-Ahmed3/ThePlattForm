@@ -19,7 +19,7 @@ class _CustomButtonCoponState extends State<CustomButtonCopon> {
     return Stack(
       children: [
         CustomContainerNationality(
-          titleText: 'هل تمتلك كوبون خصم؟',
+          titleText: 'هل تمتلك كوبون خصم؟ *',
           widthContainer: 200.w,
           height: 80,
         ),

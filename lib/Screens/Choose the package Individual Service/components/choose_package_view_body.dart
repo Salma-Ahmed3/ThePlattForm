@@ -23,57 +23,61 @@ final String promotionCode , promotionCodeDescription;
           SizedBox(
             height: 15.h,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
               workerData: 'سائق خاص- باكستان - شهر',
-              heightContainer: 128.h,
-              textPackageDuration: 'مدة الباقة 1 شهر',
+              // heightContainer: 128.h,
+              textPackageDuration: 'مدة الباقة 1 شهر', packagePrice: '', packagePriceWithoutDiscount: '',
             ),
           ),
           SizedBox(
             height: 16.h,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
               workerData:
                   'باقة كينيا ثلاثة أشهر اقساط دفعة أولى 1000 و قسط شهري 3620 ريال',
-              heightContainer: 150.h,
+              // heightContainer: 150.h,
               textPackageDuration: 'مدة الباقه شهر',
+              packagePrice: '', packagePriceWithoutDiscount: '',
             ),
           ),
           SizedBox(
             height: 16.h,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
               workerData: 'سائق خاص- باكستان - شهر',
-              heightContainer: 128.h,
+              // heightContainer: 128.h,
               textPackageDuration: 'سعر الزيارة 2500 ر.س',
+              packagePrice: '', packagePriceWithoutDiscount: '',
             ),
           ),
           SizedBox(
             height: 15.h,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
               workerData: 'سائق خاص- باكستان - شهر',
-              heightContainer: 128.h,
+              // heightContainer: 128.h,
               textPackageDuration: 'سعر الزيارة 2500 ر.س',
+              packagePrice: '', packagePriceWithoutDiscount: '',
             ),
           ),
           SizedBox(
             height: 15.h,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: CustomDetailesInChoosePackege(
               workerData: 'باقة زيارة واحدة أسبوعياً لمدة 3 شهور',
-              heightContainer: 128.h,
+              // heightContainer: 128.h,
               textPackageDuration: 'سعر الزيارة 2500 ر.س',
+              packagePrice: '', packagePriceWithoutDiscount: '',
             ),
           ),
         ],

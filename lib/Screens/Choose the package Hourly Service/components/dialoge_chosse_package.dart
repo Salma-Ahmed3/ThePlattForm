@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nowproject/Screens/Contract%20Data/components/contract_data_view_body.dart';
-import 'package:nowproject/Screens/Contract%20Data/components/custom_favorite_date.dart';
 import 'package:nowproject/Screens/Contract%20Data/contract_data_view.dart';
 import 'package:nowproject/components/custom_button/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/cubit/Calender/calender_cubit.dart';

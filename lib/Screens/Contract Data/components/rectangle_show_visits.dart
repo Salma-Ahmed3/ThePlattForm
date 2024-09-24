@@ -9,7 +9,7 @@ class RectangleShowVisits extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Container(
-          width: 336,
+          width: 250,
           height: 44,
           decoration: BoxDecoration(
             color: const Color(0xffD6D6D6),
@@ -17,13 +17,18 @@ class RectangleShowVisits extends StatelessWidget {
           ),
           child: Align(
             alignment: Alignment.centerRight,
-            child: Row(children: [
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
               const SizedBox(
                 width: 20,
               ),
-              Text(
-                text,
-                style: TextStyles.regular14,
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  text,
+                  style: TextStyles.regular14,
+                ),
               )
             ]),
           ),
