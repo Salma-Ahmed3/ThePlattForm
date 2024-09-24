@@ -10,14 +10,13 @@ import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'custom_container_wallet_balance.dart';
 class ContractSuccessViewBody extends StatelessWidget {
-  final String id; // Pass the required id and type
+  final String id; 
   final String type;
 
   const ContractSuccessViewBody({super.key, required this.id, required this.type});
 
   @override
   Widget build(BuildContext context) {
-    // Call the cubit's function when the widget is built
     BlocProvider.of<ContractSuccessCubit>(context).getFixedPackage(id, type);
 
     return BlocConsumer<ContractSuccessCubit, ContractState>(
@@ -38,7 +37,7 @@ class ContractSuccessViewBody extends StatelessWidget {
               Text('تم تسجيل التعاقد بنجاح', style: TextStyles.bold20),
               SizedBox(height: 13.h),
               Text(
-           'رقم الطلب :${state.contract.data?.paymentCredintials?.sequenceNumber ?? ''}',
+              'رقم الطلب :${state.contract.data?.paymentCredintials?.sequenceNumber ?? ''}',
                 style: TextStyles.bold16.copyWith(color: Colors.red),
               ),
               SizedBox(height: 15.h),
@@ -59,7 +58,7 @@ class ContractSuccessViewBody extends StatelessWidget {
           
         
         } else {
-        return  Center(child: Text('لا توجد عقود متاحه'));
+        return  const Center(child: Text('لا توجد عقود متاحه'));
         }
       },
       listener: (context, state) {
