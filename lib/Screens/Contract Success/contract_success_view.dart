@@ -20,11 +20,11 @@ class ContractSuccessView extends StatelessWidget {
           create: (context) => ContractSuccessCubit(
           firstStepCubit: context.read<FirstStepCubit>()
           ..fetchContractSuccess(
-            id: 'cb522172-f6e6-41ef-8329-e05276252c42',
+            id: '2501a6cd-09a4-445f-b32e-bbef2cb27149',
             type: '1'
             ,)
         ),
-          child: const ContractSuccessViewBody(id: 'cb522172-f6e6-41ef-8329-e05276252c42', type: '1',),
+          child: const ContractSuccessViewBody(id: '2501a6cd-09a4-445f-b32e-bbef2cb27149', type: '1',),
         ),
         appBar: buildAppBar(
           context,
