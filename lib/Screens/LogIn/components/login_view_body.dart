@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/Home/home_view.dart';
@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/cubit/Login/login_cubit.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
 import 'package:nowproject/utility/app_text_style.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -24,6 +25,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -64,27 +66,31 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 const ForgetPassword(),
                 SizedBox(height: 33.h),
                 BlocConsumer<LoginCubit, LoginState>(
-                  listener: (context, state) {
+                  listener: (context, state) async {
                     if (state is LoginSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                            content: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                'تم تسجيل الدخول بنجاح',
-                                style: TextStyles.regular16,
-                              ),
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'تم تسجيل الدخول بنجاح',
+                              style: TextStyles.regular16,
                             ),
-                            backgroundColor: Colors.blue),
+                          ),
+                          backgroundColor: Colors.blue,
+                        ),
                       );
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setString('crmUserId', state.crmUserId??'');
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomeView()),
+                          builder: (context) => HomeView(crmUserId: state.crmUserId,),
+                        ),
                       );
                     }
                     if (state is LoginFailuer) {
-                      log("Error: ${state.error}");
+                      developer.log("Error: ${state.error}");
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Align(
@@ -100,17 +106,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     }
                   },
                   builder: (context, state) {
-                    if (state is LoginLoading) {
-                      return const CircularProgressIndicator();
-                    }
                     return CustomButtonLogin(
+                      text: 'تسجيل الدخول',
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
-                          context.read<LoginCubit>().login(email, password);
+                          BlocProvider.of<LoginCubit>(context).login(email, password);
                         }
                       },
-                      text: 'تسجيل دخول',
                     );
                   },
                 ),

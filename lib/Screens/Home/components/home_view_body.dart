@@ -8,9 +8,10 @@ import 'package:nowproject/Screens/Hourly%20service/hourly_service_view.dart';
 import 'package:nowproject/Screens/Resident%20service/resident_service_view.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
-
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({super.key, required this.crmUserId});
+  
+  final String crmUserId;  // Add crmUserId field
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,8 @@ class HomeViewBody extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const HourlyService()),
+                    builder: (context) => const HourlyService(),
+                  ),
                 );
               },
             ),
@@ -59,7 +61,8 @@ class HomeViewBody extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const ResidentServiceView()),
+                    builder: (context) => const ResidentServiceView(),
+                  ),
                 );
               },
             ),

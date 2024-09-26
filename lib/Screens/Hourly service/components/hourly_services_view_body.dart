@@ -6,6 +6,7 @@ import 'package:nowproject/components/custom_dialog/custom_dialog.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
+import 'package:nowproject/Screens/Resident%20service/components/global_data.dart'; // Import global data
 
 class HourlyServicesViewBody extends StatelessWidget {
   const HourlyServicesViewBody({super.key});
@@ -41,6 +42,7 @@ class HourlyServicesViewBody extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          globalData.serviceId = service.id;
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
@@ -50,6 +52,7 @@ class HourlyServicesViewBody extends StatelessWidget {
                         },
                         child: CustomButton(
                           onTap: () {
+                            globalData.serviceId = service.id;
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Screens/Home/home_view.dart';
+import 'package:nowproject/Screens/LogIn/login_view.dart';
 // import 'package:nowproject/Screens/LogIn/login_view.dart';
 import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
 import 'package:nowproject/cubit/Hourly_Services/hourly_services_cubit.dart';
@@ -41,8 +42,8 @@ class PlattForm extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           onGenerateRoute: onGenerateRoute,
-          initialRoute: HomeView.routeName,
-          // initialRoute: LoginView.routeName,
+          // initialRoute: HomeView.routeName,
+          initialRoute: LoginView.routeName,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.blueGrey[100],
           ),

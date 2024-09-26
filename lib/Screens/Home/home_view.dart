@@ -6,8 +6,10 @@ import 'package:nowproject/components/custom_menue_bar/menue_bar.dart';
 import 'package:nowproject/utility/custom_nav_bar.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  const HomeView({super.key, required this.crmUserId});
+  
   static const routeName = 'HomeView';
+  final String crmUserId;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class HomeView extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         bottomNavigationBar: const CustomNavBar(),
-        body: const HomeViewBody(),
+        body: const HomeViewBody(crmUserId: ''),  
         drawer: const MenueBar(),
         appBar: buildAppBar(
           context,

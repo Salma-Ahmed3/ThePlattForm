@@ -5,7 +5,7 @@ import 'package:nowproject/services/app_services.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit({this.userData}) : super(LoginInitial());
-  bool iSUserVisitor = true;
+  bool isUserVisitor = true;
   final User? userData;
 
   Future<void> login(String email, String password) async {
@@ -24,8 +24,11 @@ class LoginCubit extends Cubit<LoginState> {
 
     if (response != null) {
       if (response['status'] == 200) {
+        // Assuming response contains CrmUserId in data
+        String crmUserId = response['data']['user']['crmUserId'];
         emit(LoginSuccess(
           message: 'تم تسجيل الدخول بنجاح!',
+          crmUserId: crmUserId,
         ));
       } else {
         emit(LoginFailuer(
@@ -39,3 +42,4 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 }
+

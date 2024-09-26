@@ -9,11 +9,14 @@ final class LoginLoading extends LoginState {}
 
 final class LoginSuccess extends LoginState {
   final String message;
+  final String crmUserId; 
 
   LoginSuccess({
     required this.message,
+    required this.crmUserId,  
   });
 }
+
 
 final class LoginFailuer extends LoginState {
   final String error;

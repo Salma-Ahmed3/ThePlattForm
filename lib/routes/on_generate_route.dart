@@ -18,6 +18,7 @@ import 'package:nowproject/Screens/Logo/logo_view.dart';
 import 'package:nowproject/Screens/My%20Request%20Hours/my_request_hourly_view.dart';
 import 'package:nowproject/Screens/My%20Requests/my_requests_view.dart';
 import 'package:nowproject/Screens/Notification/notification_view.dart';
+import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 import 'package:nowproject/Screens/SignUp/signup_view.dart';
 import 'package:nowproject/Screens/contact_us/contact_us_view.dart';
 
@@ -33,7 +34,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const SignupView());
 
     case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => const HomeView());
+      return MaterialPageRoute(builder: (context) =>  HomeView(crmUserId:globalData.crmUserId??'' ,));
 
     case NotificationView.routeName:
       return MaterialPageRoute(builder: (context) => const NotificationView());
@@ -109,7 +110,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     //     return MaterialPageRoute(builder: (context) => const CustomDialog());
 
     default:
-      return MaterialPageRoute(builder: (context) => const HomeView());
+      return MaterialPageRoute(builder: (context) =>  HomeView(crmUserId: globalData.crmUserId??''));
   }
 }
 
