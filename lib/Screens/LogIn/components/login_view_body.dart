@@ -81,7 +81,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         ),
                       );
                       SharedPreferences prefs = await SharedPreferences.getInstance();
-                      await prefs.setString('crmUserId', state.crmUserId??'');
+                      await prefs.setString('crmUserId', state.crmUserId);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

@@ -80,12 +80,11 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                             return Column(
                               children: [
                                 ButtonInResidentService(
-                                   showIsAddressMain: true,
-
+                                  showIsAddressMain: true,
                                   titleText: subLocation.displayValue ?? 'لا يوجد عناوين متاحة',
                                   subTitleText: subLocation.availabilityMessage ?? '',
                                   onChanged: (value) {
-                                   if (subLocation.availabilityMessage ==
+                                  if (subLocation.availabilityMessage ==
                                             null ||
                                         subLocation
                                             .availabilityMessage!.isEmpty) {
@@ -192,7 +191,7 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
                                   colorBackGroun: Colors.transparent,
                                   colorBorder: selectedAddressIndex == index
                                       ? Colors
-                                          .black // Highlight selected address
+                                          .black
                                       : const Color(0xffACACAC),
                                   isSelected: selectedAddressIndex == index,
                                 ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Screens/Choose%20the%20package%20Hourly%20Service/components/choose_package_hourly_services_view_body.dart';
 import 'package:nowproject/Screens/Design%20your%20presentation/design_your_presentation_view.dart';
 import 'package:nowproject/Screens/Notification/notification_view.dart';
+import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 import 'package:nowproject/components/custom_app_bar/build_app_bar.dart';
 import 'package:nowproject/cubit/Fixed_Package/fixed_package_cubit.dart';
 import 'package:nowproject/cubit/Nationality/nationality_cubit.dart';
@@ -26,20 +27,20 @@ class ChoosePackageHourlyServicesView extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 NationalityCubit(firstStepCubit: context.read<FirstStepCubit>())
-                  ..fetchNationalities("4dc0edee-8e92-ee11-b766-000d3a236f24"),
+                  ..fetchNationalities(globalData.serviceId??''),
           ),
           BlocProvider(
             create: (context) =>
                 PeriodCubit(firstStepCubit: context.read<FirstStepCubit>())
                   ..fetchPeriodTime(
-                    "4dc0edee-8e92-ee11-b766-000d3a236f24",
+                    globalData.serviceId??'',
                   ),
           ),
           BlocProvider(
             create: (context) =>
                 TimeHoursCubit(firstStepCubit: context.read<FirstStepCubit>())
                   ..getTimeHours(
-                    "4dc0edee-8e92-ee11-b766-000d3a236f24",
+                    globalData.serviceId??'',
                     '1',
                   ),
           ),

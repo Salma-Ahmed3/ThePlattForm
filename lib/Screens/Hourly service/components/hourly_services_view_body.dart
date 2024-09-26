@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
 import 'package:nowproject/cubit/Hourly_Services/hourly_services_cubit.dart';
 import 'package:nowproject/components/custom_dialog/custom_dialog.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
-import 'package:nowproject/Screens/Resident%20service/components/global_data.dart'; // Import global data
+import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 
 class HourlyServicesViewBody extends StatelessWidget {
   const HourlyServicesViewBody({super.key});
@@ -41,24 +42,21 @@ class HourlyServicesViewBody extends StatelessWidget {
                   return Column(
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          globalData.serviceId = service.id;
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return const CustomDialogHourly();
-                            },
-                          );
-                        },
-                        child: CustomButton(
+                        child:CustomButton(
                           onTap: () {
                             globalData.serviceId = service.id;
+                            if (service.serviceNote != null) {
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return const CustomDialogHourly();
+                                return  CustomDialogHourly(titleText: service.serviceNote??'',);
                               },
                             );
+                          }
+                          else {
+                            globalData.serviceId = service.id;
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ChooseAddreseView()));
+                          }
                           },
                           titletext: service.name,
                           subtitletext: service.description,

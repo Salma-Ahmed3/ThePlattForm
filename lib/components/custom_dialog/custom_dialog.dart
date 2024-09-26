@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
-import 'package:nowproject/components/custom_circle_exit/custom_circle_avatar_dialog.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:svg_flutter/svg_flutter.dart';
@@ -9,8 +8,8 @@ import 'package:svg_flutter/svg_flutter.dart';
 import '../custom_button/custom_button_in_add_new_addrease.dart';
 
 class CustomDialogHourly extends StatelessWidget {
-  const CustomDialogHourly({super.key});
-
+  const CustomDialogHourly({super.key, required this.titleText,});
+final String titleText ;
   static const routeName = 'CustomDialog';
 
   @override
@@ -35,17 +34,22 @@ class CustomDialogHourly extends StatelessWidget {
                   SvgPicture.asset(
                     Assets.imagesErrorIcon,
                   ),
-                  const SizedBox(height: 13),
-                  Text(
-                    'هذه الخدمة تقدم للعائلات فقط',
-                    style: TextStyles.semiBold18,
+                  const SizedBox(height: 25),
+                  Center(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        titleText,
+                        style: TextStyles.semiBold18,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 14),
-                  Text(
-                    'نعتذر على عدم تقديم الخدمة في حالة عدم وجود سيدة بالمنزل',
-                    style: TextStyles.regular14,
-                  ),
-                  const SizedBox(height: 16),
+                  // Text(
+                  //  subTitleText,
+                  //   style: TextStyles.regular14,
+                  // ),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -93,7 +97,7 @@ class CustomDialogHourly extends StatelessWidget {
             ),
           ),
         ),
-        const Positioned(top: 283, child: CustomCircleAvatar()),
+        // const Positioned(top: 283, child: CustomCircleAvatar()),
       ],
     );
   }
