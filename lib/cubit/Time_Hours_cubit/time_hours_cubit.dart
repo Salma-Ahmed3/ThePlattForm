@@ -16,11 +16,9 @@ class TimeHoursCubit extends Cubit<TimeHoursState> {
       final timeHoursJson =
           await firstStepCubit.getTimeHours(serviceId: serviceId, shift: shift);
 
-      // Ensure response and data are not null
       if (timeHoursJson != null && timeHoursJson['data'] != null) {
         final data = timeHoursJson['data'];
 
-        // Check if 'data' is a list
         if (data is List) {
           final timeHour = data
               .map((item) => TimeHours.fromJson(item as Map<String, dynamic>))
