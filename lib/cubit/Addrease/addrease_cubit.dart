@@ -11,7 +11,7 @@ class AddreaseCubit extends Cubit<SavedAddressState> {
     try {
       emit(SavedAddressLoading());
 
-      final savedAddressesJson = await FirstStepCubit.getFirstStep(
+      final savedAddressesJson = await FirstStepCubit.getAddrease(
         contactId: contactId,
         serviceId: serviceId,
       );

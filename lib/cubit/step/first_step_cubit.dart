@@ -8,12 +8,24 @@ class FirstStepCubit extends Cubit<FirstStepState> {
   StepDetailsVm firstStep = StepDetailsVm();
   ActionStep actionStep = ActionStep();
 
-  static Future<Map<String, dynamic>?> getFirstStep({
-    required String serviceId,
-    required String contactId,
+  static Future<StepDetailsVm?> firtStep({
+    required String serviceType,
+    required String object,
   }) async {
     var result = await DynamicStepsController.firstStepAction(
-        serviceId: serviceId, contactId: contactId);
+        serviceType: serviceType, object: object );
+    if (result != null) {
+      return result;
+    }
+    return null;
+  }
+  static Future<Map<String, dynamic>?> getAddrease({
+    required String serviceId,
+    required String contactId,
+    String? serviceType,
+  }) async {
+    var result = await DynamicStepsController.firstAddrease(
+        serviceId: serviceId, contactId: contactId );
     if (result != null) {
       return result;
     }

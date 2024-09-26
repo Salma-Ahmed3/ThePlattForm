@@ -73,8 +73,8 @@ final String titleText ;
                       //  SizedBox(width: 19 ,),
                       CustomButtonInAddNewAddrease(
                         onTap: () {
-                          Navigator.of(context)
-                              .pushNamed(ChooseAddreseView.routeName);
+                          // Navigator.of(context)
+                          //     .pushNamed(ChooseAddreseView.routeName);
                         },
                         alignment: Alignment.centerRight,
                         colorBackGround: Colors.black,

@@ -9,6 +9,7 @@ import 'package:nowproject/Screens/Resident%20service/components/global_data.dar
 import 'package:nowproject/components/custom_button/custom_button_in_add_new_addrease.dart';
 import 'package:nowproject/cubit/Addrease/addrease_cubit.dart';
 import 'package:nowproject/cubit/Addrease/addrease_state.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,6 +41,10 @@ class _ResidentServiceViewBodyState extends State<ResidentServiceViewBody> {
 
     if (serviceId != null && crmUserId != null) {
       BlocProvider.of<AddreaseCubit>(context).getSavedAddress(serviceId, crmUserId);
+      // BlocProvider.of<FirstStepCubit>(context).firstStep(
+      //   serviceType:'2',
+      //   object: '',
+      // );
     } else {
       print('serviceId or crmUserId is null. Make sure both are set.');
     }
