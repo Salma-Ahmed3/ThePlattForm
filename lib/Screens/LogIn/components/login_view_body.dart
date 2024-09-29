@@ -5,6 +5,7 @@ import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_button.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart';
 import 'package:nowproject/Screens/LogIn/components/forget_password.dart';
+import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 import 'package:nowproject/Screens/SignUp/signup_view.dart';
 import 'package:nowproject/components/custom_text_account/custom_text_account.dart';
 import 'package:nowproject/components/custom_password_failed/password_failed.dart';
@@ -80,12 +81,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           backgroundColor: Colors.blue,
                         ),
                       );
-                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      // await  globalData.crmUserId;
                       await prefs.setString('crmUserId', state.crmUserId);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomeView(crmUserId: state.crmUserId,),
+                          builder: (context) => HomeView(
+                            crmUserId: state.crmUserId,
+                          ),
                         ),
                       );
                     }
@@ -111,7 +116,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
-                          BlocProvider.of<LoginCubit>(context).login(email, password);
+                          BlocProvider.of<LoginCubit>(context)
+                              .login(email, password);
                         }
                       },
                     );
@@ -125,7 +131,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     Navigator.of(context).pushNamed(SignupView.routeName);
                   },
                 ),
-                SizedBox(height: 41.h),
+                SizedBox(height: 16.h),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(HomeView.routeName);
+                  },
+                  child: Text(
+                    'تخطي ؟',
+                    style: TextStyles.bold16.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
                 SizedBox(height: 16.h),
               ],
             ),

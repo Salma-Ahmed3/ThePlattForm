@@ -12,14 +12,14 @@ class DistinguishedServices extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             'خدماتنا المميزة',
-            style: TextStyles.regular16,
+            style: TextStyles.regular16.copyWith(color: Colors.green[200]),
           ),
         ),
         Align(
           alignment: Alignment.centerRight,
           child: Text(
             'مجموعة خدمات لا غنى عنها',
-            style: TextStyles.regular16,
+            style: TextStyles.regular16.copyWith(color: Colors.green[200]),
           ),
         ),
       ],

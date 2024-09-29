@@ -8,7 +8,7 @@ AppBar buildAppBar(
   required Widget icon,
 }) {
   return AppBar(
-    backgroundColor: const Color(0xffF8F8F8),
+    // backgroundColor: const Color(0xffF8F8F8),
     centerTitle: true,
     title: Text(
       titleAppBar,

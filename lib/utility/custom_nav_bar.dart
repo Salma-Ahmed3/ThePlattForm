@@ -10,7 +10,11 @@ class CustomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      elevation: 10,
+      backgroundColor: const Color.fromARGB(255, 38, 107, 121),
       type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.white,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),

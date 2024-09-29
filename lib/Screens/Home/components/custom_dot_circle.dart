@@ -15,7 +15,7 @@ class _CustomDotCircleState extends State<CustomDotCircle> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(3, (index) => _buildDot(index)),
+      children: List.generate(1, (index) => _buildDot(index)),
     );
   }
 
@@ -33,7 +33,7 @@ class _CustomDotCircleState extends State<CustomDotCircle> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color:
-              selectedIndex == index ? const Color(0xffACACAC) : Colors.white,
+              selectedIndex == index ?  Colors.white:const Color(0xffACACAC) ,
           border: Border.all(
             color: const Color(0xffACACAC),
             width: 1,

@@ -8,10 +8,11 @@ import 'package:nowproject/Screens/Hourly%20service/hourly_service_view.dart';
 import 'package:nowproject/Screens/Resident%20service/resident_service_view.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
+
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key, required this.crmUserId});
-  
-  final String crmUserId;  // Add crmUserId field
+
+  final String crmUserId; // Add crmUserId field
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(
               height: 33.h,
             ),
-            const CustomPhoto(),
+            const CustomPhoto(imageWidth: 350,),
             SizedBox(
               height: 16.h,
             ),
@@ -36,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
               height: 17.h,
             ),
             CustomButton(
-              image: '',
+              // image: '',
               titletext: 'خدمة بالساعة',
               subtitletext: 'خدمات منزلية بنظام الساعات',
               colorSmallContainer: const Color(0xffD6D6D6),
@@ -53,7 +54,7 @@ class HomeViewBody extends StatelessWidget {
               height: 20.h,
             ),
             CustomButton(
-              image: '',
+              // image: '',
               titletext: 'خدمة مقيمة',
               subtitletext: 'نظام الباقات الشهرية والسنوية',
               colorSmallContainer: const Color(0xffACACAC),
@@ -71,7 +72,7 @@ class HomeViewBody extends StatelessWidget {
             ),
             Text(
               'نسعد بتواصلكم معنا من خلال',
-              style: TextStyles.regular16,
+              style: TextStyles.bold16.copyWith(color: Colors.black),
             ),
             const SizedBox(
               height: 23,

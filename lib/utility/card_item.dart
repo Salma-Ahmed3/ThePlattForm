@@ -8,12 +8,12 @@ class CustomButton extends StatelessWidget {
     required this.titletext,
     required this.colorSmallContainer,
     this.onTap,
-    required this.image,
+     this.image,
   });
   final String subtitletext;
   final String titletext;
   final Color colorSmallContainer;
-  final String image;
+  final String? image;
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,10 @@ class CustomButton extends StatelessWidget {
             width: double.infinity,
             height: 75,
             decoration: BoxDecoration(
-              color: Colors.transparent,
+              // color: Colors.grey,
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: const Color(0xff000000),
+                color: Colors.white,
                 width: 1,
               ),
             ),
@@ -41,7 +41,8 @@ class CustomButton extends StatelessWidget {
                     height: 56,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(image),
+                        image:NetworkImage(image??'')
+                            
                       ),
                       borderRadius: BorderRadius.circular(14),
                     ),
@@ -55,11 +56,15 @@ class CustomButton extends StatelessWidget {
                       const SizedBox(
                         height: 14,
                       ),
-                      Text(titletext, style: TextStyles.regular16),
+                      Text(titletext,
+                          style: TextStyles.regular18
+                              .copyWith(color: Colors.yellow)),
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(subtitletext, style: TextStyles.regular12),
+                      Text(subtitletext,
+                          style: TextStyles.regular12
+                              .copyWith(color: Colors.white)),
                     ],
                   ),
                 ],

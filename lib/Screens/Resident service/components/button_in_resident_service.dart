@@ -39,11 +39,11 @@ class ButtonInResidentService extends StatelessWidget {
         width: double.infinity,
         height: 100.h,
         decoration: BoxDecoration(
-          color: isSelected ? Color(0xffF8F8F8) : colorBackGroun,
+          color: isSelected ? Colors.grey : colorBackGroun,
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
-            color: isSelected ? Colors.black : colorBorder,
-            width: 1.w,
+            color: isSelected ? Colors.white : colorBorder,
+            width: 2.w,
           ),
         ),
         child: Padding(
@@ -57,12 +57,14 @@ class ButtonInResidentService extends StatelessWidget {
                   children: [
                     Text(
                       titleText,
-                      style: TextStyles.regular16,
+                      style: TextStyles.regular16
+                          .copyWith(color: Colors.blue[100]),
                     ),
                     SizedBox(height: 4.h),
                     Text(
                       subTitleText,
-                      style: TextStyles.regular12.copyWith(color: Colors.red),
+                      style: TextStyles.regular14.copyWith(
+                          color: const Color.fromARGB(255, 32, 32, 77)),
                     ),
                   ],
                 ),

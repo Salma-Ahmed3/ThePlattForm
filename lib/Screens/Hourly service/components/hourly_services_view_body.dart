@@ -36,27 +36,34 @@ class HourlyServicesViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 20.h),
-                Text('اختر الخدمة المطلوبة', style: TextStyles.regular18),
+                Text('اختر الخدمة المطلوبة',
+                    style: TextStyles.regular18
+                        .copyWith(color: Colors.green[200])),
                 SizedBox(height: 24.h),
                 ...state.services.map((service) {
                   return Column(
                     children: [
                       GestureDetector(
-                        child:CustomButton(
+                        child: CustomButton(
                           onTap: () {
                             globalData.serviceId = service.id;
                             if (service.serviceNote != null) {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return  CustomDialogHourly(titleText: service.serviceNote??'',);
-                              },
-                            );
-                          }
-                          else {
-                            globalData.serviceId = service.id;
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ChooseAddreseView()));
-                          }
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return CustomDialogHourly(
+                                    titleText: service.serviceNote ?? '',
+                                  );
+                                },
+                              );
+                            } else {
+                              globalData.serviceId = service.id;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ChooseAddreseView()));
+                            }
                           },
                           titletext: service.name,
                           subtitletext: service.description,

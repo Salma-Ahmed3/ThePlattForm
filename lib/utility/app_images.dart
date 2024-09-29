@@ -24,4 +24,5 @@ class Assets {
       "assets/images/SuccessVerySmall.png";
   static const String imagesUserIcon = "assets/images/userIcon.png";
   static const String imagesclockloader = "assets/images/clock_loader.gif";
+  static const String imagesCleaning = "assets/images/cleaninig.jpg";
 }

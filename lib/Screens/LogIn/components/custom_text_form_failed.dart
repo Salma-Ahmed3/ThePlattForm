@@ -32,9 +32,9 @@ class CustomTextFormFaild extends StatelessWidget {
           return null;
         },
         keyboardType: keyboardType,
-        cursorColor: Colors.black,
+        cursorColor: Colors.white,
         style: TextStyles.semiBold18.copyWith(
-          color: Colors.black,
+          color: Colors.white,
         ),
         textInputAction: textInputAction,
         decoration: InputDecoration(
@@ -42,11 +42,17 @@ class CustomTextFormFaild extends StatelessWidget {
           // filled: true,
           suffixIcon: suffixIcon,
           hintText: hitText,
-          hintStyle: TextStyles.regular16,
+          hintStyle: TextStyles.regular16.copyWith(
+            color: Colors.white,
+          ),
           border: buildBorder(),
-          // enabledBorder: buildBorder(),
+          enabledBorder: buildBorder(),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4),
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 1.w,
+            ),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
       ),
@@ -55,10 +61,10 @@ class CustomTextFormFaild extends StatelessWidget {
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(10),
       borderSide: BorderSide(
-        color: const Color.fromARGB(255, 37, 33, 1),
-        width: 0.3.w,
+        color: Colors.white,
+      width: 1.w,
       ),
     );
   }
