@@ -53,6 +53,7 @@ class HourlyServicesViewBody extends StatelessWidget {
                                 builder: (BuildContext context) {
                                   return CustomDialogHourly(
                                     titleText: service.serviceNote ?? '',
+                                    service: service,
                                   );
                                 },
                               );

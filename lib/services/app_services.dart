@@ -13,7 +13,7 @@ class AppService {
     required ActionType actionType,
     required String apiName,
     Map<String, dynamic>? query,
-    required Map<String, dynamic> body,
+     Map<String, dynamic>? body,
   }) async {
     try {
       final result = await InternetAddress.lookup('google.com');

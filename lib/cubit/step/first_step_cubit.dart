@@ -1,24 +1,43 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nowproject/Models/steps/steps.dart';
+import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
 import 'package:nowproject/controller/dynamic_steps/dynamic_steps_controller.dart';
+import 'package:nowproject/cubit/loading_cubit/loading_cubit.dart';
 import 'package:nowproject/cubit/step/first_step_state.dart';
+import 'package:nowproject/utility/enums.dart';
 
 class FirstStepCubit extends Cubit<FirstStepState> {
   FirstStepCubit() : super(FirstStepInitial());
+  String serviceType = ServiceType.none; 
+  final Loading loading = Loading();
   StepDetailsVm firstStep = StepDetailsVm();
   ActionStep actionStep = ActionStep();
-
-  static Future<StepDetailsVm?> firtStep({
+  Future<void> fetchFirstStep({
     required String serviceType,
-    required String object,
+    required FirstStepObjParameter object,
+    required BuildContext context,
+    
   }) async {
     var result = await DynamicStepsController.firstStepAction(
-        serviceType: serviceType, object: object );
+        serviceType: serviceType, object: object);
     if (result != null) {
-      return result;
+      final stepHeaderId = result.stepId;
+      Navigator.of(context).pushNamed(
+        ChooseAddreseView.routeName,
+        arguments: stepHeaderId,
+      );
+    log("First Step: $result");
+    } 
+    else {
+      log('Failed to retrieve step data.');
     }
-    return null;
   }
+
+
+  
   static Future<Map<String, dynamic>?> getAddrease({
     required String serviceId,
     required String contactId,
@@ -106,5 +125,27 @@ class FirstStepCubit extends Cubit<FirstStepState> {
       return result;
     }
     return null;
+  }
+}
+class FirstStepObjParameter {
+  String? serviceId;
+  String? selectedPricingId;
+  bool? fromOffer;
+
+  FirstStepObjParameter(
+      {this.serviceId, this.selectedPricingId, this.fromOffer});
+
+  FirstStepObjParameter.fromJson(Map<String, dynamic> json) {
+    serviceId = json['ServiceId'];
+    selectedPricingId = json['SelectedPricingId'];
+    fromOffer = json['FromOffer'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['ServiceId'] = serviceId;
+    data['SelectedPricingId'] = selectedPricingId;
+    data['FromOffer'] = fromOffer;
+    return data;
   }
 }

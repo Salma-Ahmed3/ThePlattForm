@@ -1,24 +1,27 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:nowproject/Models/steps/steps.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/services/app_services.dart';
 
 class DynamicStepsController {
-  static Future<StepDetailsVm?> firstStepAction({
-    required String? object,
-    required  String? serviceType,
-  }) async {
-    
-      var result = await AppService.callService(
-        actionType: ActionType.get,
-        apiName: 'api/Steps/FirstStep?serviceType=$serviceType&Object=$object',
-        body: {},
-        query: {
-          // 'serviceType': serviceType,
-        },
-      );
-    return result != null ? StepDetailsVm.fromJson(jsonDecode(result.toString())) : null;
-  }
+ static Future<StepDetailsVm?> firstStepAction({
+  required FirstStepObjParameter object,
+  required String? serviceType,
+}) async {
+      final obj =  json.encode(object.toJson());
+  log("obj: $obj"); 
+  var result = await AppService.callService(
+    actionType: ActionType.get,
+    apiName: 'Steps/FirstStep',
+    query: {
+      'serviceType': serviceType,
+      'Object': obj,
+    },
+  );
+  return result != null ? StepDetailsVm.fromJson(result) : null;
+}
+
   static Future<Map<String, dynamic>?> firstAddrease({
     required String contactId,
     required String serviceId,

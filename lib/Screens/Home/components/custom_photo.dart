@@ -24,6 +24,16 @@ class _CustomPhotoState extends State<CustomPhoto> {
     _scrollController = ScrollController();
     _startScrolling(); 
   }
+    Future<void> _pauseScrolling() async {
+    setState(() {
+      _isPaused = true; 
+    });
+    await Future.delayed(const Duration(seconds: 4)); 
+    setState(() {
+      _isPaused = false; 
+    });
+  }
+
   Future<void> _startScrolling() async {
     _timer = Timer.periodic(const Duration(milliseconds: 50), (timer) async {
       if (_scrollController.hasClients && !_isPaused) {
@@ -37,15 +47,6 @@ class _CustomPhotoState extends State<CustomPhoto> {
           await _pauseScrolling(); 
         }
       }
-    });
-  }
-  Future<void> _pauseScrolling() async {
-    setState(() {
-      _isPaused = true; 
-    });
-    await Future.delayed(const Duration(seconds: 4)); 
-    setState(() {
-      _isPaused = false; 
     });
   }
 
