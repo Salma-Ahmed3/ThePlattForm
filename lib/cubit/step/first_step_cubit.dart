@@ -15,27 +15,27 @@ class FirstStepCubit extends Cubit<FirstStepState> {
   final Loading loading = Loading();
   StepDetailsVm firstStep = StepDetailsVm();
   ActionStep actionStep = ActionStep();
-  Future<void> fetchFirstStep({
-    required String serviceType,
-    required FirstStepObjParameter object,
-    required BuildContext context,
-    
-  }) async {
-    var result = await DynamicStepsController.firstStepAction(
-        serviceType: serviceType, object: object);
-    if (result != null) {
-      final stepHeaderId = result.stepId;
-      Navigator.of(context).pushNamed(
-        ChooseAddreseView.routeName,
-        arguments: stepHeaderId,
-      );
-    log("First Step: $result");
-    } 
-    else {
-      log('Failed to retrieve step data.');
-    }
-  }
+Future<void> fetchFirstStep({
+  required String serviceType,
+  required FirstStepObjParameter object,
+  required BuildContext context,
+}) async {
+  var result = await DynamicStepsController.firstStepAction(
+    serviceType: serviceType,
+    object: object,
+  );
 
+  if (result != null) {
+    final stepId = result.stepId;  // Fetch the step ID
+    Navigator.of(context).pushNamed(
+      ChooseAddreseView.routeName,  // Assuming you have a route setup
+      arguments: stepId,  // Pass the stepId as argument
+    );
+    log("First Step: $stepId");  // Log for debugging
+  } else {
+    log('Failed to retrieve step data.');
+  }
+}
 
   
   static Future<Map<String, dynamic>?> getAddrease({

@@ -8,6 +8,8 @@ import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/card_item.dart';
 import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
+import 'package:nowproject/cubit/step/first_step_cubit.dart';
+import 'package:nowproject/utility/enums.dart';
 
 class HourlyServicesViewBody extends StatelessWidget {
   const HourlyServicesViewBody({super.key});
@@ -58,12 +60,26 @@ class HourlyServicesViewBody extends StatelessWidget {
                                 },
                               );
                             } else {
+                              // Add your logic here in the else block
+                              BlocProvider.of<FirstStepCubit>(context)
+                                  .serviceType = ServiceType.hourlyServiceType;
                               globalData.serviceId = service.id;
+                              BlocProvider.of<FirstStepCubit>(context)
+                                  .fetchFirstStep(
+                                serviceType: ServiceType.hourlyServiceType,
+                                object: FirstStepObjParameter(
+                                  serviceId: service.id,
+                                  fromOffer: false,
+                                ),
+                                context: context,
+                              );
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ChooseAddreseView()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ChooseAddreseView(),
+                                ),
+                              );
                             }
                           },
                           titletext: service.name,

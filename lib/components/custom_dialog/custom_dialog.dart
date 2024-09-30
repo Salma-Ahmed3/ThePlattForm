@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
 import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/utility/app_images.dart';
 import 'package:nowproject/utility/app_text_style.dart';
 import 'package:nowproject/utility/enums.dart';
 import 'package:svg_flutter/svg_flutter.dart';
-
 import '../../Models/services.dart';
 import '../custom_button/custom_button_in_add_new_addrease.dart';
 
@@ -79,15 +77,15 @@ class CustomDialogHourly extends StatelessWidget {
                       ),
                       CustomButtonInAddNewAddrease(
                       onTap: () {
-                        BlocProvider.of<FirstStepCubit>(context).serviceType = ServiceType.hourlyServiceType;
-                        globalData.serviceId = service.id;
-                        BlocProvider.of<FirstStepCubit>(context).fetchFirstStep(
-                          serviceType: ServiceType.hourlyServiceType,
-                          object:FirstStepObjParameter(
-                                      serviceId: service.id,
-                                      fromOffer: false,
-                                      ),
-                          context: context,
+                  BlocProvider.of<FirstStepCubit>(context).serviceType = ServiceType.hourlyServiceType;
+                  globalData.serviceId = service.id;  
+                  BlocProvider.of<FirstStepCubit>(context).fetchFirstStep(
+                  serviceType: ServiceType.hourlyServiceType,
+                  object: FirstStepObjParameter(
+                    serviceId: service.id,
+                    fromOffer: false,
+                  ),
+                  context: context,
                         );
                       },
                       alignment: Alignment.centerRight,
