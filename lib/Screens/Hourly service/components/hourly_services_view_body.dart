@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nowproject/Screens/Choose%20Addrease/choose_addrese_view.dart';
 import 'package:nowproject/cubit/Hourly_Services/hourly_services_cubit.dart';
 import 'package:nowproject/components/custom_dialog/custom_dialog.dart';
 import 'package:nowproject/utility/app_images.dart';
@@ -73,13 +72,7 @@ class HourlyServicesViewBody extends StatelessWidget {
                                 ),
                                 context: context,
                               );
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ChooseAddreseView(),
-                                ),
-                              );
+                            
                             }
                           },
                           titletext: service.name,
