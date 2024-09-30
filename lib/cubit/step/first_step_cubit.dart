@@ -26,12 +26,12 @@ Future<void> fetchFirstStep({
   );
 
   if (result != null) {
-    final stepId = result.stepId;  // Fetch the step ID
+    final stepId = result.stepId; 
     Navigator.of(context).pushNamed(
-      ChooseAddreseView.routeName,  // Assuming you have a route setup
-      arguments: stepId,  // Pass the stepId as argument
+      ChooseAddreseView.routeName,  
+      arguments: stepId,
     );
-    log("First Step: $stepId");  // Log for debugging
+    log("First Step: $stepId");
   } else {
     log('Failed to retrieve step data.');
   }
