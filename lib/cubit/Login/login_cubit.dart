@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:nowproject/Models/authentication/user_data.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
+import 'package:nowproject/helper/local_store.dart';
 import 'package:nowproject/services/app_services.dart';
+import 'package:nowproject/utility/local_storge_key.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit({this.userData}) : super(LoginInitial());
   bool isUserVisitor = true;
   final User? userData;
+
 
   Future<void> login(String email, String password) async {
     emit(LoginLoading());
@@ -24,12 +29,14 @@ class LoginCubit extends Cubit<LoginState> {
 
     if (response != null) {
       if (response['status'] == 200) {
-        // Assuming response contains CrmUserId in data
         String crmUserId = response['data']['user']['crmUserId'];
         String token = response['data']['token'];
-        // UserData userData = response['data']['token'];
+          await AppLocalStore.setString(
+        LocalStoreNames.appToken,
+        jsonEncode({'access_token': token}),
+    );
+
         emit(LoginSuccess(
-          // userData: userData,
           message: 'تم تسجيل الدخول بنجاح!',
           crmUserId: crmUserId,
           token : token
@@ -46,4 +53,6 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 }
+
+
 

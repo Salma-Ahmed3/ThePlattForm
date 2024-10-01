@@ -57,7 +57,6 @@ class HourlyServicesViewBody extends StatelessWidget {
                                 },
                               );
                             } else {
-                              // Add your logic here in the else block
                               BlocProvider.of<FirstStepCubit>(context)
                                   .serviceType = ServiceType.hourlyServiceType;
                               globalData.serviceId = service.id;
@@ -70,7 +69,6 @@ class HourlyServicesViewBody extends StatelessWidget {
                                 ),
                                 context: context,
                               );
-                            
                             }
                           },
                           titletext: service.name,

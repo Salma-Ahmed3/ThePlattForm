@@ -42,7 +42,6 @@ class CustomButton extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image:NetworkImage(image??'')
-                            
                       ),
                       borderRadius: BorderRadius.circular(14),
                     ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nowproject/Models/authentication/user_data.dart';
 
 @immutable
 sealed class LoginState {}

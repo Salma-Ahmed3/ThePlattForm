@@ -1,3 +1,4 @@
+ import 'dart:convert';
 import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +12,9 @@ import 'package:nowproject/components/custom_password_failed/password_failed.dar
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nowproject/cubit/Login/login_cubit.dart';
 import 'package:nowproject/cubit/Login/login_state.dart';
+import 'package:nowproject/helper/local_store.dart';
 import 'package:nowproject/utility/app_text_style.dart';
+import 'package:nowproject/utility/local_storge_key.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -80,11 +83,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           backgroundColor: Colors.blue,
                         ),
                       );
-                      SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      // await  globalData.crmUserId;
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
                       await prefs.setString('crmUserId', state.crmUserId);
-                    await prefs.setString('token', state.token);
+                      await AppLocalStore.setString(
+                          LocalStoreNames.appToken, jsonEncode({'access_token': state.token}));
+                      String? retrievedToken = await AppLocalStore.getString(LocalStoreNames.appToken);
+                      developer.log("Retrieved token: $retrievedToken");
+
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
@@ -152,3 +157,5 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     );
   }
 }
+
+ 
