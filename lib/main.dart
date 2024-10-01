@@ -13,7 +13,7 @@ void main() {
       providers: [
         BlocProvider<HourlyServicesCubit>(
           create: (context) =>
-              HourlyServicesCubit()..fetchHourlyServices('hourly'),
+              HourlyServicesCubit()..fetchHourlyServices('2'),
         ),
         BlocProvider<FirstStepCubit>(
           create: (context) => FirstStepCubit(),

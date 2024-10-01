@@ -24,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(
               height: 33.h,
             ),
-            const CustomPhoto(imageWidth: 350,), 
+            // const CustomPhoto(imageWidth: 350,), 
             SizedBox(
               height: 16.h,
             ),

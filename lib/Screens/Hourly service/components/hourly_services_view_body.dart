@@ -15,7 +15,7 @@ class HourlyServicesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<HourlyServicesCubit>().fetchHourlyServices('hourly');
+    context.read<HourlyServicesCubit>().fetchHourlyServices('2');
     return BlocBuilder<HourlyServicesCubit, HourlyServicesState>(
       builder: (context, state) {
         if (state is HourlyServicesLoading) {

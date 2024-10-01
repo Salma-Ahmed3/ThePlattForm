@@ -86,10 +86,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       SharedPreferences prefs = await SharedPreferences.getInstance();
                       await prefs.setString('crmUserId', state.crmUserId);
                       await AppLocalStore.setString(
-                          LocalStoreNames.appToken, jsonEncode({'access_token': state.token}));
+                          LocalStoreNames.appToken,'${state.token}');
                       String? retrievedToken = await AppLocalStore.getString(LocalStoreNames.appToken);
-                      developer.log("Retrieved token: $retrievedToken");
-
+                      developer.log(retrievedToken!);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

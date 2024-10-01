@@ -10,15 +10,17 @@ class DynamicStepsController {
   required String? serviceType,
 }) async {
       final obj =  json.encode(object.toJson());
-  log("obj: $obj"); 
+  log("objjjjjjjjjjjjjjjjjj: $obj"); 
   var result = await AppService.callService(
     actionType: ActionType.get,
-    apiName: 'Steps/FirstStep',
-    query: {
-      'serviceType': serviceType,
-      'Object': obj,
-    },
+    apiName: 'Steps/FirstStep?serviceType=$serviceType&Object=$obj',
+    // query: {
+    //   'serviceType': serviceType,
+    //   'Object': obj,
+    // },
   );
+  log("reqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq: $result"); 
+
   return result != null ? StepDetailsVm.fromJson(result) : null;
 }
 

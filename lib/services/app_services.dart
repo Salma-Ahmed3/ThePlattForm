@@ -29,24 +29,27 @@ class AppService {
           );
 
           // Construct the URL with query parameters
-          var apiUrl = Uri.https(AppSetting.serviceURL, "ar/api/$apiName", query);
-
+     var   apiNameText =   Uri.parse("https://${AppSetting.serviceURL}/ar/api/${apiName}");
+          var apiUrl = http.get(apiNameText);
+          log("apiNameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee: $apiNameText");
           // Construct the headers
           var header = {
             "content-type": 'application/json',
             "TimeX": DateTime.now().millisecondsSinceEpoch.toString(),
             "cache-control": "no-cache",
-            "SignAuth": "$apikey${getSignature(apiUrl, 1000)}",
+            "SignAuth": "$apikey${getSignature(apiNameText, 1000)}",
             "platform": platform,
             "version": '7.0.0',
             "source": "3",
             "Accept": 'application/json, text/plain, */*',
-            'Authorization': "bearer ${await getStoredToken()}",
+            // 'Authorization': "bearer ${await getStoredToken()}",
           };
 
 
         if (!checkIfNotLogin(apiUrl.toString())) {
         String? token = await getStoredToken();
+          log("tokkkkkkkkkkkkkkkkkkkkkkkeeeeeeeeeennn: $token");
+
         if (token != null) {
           header.update('Authorization', (value) => "bearer $token",
               ifAbsent: () => "bearer $token");
@@ -58,8 +61,8 @@ class AppService {
 
           // Make the HTTP request
           final response = actionType == ActionType.get
-              ? await http.get(apiUrl, headers: header)
-              : await http.post(apiUrl, headers: header, body: json.encode(body));
+              ? await http.get(apiNameText, headers: header)
+              : await http.post(apiNameText, headers: header, body: json.encode(body));
 
           print("Response Status: ${response.statusCode}");
           print("Response Body: ${response.body}");
