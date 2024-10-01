@@ -26,9 +26,13 @@ class LoginCubit extends Cubit<LoginState> {
       if (response['status'] == 200) {
         // Assuming response contains CrmUserId in data
         String crmUserId = response['data']['user']['crmUserId'];
+        String token = response['data']['token'];
+        // UserData userData = response['data']['token'];
         emit(LoginSuccess(
+          // userData: userData,
           message: 'تم تسجيل الدخول بنجاح!',
           crmUserId: crmUserId,
+          token : token
         ));
       } else {
         emit(LoginFailuer(

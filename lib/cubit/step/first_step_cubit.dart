@@ -118,8 +118,8 @@ Future<void> fetchFirstStep({
     required String type
   }) async {
     var result = await DynamicStepsController.fetchContractSuccess(
-     id: id,
-     type: type
+    id: id,
+    type: type
     );
     if (result != null) {
       return result;
@@ -129,22 +129,22 @@ Future<void> fetchFirstStep({
 }
 class FirstStepObjParameter {
   String? serviceId;
-  String? selectedPricingId;
+  // String? selectedPricingId;
   bool? fromOffer;
 
   FirstStepObjParameter(
-      {this.serviceId, this.selectedPricingId, this.fromOffer});
+      {this.serviceId,this.fromOffer});
 
   FirstStepObjParameter.fromJson(Map<String, dynamic> json) {
     serviceId = json['ServiceId'];
-    selectedPricingId = json['SelectedPricingId'];
+    // selectedPricingId = json['SelectedPricingId'];
     fromOffer = json['FromOffer'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['ServiceId'] = serviceId;
-    data['SelectedPricingId'] = selectedPricingId;
+    // data['SelectedPricingId'] = selectedPricingId;
     data['FromOffer'] = fromOffer;
     return data;
   }

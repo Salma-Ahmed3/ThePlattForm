@@ -19,9 +19,23 @@ import 'package:nowproject/cubit/Nationality/nationality_cubit.dart';
 
 import 'custom_detailes_in_choose_packege_hourly_services.dart';
 
-class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
+class ChoosePackageHourlyServicesViewBody extends StatefulWidget {
   const ChoosePackageHourlyServicesViewBody({super.key});
 
+  @override
+  State<ChoosePackageHourlyServicesViewBody> createState() => _ChoosePackageHourlyServicesViewBodyState();
+}
+
+class _ChoosePackageHourlyServicesViewBodyState extends State<ChoosePackageHourlyServicesViewBody> {
+    String? selectedNationality;
+    String? selectedPeriod;
+
+  void selectNationality(String nationality , String period) {
+    setState(() {
+      selectedNationality = nationality;
+       selectedPeriod = period;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -61,6 +75,12 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                     nationalityText:
                                         state.nationalities[index].value!,
                                     image: state.nationalities[index].image!,
+                                    isSelected: selectedNationality ==
+                                        state.nationalities[index].value!,
+                                    onSelect: () => selectNationality(
+                                        state.nationalities[index].value!,
+                                        state.nationalities[index].image!,
+                                        ),
                                   );
                                 },
                               ),
@@ -97,6 +117,8 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                 itemBuilder: (context, index) {
                                   return CustomButtonPeriodsInChoosePackage(
                                     time: state.periodmodel[index].value!,
+                                  isSelected: selectedPeriod == state.periodmodel[index].value!,
+                                  onSelect: () => selectedPeriod??(state.periodmodel[index].value!),
                                   );
                                 },
                               ),
@@ -135,6 +157,8 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                 itemBuilder: (context, index) {
                                   return CustomButtonPeriodsInChoosePackage(
                                     time: state.timeHour[index].value!,
+                                    isSelected:selectedPeriod == state.timeHour[index].value!,
+                                  onSelect: () => selectedPeriod??(state.timeHour[index].value!),
                                   );
                                 },
                               ),
@@ -176,6 +200,8 @@ class ChoosePackageHourlyServicesViewBody extends StatelessWidget {
                                 itemBuilder: (context, index) {
                                   return CustomButtonPeriodsInChoosePackage(
                                     time: state.visitTimeModels[index].data!,
+                                         isSelected:selectedPeriod == state.visitTimeModels[index].data!,
+                                  onSelect: () => selectedPeriod??(state.visitTimeModels[index].data!),
                                   );
                                 },
                               ),

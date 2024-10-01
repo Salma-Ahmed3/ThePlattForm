@@ -5,7 +5,6 @@ import 'package:nowproject/Screens/Home/home_view.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_button.dart';
 import 'package:nowproject/Screens/LogIn/components/custom_text_form_failed.dart';
 import 'package:nowproject/Screens/LogIn/components/forget_password.dart';
-import 'package:nowproject/Screens/Resident%20service/components/global_data.dart';
 import 'package:nowproject/Screens/SignUp/signup_view.dart';
 import 'package:nowproject/components/custom_text_account/custom_text_account.dart';
 import 'package:nowproject/components/custom_password_failed/password_failed.dart';
@@ -85,6 +84,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           await SharedPreferences.getInstance();
                       // await  globalData.crmUserId;
                       await prefs.setString('crmUserId', state.crmUserId);
+                    await prefs.setString('token', state.token);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
+import 'package:nowproject/helper/local_store.dart';
 import 'package:nowproject/utility/app_setting.dart';
+import 'package:nowproject/utility/local_storge_key.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 
 class AppService {
@@ -37,7 +39,17 @@ class AppService {
           "version": '7.0.0',
           "source": "3",
           "Accept": 'application/json, text/plain, */*',
+          'Authorization': "bearer ${await getStoredToken()}",
         };
+
+
+      if (!checkIfNotLogin(apiUrl.toString())) {
+      String? token = await getStoredToken();
+      if (token != null) {
+        header.update('Authorization', (value) => "bearer $token",
+            ifAbsent: () => "bearer $token");
+      }
+    }
 
         print("Request URL: $apiUrl");
         print("Headers: $header");
@@ -107,6 +119,34 @@ class AppService {
   static String getPlatformName() {
     return kIsWeb ? "Web" : Platform.operatingSystem;
   }
+
+    static getStoredToken() async {
+    String? storedToken =
+        await AppLocalStore.getString(LocalStoreNames.appToken);
+    if (storedToken != null) {
+      var token = jsonDecode(storedToken);
+
+      return token["access_token"].toString();
+    } else {
+      return null;
+    }
+  }
+
+  
+    static checkIfNotLogin(String apiUrl) {
+    if (apiUrl.contains('login') ||
+        apiUrl.contains('ResetPassword') ||
+        apiUrl.contains('ReGenrateCode') ||
+        apiUrl.contains('register') ||
+        apiUrl.contains('VerifyCode') ||
+        apiUrl.contains('ForgotPassword')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  
 }
 
 enum ActionType { get, post }
