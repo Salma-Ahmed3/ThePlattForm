@@ -1,5 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:nowproject/Models/steps/steps.dart';
 import 'package:nowproject/cubit/step/first_step_cubit.dart';
 import 'package:nowproject/services/app_services.dart';
@@ -10,16 +13,12 @@ class DynamicStepsController {
   required String? serviceType,
 }) async {
       final obj =  json.encode(object.toJson());
-  log("objjjjjjjjjjjjjjjjjj: $obj"); 
+  log("Object Is: $obj"); 
   var result = await AppService.callService(
     actionType: ActionType.get,
     apiName: 'Steps/FirstStep?serviceType=$serviceType&Object=$obj',
-    // query: {
-    //   'serviceType': serviceType,
-    //   'Object': obj,
-    // },
   );
-  log("reqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq: $result"); 
+  log("Request First Step Action: $result"); 
 
   return result != null ? StepDetailsVm.fromJson(result) : null;
 }
@@ -31,12 +30,8 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'SavedContactLocation/ContactSavedAddress',
+        apiName: 'SavedContactLocation/ContactSavedAddress?contactId=$contactId&serviceId=$serviceId',
         body: {},
-        query: {
-          'contactId': contactId,
-          'serviceId': serviceId,
-        },
       );
       log("Services: $result");
       if (result != null) {
@@ -50,6 +45,16 @@ class DynamicStepsController {
     }
     return null;
   }
+    static Future<StepDetailsVm?> alternativeStep(
+      {String? actionName, String? serviceType, String? stepId}) async {
+    var result = await AppService.callService(
+        actionType: ActionType.get,
+        apiName:
+            'api/Steps/Alternative?serviceType=$serviceType&actionName=$actionName&stepId=$stepId',
+        body: null);
+
+    return result != null ? StepDetailsVm.fromJson(result) : null;
+  }
 
   static Future<Map<String, dynamic>?> nationality({
     required String serviceId,
@@ -57,11 +62,8 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'ResourceGroup/GetResourceGroupsByService',
+        apiName: 'ResourceGroup/GetResourceGroupsByService?serviceId=$serviceId',
         body: {},
-        query: {
-          'serviceId': serviceId,
-        },
       );
       log("Addrease: $result");
       if (result != null) {
@@ -82,11 +84,9 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'HourlyContract/Shifts',
+       
+        apiName: 'HourlyContract/Shifts?serviceId=$serviceId',
         body: {},
-        query: {
-          'serviceId': serviceId,
-        },
       );
       log("Period Time: $result");
       if (result != null) {
@@ -108,13 +108,12 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'HourlyContract/ShiftHours',
+        apiName: 'HourlyContract/ShiftHours?serviceId=$serviceId&shift=$shift',
         body: {},
-        query: {'serviceId': serviceId, 'shift': shift},
       );
       log("TimeHours Response: $result");
       if (result != null) {
-        return result; // Ensure this is a map with "data" as a list of maps
+        return result;
       } else {
         throw Exception('Failed to fetch data');
       }
@@ -131,11 +130,8 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'HourlyTimeSlot/GetArrivalTime',
+        apiName: 'HourlyTimeSlot/GetArrivalTime?timeSlotId=$timeSlotId',
         body: {},
-        query: {
-          'TimeSlotId': timeSlotId,
-        },
       );
       log("Visit Time: $result");
       if (result != null) {
@@ -156,11 +152,9 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'HourlyContract/FixedPackage',
+        apiName: 'HourlyContract/FixedPackage?stepId=$stepId',
         body: {},
-        query: {
-          'stepId': stepId,
-        },
+        
       );
       log("Fixed Package: $result");
       if (result != null) {
@@ -180,9 +174,8 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'HourlyContract/CalenderOptions',
+        apiName: 'HourlyContract/CalenderOptions?serviceId=$serviceId&visitShift=$visitShift',
         body: {},
-        query: {'serviceId': serviceId, 'visitShift': visitShift},
       );
       log("Calender Days: $result");
       if (result != null) {
@@ -201,11 +194,9 @@ class DynamicStepsController {
     try {
       var result = await AppService.callService(
         actionType: ActionType.get,
-        apiName: 'Payment/ShopperResult',
+        apiName: 'Payment/ShopperResult?id=$id&type=$type',
         body: {},
-        query: {
-        'id': id, 
-        'type': type},
+       
       );
       log("Contract Success: $result");
       if (result != null) {
@@ -218,5 +209,24 @@ class DynamicStepsController {
       // TODO
     }
     return null;
+  }
+
+  
+  static Future<ActionStep?> createContractAction({String? stepId}) async {
+    var result = await AppService.callService(
+        actionType:
+            BlocProvider.of<FirstStepCubit>(Get.context!, listen: false)
+                        .actionStep
+                        .stepDetailsVm!
+                        .httpMethod!
+                        .toLowerCase() ==
+                    ActionType.post.name
+                ? ActionType.post
+                : ActionType.get,
+        apiName:
+            'api/${BlocProvider.of<FirstStepCubit>(Get.context!, listen: false).actionStep.stepDetailsVm!.controller}/${BlocProvider.of<FirstStepCubit>(Get.context!, listen: false).actionStep.stepDetailsVm!.action}?stepId=$stepId',
+        body: null);
+
+    return result != null ? ActionStep.fromJson(result) : null;
   }
 }

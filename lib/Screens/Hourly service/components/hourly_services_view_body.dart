@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,13 +63,14 @@ class HourlyServicesViewBody extends StatelessWidget {
                                   .serviceType = ServiceType.hourlyServiceType;
                               globalData.serviceId = service.id;
                               BlocProvider.of<FirstStepCubit>(context)
-                                  .fetchFirstStep(
+                              .    fetchFirstStep(
                                 serviceType: ServiceType.hourlyServiceType,
                                 object: FirstStepObjParameter(
                                   serviceId: service.id,
                                   fromOffer: false,
                                 ),
                                 context: context,
+                                
                               );
                             }
                           },

@@ -9,7 +9,7 @@ import 'package:svg_flutter/svg.dart';
 
 class ChooseAddreseView extends StatelessWidget {
   const ChooseAddreseView({super.key});
-  static const routeName = 'ChooseAddreseView';
+  static const routeName = 'SavedAddresses';
   @override
   Widget build(BuildContext context) {
     return Directionality(
